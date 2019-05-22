@@ -1,4 +1,5 @@
 ﻿using System;
+using Exercises;
 
 namespace Basic_1
 {
@@ -29,37 +30,35 @@ namespace Basic_1
                 switch (exercise)
                 {
                     case 1:
-                        Basic_1();
+                        BasicExercises.Basic_1();
                         break;
 
                     default:
                         Console.WriteLine("No such Excercise exists.");
-
                         break;
                 }
 
-
-                while (entry != "")
-                {
-                    Console.WriteLine("\nPress [ENTER] to continue, \"x\" to end");
-                    entry = Console.ReadLine();
-
-                    if (entry == "x")
-                    {
-                        run = false;
-                        break;
-                    }
-                }
+                run = endOrContinue();
 
                 exercise = 0;
             }
             
         }
 
-        static void Basic_1()
+        static Boolean endOrContinue()
         {
-            Console.WriteLine("Hello \nStan Caceres");
+            string entry = null;
+            while (entry != "")
+            {
+                Console.WriteLine("\nPress [ENTER] to continue, \"x\" to end");
+                entry = Console.ReadLine();
 
+                if (entry == "x")
+                {
+                   return false;
+                }
+            }
+            return true;
         }
 
     }
