@@ -26,15 +26,18 @@ namespace Basic_1
                 switch (exercise)
                 {
                     case 1:
-                        BasicExercises.Basic_1();
+                        Basic_01.Execute();
                         break;
 
                     case 2:
-                        BasicExercises.Basic_2();
+                        Basic_02.Execute();
                         break;
 
                     case 3:
-                        BasicExercises.Basic_3();
+                        Basic_03.Execute();
+                        break;
+                    case 4:
+                        Basic_04.Execute();
                         break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
