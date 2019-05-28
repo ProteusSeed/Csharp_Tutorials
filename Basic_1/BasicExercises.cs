@@ -106,4 +106,58 @@ namespace Exercises
 
         }
     }
+
+    static class Basic_05
+    {
+        public static void Execute()
+        {
+            /*
+            5.Write a C# Sharp program to swap two numbers. 
+            Test Data:
+            Input the First Number : 5
+            Input the Second Number : 6
+            Expected Output: 
+            After Swapping :
+            First Number : 6
+            Second Number : 5
+            */
+            bool valid = false;
+            string entry;
+            string ordinal = "first";
+            int number; int firstNumber = 0; int secondNumber = 0;
+
+            while (valid == false || ordinal == "first")
+            {
+                if (ordinal == "first" && valid == true)
+                {
+                    ordinal = "second";
+                }
+               // ordinal = ordinal == "first" && valid == true ? "second" : "first";
+
+                Console.Write("Enter {0} number: ", ordinal);
+
+                entry = Console.ReadLine();
+                valid = int.TryParse(entry, out number);
+
+                if (valid == false)
+                {
+                    Console.WriteLine("Value must be a valid number!");
+                }
+                else
+                {                   
+                    if (ordinal == "first")
+                    {
+                        firstNumber = number;
+                    }
+                    else
+                    {
+                        secondNumber = number;
+                    }
+                }
+            }
+
+            Console.WriteLine("First Number: {0}\nSecond Number: {1}", secondNumber, firstNumber);            
+
+        }
+    }
 }
