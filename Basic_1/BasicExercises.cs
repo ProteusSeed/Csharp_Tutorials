@@ -160,4 +160,63 @@ namespace Exercises
 
         }
     }
+
+    static class Basic_06
+    {
+        public static void Execute()
+        {
+            /*
+             6. Write a C# Sharp program to print the output of multiplication of three numbers 
+                which will be entered by the user. Go to the editor
+                Test Data:
+                Input the first number to multiply: 2
+                Input the second number to multiply: 3
+                Input the third number to multiply: 6
+                Expected Output:
+                2 x 3 x 6 = 36
+            */
+            int iterationIndex = 0;
+            var iteration = new[] {
+                                     new{ iterationNumber = 1, iterationName = "first" }
+                                    ,new{ iterationNumber = 2, iterationName = "second" }
+                                    ,new{ iterationNumber = 3, iterationName = "third" }
+                                  };                                        
+
+            //int iteration = 1;
+            //string iterationMsg = "first";
+            int firstNumber = 0; int secondNumber = 0; int thirdNumber = 0;
+            bool valid = false;
+
+            while (iterationIndex < 3)
+            {
+                Console.Write("Enter {0} number: ", iteration[iterationIndex].iterationName);
+
+                switch (iterationIndex)
+                {
+                    case 0:
+                        valid = int.TryParse(Console.ReadLine(), out firstNumber);
+                        break;
+                    case 1:
+                        valid = int.TryParse(Console.ReadLine(), out secondNumber);
+                        break;
+                    case 2:
+                        valid = int.TryParse(Console.ReadLine(), out thirdNumber);
+                        break;
+                    default:
+                        break;
+                }
+
+                if (valid == false)
+                {
+                    Console.WriteLine("Value must be a valid number!");
+                }
+                else
+                {
+                    iterationIndex++;
+                }
+            }
+
+            Console.WriteLine("Result: {0}", firstNumber * secondNumber * thirdNumber);
+        }
+    }
 }
