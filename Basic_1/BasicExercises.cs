@@ -277,4 +277,40 @@ namespace Exercises
             Console.WriteLine("{0} % {1} = {2}", firstNumber, secondNumber, firstNumber % secondNumber);
         }
     }
+
+    static class Basic_08
+    {
+        public static void Execute()
+        {
+            /*
+             8. Write a C# Sharp program that takes a number as input and print its multiplication table. 
+                Test Data:
+                Enter the number: 5
+                Expected Output:
+                5 * 0 = 0
+                5 * 1 = 5
+                5 * 2 = 10 
+                5 * 3 = 15
+                ....
+                5 * 10 = 50
+            */
+
+            int number = 0;
+
+            Console.Write("Enter number: ");
+
+           while( int.TryParse(Console.ReadLine(), out number) == false )
+            {
+                Console.WriteLine("Value must be a valid number!");
+                Console.Write("Enter number: ");
+            }
+
+            Console.WriteLine("Multiplication table...");
+
+            for (int multiplier = 0; multiplier <= 12; multiplier++)
+            {
+                Console.WriteLine("{0} * {1} = {2}", number, multiplier, number * multiplier);
+            }
+        }
+    }
 }
