@@ -176,7 +176,7 @@ namespace Exercises
                 2 x 3 x 6 = 36
             */
             int iterationIndex = 0;
-            var iteration = new[] {
+            var iteration = new[] { //this is an anonymous type, instantiated with "initializer syntax"
                                      new{ iterationNumber = 1, iterationName = "first" }
                                     ,new{ iterationNumber = 2, iterationName = "second" }
                                     ,new{ iterationNumber = 3, iterationName = "third" }
@@ -217,6 +217,64 @@ namespace Exercises
             }
 
             Console.WriteLine("Result: {0}", firstNumber * secondNumber * thirdNumber);
+        }
+    }
+
+    static class Basic_07
+    {
+        public static void Execute()
+        {
+            /*
+             7. Write a C# Sharp program to print on screen the output of adding, subtracting
+             , multiplying and dividing of two numbers which will be entered by the user. 
+                Test Data:
+                Input the first number: 25
+                Input the second number: 4
+                Expected Output:
+                25 + 4 = 29
+                25 - 4 = 21
+                25 x 4 = 100 
+                25 / 4 = 6
+                25 mod 4 = 1
+                */
+            bool valid = false;
+            int firstNumber = 0; int secondNumber = 0;
+            int iterationIndex = 0;
+            var iteration = new[] {
+                                     new { iterationNumber = 1, iterationName = "first" }
+                                    ,new { iterationNumber = 1, iterationName = "second" }
+                                  };
+
+            while (iterationIndex < 2)
+            {
+                Console.Write("Enter {0} number: ", iteration[iterationIndex].iterationName);
+
+                if (iterationIndex == 0)
+                {
+                    valid = int.TryParse(Console.ReadLine(), out firstNumber);
+                }
+                else
+                {
+                    valid = int.TryParse(Console.ReadLine(), out secondNumber);
+                }
+
+                if (valid)
+                {
+                    iterationIndex++;
+                }
+                else
+                {
+                    Console.WriteLine("Value must be a valid number!");
+                }
+
+            }
+
+            Console.WriteLine("Results...");
+            Console.WriteLine("{0} + {1} = {2}", firstNumber, secondNumber, firstNumber + secondNumber);
+            Console.WriteLine("{0} - {1} = {2}", firstNumber, secondNumber, firstNumber - secondNumber);
+            Console.WriteLine("{0} * {1} = {2}", firstNumber, secondNumber, firstNumber * secondNumber);
+            Console.WriteLine("{0} / {1} = {2}", firstNumber, secondNumber, firstNumber / secondNumber);
+            Console.WriteLine("{0} % {1} = {2}", firstNumber, secondNumber, firstNumber % secondNumber);
         }
     }
 }
