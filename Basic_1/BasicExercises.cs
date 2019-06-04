@@ -328,21 +328,11 @@ namespace Exercises
             The average of 10 , 15 , 20 , 30 is: 18
         */
 
-            class Iteration{
+            class Iteration{//This class provides the type for the list that will store the entries.
 
             public string iterationName { get; set; }
             public int iterationNumber { get; set; }
             public int iterationValue { get; set; }
-        }
-
-        public static void test()
-        {
-            Iteration testClass = new Iteration();
-
-            testClass.iterationName = "test";
-
-            Console.WriteLine(testClass.iterationName);
-            Console.ReadLine();
         }
 
         public static void Execute()
@@ -358,7 +348,7 @@ namespace Exercises
 
             };
             */
-
+            //List of type Iteration class (declared above)
             List<Iteration> Iteration = new List<Iteration>
             {
                 new Iteration{ iterationName = "first", iterationNumber = 1, iterationValue = 0 }
@@ -371,7 +361,6 @@ namespace Exercises
 
             for (iterationIndex = 0; iterationIndex <= Iteration.Count- 1; iterationIndex++ )
             {
-                //Console.WriteLine(item.iterationName);
                 Console.Write("Enter {0} number: ", Iteration[iterationIndex].iterationName);
 
                 while (int.TryParse(Console.ReadLine(), out number) == false)
@@ -380,30 +369,17 @@ namespace Exercises
                     Console.Write("Enter {0} number: ", Iteration[iterationIndex].iterationName);
                 }
 
+                //Add the entered value to the list
                 Iteration[iterationIndex].iterationValue = number;
 
+                //Add the #s as they're entered
                 result = Iteration[iterationIndex].iterationValue + result;
             }
 
-            result = result / Iteration.Count;
+            result /= Iteration.Count;
 
             Console.WriteLine("The Average of is: {0}", result);
-            /*
-            while (iterationIndex < 4)
-            {
-                Console.Write("Enter {0} number: ", iteration[iterationIndex]);
 
-                //have the values stored in the array.
-
-                while (int.TryParse(Console.ReadLine(), out number))
-                {
-                    Console.WriteLine("Value must be a valid number!");
-                    Console.Write("Enter {0} number: ", iteration[iterationIndex].iterationName);
-                }
-                //iteration[iterationIndex].iterationValue = number;
-                iterationIndex++;
-            }
-            */
         }
     }
 }
