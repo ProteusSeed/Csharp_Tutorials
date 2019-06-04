@@ -51,6 +51,9 @@ namespace Basic_1
                     case 8:
                         Basic_08.Execute();
                         break;
+                    case 9:
+                        Basic_09.Execute();
+                        break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
                         break;

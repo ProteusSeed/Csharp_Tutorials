@@ -313,4 +313,97 @@ namespace Exercises
             }
         }
     }
+
+    static class Basic_09
+    {
+        /*
+         9. Write a C# Sharp program that takes four numbers as input to calculate and print the average.
+            Test Data:
+            Enter the First number: 10 
+            Enter the Second number: 15 
+            Enter the third number: 20 
+            Enter the four number: 30 
+
+            Expected Output:
+            The average of 10 , 15 , 20 , 30 is: 18
+        */
+
+            class Iteration{
+
+            public string iterationName { get; set; }
+            public int iterationNumber { get; set; }
+            public int iterationValue { get; set; }
+        }
+
+        public static void test()
+        {
+            Iteration testClass = new Iteration();
+
+            testClass.iterationName = "test";
+
+            Console.WriteLine(testClass.iterationName);
+            Console.ReadLine();
+        }
+
+        public static void Execute()
+        {
+            int number = 0;
+            int result = 0;
+            /*
+            var iteration = new[] {
+                                     new { iterationName = "first", iterationNumber = 1, iterationValue = 0 } 
+                                    ,new{ iterationName = "second", iterationNumber = 2, iterationValue = 0 }
+                                    ,new{ iterationName = "third", iterationNumber = 3, iterationValue = 0 }
+                                    ,new{ iterationName = "fourth", iterationNumber = 4, iterationValue = 0 }
+
+            };
+            */
+
+            List<Iteration> Iteration = new List<Iteration>
+            {
+                new Iteration{ iterationName = "first", iterationNumber = 1, iterationValue = 0 }
+                ,new Iteration{ iterationName = "second", iterationNumber = 2, iterationValue = 0 }
+                ,new Iteration{ iterationName = "third", iterationNumber = 3, iterationValue = 0 }
+                ,new Iteration{ iterationName = "fourth", iterationNumber = 4, iterationValue = 0 }
+            };
+
+            int iterationIndex;
+
+            for (iterationIndex = 0; iterationIndex <= Iteration.Count- 1; iterationIndex++ )
+            {
+                //Console.WriteLine(item.iterationName);
+                Console.Write("Enter {0} number: ", Iteration[iterationIndex].iterationName);
+
+                while (int.TryParse(Console.ReadLine(), out number) == false)
+                {
+                    Console.WriteLine("Value must be a valid number!");
+                    Console.Write("Enter {0} number: ", Iteration[iterationIndex].iterationName);
+                }
+
+                Iteration[iterationIndex].iterationValue = number;
+
+                result = Iteration[iterationIndex].iterationValue + result;
+            }
+
+            result = result / Iteration.Count;
+
+            Console.WriteLine("The Average of is: {0}", result);
+            /*
+            while (iterationIndex < 4)
+            {
+                Console.Write("Enter {0} number: ", iteration[iterationIndex]);
+
+                //have the values stored in the array.
+
+                while (int.TryParse(Console.ReadLine(), out number))
+                {
+                    Console.WriteLine("Value must be a valid number!");
+                    Console.Write("Enter {0} number: ", iteration[iterationIndex].iterationName);
+                }
+                //iteration[iterationIndex].iterationValue = number;
+                iterationIndex++;
+            }
+            */
+        }
+    }
 }
