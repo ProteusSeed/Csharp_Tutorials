@@ -382,4 +382,58 @@ namespace Exercises
 
         }
     }
+
+    static class Basic_10
+    {
+        /*
+          Write a C# program that takes three numbers (x,y,z) as input
+          and print the output of (x+y)z and x.y + y.z
+          Test data:
+          Enter 1st number: -5
+          2nd: -6
+          3rd: -7
+
+           Expected Output:
+            Result of specified numbers 5, 6 and 7, (x+y).z is 77 and x.y + y.z is 72
+    */
+
+        public class numbers
+        {
+            public string iterationName { get; set; }
+            public int value { get; set; }
+        }
+        public static void Execute()
+        {
+            int number = 0;
+            int result = 0;
+
+            //Dictionary
+            Dictionary<int, numbers> numbers = new Dictionary<int, numbers>();
+
+            numbers.Add(0, new Basic_10.numbers { iterationName = "first", value = 0 });
+            numbers.Add(1, new Basic_10.numbers { iterationName = "second", value = 0 });
+            numbers.Add(2, new Basic_10.numbers { iterationName = "third", value = 0 });            
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.WriteLine("Enter {0} number", numbers[i].iterationName);
+
+                while (int.TryParse(Console.ReadLine(), out number) == false)
+                {
+                    Console.WriteLine("Value must be a number!");
+                    Console.WriteLine("Enter {0} number", numbers[i].iterationName);
+                }
+
+                numbers[i].value = number;
+            }
+
+            result = (numbers[0].value + numbers[1].value) * numbers[2].value;
+
+            Console.WriteLine("The result of ({0} + {1}) * {2} is: {3}",numbers[0].value,numbers[1].value,numbers[2].value, result);
+
+            result = (numbers[0].value * numbers[1].value) + ( numbers[1].value * numbers[2].value );
+            Console.WriteLine("The result of ({0} * {1}) + ({1} * {3}) is: {3}", numbers[0].value, numbers[1].value, numbers[2].value, result);
+        }
+    }
 }
+
