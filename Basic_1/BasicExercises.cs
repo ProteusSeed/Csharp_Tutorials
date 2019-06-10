@@ -499,5 +499,47 @@ namespace Exercises
             Console.WriteLine("{0}{0}{0}", number);
         }
     }
+
+    static class Basic_13
+    {
+        /*
+         13. Write a C# program that takes a number as input 
+            and then displays a rectangle of 3 columns wide and 5 rows tall 
+            using that digit. 
+            Test Data:
+            Enter a number: 5 
+            Expected Output:
+            555 
+            5 5
+            5 5 
+            5 5 
+            555
+        */
+        public static void Execute()
+        {
+            int number = 0;
+
+            Console.WriteLine("Enter number: ");
+
+            //Validation
+            while (int.TryParse(Console.ReadLine(), out number) == false)
+            {
+                Console.WriteLine("Value must be a number!");
+                Console.WriteLine("Enter number: ");
+
+            }
+
+            for (int i = 1; i <= 5; i++)
+            {
+                if (i == 1 | i == 5)
+                {
+                    Console.WriteLine("{0}{0}{0}", number);
+                }
+            else {
+                Console.WriteLine("{0} {0}", number);
+                }
+            }
+        }
+    }
 }
 
