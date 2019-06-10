@@ -576,6 +576,47 @@ namespace Exercises
 
     }
 
+    static class Basic_15
+    {
+        /*
+         15. Write a C# program to remove specified a character 
+         from a non-empty string using index of a character. 
+        Test Data:
+            w3resource
+        Sample Output:
+            wresource
+            w3resourc
+            3resource
+        */
+        public static void Execute()
+        {
+            string theString = "";
+            int characterIndex = 0;
+            string message = "";
 
+            while (theString.Length == 0 )
+            {
+                Console.WriteLine("{0}", message);
+                Console.WriteLine("Enter string: ");
+                theString = Console.ReadLine();
+                message = "String cannot be empty!";
+
+            }
+
+            message = "";
+
+            Console.WriteLine("Enter character index: ");
+
+            while ( int.TryParse(Console.ReadLine(), out characterIndex) == false )
+            {
+                Console.WriteLine("{0}", message);
+                message = "Value must be a number! n/Enter character index: ";
+
+            }
+
+            Console.WriteLine(theString.Remove(characterIndex - 1,1));
+
+        }
+    }
 }
 
