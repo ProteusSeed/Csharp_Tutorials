@@ -435,5 +435,69 @@ namespace Exercises
             Console.WriteLine("The result of ({0} * {1}) + ({1} * {3}) is: {3}", numbers[0].value, numbers[1].value, numbers[2].value, result);
         }
     }
+
+    static class Basic_11
+    {
+        /*
+         11. Write a C# Sharp program that takes an age (for example 20) as input 
+            and prints something as "You look older than 20". Go to the editor
+        Test Data:
+        Enter your age - 25
+        Expected Output:
+        You look older than 25
+        */
+
+        public static void Execute()
+        {
+            int age = 0;
+
+            Console.Write("Enter your age: ");
+
+            while (int.TryParse(Console.ReadLine(), out age) == false)
+            {
+                Console.WriteLine("Value must be a number!");
+                Console.Write("Enter your age: ");
+            }
+           
+            Console.WriteLine("You look older than {0}", age);
+
+        }
+
+    }
+
+    static class Basic_12
+    {
+        /*
+         12. Write a C# program that takes a number as input and display it 
+         four times in a row (separated by blank spaces), and then four times in the next row, 
+         with no separation. You should do it two times: Use Console. Write and then use {0}. 
+        Test Data:
+        Enter a digit: 25 
+        Expected Output:
+        25 25 25 25 
+        25252525 
+        25 25 25 25 
+        25252525
+        */
+
+        public static void Execute()
+        {
+            int number = 0;
+
+            Console.Write("Enter a number: ");
+
+            while (int.TryParse(Console.ReadLine(), out number) == false )
+            {
+                Console.WriteLine("Value must be a number!");
+                Console.Write("Enter a number: ");
+            }
+
+            Console.WriteLine("Output: ");
+            Console.WriteLine("{0} {0} {0}",number);
+            Console.WriteLine("{0}{0}{0}", number);
+            Console.WriteLine("{0} {0} {0}", number);
+            Console.WriteLine("{0}{0}{0}", number);
+        }
+    }
 }
 

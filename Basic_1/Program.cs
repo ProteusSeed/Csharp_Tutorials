@@ -1,7 +1,7 @@
 ﻿using System;
 using Exercises;
 
-namespace Basic_1
+namespace Basics
 {
 
     class Program
@@ -56,6 +56,12 @@ namespace Basic_1
                         break;
                     case 10:
                         Basic_10.Execute();
+                        break;
+                    case 11:
+                        Basic_11.Execute();
+                        break;
+                    case 12:
+                        Basic_12.Execute();
                         break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
