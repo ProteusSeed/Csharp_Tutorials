@@ -618,5 +618,36 @@ namespace Exercises
 
         }
     }
+
+    static class Basic_16
+    {
+        /*
+         16. Write a C# program to create a new string from a given string 
+            where the first and last characters will change their positions. 
+            Test Data:
+                w3resource
+                Python
+                Sample Output:
+                e3resourcw
+                nythoP 
+        */
+
+        public static void Execute()
+        {
+            string theString = "";
+            string message = "";
+
+            while (theString.Length < 2)
+            {
+                Console.WriteLine("{0} Enter string: ", message);
+                theString = Console.ReadLine();
+                message = "Value must be at least two characters!";
+            }                       
+
+            theString = theString.Substring(theString.Length - 1, 1) + theString.Substring(1, theString.Length - 2) + theString.Substring(0, 1);
+
+            Console.WriteLine(theString);
+        }
+    }
 }
 
