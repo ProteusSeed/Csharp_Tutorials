@@ -649,5 +649,34 @@ namespace Exercises
             Console.WriteLine(theString);
         }
     }
+
+    static class Basic_17
+    {
+        /*
+          17. Write a C# program to create a new string from a given string (length 1 or more ) 
+           with the first character added at the front and back. Go to the editor
+            Sample Output:
+            Input a string : The quick brown fox jumps over the lazy dog. 
+            TThe quick brown fox jumps over the lazy dog.T
+            */
+        public static void Execute()
+        {
+            string theString = "";
+            string message = "";
+            string firstChar = "";
+
+            //validation
+            while ( theString == "" )
+            {
+                Console.WriteLine("{0}Enter string: ", message);
+                theString = Console.ReadLine();
+                message = "Value must be at least one character! ";
+            }
+
+            firstChar = theString.Substring(0, 1);
+            theString = firstChar + theString + firstChar;
+            Console.WriteLine(theString);
+        }
+    }
 }
 

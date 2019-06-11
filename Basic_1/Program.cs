@@ -75,6 +75,9 @@ namespace Basics
                     case 16:
                         Basic_16.Execute();
                         break;
+                    case 17:
+                        Basic_17.Execute();
+                        break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
                         break;
@@ -95,7 +98,7 @@ namespace Basics
                 Console.WriteLine("\nPress [ENTER] to continue, \"x\" to end");
                 entry = Console.ReadLine();
 
-                if (entry == "x")
+                if (entry == "x" | entry == "X")
                 {
                    return false;
                 }
