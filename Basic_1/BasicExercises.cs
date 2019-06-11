@@ -678,5 +678,48 @@ namespace Exercises
             Console.WriteLine(theString);
         }
     }
+
+    static class Basic_18
+    {
+        /*
+         18. Write a C# program to check two given integers and return true
+            if one is negative and one is positive. 
+            Sample Output:
+                Input first integer:
+                -5 
+                Input second integer: 
+                25 
+                Check if one is negative and one is positive: 
+                True 
+        */
+
+        public static void Execute()
+        {
+            string entry = "";
+            int integer = 0;
+            int first = 0; int second = 0;
+            string message = "";
+
+            for (int i = 1; i <= 2; i++)
+            {
+                Console.WriteLine("Enter number: ");
+                //validate
+                while (int.TryParse(Console.ReadLine(), out integer) == false)
+                {
+                    message = "Value must be a valid number! ";
+                    Console.WriteLine("{0}Enter number: ", message);                    
+                }
+
+                if (integer < 0)
+                {
+                    Console.WriteLine("TRUE!");
+                    break;
+                }
+
+                message = "";
+            }
+
+        }
+    }
 }
 
