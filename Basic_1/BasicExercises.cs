@@ -721,5 +721,48 @@ namespace Exercises
 
         }
     }
+
+    static class Basic_19
+    {
+        /*
+         19. Write a C# program to compute the sum of two given integers, 
+         if two values are equal then return the triple of their sum.
+         */
+
+        public static void Execute()
+        {
+            int integer = 0;
+            int first = 0; int second = 0;
+            bool validity = false;
+            string iteration = "first";
+            string message = "";
+            int result = 0;
+
+            for (int i = 1; i <=2; i++)
+            {
+                while (validity == false)
+                {
+                    iteration = i == 1 ? "first" : "second";
+
+                    Console.WriteLine("{0}\nEnter {1} number: ", message, iteration);
+
+                    if (i == 1)
+                    {
+                        validity = int.TryParse(Console.ReadLine(), out first);
+                    }
+                    else
+                    {
+                        validity = int.TryParse(Console.ReadLine(), out second);
+                    }
+                    message = "Value must be a valid number!";
+                }
+                validity = false;//re-initialize
+                message = "";
+
+            }
+            result = first == second ? (first + second) * 3 : (first + second);
+            Console.WriteLine("Result: {0}", result);
+        }
+    }
 }
 
