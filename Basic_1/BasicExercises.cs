@@ -4,6 +4,23 @@ using System.Text;
 
 namespace Exercises
 {
+    public static class UtilityMethods
+    {
+        public static int GetValidNumber( string entryMessage = "Enter Number: " )
+        {
+            int number = 0;
+
+            Console.WriteLine(entryMessage);
+
+            while(int.TryParse(Console.ReadLine(), out number) == false)
+            {
+                Console.WriteLine( "Value must be a valid number! \nEnter Number: " );
+            }
+
+            return number;
+        }
+    }
+
     static class Basic_01
         {
         public static void Execute()
@@ -762,6 +779,31 @@ namespace Exercises
             }
             result = first == second ? (first + second) * 3 : (first + second);
             Console.WriteLine("Result: {0}", result);
+        }
+    }
+
+    static class Basic_20
+    {
+        /*
+         20. Write a C# program to get the absolute value of the difference between two given numbers. 
+         Return double the absolute value of the difference if the first number is greater than second number. 
+         */
+
+        public static void Execute()
+        {
+            int first = 0; int second = 0;
+            string iteration = "first";
+            int result = 0;
+            string message = "";
+
+            first = UtilityMethods.GetValidNumber("Enter first number: "); 
+
+            second = UtilityMethods.GetValidNumber("Enter second number: ");
+
+            result = first > second ? (first - second) * 2 : first - second;
+
+            Console.WriteLine("Result: {0}", result);
+
         }
     }
 }
