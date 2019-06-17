@@ -806,5 +806,41 @@ namespace Exercises
 
         }
     }
+
+    static class Basic_21
+    {
+        /*
+         21. Write a C# program to check the sum of the two given integers 
+         and return true if one of the integer is 20 or if their sum is 20.
+         */
+
+        public static void Execute()
+        {
+            int first = UtilityMethods.GetValidNumber("Enter first number: ");
+            int second = UtilityMethods.GetValidNumber("Enter second number: ");
+
+            Console.WriteLine(first == 20 | second == 20 | first + second == 20 ? true : false);
+        }
+    }
+
+    static class Basic_22
+    {
+        /*
+          22. Write a C# program to check if an given integer is within 20 of 100 or 200. 
+            Sample Output:
+            Input an integer: 
+            25 
+            False 
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+
+            Console.WriteLine( 100 - number <= 20 | 200 - number <= 20 ? true : false );
+
+        }
+
+    }
 }
 
