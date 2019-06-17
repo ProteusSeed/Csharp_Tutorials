@@ -842,5 +842,25 @@ namespace Exercises
         }
 
     }
+
+    static class Basic_23
+    {
+        /*
+         * 23. Write a C# program to convert a given string into lowercase.
+            Sample Output:
+            write a c# sharp program to display the following pattern using the alphabet.
+        */
+
+        public static void Execute()
+        {
+            string theString = "";
+
+            Console.Write("Enter string: ");
+            theString = Console.ReadLine();
+
+            Console.WriteLine(theString.ToLower());
+
+        }
+    }
 }
 

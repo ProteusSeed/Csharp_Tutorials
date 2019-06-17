@@ -93,6 +93,9 @@ namespace Basics
                     case 22:
                         Basic_22.Execute();
                         break;
+                    case 23:
+                        Basic_23.Execute();
+                        break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
                         break;
