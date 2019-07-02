@@ -19,6 +19,22 @@ namespace Exercises
 
             return number;
         }
+
+        public static string GetValidString()
+        {
+            string theString = "";
+            string message = "";
+
+            while(theString.Length == 0)
+            {
+                Console.WriteLine("{0}\nEnter string: ", message);
+                theString = Console.ReadLine();
+
+                if(message.Length == 0) message = "Value must be a valid string!";
+            }
+
+            return theString.Trim();
+        }
     }
 
     static class Basic_01
@@ -860,6 +876,146 @@ namespace Exercises
 
             Console.WriteLine(theString.ToLower());
 
+        }
+    }
+
+    static class Basic_24
+    {
+        /*
+          24. Write a C# program to find the longest word in a string. 
+            Test Data: Write a C# Sharp Program to display the following pattern using the alphabet.
+            Sample Output:
+            following
+        */
+
+        public static void Execute()
+        {
+            string theString = "";
+            string stringFrag = "";
+            string word = "";
+            int spaceLocation = 1;
+            int nextSpaceLocation = 0;
+            int lastChar = 0;
+
+            List<Tuple<string, int>> words = new List<Tuple<string, int>>();
+
+            theString = UtilityMethods.GetValidString();
+            stringFrag = theString;
+
+            theString.TrimEnd();
+            theString.TrimStart();
+
+            //spaceLocation = theString.IndexOf(" ");
+
+            lastChar = theString.Length - 1;
+
+            //parse sentence into words
+            while (stringFrag.Length > 0 )
+            {
+                //spaceLocation = spaceLocation != 0 ? theString.Substring(spaceLocation + 1).IndexOf(" "): 0;
+                nextSpaceLocation = stringFrag.IndexOf(" ") > 0 ? stringFrag.IndexOf(" ") : stringFrag.Length;
+
+                word = stringFrag.Substring(0, nextSpaceLocation );
+
+                //words.Add(( word, word.Length));
+                Console.WriteLine(word);
+
+                nextSpaceLocation++;
+
+                //If there are more letters after the space after the current word start the fragment from there
+                //else assign an empty string which stops the loop
+                stringFrag = nextSpaceLocation < stringFrag.Length ? stringFrag.Substring(nextSpaceLocation) : "";
+             
+            }           
+
+        }
+    }
+
+    static class Basic_28
+    {
+        /*
+         * 28. Write a C# program to reverse the words of a sentence. 
+        Sample Output:
+        Original String: Display the pattern like pyramid using the alphabet.
+        Reverse String: alphabet. the using pyramid like pattern the Display
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int position = 0; int nextPosition = 0; int length = 0;
+            string word = "";
+
+            Dictionary<int, string> words = new Dictionary<int, string>();
+
+            //the  cat  ran
+            while (position < theString.Length)
+            {
+                nextPosition = theString.Substring(position).IndexOf(" ") + position;
+
+                //keep trying until a space after letters is found
+                //
+                while (nextPosition == 0 & position < theString.Length)
+                {
+                    position++;
+                    nextPosition = theString.Substring(position).IndexOf(" ");                    
+                }
+
+                if (nextPosition == -1) nextPosition = theString.Length;
+
+                length = nextPosition - position;
+
+                word = theString.Substring(position, length);
+
+                Console.WriteLine(word);
+
+                position = nextPosition + 1; //the next letter
+            }
+        }
+    }
+
+    static class Basic_29
+    {
+        /*
+         * 29. Write a C# program to find the size of a specified file in bytes. 
+            Sample Output:
+            Size of a file: 31 
+         */
+
+        public static void Execute()
+        {
+            // file.length;
+
+           //OpenFileDialog fileDialog = new FileDialog();
+        }
+    }
+
+    static class Basic_30
+    {
+        /*
+         30. Write a C# program to convert a hexadecimal number to decimal number. 
+            Sample Output:
+            Hexadecimal number: 4B0
+            Convert to- 
+            Decimal number: 1200 
+        */
+
+        public static void Execute()
+        {
+            string hex;
+            long result = 0;
+            bool validate = false;
+            string message = "";
+
+            while (validate == false)
+            {
+                Console.Write("{0}Enter hexidecimal number: ", message);
+                hex = Console.ReadLine();
+                validate = long.TryParse(hex, System.Globalization.NumberStyles.HexNumber, null, out result);
+                message = "Value is not a hexadecimal! ";
+            }
+
+            Console.WriteLine(result);
         }
     }
 }
