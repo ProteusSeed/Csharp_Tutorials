@@ -1018,5 +1018,59 @@ namespace Exercises
             Console.WriteLine(result);
         }
     }
+
+    static class Basic_31
+    {
+        /*
+         31. Write a C# program to multiply corresponding elements of two arrays of integers. Go to the editor
+        Sample Output:
+        Array1: [1, 3, -5, 4]
+        Array2: [1, 4, -5, -2]
+        Multiply corresponding elements of two arrays:
+        1 12 25 -8
+        */
+        public static void Execute()
+        {
+            int[] Array1 = new int[] { 1, 3, -5, 4 };
+            int[] Array2 = new int[] { 1, 4, -5, -2 };
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine(Array1[i] * Array2[i]);
+            }
+
+        }
+    }
+
+    static class Basic_32
+    {
+        /*
+          32. Write a C# program to create a new string of four copies, 
+          taking last four characters from a given string. If the length of the given string 
+          is less than 4 return the original one. 
+            Sample Output:
+            Input a string : The quick brown fox jumps over the lazy dog.
+            dog.dog.dog.dog.
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string theCopy;
+            int start = 0;
+            int length = 0;
+
+            start = theString.Length >= 4 ? theString.Length - 4 : 0;
+            length = start == 0 ? theString.Length : 4;
+
+            theCopy = theString.Substring( start, length);
+
+            for (int x = 1; x <= 4; x++)
+            {
+                Console.Write(theCopy);
+            }            
+
+        }
+    }
 }
 
