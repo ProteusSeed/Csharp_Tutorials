@@ -14,20 +14,20 @@ namespace Exercises
 
             while(int.TryParse(Console.ReadLine(), out number) == false)
             {
-                Console.WriteLine( "Value must be a valid number! \nEnter Number: " );
+                Console.WriteLine( "Value must be a valid number! \n{0}: ", entryMessage);
             }
 
             return number;
         }
 
-        public static string GetValidString()
+        public static string GetValidString(string entryMessage = "Enter String: ")
         {
             string theString = "";
             string message = "";
 
             while(theString.Length == 0)
             {
-                Console.WriteLine("{0}\nEnter string: ", message);
+                Console.WriteLine("{0}\n{1}: ", message, entryMessage);
                 theString = Console.ReadLine();
 
                 if(message.Length == 0) message = "Value must be a valid string!";
@@ -1070,6 +1070,120 @@ namespace Exercises
                 Console.Write(theCopy);
             }            
 
+        }
+    }
+
+    static class Basic_33
+    {
+        /*
+         33. Write a C# program to check if a given positive number is a multiple of 3 or a multiple of 7. 
+            Sample Output:
+            Input first integer:
+            15 
+            True
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+
+            if (number % 3 == 0 | number % 7 == 0)
+            {
+                Console.WriteLine("True");
+                return;
+            }
+            Console.WriteLine("False");
+
+        }
+    }
+
+    static class Basic_34
+    {
+        /*
+          34. Write a C# program to check if a string starts with a specified word. 
+        Note: Suppose the sentence starts with "Hello"
+        Sample Data: string1 = "Hello how are you?"
+        Result: Hello.
+        Sample Output:
+        Input a string : Hello how are you? 
+        True
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string firstWord = "";
+            int length = theString.IndexOf(" ");
+
+            length = length < 0 ? theString.Length : length;
+
+            firstWord = theString.Substring(0, length);
+
+            Console.WriteLine(firstWord);
+        }
+    }
+
+    static class Basic_35
+    {
+        /*
+         * 35. Write a C# program to check two given numbers where one is less than 100 and other is greater than 200. Go to the editor
+            Sample Output:
+            Input a first number(<100): 75 
+            Input a second number(>100): 250
+            True
+         */
+        public static void Execute()
+        {
+            int first = UtilityMethods.GetValidNumber("Enter first number");
+            int second = UtilityMethods.GetValidNumber("Enter second number");
+
+            if ((first < 100 & second > 200) | (first > 200 & second < 100))
+            {
+                Console.WriteLine("True");
+            }
+            else {
+                Console.WriteLine("False");
+                 };
+        }
+    }
+
+    static class Basic_36
+    {
+        /*
+        36. Write a C# program to check if an integer (from the two given integers) 
+        is in the range -10 to 10. Go to the editor
+        Sample Output:
+        Input a first number: -5
+        Input a second number: 8 
+        True
+        */
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+            bool result = number <= 10 & number >= -10 ? true : false;
+
+            Console.WriteLine(result);
+        }
+    }
+
+    static class Basic_37
+    {
+        /*
+         * 37. Write a C# program to check if "HP" appears 
+         * at second position in a string and returns the string without "HP". 
+        Test Data: PHP Tutorial
+        Sample Output:
+        P Tutorial
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string result = "";
+
+            if(theString.Length >= 3)
+            result = theString.Substring(1, 2) == "HP" ? theString.Replace("HP", "") : theString;
+
+            Console.WriteLine(result);
         }
     }
 }

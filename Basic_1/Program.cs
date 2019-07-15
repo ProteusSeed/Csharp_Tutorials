@@ -112,6 +112,21 @@ namespace Basics
                     case 32:
                         Basic_32.Execute();
                         break;
+                    case 33:
+                        Basic_33.Execute();
+                        break;
+                    case 34:
+                        Basic_34.Execute();
+                        break;
+                    case 35:
+                        Basic_35.Execute();
+                        break;
+                    case 36:
+                        Basic_36.Execute();
+                        break;
+                    case 37:
+                        Basic_37.Execute();
+                        break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
                         break;
