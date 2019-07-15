@@ -20,7 +20,7 @@ namespace Exercises
             return number;
         }
 
-        public static string GetValidString(string entryMessage = "Enter String: ")
+        public static string GetValidString(string entryMessage = "Enter String")
         {
             string theString = "";
             string message = "";
@@ -1184,6 +1184,36 @@ namespace Exercises
             result = theString.Substring(1, 2) == "HP" ? theString.Replace("HP", "") : theString;
 
             Console.WriteLine(result);
+        }
+    }
+
+    static class Basic_38
+    {
+        /*
+           38. Write a C# program to get a new string of two characters from a given string. 
+           The first and second character of the given string must be "P" and "H", so PHP will be "PH". 
+            Test Data: PHP
+            Sample Output:
+            PH
+        */
+
+        public static void Execute()
+        {
+            string theString = "  ";
+            string outputString = "";
+            string theMessage = "";
+
+            while (outputString != "PH")
+            {
+                Console.WriteLine("{0}", theMessage);
+                theString = UtilityMethods.GetValidString();
+
+                outputString = theString.Substring(0, 2);
+
+                theMessage = "String must begin with \"PH\"";
+            }
+
+            Console.WriteLine(outputString);
         }
     }
 }
