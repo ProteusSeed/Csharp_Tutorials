@@ -6,7 +6,7 @@ namespace Exercises
 {
     public static class UtilityMethods
     {
-        public static int GetValidNumber( string entryMessage = "Enter Number: " )
+        public static int GetValidNumber( string entryMessage = "Enter Number" )
         {
             int number = 0;
 
@@ -1253,6 +1253,42 @@ namespace Exercises
             Console.WriteLine("Largest of the three: {0}", largest);
             Console.WriteLine("Lowest of the three: {0}", lowest);
             
+        }
+    }
+
+    static class Basic_40
+    {
+        /*
+          40. Write a C# program to check the nearest value of 20 of two given integers 
+          and return 0 if two numbers are same. 
+            Test Data:
+            Input first integer:
+            15 
+            Input second integer:
+            12 
+            Sample Output
+            15
+        */
+
+        public static void Execute()
+        {
+            int first = UtilityMethods.GetValidNumber("Enter first number");
+            int second = UtilityMethods.GetValidNumber("Enter second number");
+            int result = 0;
+
+            if (first != second)
+            {
+                if (Math.Abs((first - 20)) < Math.Abs((second - 20)))
+                {
+                    result = first;
+                }
+                else
+                {
+                    result = second;
+                }
+            }
+
+            Console.WriteLine("{0}", result);
         }
     }
 }
