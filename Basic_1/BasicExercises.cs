@@ -1216,5 +1216,44 @@ namespace Exercises
             Console.WriteLine(outputString);
         }
     }
+
+    static class Basic_39
+    {
+        /*
+         39. Write a C# program to find the largest and lowest values from three integer values. 
+            Test Data:
+            Input first integer:
+            15 
+            Input second integer:
+            25 
+            Input third integer: 
+            30
+            Sample Output
+            Largest of three: 30 
+            Lowest of three: 15
+        */
+
+        public static void Execute()
+        {
+            //int[] numbers = new int[3];
+            //numbers[0] = UtilityMethods.GetValidNumber("Input first integer");
+            //numbers[1] = UtilityMethods.GetValidNumber("Input second integer");
+            //numbers[2] = UtilityMethods.GetValidNumber("Input third integer");
+
+            List<int> numbersList = new List<int>();
+
+            numbersList.Add(UtilityMethods.GetValidNumber("Input first integer"));
+            numbersList.Add(UtilityMethods.GetValidNumber("Input second integer"));
+            numbersList.Add(UtilityMethods.GetValidNumber("Input third integer"));
+
+            numbersList.Sort();
+            int largest = numbersList[2];
+            int lowest = numbersList[0];
+
+            Console.WriteLine("Largest of the three: {0}", largest);
+            Console.WriteLine("Lowest of the three: {0}", lowest);
+            
+        }
+    }
 }
 
