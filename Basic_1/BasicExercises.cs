@@ -1291,5 +1291,58 @@ namespace Exercises
             Console.WriteLine("{0}", result);
         }
     }
+
+    static class Basic_41
+    {
+        /*
+          41. Write a C# program to check if a given string contains ‘w’ character between 1 and 3 times. Go to the editor
+            Test Data:
+            Input a string (conatins at least one 'w' char) : w3resource 
+            Test the string contains 'w' character between 1 and 3 times:
+            Sample Output
+            True 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int wcount = 0;
+            bool result = false;
+
+            theString = theString.Replace(" ", "");
+
+            for (int i = 0; i < theString.Length - 1; i++)
+            {
+                // Console.WriteLine(theString.Substring(i, 1));
+                if (theString.Substring(i, 1).ToLower() == "w") wcount++;
+            }
+
+            if (wcount > 0 & wcount <= 3) result = true;
+
+            Console.WriteLine("String Contains 'w' between one and 3 times: {0}", result);
+        }
+    }
+
+    static class Basic_42
+    {
+        /*
+          42. Write a C# program to create a new string where the first 4 characters will be in lower case. 
+            If the string is less than 4 characters then make the whole string in upper case. 
+            Test Data:
+            Input a string: w3r 
+            Sample Output
+            W3R 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            if (theString.Length < 4) theString = theString.ToUpper();
+
+            Console.WriteLine("String has been changed to uppercase if it has less than 4 characters: {0}", theString);
+        }
+
+    }
 }
 
