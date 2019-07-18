@@ -1344,5 +1344,30 @@ namespace Exercises
         }
 
     }
+
+    static class Basic_43
+    {
+        /*
+         * 43. Write a C# program to check if a given string starts with "w" 
+            and immediately followed by two "ww". 
+            Test Data:
+            Input a string : www 
+            Sample Output
+            False 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            if (theString.ToLower().Substring(0,3) == "www")
+            {
+                Console.WriteLine(true);
+            }
+            else {
+                    Console.WriteLine(false);
+                 }
+        }
+    }
 }
 
