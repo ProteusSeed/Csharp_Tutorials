@@ -1369,5 +1369,30 @@ namespace Exercises
                  }
         }
     }
+
+    static class Basic_44
+    {
+        /*
+          44. Write a C# program to create a new string of every other character (odd position) 
+            from the first position of a given string. 
+            Test Data:
+            Input a string : w3resource 
+            Sample Output
+            wrsuc 
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string newString = "";
+
+            for (int i = 0; i < theString.Length; i+=2)
+            {
+                newString += theString.Substring(i, 1);
+            }
+
+            Console.WriteLine(newString);
+        }
+    }
 }
 

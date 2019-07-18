@@ -145,6 +145,9 @@ namespace Basics
                     case 43:
                         Basic_43.Execute();
                         break;
+                    case 44:
+                        Basic_44.Execute();
+                        break;
                     default:
                         Console.WriteLine("No such Excercise exists.");
                         break;
