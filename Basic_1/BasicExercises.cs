@@ -1394,5 +1394,66 @@ namespace Exercises
             Console.WriteLine(newString);
         }
     }
+
+    static class Basic_45
+    {
+        /*
+        45. Write a C# program to count a specified number in a given array of integers. 
+        Test Data:
+        Input an integer: 5 
+        Sample Output
+        Number of 5 present in the said array: 2 
+
+        Method returning type Dictionary
+        dictionary to array
+        */
+
+        private static Dictionary<int,int> getNumbers(int intToCount)
+        {
+            Dictionary<int, int> dicNumbers = new Dictionary<int, int>();
+            int dicKey = 1;
+            string entry = ""; int entryNumber = 0;
+
+            while (entry != "x")
+            {
+                Console.Write("Input an integer or X to stop: ");
+                entry = Console.ReadLine().ToLower();
+
+                if (int.TryParse(entry, out entryNumber))
+                {
+                    dicNumbers.Add(dicKey, entryNumber);
+                    dicKey++;
+                }
+                else
+                {
+                    if (entry != "x")
+                    {
+                        Console.WriteLine("Error, value entered is not a number!");
+                    }
+                }
+            }
+
+            return dicNumbers;
+        }
+
+        public static void Execute()
+        {
+            int intToCount = UtilityMethods.GetValidNumber("Enter integer to count");
+            //string entry = ""; int entryNumber = 0;
+            int result = 0;
+            Dictionary<int, int> dicNumbers = getNumbers(intToCount);
+
+            int[] arrNumbers = new int[dicNumbers.Count];
+
+            dicNumbers.Values.CopyTo(arrNumbers, 0);
+
+            foreach(int number in arrNumbers)
+            {
+                result = number == intToCount ? result + 1 : result;
+            }
+
+            Console.WriteLine(result);
+        }
+    }
 }
 
