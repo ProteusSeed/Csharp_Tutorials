@@ -36,7 +36,7 @@ namespace Exercises
             return theString.Trim();
         }
 
-        public static Dictionary<int, int> getNumbers()
+        public static Dictionary<int, int> getValidNumbers()
         {
             Dictionary<int, int> dicNumbers = new Dictionary<int, int>();
             int dicKey = 1;
@@ -1440,7 +1440,7 @@ namespace Exercises
         {
             int intToCount = UtilityMethods.GetValidNumber("Enter integer to count");
             int result = 0;
-            Dictionary<int, int> dicNumbers = UtilityMethods.getNumbers();
+            Dictionary<int, int> dicNumbers = UtilityMethods.getValidNumbers();
 
             int[] arrNumbers = new int[dicNumbers.Count];
 
@@ -1476,7 +1476,7 @@ namespace Exercises
             string result = "";
             int first = 0; int last = 0;
 
-            Dictionary<int, int> dicNumbers = UtilityMethods.getNumbers();
+            Dictionary<int, int> dicNumbers = UtilityMethods.getValidNumbers();
 
             int[] arrNumbers = new int[dicNumbers.Count];
 
@@ -1488,6 +1488,22 @@ namespace Exercises
             result = first == intToSearch & last == intToSearch ? "true" : "false";
 
             Console.WriteLine(result);
+        }
+    }
+
+    public static class Basic_47
+    {
+        /*
+          47. Write a C# program to compute the sum of all the elements of an array of integers. 
+            Test Data:
+            Array1: [1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1]
+            Sample Output
+            Sum: 69 
+        */
+
+        public static void Execute()
+        {
+
         }
     }
 }
