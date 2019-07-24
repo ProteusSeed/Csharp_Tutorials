@@ -1465,21 +1465,27 @@ namespace Exercises
             Input an integer: 25 
             Sample Output
             False 
+
+         - Dictionary to array
+         - Array boundaries
         */
 
         public static void Execute()
         {
-            int result = 0;
+            int intToSearch = UtilityMethods.GetValidNumber("Enter number to search for");
+            string result = "";
+            int first = 0; int last = 0;
+
             Dictionary<int, int> dicNumbers = UtilityMethods.getNumbers();
 
             int[] arrNumbers = new int[dicNumbers.Count];
 
             dicNumbers.Values.CopyTo(arrNumbers, 0);
 
-            foreach (int number in arrNumbers)
-            {
-                result = number == intToCount ? result + 1 : result;
-            }
+            first = arrNumbers[arrNumbers.GetLowerBound(0)];
+            last = arrNumbers[arrNumbers.GetUpperBound(0)];
+
+            result = first == intToSearch & last == intToSearch ? "true" : "false";
 
             Console.WriteLine(result);
         }
