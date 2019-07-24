@@ -1503,7 +1503,18 @@ namespace Exercises
 
         public static void Execute()
         {
+            Dictionary<int, int> numbers = UtilityMethods.getValidNumbers();
+            int[] arrNumbers = new int[numbers.Count];
+            int result = 0;
 
+            numbers.Values.CopyTo(arrNumbers, 0);
+
+            foreach (int number in arrNumbers)
+            {
+                result += number;
+            }
+
+            Console.WriteLine("The sum of all the numbers is {0}", result);
         }
     }
 }
