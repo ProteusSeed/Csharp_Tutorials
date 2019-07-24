@@ -1517,5 +1517,32 @@ namespace Exercises
             Console.WriteLine("The sum of all the numbers is {0}", result);
         }
     }
+
+    public static class Basic_48
+    {
+        /*
+         48. Write a C# program to check if the first element and the last element 
+         are equal of an array of integers and the length is 1 or more. 
+            Test Data:
+            Array1: [1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1] 
+            Sample Output
+            True 
+        */
+
+        public static void Execute()
+        {
+            int[] Array1 = new int[] { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
+            int first = 0; int last = 0;
+            bool result = false;
+
+            first = Array1[Array1.GetLowerBound(0)];
+            last = Array1[Array1.GetUpperBound(0)];
+
+            result = first == last & Array1.Length >= 1 ? true : false;
+
+            Console.WriteLine(result);
+
+        }
+    }
 }
 
