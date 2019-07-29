@@ -1544,5 +1544,77 @@ namespace Exercises
 
         }
     }
+
+    public static class Basic_49
+    {
+        /*
+         49. Write a C# program to check if the first element or the last element 
+            of the two arrays ( length 1 or more) are equal. 
+            Test Data:
+            Array1: [1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1] 
+            Array2: [1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 5]
+            Check if the first element or the last element of the two arrays ( leng th 1 or more) are equal. 
+            Sample Output
+            True 
+        */
+
+        public static void Execute()
+        {
+            int[] Array1 = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
+            int[] Array2 = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 5 };
+
+            int ar1First = Array1[Array1.GetLowerBound(0)];
+            int ar1Last = Array1[Array1.GetUpperBound(0)]; 
+            int ar2First = Array2[Array2.GetLowerBound(0)];
+            int ar2Last = Array2[Array2.GetUpperBound(0)];
+
+            bool result = false;
+
+            result = ar1First == ar2First | ar1Last == ar2Last ? true : false;
+
+            Console.WriteLine(result);
+        }
+    }
+
+    public static class Basic_50
+    {
+        /*
+          50. Write a C# program to rotate an array (length 3) 
+          of integers in left direction. 
+            Test Data:
+            Array1: [1, 2, 8]
+            After rotating array becomes: [2, 8, 1] 
+        */
+
+        public static void Execute()
+        {
+            string result = "";
+            int[] Array1 = { 1, 2, 8, 7, 5 };
+
+            //Make the new array one element longer than the original array
+            int[] Array2 = new int[Array1.Length + 1];
+
+            //Make a copy of original array to new array
+            //but starting at the 2nd element of the new array
+            Array1.CopyTo(Array2, 1);
+
+            //Place the last element value of the original array
+            //To the 1st element of the new array
+            Array2[0] = Array1[Array1.GetUpperBound(0)];
+
+            //Chop off the last element of the new array
+            Array.Resize<int>(ref Array2, Array1.Length);
+
+            //Print the results.
+            foreach (int number in Array2)
+            {
+                result += number.ToString() + ", ";
+            }
+
+            Console.WriteLine(result);
+        }
+
+    }
+
 }
 
