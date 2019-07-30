@@ -1616,5 +1616,61 @@ namespace Exercises
 
     }
 
+    public static class Basic_51
+    {
+        /*
+         51. Write a C# program to get the larger value between first and last element 
+         of an array (length 3) of integers. 
+            Test Data:
+            Array1: [1, 2, 5, 7, 8] 
+            Highest value between first and last values of the said array: 8 
+        */
+
+        public static void Execute()
+        {
+            int first = 0; int last = 0;
+            int result = 0;
+            Dictionary<int, int> numbers = UtilityMethods.getValidNumbers();
+            int[] arrNumbers = new int[numbers.Count];
+
+            numbers.Values.CopyTo(arrNumbers, 0);
+
+            first = arrNumbers[0];
+            last = arrNumbers[arrNumbers.GetUpperBound(0)];
+
+            result = first > last ? first : last;
+
+            Console.WriteLine("Highest value between first and last values of the said array: {0}", result);
+        }
+    }
+
+    public static class Basic_52
+    {
+        /*
+         * 52. Write a C# program to create a new array of length 
+            containing the middle elements of three arrays (each length 3) of integers.
+            Test Data:
+            Array1: [1, 2, 5]
+            Array2: [0, 3, 8]
+            Array3: [-1, 0, 2]
+            New array: [2, 3, 0] 
+        */
+
+        public static void Execute()
+        {
+            string comma = ",";
+            int[] Array1 = { 1, 2, 5 };
+            int[] Array2 = { 0, 3, 8 };
+            int[] Array3 = { -1, 0, 2 };
+            int[] ArrayNew = { Array1[1], Array2[1], Array3[1] };
+
+            for (int i = 0; i <= ArrayNew.GetUpperBound(0); i++)
+            {
+                //remove the comma on last iteration.
+                if (i == ArrayNew.GetUpperBound(0)) comma = "";
+                Console.Write("{0}{1}", ArrayNew[i],comma);
+            }
+        }
+    }
 }
 
