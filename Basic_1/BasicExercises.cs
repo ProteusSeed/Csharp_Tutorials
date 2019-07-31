@@ -1672,5 +1672,34 @@ namespace Exercises
             }
         }
     }
+
+    public static class Basic_53
+    {
+        /*
+          53. Write a C# program to check if an array contains an odd number. 
+            Test Data:
+            Original array: [2, 4, 7, 8, 6]
+            Check if an array contains an odd number? True 
+        */
+        public static void Execute()
+        {
+            bool result = false;
+            Dictionary<int, int> dicNumbers = UtilityMethods.getValidNumbers();
+
+            int[] origArray = new int[dicNumbers.Count];
+            dicNumbers.Values.CopyTo(origArray, 0 );
+
+            foreach (int number in origArray)
+            {
+                if(number % 2 > 0)
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            Console.WriteLine(result);
+        }
+    }
 }
 
