@@ -63,6 +63,31 @@ namespace Exercises
 
             return dicNumbers;
         }
+
+        public static string getValidDate()
+        {
+            //Returns a valid date as a string
+            string entry = "";
+            DateTime validDate = DateTime.Today;
+            bool valid = false;
+            string strValidDate = "";
+            string errMsg = "";
+
+            while (valid == false)
+            {
+                Console.Write("{0}Enter date or X to cancel: ", errMsg);
+                entry = Console.ReadLine();
+
+                valid = DateTime.TryParse(entry, out validDate);
+                if (entry.ToLower() == "x") break;
+
+                if( errMsg == "" ) errMsg = "Entry was not a valid date. ";
+            }
+
+            strValidDate = valid == true ? validDate.ToString() : null;
+
+            return strValidDate;  
+        }
     }
 
     static class Basic_01
@@ -1699,6 +1724,32 @@ namespace Exercises
             }
 
             Console.WriteLine(result);
+        }
+    }
+
+    public static class Basic_54
+    {
+        /*
+         * 54. Write a C# program to get the century from a year
+         */
+
+        public static void Execute()
+        {
+            var varValidDate = UtilityMethods.getValidDate();
+            DateTime validDate = DateTime.Today;
+            string century = "";
+
+            if (varValidDate != null)
+            {
+                validDate = DateTime.Parse(varValidDate);
+                century = (validDate.Year + 100 ).ToString();
+                century = century.Substring(0, 2);
+
+                Console.WriteLine(century);
+            }
+            else{
+                     Console.WriteLine("Operation canceled");
+                }
         }
     }
 }
