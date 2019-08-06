@@ -1780,5 +1780,36 @@ namespace Exercises
             Console.WriteLine("Largest product of adjacent numbers is: {0}", highestProduct);
         }
     }
+
+    public static class Basic_56
+    {
+        /*
+         Write a C# program to check if a given string is a palindrome or not.
+         Sample: For 'aaa' the output should be true
+    */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            //store each individual character in the string as an element in a new array
+            char[] charArray = theString.ToCharArray();
+
+            //Reverse the order of characters in the new array
+            Array.Reverse(charArray);
+
+            //Create a new string from the elements in the array
+            string revString = new string( charArray );
+
+            if (theString == revString)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+    }
 }
 
