@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Exercises
 {
@@ -1750,6 +1751,33 @@ namespace Exercises
             else{
                      Console.WriteLine("Operation canceled");
                 }
+        }
+    }
+
+    public static class Basic_55
+    {
+        /*
+         * 55. Write a C# program to find the pair of adjacent elements 
+         * that has the largest product of an given array which is equal to a given value.
+         */
+
+        public static void Execute()
+        {
+            Dictionary<int, int> numbers = UtilityMethods.getValidNumbers();
+            int[] arrNumbers = new int[numbers.Count];
+            int highestProduct = 0;
+            string highestProductEquation = "";
+
+            numbers.Values.CopyTo(arrNumbers, 0);
+
+            for (int i = 0; i < arrNumbers.GetUpperBound(0); i++)
+            {
+                Console.WriteLine("{0} X {1} = {2}", arrNumbers[i], arrNumbers[i + 1], arrNumbers[i] * arrNumbers[i + 1]);
+                highestProductEquation = string.Concat( arrNumbers[i], " X ", arrNumbers[i + 1] );
+                highestProduct = arrNumbers[i] * arrNumbers[i + 1] > highestProduct ? arrNumbers[i] * arrNumbers[i + 1] : highestProduct;
+            }
+
+            Console.WriteLine("Largest product of adjacent numbers is: {0}", highestProduct);
         }
     }
 }
