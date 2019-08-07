@@ -1811,5 +1811,82 @@ namespace Exercises
             }
         }
     }
+
+    public static class Basic_58
+    {
+        /*
+         Write a C# program which will accept a list of intergers and checks
+         how many integers are needed to complete the range.
+         Sample: [1, 3, 4, 7, 9]
+            2, 5, 6, 8 are needed to complete the range.
+         */
+        public static void Execute()
+        {
+            List<int> integers = new List<int>();
+            List<int> missing = new List<int>();
+            bool cont = true;
+            string entry = "";
+            int number = 0;
+            string errMsg = "";
+            int previousInt = 0;
+            string missingNumbers = "";
+
+            while (cont == true)
+            {
+                Console.Write("{0}Enter an integer or \"S\" to save: ", errMsg);
+                entry = Console.ReadLine().ToLower();                              
+
+                if (int.TryParse(entry, out number))//if not a number
+                {
+                    integers.Add(number);
+                    errMsg = "";
+                }
+                else
+                {
+                    if (entry == "s")
+                    {
+                        cont = false;
+                    }
+                    else
+                    {
+                        errMsg = "Value is not a valid number or \"S\". ";
+                    }
+                }
+
+            }
+
+            integers.Sort();
+
+            foreach (int integer in integers)
+            {
+                if (integer - previousInt > 1)
+                {
+                    //add the missing numbers to the missing numbers list
+                    missing.AddRange( getMissingNumbersBetween( previousInt, integer ) );
+                }
+
+                previousInt = integer;
+            }
+          
+            missingNumbers = String.Join(", ", missing.ToArray());
+
+            Console.WriteLine(missingNumbers);
+        }
+
+        public static List<int> getMissingNumbersBetween( int first, int second )
+        {
+            List<int> numbers = new List<int>();
+
+            int numbersBetween = second - first - 1;
+
+            for (int i = 1; i <= numbersBetween; i++)
+            {
+                numbers.Add(first + i);
+            }
+
+            return numbers;
+        }
+         
+    }
 }
 
