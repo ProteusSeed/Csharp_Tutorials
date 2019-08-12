@@ -1888,5 +1888,41 @@ namespace Exercises
         }
          
     }
+
+    public static class Basic_59
+    {
+        /*
+          Write a C# program to check whether it is possible to create 
+         a strictly increasing sequence from a given sequence of integers as an array.           
+         */
+
+        public static void Execute()
+        {
+            Dictionary<int, int> numbers = UtilityMethods.getValidNumbers();
+
+            var arrNumbers = numbers.Values.ToArray();            
+            int difference = 0; int prevDifference = 0;
+            bool possible = true;
+
+
+            for (int index = 1; index <= arrNumbers.GetUpperBound(0); index++)
+            {
+                difference = arrNumbers[index] - arrNumbers[index - 1];
+
+                if ( prevDifference != difference & difference != 0 & prevDifference != 0 )
+                {
+                    possible = false;
+                    break;
+                }
+                //possible = prevDifference == difference | difference == 0 ? true : false;
+
+                prevDifference = difference;
+            }
+
+            Console.WriteLine(possible);
+        }
+    }
+
+
 }
 
