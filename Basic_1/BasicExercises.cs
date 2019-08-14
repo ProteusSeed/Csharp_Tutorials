@@ -2030,5 +2030,37 @@ namespace Exercises
             return entry;
         }
     }
+
+    public static class Basic_61
+    {
+        /*
+         * 61. Write a C# program to sort the integers in ascending order without moving the number -5. 
+          
+            Sorting a dictionary by value, by converting to list.
+         */
+
+        public static void Execute()
+        {
+            Dictionary<int, int> numbers = UtilityMethods.getValidNumbers();
+            List<KeyValuePair<int, int>> numbersList = numbers.ToList();
+            int neg5Location = 0;
+
+            neg5Location = numbersList.FindIndex( n => n.Value == -5);
+
+            //Delete -5
+            numbersList.RemoveAt(neg5Location);
+
+            numbersList.Sort( (pair1, pair2) => pair1.Value.CompareTo(pair2.Value) );
+
+            numbersList.Insert(neg5Location, new KeyValuePair<int, int>(0, -5));            
+
+            foreach (var item in numbersList)
+            {
+                Console.WriteLine(item.Value);
+                
+            }
+
+        }
+    }
 }
 
