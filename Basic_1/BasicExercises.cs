@@ -1923,6 +1923,112 @@ namespace Exercises
         }
     }
 
+    public static class Basic_60
+    {
+        /*
+          60. Write a C# program to calculate the sum of all the intgers 
+          of a rectangular matrix except those integers which are located below an intger of value 0. 
+            Sample Example:
+                matrix = [[0, 2, 3, 2],
+                [0, 6, 0, 1],
+                [4, 0, 3, 0]]
+                Eligible integers which will be participated to calculate the sum -
+                matrix = [[X, 2, 3, 2],
+                [X, 6, X, 1],
+                [X, X, X, X]]
+                Therefore sum will be: 2 + 3 + 2 + 6 + 1 = 14
 
+            Note: this example uses an array of arrays; each array is resized dynamically
+        */
+
+        public static void Execute()
+        {
+            int sum = 0;
+            Array[] matrix = Basic_60.matrix();
+
+            foreach (var row in matrix)
+            {
+                foreach (int number in row)
+                {
+                    //Console.Write("{0},", number);
+                    sum += number;
+                }
+                
+            }
+            Console.WriteLine("The total sum is: {0}", sum);
+        }
+
+        public static Array[] matrix()
+        {
+            Array[] matrix = new Array[1];
+            int[] row = new int[1];
+            var entry = "";
+            int matrixIndex = 0;  int rowIndex = 0; int rowNum = 1;
+            int matrixResizeValue = 1; int rowResizeValue = 1;
+
+            while ( entry != "s")
+            {
+                entry = Basic_60.getNumber("(Row-" + rowNum + ") Enter number, R to save row, or S to save and exit");
+
+                switch (entry)
+                {
+                    case "s":
+                        matrix[matrixIndex] = row;
+                        break;
+
+                    case "r":
+
+                        matrix[matrixIndex] = (int[]) row.Clone();
+
+                        row[0] = 69;
+
+                        matrixResizeValue++;
+
+                        Array.Resize(ref matrix, matrixResizeValue);
+                        
+                        //row.Initialize();//reinitialize array;
+                        Array.Clear(row, 0, row.Length);
+                        matrixIndex++;
+                        rowNum++;
+                        rowIndex = 0;
+                        break;
+
+                    default:
+
+                        if (rowIndex > row.GetUpperBound(0))
+                        {
+                            rowResizeValue++;
+                            Array.Resize(ref row, rowResizeValue);
+                        }
+
+                        row[rowIndex] = int.Parse(entry);
+                        rowIndex++;
+                        break;
+                }
+               
+            }
+
+            return matrix;
+        }
+
+        public static string getNumber( string message )
+        {
+            string entry = "";
+            int number = 0;
+            bool isNumber = false;
+            string errMsg = "";
+
+            while (entry != "s" & entry != "r" & isNumber == false)
+            {
+                Console.WriteLine("{0} {1}: ", errMsg, message);
+                entry = Console.ReadLine().ToLower();
+                isNumber = int.TryParse(entry, out number);
+
+                errMsg = "Value must be a number! ";
+            }
+
+            return entry;
+        }
+    }
 }
 
