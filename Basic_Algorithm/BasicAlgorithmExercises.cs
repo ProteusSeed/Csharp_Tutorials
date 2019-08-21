@@ -60,5 +60,28 @@ namespace Basic_Algorithm_Exercises
 
     }
 
+    public static class Exercise_3
+    {
+        /*
+         * 3. Write a C# Sharp program to check two given integers, 
+            and return true if one of them is 30 or if their sum is 30. 
+            Expected Output: 
+            True
+            True
+            True
+            False
+        */
 
+        public static void Execute()
+        {
+            int intOne = UtilityMethods.GetValidNumber();
+            int intTwo = UtilityMethods.GetValidNumber();
+            bool result = false;
+
+            result = intOne == 30 | intTwo == 30 | intTwo + intTwo == 30 ? true : false;
+
+            Console.WriteLine("One number is 30 or the sum of these two numbers is 30: {0}", result);
+
+        }
+    }
 }
