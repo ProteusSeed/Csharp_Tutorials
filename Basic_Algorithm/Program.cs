@@ -20,6 +20,10 @@ namespace Basic_Algorithm
                         Exercise_1.Execute();                        
                         break;
 
+                    case 2:
+                        Exercise_2.Execute();
+                        break;
+
                     case 0:
                         //exit
                         break;

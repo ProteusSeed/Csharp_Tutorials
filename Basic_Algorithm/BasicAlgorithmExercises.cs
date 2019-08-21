@@ -37,5 +37,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_2
+    {
+        /*
+        2. Write a C# Sharp program to get the absolute difference between n and 51. 
+        If n is greater than 51 return triple the absolute difference. 
+            Expected Output: 
+            6
+            21
+            0
+        */
+
+        public static void Execute()
+        {
+            int n = UtilityMethods.GetValidNumber();
+            int result = Math.Abs( n - 51);
+
+            result = n > 51 ? result * 3 : result;
+
+            Console.WriteLine("Result: {0}", result);
+        }
+
+    }
+
 
 }
