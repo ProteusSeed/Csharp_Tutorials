@@ -2062,5 +2062,36 @@ namespace Exercises
 
         }
     }
+
+    public static class Basic_62
+    {
+        /*
+         62. Write a C# program to reverse the strings contained in each pair 
+         of matching parentheses in a given string and also remove the parentheses within the given string.
+        */
+
+        public static void Execute()
+        {
+            string theString = "(first pair) (second pair)";
+            string string1 = ""; string string2 = "";
+            string finalString = "";
+
+            Console.WriteLine("Original string: {0}", theString);
+
+            string1 = theString.Substring(theString.IndexOf("("), theString.IndexOf(")") + 1);
+            string2 = theString.Substring( theString.IndexOf("(", string1.Length) );
+
+            string1.Reverse();
+            string2.Reverse();
+
+            finalString = string1 + " " + string2;
+
+            finalString = finalString.Replace("(", "");
+            finalString = finalString.Replace(")", "");
+
+            Console.WriteLine(finalString);
+
+        }
+    }
 }
 
