@@ -28,18 +28,22 @@ namespace Basic_Algorithm
                         Exercise_3.Execute();
                         break;
 
+                    case 4:
+                        Exercise_4.Execute();
+                        break;
+
                     case 0:
                         //exit
+                        continueLoop = false;
                         break;
 
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;
                 }
-                
-            }
 
-            Console.ReadLine();
+            }
+            
         }
 
         static bool getValidProgramNumber( out int Number)

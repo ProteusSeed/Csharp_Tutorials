@@ -84,4 +84,26 @@ namespace Basic_Algorithm_Exercises
 
         }
     }
+
+    public static class Exercise_4
+    {
+        /*
+          4. Write a C# Sharp program to check a given integer 
+          and return true if it is within 10 of 100 or 200. 
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int integer = UtilityMethods.GetValidNumber();
+            bool result = false;
+
+            result = Math.Abs(100 - integer) <= 10 | Math.Abs(200 - integer) <= 10;
+
+            Console.WriteLine(result);
+        }
+    }
 }
