@@ -207,6 +207,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Basic_1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Basic_1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Basic_1.dll": {}
+        }
       }
     }
   },
@@ -678,10 +688,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Basic_1/1.0.0": {
+      "type": "project",
+      "path": "../Basic_1/Basic_1.csproj",
+      "msbuildProject": "../Basic_1/Basic_1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Basic_1 >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
@@ -714,7 +730,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Git\\CSharp_Practice\\Basic_1\\Basic_1.csproj": {
+              "projectPath": "D:\\Git\\CSharp_Practice\\Basic_1\\Basic_1.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Exercises;
 
 namespace Basic_Algorithm_Exercises
 {
@@ -18,7 +19,20 @@ namespace Basic_Algorithm_Exercises
 
         public static void Execute()
         {
-            Console.WriteLine("Test!");
+            int intOne = UtilityMethods.GetValidNumber();
+            int intTwo = UtilityMethods.GetValidNumber();
+            int result = 0;
+
+            if (intOne == intTwo)
+            {
+                result = (intOne + intTwo) * 3;
+            }
+            else
+            {
+                result = (intOne + intTwo);
+            }
+
+            Console.WriteLine("Triple the sum is: {0}", result);
 
         }
     }
