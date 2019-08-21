@@ -106,4 +106,25 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(result);
         }
     }
+
+    public static class Exercise_5
+    {
+        /*
+          5. Write a C# Sharp program to create a new string 
+          where 'if' is added to the front of a given string. 
+          If the string already begins with 'if', return the string unchanged. 
+            Expected Output: 
+            if else
+            not else
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            theString = theString.ToLower().IndexOf("if") == 0 ? theString : "if " + theString;
+
+            Console.WriteLine(theString);
+        }
+    }
 }
