@@ -186,4 +186,30 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(theString);
         }
     }
+
+    public static class Exercise_8
+    {
+        /*
+         * 8. Write a C# Sharp program to create a new string 
+            which is 4 copies of the 2 front characters of a given string. 
+            If the given string length is less than 2 return the original string. 
+            Expected Output: 
+            C C C C 
+            JSJSJSJS
+            a
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            theString = theString.Substring(0, 2);
+
+            for (int i = 1; i <= 4; i++)
+            {
+                Console.Write(theString);
+                Console.WriteLine();
+            }
+        }
+    }
 }
