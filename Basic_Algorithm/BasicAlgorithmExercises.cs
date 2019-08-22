@@ -166,5 +166,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_7
+    {
+        /*
+          7. Write a C# Sharp program to exchange the first and last characters 
+            in a given string and return the new string.
+            Expected Output: 
+            dbca
+            a
+            yx
+        */
 
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            theString = theString.Substring(theString.Length - 1, 1) + theString.Substring(1, theString.Length - 2) + theString.Substring(0, 1);
+
+            Console.WriteLine(theString);
+        }
+    }
 }
