@@ -201,15 +201,23 @@ namespace Basic_Algorithm_Exercises
 
         public static void Execute()
         {
-            string theString = UtilityMethods.GetValidString();
+            string theString = UtilityMethods.GetValidString();                      
 
-            theString = theString.Substring(0, 2);
-
-            for (int i = 1; i <= 4; i++)
+            if (theString.Length >= 2)
             {
-                Console.Write(theString);
-                Console.WriteLine();
+                for (int i = 1; i <= 4; i++)
+                {
+                    theString = theString.Substring(0, 2);
+                    Console.Write(theString);
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine(theString);
             }
         }
     }
+
+
 }
