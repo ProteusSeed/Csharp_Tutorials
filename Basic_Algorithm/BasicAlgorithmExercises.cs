@@ -127,4 +127,44 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(theString);
         }
     }
+
+    public static class Exercise_6
+    {
+        /*
+          6. Write a C# Sharp program to remove the character 
+          in a given position of a given string. 
+          The given position will be in the range 0.. string length -1 inclusive. 
+            Expected Output: 
+            Pthon
+            ython
+            Pythn
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int position = getStringPosition( theString );
+
+            theString = theString.Remove(position, 1);
+
+            Console.WriteLine(theString);
+        }
+
+        static int getStringPosition(string theString )
+        {
+            int position = theString.Length;
+            string errMsg = "";
+            
+            while (position >= theString.Length)
+            {
+                Console.WriteLine(errMsg);
+                position = UtilityMethods.GetValidNumber();
+                errMsg = "Character position must be between zero and less than the string length which is " + theString.Length;
+            }
+
+            return position;
+        }
+    }
+
+
 }
