@@ -244,5 +244,33 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_10
+    {
+        /*
+          10. Write a C# Sharp program to check if a given positive number 
+          is a multiple of 3 or a multiple of 7. 
+            Expected Output: 
+            True
+            True
+            True
+            False
+        */
 
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+            int multiple = 0;
+
+            multiple = number % 3 == 0 ? 3 : number % 7 == 0 ? 7 : 0;
+
+            if (multiple > 0)
+            {
+                Console.WriteLine("{0} is a multiple of {1}", number, multiple);
+            }
+            else
+            {
+                Console.WriteLine("{0} is not a multiple of 3 or 7");
+            }
+        }
+    }
 }
