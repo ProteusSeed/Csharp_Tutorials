@@ -219,5 +219,30 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_9
+    {
+        /*
+          9. Write a C# Sharp program to create a new string with the last char added 
+            at the front and back of a given string of length 1 or more. 
+            Expected Output: 
+            dRedd
+            nGreenn
+            111
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            if(theString.Length >= 1)
+            {
+                theString = theString.Substring(theString.Length - 1, 1) + theString + theString.Substring(theString.Length - 1, 1);
+            }
+
+                Console.WriteLine(theString);
+            
+        }
+    }
+
 
 }
