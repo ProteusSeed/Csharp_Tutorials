@@ -21,6 +21,20 @@ namespace Exercises
             return number;
         }
 
+        public static decimal GetValidDecimal(string entryMessage = "Enter decimal: ")
+        {
+            decimal number = 0.00M;
+
+            Console.WriteLine(entryMessage);
+
+            while (decimal.TryParse(Console.ReadLine(), out number) == false)
+            {
+                Console.WriteLine("Value must be a valid decimal! \n{0}: ", entryMessage);
+            }
+
+            return number;
+        }
+
         public static string GetValidString(string entryMessage = "Enter String")
         {
             string theString = "";

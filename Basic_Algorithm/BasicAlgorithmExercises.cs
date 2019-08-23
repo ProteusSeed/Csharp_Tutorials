@@ -303,4 +303,68 @@ namespace Basic_Algorithm_Exercises
 
         }
     }
+
+    public static class Exercise_12
+    {
+        /*
+          12. Write a C# Sharp program to check if a given string starts with 'C#' or not. 
+            Expected Output: 
+            True
+            True
+            False
+         */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            bool starts = theString.IndexOf("C#") == 0 ? true : false;
+
+            Console.WriteLine("String begins with \"c#\": {0}", starts);
+        }
+    }
+
+    public static class Exercise_13
+    {
+        /*13. Write a C# Sharp program to check if one given temperatures 
+            is less than 0 and the other is greater than 100. 
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public class temps
+        {
+            private decimal temp1;
+            private decimal temp2;
+
+            public decimal Temp1 {
+                                get { return temp1; }
+                                set { temp1 = value;  }
+                             }
+            public decimal Temp2 {
+                                get { return temp2; }
+                                set { temp2 = value;  }        
+                             }
+
+            public bool evaluate()
+            {
+                if ( (temp1 < 0 & temp2 > 100) | (temp1 > 0 & temp2 < 100) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public static void Execute()
+        {
+            temps temperatures = new temps();
+
+            temperatures.Temp1 = UtilityMethods.GetValidDecimal("Enter 1st temperature: ");
+            temperatures.Temp2 = UtilityMethods.GetValidDecimal("Enter 2nd temperature: ");
+
+            Console.WriteLine("One temp is less than zero and the other greater than 100: {0}", temperatures.evaluate());
+        }
+    }
 }
