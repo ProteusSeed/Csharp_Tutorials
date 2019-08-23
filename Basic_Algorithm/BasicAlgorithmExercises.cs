@@ -367,4 +367,50 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine("One temp is less than zero and the other greater than 100: {0}", temperatures.evaluate());
         }
     }
+
+    public static class Exercise_14
+    {
+        /*
+          14. Write a C# Sharp program to check two given integers whether 
+            either of them is in the range 100..200 inclusive. 
+            Expected Output: 
+            True
+            False
+            True
+         */
+
+        public class integers
+        {
+            public readonly int integer1;
+            public readonly int integer2;
+
+            public integers(int Integer1, int Integer2)
+            {
+                integer1 = Integer1;
+                integer2 = Integer2;
+            }
+
+            public bool evauluate()
+            {
+                bool ret = false;
+
+                if ( (integer1 >= 100 & integer1 <= 200) | (integer2 >= 100 & integer2 <= 200))
+                {
+                    ret = true;
+                }
+                return ret;
+            }
+        }
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber();
+            int integer2 = UtilityMethods.GetValidNumber();
+
+            integers Integers = new integers(integer1, integer2);
+
+            Console.WriteLine( "Either integer one or integer two are between 100 and 200: {0}", Integers.evauluate() );
+        }
+    }
+
 }
