@@ -273,4 +273,34 @@ namespace Basic_Algorithm_Exercises
             }
         }
     }
+
+    public static class Exercise_11
+    {
+        /*
+         * 11. Write a C# Sharp program to create a new string 
+         taking the first 3 characters of a given string and return the string 
+         with the 3 characters added at both the front and back. 
+         If the given string length is less than 3, use whatever characters are there. 
+        Expected Output: 
+        PytPythonPyt
+        JSJSJS
+        CodCodeCod
+         */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            if (theString.Length >= 3)
+            {
+                theString = theString.Substring(0, 3) + theString + theString.Substring(0, 3);
+            }
+            else
+            {
+                theString = theString + theString + theString;
+            }
+
+            Console.WriteLine(theString);
+
+        }
+    }
 }

@@ -55,6 +55,10 @@ namespace Basic_Algorithm
                         Exercise_10.Execute();
                         break;
 
+                    case 11:
+                        Exercise_11.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;
@@ -78,7 +82,7 @@ namespace Basic_Algorithm
 
             while (valid == false & entry != "x")
             {
-                Console.Write("{0} Enter program number to run or X to exit: ", errMsg);
+                Console.WriteLine("{0} Enter program number to run or X to exit: ", errMsg);
 
                 entry = Console.ReadLine().ToLower();
 
