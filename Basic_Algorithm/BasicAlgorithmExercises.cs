@@ -414,4 +414,68 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_15
+    {
+        /*
+          15. Write a C# Sharp program to check whether three given integer values 
+          are in the range 20..50 inclusive. 
+          Return true if 1 or more of them are in the said range otherwise false. 
+            Expected Output: 
+            True
+            True
+            True
+            False
+        */
+
+        public class integers
+        {
+            private int integer1;
+            private int integer2;
+            private int integer3;
+
+            public int Integer1
+            {
+                get { return integer1; }
+                set { integer1 = value; }
+            }
+
+            public int Integer2
+            {
+                get { return integer2; }
+                set { integer2 = value; }
+            }
+
+            public int Integer3
+            {
+                get { return integer3; }
+                set { integer3 = value; }
+            }
+
+            public bool evaluateRange(int rangeLower, int rangeUpper)
+            {
+                if (Integer1 >= rangeLower & Integer1 <= rangeUpper) return true;
+                if (Integer2 >= rangeLower & Integer2 <= rangeUpper) return true;
+                if (Integer3 >= rangeLower & Integer3 <= rangeUpper) return true;
+
+                return false;
+            }
+        }
+
+        public static void Execute()
+        {
+            bool isWithinRange;
+            int lowerRange = 20; int upperRange = 50;
+            integers ints = new integers();
+
+            ints.Integer1 = UtilityMethods.GetValidNumber();
+            ints.Integer2 = UtilityMethods.GetValidNumber();
+            ints.Integer3 = UtilityMethods.GetValidNumber();
+
+            isWithinRange = ints.evaluateRange(lowerRange, upperRange);
+
+            Console.WriteLine("On of these numbers is between {1} and {2}: {0}", isWithinRange, lowerRange, upperRange);
+        }
+    }
+
+
 }
