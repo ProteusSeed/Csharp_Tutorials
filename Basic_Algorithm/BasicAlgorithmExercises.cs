@@ -337,7 +337,7 @@ namespace Basic_Algorithm_Exercises
         {
             private decimal temp1;
             private decimal temp2;
-
+          
             public decimal Temp1 {
                                 get { return temp1; }
                                 set { temp1 = value;  }
@@ -351,6 +351,7 @@ namespace Basic_Algorithm_Exercises
             {
                 if ( (temp1 < 0 & temp2 > 100) | (temp1 > 0 & temp2 < 100) )
                 {
+                   
                     return true;
                 }
                 return false;
