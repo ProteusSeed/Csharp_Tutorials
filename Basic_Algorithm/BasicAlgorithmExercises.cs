@@ -526,4 +526,26 @@ namespace Basic_Algorithm_Exercises
                                 );
         }
     }
+
+    public static class Exercise_17
+    {
+        /*17. Write a C# Sharp program to check if a string 'yt' appears 
+         at index 1 in a given string. If it appears return a string without 'yt' 
+         otherwise return the original string. 
+        Expected Output: 
+        Phon
+        ytade
+        jsues
+    */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            theString = theString.Replace("yt", "");
+
+            Console.WriteLine(theString);
+        }
+
+    }
 }
