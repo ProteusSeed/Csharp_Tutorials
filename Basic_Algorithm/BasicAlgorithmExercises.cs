@@ -477,5 +477,53 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_16
+    {
+        /*
+         16. Write a C# Sharp program to check whether two given integer values
+         are in the range 20..50 inclusive. 
+         Return true if 1 or other is in the said range otherwise false.
+            Expected Output: 
+            True
+            True
+            True
+            False
+        */
 
+        public class ints
+        {
+            //auto implemented properties
+            public int integer1 { get; set; }
+            public int integer2 { get; set; }
+
+            public bool evaluateRange( int lowerRange, int upperRange )
+            {
+                bool int1Truth = integer1 >= lowerRange & integer1 <= upperRange;
+                bool int2Truth = integer2 >= lowerRange & integer2 <= upperRange;
+
+                if (int1Truth ^ int2Truth) return true;
+
+                return false;
+            }
+        }
+
+        public static void Execute()
+        {
+            int lowerRange = 20;
+            int upperRange = 50;
+
+            ints integers = new ints();
+
+            integers.integer1 = UtilityMethods.GetValidNumber();
+            integers.integer2 = UtilityMethods.GetValidNumber();
+
+            Console.WriteLine("Either {0} or {1} is between {2} and {3} but not both: {4}"
+                                ,integers.integer1
+                                ,integers.integer2
+                                ,lowerRange
+                                ,upperRange
+                                , integers.evaluateRange(lowerRange, upperRange)
+                                );
+        }
+    }
 }
