@@ -634,4 +634,48 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_20
+    {
+        /*
+          20. Write a C# Sharp program to check whether two given integers 
+          are in the range 40..50 inclusive, or they are both in the range 50..60 inclusive. 
+            Expected Output: 
+            False
+            False
+            True
+            True
+        */
+
+        public class numbers
+        {
+            private int number1;
+            private int number2;
+
+            public int Number1
+            {
+                get { return number1; }
+                set { number1 = value; }
+            }
+           public int Number2
+            {
+                get { return number2; }
+                set { number2 = value; }
+            }
+
+            public bool range()
+            {
+                return (number1 >= 40 & number1 <= 50) & (number2 >= 40 & number2 <= 50)
+                        | (number1 >= 50 & number1 <= 60) & (number2 >= 50 & number2 <= 60);
+            }
+        }
+
+        public static void Execute()
+        {
+            numbers numbs = new numbers();
+            numbs.Number1 = UtilityMethods.GetValidNumber();
+            numbs.Number2 = UtilityMethods.GetValidNumber();
+
+            Console.WriteLine( "Both numbers are within the ranges 40 - 50 or 50 - 60: {0}", numbs.range());
+        }
+    }
 }
