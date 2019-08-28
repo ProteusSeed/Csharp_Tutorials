@@ -596,4 +596,42 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine( "The largest integer is: {0}", ints.largestInteger());
         }
     }
+
+    public static class Exercise_19
+    {
+        /*19. Write a C# Sharp program to check which number is nearest to the value 100 among two given integers. 
+            Return 0 if the two numbers are equal. 
+            Expected Output: 
+            95
+            0
+            99
+        */
+
+        public class numbers
+        {
+            public int number1 { get; set; }
+            public int number2 { get; set; }
+
+            public int nearest( int nearestTo)
+            {
+                if (number1 != number2)
+                {
+                    return (nearestTo - number1) > (nearestTo = number2) ? number1 : number2;
+                }
+                else { return 0; }
+            }
+        }
+
+        public static void Execute()
+        {
+            int nearest = 100;
+            numbers nums = new numbers();
+
+            nums.number1 = UtilityMethods.GetValidNumber();
+            nums.number2 = UtilityMethods.GetValidNumber();
+
+            Console.WriteLine("{0} is nearest to {1}", nums.nearest(100), nearest);
+        }
+    }
+
 }
