@@ -548,4 +548,52 @@ namespace Basic_Algorithm_Exercises
         }
 
     }
+
+    public static class Exercise_18
+    {
+        /*
+         * 18. Write a C# Sharp program to check the largest number 
+            among three given integers. 
+            Expected Output: 
+            3
+            3
+            1
+            2
+        */
+
+        public class integers
+        {
+            private int integer1;
+            private int integer2;
+            private int integer3;
+
+            public integers(int Integer1, int Integer2, int Integer3)
+            {
+                integer1 = Integer1;
+                integer2 = Integer2;
+                integer3 = Integer3;
+            }
+
+            public int largestInteger()
+            {
+                int largest = 0;
+
+                largest = integer1 > integer2 ? integer1 : integer2;
+                largest = largest > integer3 ? largest : integer3;
+
+                return largest;
+            }
+        }
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber();
+            int integer2 = UtilityMethods.GetValidNumber();
+            int integer3 = UtilityMethods.GetValidNumber();
+
+            integers ints = new integers(integer1, integer2, integer3);
+
+            Console.WriteLine( "The largest integer is: {0}", ints.largestInteger());
+        }
+    }
 }
