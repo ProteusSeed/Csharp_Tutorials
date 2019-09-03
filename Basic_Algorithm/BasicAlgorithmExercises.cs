@@ -750,4 +750,46 @@ namespace Basic_Algorithm_Exercises
         }
 
     }
+
+    public static class Exercise_22
+    {
+        /*
+          22. Write a C# Sharp program to check if a given string contains between 2 and 4 'z' characters. 
+            Expected Output: 
+            True
+            False
+            True
+            False
+        */
+
+        public static int CountZ(string theString)
+        {
+            int zCount = 0;
+            theString = theString.ToLower();
+
+            //store each individual character in the string as an element in a new array
+            char[] charArray = theString.ToCharArray();
+
+            foreach (char character in charArray)
+            {
+                if (character.ToString() == "z") zCount++;
+            }
+
+            return zCount;
+        }
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int zCount = CountZ(theString);
+            bool between2and4 = false;
+
+            between2and4 = zCount >= 2 & zCount <= 4 ? true : false;
+
+            Console.WriteLine("The string contains between 2 and 4 'Z' characters: {0}", between2and4);
+
+        }
+    }
+
+
 }
