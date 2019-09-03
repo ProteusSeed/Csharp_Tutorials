@@ -678,4 +678,76 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine( "Both numbers are within the ranges 40 - 50 or 50 - 60: {0}", numbs.range());
         }
     }
+
+    public static class Exercise_21
+    {
+        /*21. Write a C# Sharp program to find the larger value from two positive integer values 
+          that is in the range 20..30 inclusive, or return 0 if neither is in that range. 
+            Expected Output: 
+            0
+            30
+            25
+            28
+        */
+
+        public class integers
+        {
+            private int integer1 = 0;
+            private int integer2 = 0;
+
+            public int Integer1 {
+                get { return integer1; }
+                set { integer1 = value; }
+            }
+
+            public int Integer2
+            {
+                get { return integer2; }
+                set { integer2 = value; }
+            }
+
+            public integers(int Integer1, int Integer2)
+            {
+                this.Integer1 = Integer1;
+                this.Integer2 = Integer2;
+            }
+
+            public integers(){}
+
+            public int getLarger()
+            {
+                int ret = 0;
+
+                if( integer1 >= 20 & integer1 <= 30 & integer1 > integer2 )
+                {
+                    ret = integer1;
+                }
+                else
+                {
+                    if (integer2 >= 20 & integer2 <= 30 & integer2 > integer1)
+                    {
+                        ret = integer2;
+                    }
+                }
+
+                return ret;
+            }
+
+        }
+
+        public static void Execute()
+        {
+            integers ints = new integers();
+
+            ints.Integer1 = UtilityMethods.GetValidNumber();
+            ints.Integer2 = UtilityMethods.GetValidNumber();
+
+            int larger = ints.getLarger();
+
+            string strLarger = larger == 0 ? "no number" : larger.ToString();
+
+            Console.WriteLine("{0} is largest and between 20 and 30", strLarger);
+        }
+
+    }
 }
