@@ -102,6 +102,11 @@ namespace Basic_Algorithm
                     case 22:
                         Exercise_22.Execute();
                         break;
+
+                    case 23:
+                        Exercise_23.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;

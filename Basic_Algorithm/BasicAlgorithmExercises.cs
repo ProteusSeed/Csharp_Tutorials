@@ -791,5 +791,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_23
+    {
+        /*
+          23. Write a C# Sharp program to check if two given non-negative integers have the same last digit. 
+            Expected Output: 
+            False
+            True
+            True
+        */
 
+        public static void Execute()
+        {
+            string number1 = UtilityMethods.GetValidAbsoluteNumber().ToString();
+            string number2 = UtilityMethods.GetValidAbsoluteNumber().ToString();
+            bool returnVal = false;
+
+            if( number1[number1.Length - 1] == number2[number1.Length - 1])
+            { returnVal = true; };
+
+            Console.WriteLine(returnVal);
+
+        }
+
+    }
 }

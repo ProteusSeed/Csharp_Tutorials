@@ -21,6 +21,20 @@ namespace Exercises
             return number;
         }
 
+        public static int GetValidAbsoluteNumber(string entryMessage = "Enter Number")
+        {
+            int number = 0;
+
+            Console.WriteLine(entryMessage);
+
+            while ( (int.TryParse(Console.ReadLine(), out number) == false) || number < 0 )
+            {
+                Console.WriteLine("Value must be a valid number greater than zero! \n{0}: ", entryMessage);
+            }
+
+            return number;
+        }
+
         public static decimal GetValidDecimal(string entryMessage = "Enter decimal: ")
         {
             decimal number = 0.00M;
