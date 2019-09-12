@@ -815,4 +815,28 @@ namespace Basic_Algorithm_Exercises
         }
 
     }
+
+    public static class Exercise_24
+    {
+        /*
+         24. Write a C# Sharp program to convert the last 3 characters of a given string in upper case. 
+         If the length of the string has less than 3 then uppercase all the characters. 
+            Expected Output: 
+            PytHON
+            JavascrIPT
+            JS
+            PHP
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int position = 0;
+
+            position = theString.Length < 3 ? 0 : theString.Length - 3;
+
+            theString = theString.Substring(0, position ) + theString.Substring(position).ToUpper();
+
+            Console.WriteLine(theString);
+        }
+    }
 }

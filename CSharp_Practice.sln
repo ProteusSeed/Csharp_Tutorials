@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{5629D266
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic_1", "Basic_1\Basic_1.csproj", "{25B4E966-4BDA-46F9-9CAD-3F8723AD9B84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic_Algorithm", "Basic_Algorithm\Basic_Algorithm.csproj", "{4FDD9F9B-87BE-4992-8CB4-62B633B6D550}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic_Algorithm", "Basic_Algorithm\Basic_Algorithm.csproj", "{4FDD9F9B-87BE-4992-8CB4-62B633B6D550}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
