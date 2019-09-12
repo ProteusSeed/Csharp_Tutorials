@@ -839,4 +839,29 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(theString);
         }
     }
+
+    public static class Exercise_25
+    {
+        /*
+         * 25. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string. 
+            Expected Output: 
+            JSJS
+            JSJSJS
+            JS
+        */
+
+        public static void Execute()
+        {
+            string stringCopies = "";
+            string theString = UtilityMethods.GetValidString();
+            int numberOfCopies = UtilityMethods.GetValidAbsoluteNumber("How many copies would you like?");
+
+            for (int i = 0; i < numberOfCopies; i++)
+            {
+                stringCopies += theString;
+            }
+
+            Console.WriteLine(stringCopies);
+        }
+    }
 }
