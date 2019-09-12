@@ -864,4 +864,32 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(stringCopies);
         }
     }
+
+    public static class Exercise_26
+    {
+        /*
+         * 26. Write a C# Sharp program to create a new string which is n (non-negative integer) 
+         * copies of the the first 3 characters of a given string. 
+         * If the length of the given string is less than 3 then return n copies of the string. 
+            Expected Output: 
+            PytPyt
+            PytPytPyt
+            JSJSJS
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int numberOfCopies = UtilityMethods.GetValidNumber();
+            string truncatedString = theString.Substring(0, theString.Length < 3 ? theString.Length : 3);
+            string stringCopies = "";
+
+            for (int i = 0; i < numberOfCopies; i++)
+            {
+                stringCopies += truncatedString;
+            }
+
+            Console.WriteLine(stringCopies);
+        }
+    }
 }
