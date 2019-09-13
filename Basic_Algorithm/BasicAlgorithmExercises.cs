@@ -892,4 +892,36 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(stringCopies);
         }
     }
+
+    public static class Exercise_27
+    {
+        /*27. Write a C# Sharp program to count the string "aa" in a given string and assume "aaa" contains two "aa".
+            Expected Output: 
+            2
+            2
+            3
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString().ToLower();
+            int position = 0; int stringIndex = 0;
+            short count = 0;
+
+            while (stringIndex >= 0)
+            {
+                theString = theString.Substring(position);
+                stringIndex = theString.IndexOf("aa");//=-1 when not found!
+               
+                if (stringIndex >= 0)
+                {
+                    count++;
+                    position = stringIndex + 2 < theString.Length ? stringIndex + 2 : theString.Length - 1;                   
+                    stringIndex = 0;
+                }
+            }
+
+            Console.WriteLine($"The string contains \"aa\" {count} times.");
+        }
+    }
 }
