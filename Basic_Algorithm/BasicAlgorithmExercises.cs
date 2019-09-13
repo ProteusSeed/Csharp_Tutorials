@@ -942,4 +942,32 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine( "String begins with aa: {0}", theString.ToLower().IndexOf("aa") == 0 );
         }
     }
+
+    public static class Exercise_29
+    {
+        /*
+         * 29. Write a C# Sharp program to create a new string 
+            made of every other character starting with the first from a given string. 
+            Expected Output: 
+            Pto
+            PP
+            J
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string newString = "";
+            string[] splits = theString.Split(",");
+
+            for (int i = 0; i < theString.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    newString += theString[i];
+                }
+            }
+
+            Console.WriteLine(newString);
+        }
+    }
 }
