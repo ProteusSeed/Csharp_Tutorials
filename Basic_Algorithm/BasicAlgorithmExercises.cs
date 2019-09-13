@@ -924,4 +924,22 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine($"The string contains \"aa\" {count} times.");
         }
     }
+
+    public static class Exercise_28
+    {
+        /*
+         28. Write a C# Sharp program to check if the first appearance of "a" 
+            in a given string is immediately followed by another "a". 
+            Expected Output: 
+            True
+            False
+            True
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            Console.WriteLine( "String begins with aa: {0}", theString.ToLower().IndexOf("aa") == 0 );
+        }
+    }
 }
