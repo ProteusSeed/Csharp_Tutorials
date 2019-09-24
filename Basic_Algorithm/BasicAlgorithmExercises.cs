@@ -970,4 +970,39 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(newString);
         }
     }
+
+    public static class Exercise_30
+    {
+        /*
+         * 30. Write a C# Sharp program to create a string like "aababcabcd" 
+           from a given string "abcd". 
+            Expected Output: 
+            aababcabcd
+            aababc
+            a
+        */
+        public static void Execute()
+        {
+            Console.WriteLine("I have no idea what's requested here");
+        }
+    }
+
+    public static class Exercise_31
+    {
+        /*
+        31. Write a C# Sharp program to count a substring of length 2 appears in a given string 
+        and also as the last 2 characters of the string. Do not count the end substring.
+        Expected Output: 
+        1
+        2
+        3
+        0
+        */
+        public static void Execute()
+        {
+            Console.WriteLine("I have no idea what's requested here");
+        }
+    }
+
+
 }
