@@ -1042,13 +1042,30 @@ namespace Basic_Algorithm_Exercises
             int[] integers = UtilityMethods.getValidNumbersArray();
             int number = UtilityMethods.GetValidNumber("Enter number to search for: ");
 
-            int index = Array.Find(integers, i => i.Equals(number));
+            int index = Array.FindIndex(integers, i => i.Equals(number));
 
-            bool foundIn4 = index >= 1 & index <= 4 ? true : false;
+            bool foundIn4 = index >= 0 & index < 4 ? true : false;
 
             Console.WriteLine($"{number} found in one of the first four array elements: {foundIn4}");
         }
     }
 
+    public static class Exercise_34
+    {
+        /*
+         * 34. Write a C# Sharp program to check whether the sequence of numbers 1, 2, 3 
+         * appears in a given array of integers somewhere. 
+            Expected Output: 
+            True
+            True
+            False
+         */
 
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+
+            //Array.
+        }
+    }
 }
