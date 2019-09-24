@@ -93,6 +93,36 @@ namespace Exercises
             return dicNumbers;
         }
 
+        public static int[] getValidNumbersArray()
+        {
+            int[] numbers;
+            string entry = ""; int number = 0;
+            string errMessage = "";
+
+            List<int> numbersList = new List<int>();
+
+            while (entry.ToLower() != "s")
+            {                
+                Console.WriteLine("{0}Enter number, or S to save.", errMessage);
+
+                entry = Console.ReadLine();
+
+                if (int.TryParse(entry, out number))
+                {
+                    numbersList.Add(number);
+                    errMessage = "";
+                }
+                else
+                {
+                    errMessage = "Value must be a valid number!";
+                }
+            }
+
+            numbers = numbersList.ToArray();
+
+            return numbers;
+        }
+
         public static string getValidDate()
         {
             //Returns a valid date as a string

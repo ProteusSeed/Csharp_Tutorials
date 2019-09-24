@@ -1004,5 +1004,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_32
+    {
+        /*
+          32. Write a C# Sharp program to check a specified number is present in a given array of integers. 
+            Expected Output: 
+            True
+            True
+            False
+        */
 
+        public static void Execute()
+        {
+            int[] numbers = UtilityMethods.getValidNumbersArray();
+
+            int numberToSearch = UtilityMethods.GetValidNumber("Enter number to search for: ");
+
+            bool found = Array.Find(numbers, n => n.Equals(numberToSearch)) > 0 ? true : false;
+
+            Console.WriteLine($"{numberToSearch} exists in the array: {found}");
+        }
+    }
 }
