@@ -1025,4 +1025,30 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine($"{numberToSearch} exists in the array: {found}");
         }
     }
+
+    public static class Exercise_33
+    {
+        /*
+         * 33. Write a C# Sharp program to check if one of the first 4 elements in an array of integers
+            is equal to a given element. 
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+            int number = UtilityMethods.GetValidNumber("Enter number to search for: ");
+
+            int index = Array.Find(integers, i => i.Equals(number));
+
+            bool foundIn4 = index >= 1 & index <= 4 ? true : false;
+
+            Console.WriteLine($"{number} found in one of the first four array elements: {foundIn4}");
+        }
+    }
+
+
 }
