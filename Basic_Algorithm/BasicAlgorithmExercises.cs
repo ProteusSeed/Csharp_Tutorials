@@ -1054,7 +1054,7 @@ namespace Basic_Algorithm_Exercises
     {
         /*
          * 34. Write a C# Sharp program to check whether the sequence of numbers 1, 2, 3 
-         * appears in a given array of integers somewhere. 
+           appears in a given array of integers somewhere. 
             Expected Output: 
             True
             True
@@ -1065,7 +1065,20 @@ namespace Basic_Algorithm_Exercises
         {
             int[] integers = UtilityMethods.getValidNumbersArray();
 
-            //Array.
+            int start = Array.FindIndex(integers, i => i.Equals(1));
+            int nextSeq = 2;
+            bool isInSeq = false;
+
+            start++;
+
+            for (int i = start; i < start + 2; i++)
+            {
+                isInSeq = integers[i] == nextSeq ? true : false;
+
+                nextSeq++;
+            }
+
+            Console.WriteLine("The number sequence contains 1, 2, 3, {0}", isInSeq);
         }
     }
 }
