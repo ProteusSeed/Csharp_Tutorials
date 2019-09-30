@@ -1081,4 +1081,67 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine("The number sequence contains 1, 2, 3, {0}", isInSeq);
         }
     }
+
+    public static class Exercise_35
+    {
+        /*35. 
+         Write a C# Sharp program to compare two given strings and return
+         the number of the positions where they contain the same length 2 substring. 
+            Expected Output: 
+            True
+            True
+            False
+        */        
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter string 1").ToLower();
+            string string2 = UtilityMethods.GetValidString("Enter string 2").ToLower();
+
+            string[] string1Array = StringToArray(string1);
+            string[] string2Array = StringToArray(string2);
+
+            int position1 = 0;
+
+            Console.WriteLine();//carriage return.
+
+            //Loop through each set of 2 characters in the 1st string
+            Array.ForEach(string1Array, (e) => {
+
+                int position2 = 0;
+
+                //Loop through each set of 2 characters in the 2nd string..
+                //and find the current set of characters from the 1st string.
+                Array.ForEach(string2Array, (e2) =>
+                {
+                    //If the characters are the same, display the positions
+                    //(Note with a lamda function you can refer to variables outside of the function.
+                    if (e == e2) Console.WriteLine($"\"{e}\" is in string-1, position {position1}; string-2, position {position2}");
+                    position2++;
+                });
+
+                position1++;
+                
+            });
+
+        }
+
+        private static string[] StringToArray( string theString )
+        {
+            //Create an array of one element per character and the character next to it.
+            //Ex: "The cat" = th, he, e , ca, at
+
+            int loopEnd = theString.Length - 1;
+
+            string[] stringArray = new string[loopEnd];
+
+            for (int i = 0; i < loopEnd; i++)
+            {
+                stringArray[i] = theString.Substring(i, 2);//The character at the index i and the character next to it.
+            }
+
+            return stringArray;
+        }
+        
+    }
 }
