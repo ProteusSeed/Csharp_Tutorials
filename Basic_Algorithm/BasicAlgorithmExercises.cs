@@ -1297,5 +1297,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_42
+    {
+        /*42. Write a C# Sharp program to test if a given non-negative number 
+            is a multiple of 13 or it is one more than a multiple of 13. 
+            Expected Output: 
+            True
+            True
+            True
+            False
+        */
 
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            bool result = number % 13 == 0 | number % 13 == 1;
+
+            Console.WriteLine(result);
+        }
+
+    }
 }
