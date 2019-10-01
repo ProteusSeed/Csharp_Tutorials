@@ -1276,4 +1276,26 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(output);
         }
     }
+
+    public static class Exercise_41
+    {
+        /*41. Write a C# Sharp program that accepts two integers and return true 
+            if either one is 5 or their sum or difference is 5. 
+            Expected Output: 
+            True
+            False
+            True
+        */
+        public static void Execute()
+        {
+            int Int1 = UtilityMethods.GetValidNumber("Enter 1st integer");
+            int Int2 = UtilityMethods.GetValidNumber("Enter 2nd integer");
+
+            bool result = Int1 == 5 | Int2 == 5 | Int1 + Int2 == 5 | Int1 - Int2 == 5 ? true : false;
+
+            Console.WriteLine(result);
+        }
+    }
+
+
 }
