@@ -1169,4 +1169,30 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_37
+    {
+        /*37. Write a C# Sharp program to create a new string of the characters at indexes 0,1, 4,5, 8,9 ...
+            from a given string. 
+            Expected Output: 
+            Pyon
+            JaScpt
+            HT
+        */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            int[] indexes = new int[6]{ 0, 1, 4, 5, 8, 9 };
+
+            string newString = "";
+
+            foreach (int number in indexes)
+            {
+                newString += givenString.Substring(number, 1);
+            }
+
+            Console.WriteLine("The new string is: {0}", newString);
+        }
+    }
 }
