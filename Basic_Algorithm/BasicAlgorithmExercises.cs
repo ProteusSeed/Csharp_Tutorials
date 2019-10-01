@@ -1195,4 +1195,35 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine("The new string is: {0}", newString);
         }
     }
+
+    public static class Exercise_38
+    {
+        /*38. Write a C# Sharp program to count the number of two 5's that are next to each other 
+         in an array of integers. Also count the situation where the second 5 is actually a 6. 
+        Expected Output: 
+            1
+            2
+            1
+        */
+
+        public static void Execute()
+        {
+            int[] numbers = UtilityMethods.getValidNumbersArray();
+            int previousNumber = 0;
+            int fives = 0; int sixes = 0;
+
+            foreach (int number in numbers)
+            {
+                if (number == 5 & previousNumber == 5) fives++;
+
+                if (number == 6 & previousNumber == 5) sixes++;
+
+                previousNumber = number;
+
+            }
+
+            Console.WriteLine($"Number of pairs of fives: {fives} \nNumber of pairs of sixes: {sixes}");
+        }
+    }
+
 }

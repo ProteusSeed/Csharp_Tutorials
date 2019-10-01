@@ -163,6 +163,9 @@ namespace Basic_Algorithm
                         Exercise_37.Execute();
                         break;
 
+                    case 38:
+                        Exercise_38.Execute();
+                        break;
 
                     case 0:
                         //exit
