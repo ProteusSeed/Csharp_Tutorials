@@ -65,6 +65,24 @@ namespace Exercises
             return theString.Trim();
         }
 
+        public static char GetValidChar(string entryMessage = "Enter Character")
+        {
+            string errMsg = "";
+            string entry = "";
+            char character = ' ';
+
+            while (entry.Length != 1 )
+            {
+                Console.WriteLine($"{errMsg} {entryMessage}");
+                entry = Console.ReadLine();
+                errMsg = "Entry must be one character only!";
+            }
+
+            character = char.Parse( entry );
+
+            return character;
+        }
+
         public static Dictionary<int, int> getValidNumbers()
         {
             Dictionary<int, int> dicNumbers = new Dictionary<int, int>();

@@ -1144,4 +1144,29 @@ namespace Basic_Algorithm_Exercises
         }
         
     }
+
+    public static class Exercise_36
+    {
+        /*36. Write a C# Sharp program to create a new string from a given string 
+         * where a specified character have been removed 
+         * except starting and ending position of the given string
+         */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            char character = UtilityMethods.GetValidChar();
+
+            string newString = string.Concat( 
+                givenString.Substring(0,1)
+                , givenString.Substring(1, givenString.Length - 2).Replace(character.ToString(),"")
+                , givenString.Substring(givenString.Length - 1, 1) 
+                );
+
+            Console.WriteLine(newString);
+
+        }
+    }
+
 }
