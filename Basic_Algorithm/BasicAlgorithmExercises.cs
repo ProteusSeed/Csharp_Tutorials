@@ -1226,4 +1226,34 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_39
+    {
+        /*39. Write a C# Sharp program to check if a triple is present in an array of integers or not. 
+         If a value appears three times in a row in an array it is called a triple. 
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+            bool result = false;
+            string message = "No integers appear 3 times in a row.";
+
+            for (int i = 0; i <= integers.Length - 3; i++)
+            {
+                if (integers[i] == integers[i+1] & integers[i] == integers[i+2])
+                {
+                    message = integers[1].ToString() + " appears 3 times in a row";
+                    break;
+                }
+            }
+
+            Console.WriteLine(message);
+        }
+    }
+
+
 }
