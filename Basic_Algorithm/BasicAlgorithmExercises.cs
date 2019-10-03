@@ -1409,4 +1409,36 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_47
+    {
+        /*47. Write a C# Sharp program to check if it is possible to add two integers 
+         to get the third integer from three given integers.
+        Expected Output: 
+            True
+            False
+            True
+        */
+
+        public static void Execute()
+        {
+            int[] integers = new int[3];
+            bool result = false;
+
+            integers[0] = UtilityMethods.GetValidNumber("Enter 1st number");
+            integers[1] = UtilityMethods.GetValidNumber("Enter 2nd number");
+            integers[2] = UtilityMethods.GetValidNumber("Enter 3rd number");
+
+            for (int x = 0; x < 3; x++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                   Array.ForEach( integers, element => { if (element == integers[x] + integers[y]) result = true; });
+                }
+            }
+
+            Console.WriteLine(result);
+        }
+    }
+
+
 }
