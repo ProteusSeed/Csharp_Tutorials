@@ -1373,13 +1373,14 @@ namespace Basic_Algorithm_Exercises
 
         public static void Execute()
         {
-            int integer1 = UtilityMethods.GetValidNumber();
-            int integer2 = UtilityMethods.GetValidNumber();
+            int integer1 = UtilityMethods.GetValidNumber("Enter 1st Number");
+            int integer2 = UtilityMethods.GetValidNumber("Enter 2nd Number");
 
-            int output = integer1 >= 10 | integer2 <= 20 ? 18 : integer1 + integer2;
+            int output = ( integer1 >= 10 & integer2 <= 20 ) | ( integer2 >= 10  & integer2 <= 20 ) ? 18 : integer1 + integer2;
 
             Console.WriteLine(output);
         }
     }
+
 
 }
