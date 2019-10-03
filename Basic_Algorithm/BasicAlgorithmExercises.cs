@@ -1339,4 +1339,26 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_44
+    {
+        /*44. Write a C# Sharp program to check 
+          if a given number is within 2 of a multiple of 10. 
+            Expected Output: 
+                False
+                False
+                True
+                True
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+
+            bool result = Math.Abs(number) % 10 <= 2;
+
+            Console.WriteLine($"Given number is within 2 of a multiple of 10: {result}");
+        }
+    }
+
+
 }
