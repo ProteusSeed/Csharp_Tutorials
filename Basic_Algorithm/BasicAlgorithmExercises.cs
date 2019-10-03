@@ -1382,5 +1382,31 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_46
+    {
+        /*46. Write a C# Sharp program to check whether a given string starts with "F" or ends with "B". 
+          If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" 
+          If the string starts with "F" and ends with "B" return "FizzBuzz". 
+          In other cases return the original string. 
+            Expected Output: 
+            Fizz
+            founder
+            club
+            forb
+        */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            string starts = givenString.Substring(0, 1).ToLower() == "f" ? "Fizz" : "";
+            string ends = givenString.Substring(givenString.Length - 1, 1).ToLower() == "b" ? "Buzz" : "";
+
+            string result = starts + ends;
+            result = result.Length == 0 ? givenString : result;
+
+            Console.WriteLine(result);
+        }
+    }
 
 }
