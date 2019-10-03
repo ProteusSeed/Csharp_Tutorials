@@ -1318,4 +1318,25 @@ namespace Basic_Algorithm_Exercises
         }
 
     }
+
+    public static class Exercise_43
+    {
+        /*43. Write a C# Sharp program to check if a given non-negative number 
+         is a multiple of 3 or 7, but not both. 
+            Expected Output: 
+                True
+                True
+                False
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            bool result = number % 3 == 0 ^ number % 7 == 0;
+
+            Console.WriteLine("given number is a multiple of 3 or 7, but not both: {0}", result);
+        }
+    }
+
 }
