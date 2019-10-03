@@ -1360,5 +1360,26 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_45
+    {
+        /*45. Write a C# Sharp program to compute the sum of the two given integers. 
+          If one of the given integer value is in the range 10..20 inclusive return 18. 
+            Expected Output: 
+            10
+            18
+            18
+            241
+        */
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber();
+            int integer2 = UtilityMethods.GetValidNumber();
+
+            int output = integer1 >= 10 | integer2 <= 20 ? 18 : integer1 + integer2;
+
+            Console.WriteLine(output);
+        }
+    }
 
 }
