@@ -1461,5 +1461,57 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_49
+    {
+        /*49. Write a C# Sharp program to check if three given numbers 
+            are in strict increasing order, such as 4 7 15, or 45, 56, 67
+            , but not 4 ,5, 8 or 6, 6, 8.  
+            However,if a fourth parameter is true, equality is allowed
+            , such as 6, 6, 8 or 7, 7, 7. 
+            Expected Output: 
+            True
+            True
+            False
+            True
+        */
 
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+
+            Console.Write("Is equality allowed? (yes or no): ");
+            bool equalityAllowed = Console.ReadLine().ToLower() == "yes" ? true : false;
+
+            bool result = numbersAreInOrder(integers, equalityAllowed);
+
+            Console.WriteLine("Numbers entered are in increasing order: {0}", result);
+        }
+
+        public static bool numbersAreInOrder( int[] integers, bool equalityAllowed )
+        {
+            bool result = true;
+            int previous = 0;
+
+            //Array.Sort(integers);
+
+            foreach (int number in integers)
+            {
+                if (
+                    (equalityAllowed == false & number <= previous)
+                    | (equalityAllowed == true & number < previous)
+                    ) {
+                    result = false;                    
+                }
+                previous = number;
+            }
+
+            /*
+            Array.ForEach(integers, element => {
+                if( element < previous) { result = false;  }
+                previous = element; 
+            });
+            */
+            return result;
+        }
+    }
 }
