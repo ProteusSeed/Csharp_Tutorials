@@ -1440,5 +1440,26 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Excercise_48
+    {
+        /*48. Write a C# Sharp program to check if y is greater than x, 
+         and z is greater than y from three given integers x,y,z. 
+        Expected Output: 
+            True
+            True
+            False
+        */
+        public static void Execute()
+        {
+            int x = UtilityMethods.GetValidNumber("Enter numeric value for X");
+            int y = UtilityMethods.GetValidNumber("Enter numeric value for Y");
+            int z = UtilityMethods.GetValidNumber("Enter numeric value for Z");
+
+            bool result = y > x & z > y;
+
+            Console.WriteLine("y is greater than x, and z is greater than y: {0}", result);
+        }
+    }
+
 
 }
