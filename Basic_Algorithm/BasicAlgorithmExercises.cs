@@ -1492,8 +1492,6 @@ namespace Basic_Algorithm_Exercises
             bool result = true;
             int previous = 0;
 
-            //Array.Sort(integers);
-
             foreach (int number in integers)
             {
                 if (
@@ -1513,5 +1511,52 @@ namespace Basic_Algorithm_Exercises
             */
             return result;
         }
+    }
+
+    public static class Exercise_50
+    {
+        /*50. Write a C# Sharp program to check if two or more non-negative 
+            given integers have the same rightmost digit. 
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            bool sameRightMost = false;
+
+            int[] integers = UtilityMethods.getValidNumbersArray();
+
+            getRightMostIntArray(ref integers);
+
+            for( int i = 0; i < integers.Length; i++ )
+            {
+                for (int y = 0; y < integers.Length; y++)
+                {
+                    if( y != i )
+                    {
+                        if (integers[i] == integers[y]) sameRightMost = true;
+                    }
+                    
+                }
+            }
+
+            Console.WriteLine("Two or more integers have the same rightmost digit: {0}", sameRightMost);
+        }
+
+        private static void getRightMostIntArray( ref int[] numbers)
+        {
+            string intString = "";
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                intString = numbers[i].ToString();
+                intString = intString.Substring(intString.Length - 1, 1);
+                numbers[i] = int.Parse(intString);
+            }
+        }
+
     }
 }
