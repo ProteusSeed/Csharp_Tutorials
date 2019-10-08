@@ -1559,4 +1559,33 @@ namespace Basic_Algorithm_Exercises
         }
 
     }
+
+    public static class Exercise_51
+    {
+        /*
+         51. Write a C# Sharp program to check three given integers
+         and return true if one of them is 20 or more less than one of the others.
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int int1 = UtilityMethods.GetValidNumber("Enter 1st number: ");
+            int int2 = UtilityMethods.GetValidNumber("Enter 2nd number: ");
+            int int3 = UtilityMethods.GetValidNumber("Enter 3rd number: ");
+
+            int[] intsSorted = new int[] { Math.Abs(int1), Math.Abs(int2), Math.Abs(int3) };
+
+            Array.Sort(intsSorted);
+
+            bool diffGreaterThan20 = (intsSorted[2] - intsSorted[1]) >= 20 | (intsSorted[2] - intsSorted[0]) >= 20;
+
+            Console.WriteLine("One or more integers are 20 or greater than the others: {0}", diffGreaterThan20);
+        }
+    }
+
+
 }
