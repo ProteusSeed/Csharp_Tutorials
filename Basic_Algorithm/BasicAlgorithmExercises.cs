@@ -1587,5 +1587,44 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_52
+    {
+        /*52. Write a C# Sharp program to find the larger from two given integers. 
+         However if the two integers have the same remainder when divided by 7, 
+         then return the smaller integer. If the two integers are the same, return 0. 
+            Expected Output: 
+            11
+            20
+            0
+        */
+
+       public static void Execute()
+        {
+            int int1 = UtilityMethods.GetValidNumber("Enter 1st Number: ");
+            int int2 = UtilityMethods.GetValidNumber("Enter 2nd Number: ");
+
+            int smallerInt = int1 > int2 ? int2 : int1;
+            int largerInt = int1 > int2 ? int1 : int2;
+            bool sameRemainder = int1 % 7 == int2 % 7;
+            bool sameInteger = int1 == int2;
+
+            if (sameInteger )
+            {
+                Console.WriteLine(0);                
+            }
+            else
+            {
+                if (sameRemainder)
+                {
+                    Console.WriteLine(smallerInt);
+                }
+                else
+                {
+                    Console.WriteLine(largerInt);
+                }
+            }
+        }
+    }
+
 
 }
