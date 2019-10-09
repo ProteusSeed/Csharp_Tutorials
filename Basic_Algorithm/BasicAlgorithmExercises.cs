@@ -1658,4 +1658,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_54
+    {
+        /*54. Write a C# Sharp program to compute the sum of two given non-negative integers x and y 
+         as long as the sum has the same number of digits as x. If the sum has more digits than x then return x without y. 
+            Expected Output: 
+            9
+            7
+            20
+        */
+
+        public static void Execute()
+        {
+            int x = UtilityMethods.GetValidAbsoluteNumber();
+            int y = UtilityMethods.GetValidAbsoluteNumber();
+
+            int result = (x + y).ToString().Length > x.ToString().Length ? x : x + y;
+
+            Console.WriteLine(result);
+
+        }
+    }
+
+
 }
