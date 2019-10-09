@@ -1626,5 +1626,36 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_53
+    { 
+        /*53. Write a C# Sharp program to check two given integers, each in the range 10..99. 
+         * Return true if a digit appears in both numbers, such as the 3 in 13 and 33. 
+            Expected Output: 
+            True
+            False
+            True
+        */
+
+        public static void Execute()
+        {
+            bool AppearsInBoth = false;
+            string number1 = UtilityMethods.GetValidNumber(10, 99).ToString();
+            string number2 = UtilityMethods.GetValidNumber(10, 99).ToString();
+            
+            char[] digits1 = number1.ToCharArray();
+            char[] digits2 = number2.ToCharArray();
+
+            Array.ForEach(digits1, digit1 =>
+           {
+               Array.ForEach(digits2, digit2 =>
+               {
+                   if (digit1 == digit2) AppearsInBoth = true;
+               });
+
+           });
+
+            Console.WriteLine(AppearsInBoth);
+        }
+    }
 
 }

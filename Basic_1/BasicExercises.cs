@@ -21,6 +21,33 @@ namespace Exercises
             return number;
         }
 
+        /// <summary>
+        /// /Gets valid number within range
+        /// </summary>
+        /// <param name="entryMessage"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        public static int GetValidNumber( int from, int to, string entryMessage = "Enter Number: ")
+        {
+            int number = 0;
+            bool validNumber = false; bool validRange = false;
+            string errMsg = $"";
+
+            //Console.WriteLine(entryMessage);
+
+            while (validNumber == false | validRange == false )
+            {
+                Console.WriteLine("{0}{1}", errMsg, entryMessage);
+
+                validNumber = int.TryParse(Console.ReadLine(), out number);
+                validRange = (number >= from) & (number <= to);
+                errMsg = $"Value must be a valid number between {from} and {to}! \n";
+            }
+
+            return number;
+        }
+
         public static int GetValidAbsoluteNumber(string entryMessage = "Enter Number")
         {
             int number = 0;
