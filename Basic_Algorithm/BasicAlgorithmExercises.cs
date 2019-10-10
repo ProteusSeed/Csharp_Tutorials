@@ -1769,5 +1769,32 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_58
+    {
+        /*58. Write a C# Sharp program to check two given integers 
+         and return the value whichever value is nearest to 13 without going over. 
+         Return 0 if both numbers go over. 
+            Expected Output: 
+            5
+            12
+            13
+            0
+            0
+        */
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber("Enter 1st integer: ");
+            int integer2 = UtilityMethods.GetValidNumber("Enter 2nd integer: ");
+
+            integer1 = integer1 > 13 ? 0 : integer1;
+            integer2 = integer2 > 13 ? 0 : integer2;
+
+            int result = (13 - integer1) > (13 - integer2) ? integer2 : integer1;
+
+            Console.WriteLine("{0} is closest to 13 without going over.", result);
+        }
+    }
+
 
 }
