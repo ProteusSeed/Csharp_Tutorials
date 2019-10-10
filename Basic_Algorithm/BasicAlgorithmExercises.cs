@@ -1680,5 +1680,54 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_55
+    {
+        /*55. Write a C# Sharp program to compute the sum of three given integers. 
+         * If the two values are same return the third value. 
+            Expected Output: 
+            16
+            23
+            12
+            18
+        */
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber("Enter 1st integer: ");
+            int integer2 = UtilityMethods.GetValidNumber("Enter 2nd integer: ");
+            int integer3 = UtilityMethods.GetValidNumber("Enter 3rd integer: ");
+
+            Console.WriteLine("Description doesn't make sense");
+        }
+    }
+
+    public static class Exercise_56
+    {
+        /*56. Write a C# Sharp program to compute the sum of the three integers.
+         If one of the values is 13 then do not count it and its right towards the sum. 
+            Expected Output: 
+            16
+            23
+            10
+            0
+        */
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber("Enter 1st integer: ");
+            int integer2 = UtilityMethods.GetValidNumber("Enter 2nd integer: ");
+            int integer3 = UtilityMethods.GetValidNumber("Enter 3rd integer: ");
+
+            integer1 = integer1 == 13 ? 0 : integer1;
+            integer2 = integer2 == 13 ? 0 : integer2;
+            integer3 = integer3 == 13 ? 0 : integer3;
+
+            int result = integer1 + integer2 + integer3;
+
+            Console.WriteLine(result);
+
+        }
+    }
+
 
 }
