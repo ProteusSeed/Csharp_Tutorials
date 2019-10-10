@@ -1729,5 +1729,45 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_57
+    {
+        /*57. Write a C# Sharp program to compute the sum of the three given integers. 
+           However, if any of the values is in the range 10..20 inclusive then that value counts as 0
+           , except 13 and 17. 
+            Expected Output: 
+            16
+            11
+            13
+            17
+        */
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidNumber("Enter 1st integer: ");
+            int integer2 = UtilityMethods.GetValidNumber("Enter 2nd integer: ");
+            int integer3 = UtilityMethods.GetValidNumber("Enter 3rd integer: ");
+
+            exceptions(ref integer1);
+            exceptions(ref integer2);
+            exceptions(ref integer3);
+
+            int result = integer1 + integer2 + integer3;
+
+            Console.WriteLine(result);
+        }
+
+        private static void exceptions( ref int integer)
+        {
+            if( integer >= 10 
+                & integer <= 20 
+                & integer != 13 
+                & integer != 17 
+                )
+                {
+                    integer = 0;
+                }
+        }
+    }
+
 
 }
