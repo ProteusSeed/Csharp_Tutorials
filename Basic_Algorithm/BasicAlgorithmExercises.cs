@@ -1898,4 +1898,25 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(lastTwo + lastTwo + lastTwo);
         }
     }
+
+    public static class Exercise_63
+    {
+        /*63. Write a C# Sharp program to create a new string using first two characters of a given string. 
+         If the string length is less than 2 then return the original string.. 
+            Expected Output: 
+            He
+            Hi
+            H
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            string result = theString.Length >= 2 ? theString.Substring(0, 2) : theString;
+
+            Console.WriteLine(result);
+        }
+    }
+
+
 }
