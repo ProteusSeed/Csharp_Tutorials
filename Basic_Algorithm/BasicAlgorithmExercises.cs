@@ -1842,5 +1842,41 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_61
+    {
+        /*
+          61. Write a C# Sharp program to insert a given string into middle of the another given string of length 4. Go to the editor
+            Expected Output: 
+            [[Hello]]
+            ((Hi))
+        */
+        public static void Execute()
+        {
+            string baseString = UtilityMethods.GetValidString();
+            string insertString = UtilityMethods.GetValidString();
+
+            string newString = InsertString(baseString, insertString);
+
+            Console.WriteLine(newString);
+
+        }
+        private static string InsertString( string baseString, string insertString )
+        {
+            int position = baseString.Length;
+            string positionExceeds = "";
+
+            while (position > baseString.Length - 1)
+            {
+                Console.WriteLine(positionExceeds);
+                position = UtilityMethods.GetValidAbsoluteNumber("Enter position where the 2nd string will be inserted");
+                positionExceeds = "Position must not exceed length of base string!";
+            }
+
+            string newString = baseString.Insert(position, insertString);
+
+            return newString;
+        }
+    }
+
 
 }
