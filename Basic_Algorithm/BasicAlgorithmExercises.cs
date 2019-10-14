@@ -1824,5 +1824,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_60
+    {
+        /*60. Write a C# Sharp program to create a new string using two given strings s1, s2, 
+            the format of the new string will be s1s2s2s1. 
+            Expected Output: 
+            HiHelloHelloHi
+            whatsappappwhats
+        */
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter first string");
+            string string2 = UtilityMethods.GetValidString("Enter second string");
+
+            Console.WriteLine(string1 + string2 + string2 + string1);
+
+        }
+    }
+
 
 }
