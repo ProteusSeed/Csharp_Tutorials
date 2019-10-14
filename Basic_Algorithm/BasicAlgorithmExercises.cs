@@ -1796,5 +1796,33 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_59
+    {
+        /*59. Write a C# Sharp program to check three given integers (small, medium and large) 
+         and return true if the difference between small and medium 
+         and the difference between medium and large is same. 
+        Expected Output: 
+        True
+        False
+        True
+        */
+
+        public static void Execute()
+        {
+            int firstNumber = UtilityMethods.GetValidNumber("Enter 1st number: ");
+            int secondNumber = UtilityMethods.GetValidNumber("Enter 2nd number: ");
+            int thirdNumber = UtilityMethods.GetValidNumber("Enter 3rd number: ");
+
+            int[] numbers = new int[3] { firstNumber, secondNumber, thirdNumber };
+
+            Array.Sort(numbers);
+
+            bool sameDiff = numbers[1] - numbers[0] == numbers[2] - numbers[1];
+
+            Console.WriteLine($"The difference between small and medium and the difference between medium and large is same {sameDiff}");
+
+        }
+    }
+
 
 }
