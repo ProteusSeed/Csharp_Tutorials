@@ -1878,5 +1878,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_62
+    {
+        /*62. Write a C# Sharp program to create a new string 
+         using three copies of the last two characters of a given string 
+         of length atleast two. s
+        Expected Output: 
+        lololo
+        HiHiHi
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int start = theString.Length >= 2 ? theString.Length - 2: 0;
+            int length = start > 0 ? 2 : theString.Length;
 
+            string lastTwo = theString.Substring(start, length);
+
+            Console.WriteLine(lastTwo + lastTwo + lastTwo);
+        }
+    }
 }
