@@ -1918,5 +1918,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_64
+    {
+        /*
+          64. Write a C# Sharp program to create a new string 
+          from the first half of a given string of even length. 
+            Expected Output: 
+            He
+            H
+        */
 
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            string newString = theString.Substring(0, theString.Length / 2);
+
+            Console.WriteLine(newString);
+        }
+    }
 }
