@@ -1987,5 +1987,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_67
+    {
+        /*67. Write a C# Sharp program to concat two given string of length atleast 1, 
+            after removing their first character. 
+            Expected Output: 
+            elloi
+            Sython
+        */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidStringLengthAtLeast("Enter 1st string", 1);
+            string string2 = UtilityMethods.GetValidStringLengthAtLeast("Enter 2nd string", 1);
+
+            Console.WriteLine(string1.Substring(1) + string2.Substring(1));
+        }
+    }
+
 
 }
