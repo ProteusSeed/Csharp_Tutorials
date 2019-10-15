@@ -1960,4 +1960,32 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(newString);
         }
     }
+
+    public static class Exercise_66
+    {
+        /*66. Write a C# Sharp program to create a new string from two given strings 
+         one shorter and another longer. The format of the new string will be
+         long string + short string + long string. 
+        Expected Output: 
+        HiHelloHi
+        JSPythonJS
+        */
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string");
+
+            if(string1.Length > string2.Length)
+            {
+                Console.WriteLine(string1 + string2 + string1);
+            }
+            else
+            {
+                Console.WriteLine(string2 + string1 + string2);
+            }
+
+        }
+    }
+
+
 }
