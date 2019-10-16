@@ -2041,5 +2041,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_70
+    {
+        /*70. Write a C# Sharp program to create a new string 
+            without the first and last character of a given string of any length.
+            Expected Output: 
+            ell
+        */
 
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            int length = theString.Length > 2 ? theString.Length - 2 : theString.Length - 1;
+
+            string newString = theString.Substring(1, length );
+
+            Console.WriteLine(newString);
+        }
+    }
 }
