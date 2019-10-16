@@ -93,17 +93,17 @@ namespace Exercises
             return theString.Trim();
         }
         */
-        public static string GetValidString(string entryMessage = "Enter String", int LengthAtLeast = 1)
+        public static string GetValidString(string entryMessage = "Enter String", int MinimalLength = 1)
         {
             string theString = "";
             string message = "";
 
-            while (theString.Length < LengthAtLeast)
+            while (theString.Length < MinimalLength)
             {
                 Console.WriteLine("{0}\n{1}: ", message, entryMessage);
                 theString = Console.ReadLine();
 
-                if (message.Length == 0) message = $"Value must be a valid string with length greater than {LengthAtLeast} !";
+                if (message.Length == 0) message = $"Value must be a valid string with length greater than {MinimalLength} !";
             }
 
             return theString.Trim();
