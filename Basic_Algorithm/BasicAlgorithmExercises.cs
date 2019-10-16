@@ -1998,12 +1998,29 @@ namespace Basic_Algorithm_Exercises
 
         public static void Execute()
         {
-            string string1 = UtilityMethods.GetValidStringLengthAtLeast("Enter 1st string", 1);
-            string string2 = UtilityMethods.GetValidStringLengthAtLeast("Enter 2nd string", 1);
+            string string1 = UtilityMethods.GetValidString("Enter 1st string", 1);
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string", 1);
 
             Console.WriteLine(string1.Substring(1) + string2.Substring(1));
         }
     }
 
+    public static class Exercise_68
+    {
+        /*68. Write a C# Sharp program to move the first two characters 
+            to the end of a given string of length at least two. 
+            Expected Output: 
+            lloHe
+            JS
+        */
 
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString(LengthAtLeast:2);
+
+            string newString = string1.Substring(2) + string1.Substring(0, 2);
+
+            Console.WriteLine(newString);
+        }
+    }
 }

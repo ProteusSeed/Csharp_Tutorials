@@ -76,6 +76,7 @@ namespace Exercises
             return number;
         }
 
+        /*
         public static string GetValidString(string entryMessage = "Enter String")
         {
             string theString = "";
@@ -91,8 +92,8 @@ namespace Exercises
 
             return theString.Trim();
         }
-
-        public static string GetValidStringLengthAtLeast(string entryMessage = "Enter String", int LengthAtLeast = 1)
+        */
+        public static string GetValidString(string entryMessage = "Enter String", int LengthAtLeast = 1)
         {
             string theString = "";
             string message = "";
