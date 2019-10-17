@@ -93,10 +93,12 @@ namespace Exercises
             return theString.Trim();
         }
         */
-        public static string GetValidString(string entryMessage = "Enter String", int MinimalLength = 1)
+        public static string GetValidString(string entryMessage = "Enter String of at least one character", int MinimalLength = 1)
         {
             string theString = "";
             string message = "";
+
+            entryMessage = MinimalLength > 1 & entryMessage == "Enter String of at least one character" ? $"Enter string of at least {MinimalLength} characters" : entryMessage;
 
             while (theString.Length < MinimalLength)
             {

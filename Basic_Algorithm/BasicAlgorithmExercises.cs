@@ -2150,5 +2150,22 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_75
+    {
+        /*75. Write a C# Sharp program to create a new string taking 3 characters 
+            from the middle of a given string at least 3. Go to the editor
+            Expected Output: 
+            ell
+            yth
+            abc
+        */
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString(MinimalLength: 3);
 
+            string newString = givenString.Substring(givenString.Length / 2 - 1 , 3);
+
+            Console.WriteLine(newString);
+        }
+    }
 }
