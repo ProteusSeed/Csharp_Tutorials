@@ -2084,5 +2084,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_72
+    {
+        /*72. Write a C# Sharp program to check if a given string ends with "on". 
+            Expected Output: 
+            False
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            bool endsWithOn = theString.EndsWith("on");
+
+            Console.WriteLine("Ends with on: {0}", endsWithOn);
+        }
+    }
+
 
 }
