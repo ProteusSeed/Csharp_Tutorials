@@ -2127,5 +2127,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_74
+    {
+        /*74. Write a C# Sharp program to create a new string of length 2 
+         starting at the given index of a given string. 
+        Expected Output: 
+        el
+        th
+        on
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString("Enter a string of at least 2 characters in length",2);
+
+            int index = UtilityMethods.GetValidNumber(0,theString.Length - 2, $"Enter index number lower than {theString.Length - 1}");
+
+            string newString = theString.Substring(index, 2);
+
+            Console.WriteLine(newString);
+
+        }
+    }
+
 
 }
