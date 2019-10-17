@@ -2060,4 +2060,29 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(newString);
         }
     }
+
+    public static class Exercise_71
+    {
+        /*71. Write a C# Sharp program to create a new string 
+         using the two middle characters of a given string of even length (at least 2).
+            Expected Output: 
+            el
+            JS
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            int startIndex = theString.Length > 1 ? theString.Length / 2 - 1 : 0;
+            int length = theString.Length > 1 ? 2 : 1;
+
+            string newString = theString.Substring(startIndex, length);
+
+            Console.WriteLine(newString);
+
+        }
+    }
+
+
 }
