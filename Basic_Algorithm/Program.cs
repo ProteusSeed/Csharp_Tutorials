@@ -302,6 +302,10 @@ namespace Basic_Algorithm
                     case 72:
                         Exercise_72.Execute();
                         break;
+                        
+                    case 73:
+                        Exercise_73.Execute();
+                        break;
 
                     case 0:
                         //exit

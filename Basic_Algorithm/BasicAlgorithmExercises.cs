@@ -2104,5 +2104,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_73
+    {
+        /*
+        73. Write a C# Sharp program to create a new string using 
+        the first and last n characters from a given string of length at least n. 
+        Expected Output: 
+        Ho
+        Pyon
+        on
+        oo
+        */
+
+        public static void Execute()
+        {
+            int numOfChars = UtilityMethods.GetValidNumber("Enter # of characters to get from string");
+            string theString = UtilityMethods.GetValidString($"Enter a string at least {numOfChars * 2} characters long", numOfChars * 2);
+
+            string newString = theString.Substring(0, numOfChars) + theString.Substring(theString.Length - numOfChars, numOfChars);
+
+            Console.WriteLine(newString);
+        }
+    }
+
 
 }
