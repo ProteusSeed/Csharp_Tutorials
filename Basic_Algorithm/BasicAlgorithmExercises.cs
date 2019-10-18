@@ -2196,5 +2196,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_77
+    {
+        /*77. Write a C# Sharp program to create a new string taking the first character
+            from a given string and the last character from another given string. 
+            If the length of any given string is 0, use '#' as its missing character. 
+            Expected Output: 
+            Hi
+            PP
+            JS
+            C#
+        */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string");
+
+            string newString = string.Concat( string1.Substring(0, 1), string2.Substring(string2.Length - 1) );
+
+            Console.WriteLine(newString);
+        }
+    }
 
 }
