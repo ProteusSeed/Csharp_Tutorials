@@ -2219,4 +2219,54 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_78
+    {
+        /*78. Write a C# Sharp program to concat two given strings (lowercase).
+            If there are any double character in new string then omit one character. 
+            Expected Output: 
+            abcat
+            pythonphp
+            phphp
+        */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string");
+
+            string newString = string1 + string2;
+            string finalString = "";
+            bool charFound = false;
+
+            char[] characters = newString.ToCharArray();
+
+            Console.WriteLine(newString);
+
+            for (int i = 0; i < characters.Length; i++)
+            {
+                //Console.WriteLine(characters[i]);
+
+                for (int n = 0; n < i; n++)
+                {
+
+                    if (
+                        characters[i].ToString().ToLower() == characters[n].ToString().ToLower() //take caps out of the equation
+                        & i > n //not the same character
+                        & characters[i] != ' ' //ignore spaces
+                        )
+                    {
+                        charFound = true;
+                        break;
+                    }
+                }
+
+                //if the character hadn't been previous encountered add it to the string
+                if ( charFound == false ) finalString += characters[i];
+
+                charFound = false;
+            }
+
+            Console.WriteLine(finalString);
+        }
+    }
 }
