@@ -2319,5 +2319,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_81
+    {
+        /*81. Write a C# Sharp program to check whether the first two characters 
+         and last two characters of a given string are same. 
+            Expected Output: 
+            True
+            False
+            True
+        */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            bool same = givenString.Substring(0, 2).ToLower() == givenString.Substring(givenString.Length - 2).ToLower();
+
+            Console.WriteLine("The first two characters and last two characters are the same: {0}", same);
+        }
+    }
+
 
 }
