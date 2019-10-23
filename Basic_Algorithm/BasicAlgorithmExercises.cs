@@ -2296,5 +2296,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_80
+    {
+        /*80. Write a C# Sharp program to check if a given string begins with 'abc' or 'xyz'. 
+         If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string. 
+        Expected Output: 
+            abc
+            abc
+            xyz
+            xyz
+        */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            bool beginsWith = givenString.ToLower().StartsWith("abc") | givenString.ToLower().StartsWith("xyz");
+
+            string result = beginsWith ? givenString.Substring(0, 3) : "";
+
+            Console.WriteLine(result);
+        }
+    }
+
 
 }
