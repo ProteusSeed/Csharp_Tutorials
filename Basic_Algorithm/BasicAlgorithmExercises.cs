@@ -2269,4 +2269,32 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(finalString);
         }
     }
+
+    public static class Exercise_79
+    {
+        /*
+          79. Write a C# Sharp program to create a new string from a given string after swapping last two characters. Go to the editor
+            Expected Output: 
+            Helol
+            Pythno
+            PPH
+            SJ
+            C
+        */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            string newString = string.Concat(
+                 givenString.Substring(0, givenString.Length - 2)
+                ,givenString.Substring(givenString.Length - 1)
+                ,givenString.Substring(givenString.Length - 2, 1) 
+                );
+
+            Console.WriteLine(newString);
+        }
+    }
+
+
 }
