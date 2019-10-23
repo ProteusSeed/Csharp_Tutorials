@@ -2385,5 +2385,29 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_84
+    {
+        /*84. Write a C# Sharp program to create a new string from a given string. 
+        If the two characters of the given string from its beginning and end are same 
+        return the given string without the first two characters otherwise return the original string. 
+        Expected Output: 
+        cab
+        Python
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string newString = theString;
+
+            if ( theString.Substring(0,1).ToLower() == theString.Substring(theString.Length - 1).ToLower())
+            {
+                newString = theString.Substring(1, theString.Length - 2);
+            }
+
+            Console.WriteLine(newString);
+        }
+    }
+
 
 }
