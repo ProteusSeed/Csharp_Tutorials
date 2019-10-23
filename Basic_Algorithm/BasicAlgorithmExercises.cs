@@ -5,6 +5,7 @@ using Exercises;
 
 namespace Basic_Algorithm_Exercises
 {
+    //https://www.w3resource.com/csharp-exercises/basic-algo/index.php
 
     public static class Exercise_1
     {
@@ -2336,6 +2337,28 @@ namespace Basic_Algorithm_Exercises
             bool same = givenString.Substring(0, 2).ToLower() == givenString.Substring(givenString.Length - 2).ToLower();
 
             Console.WriteLine("The first two characters and last two characters are the same: {0}", same);
+        }
+    }
+
+    public static class Exercise_82
+    {
+        /*82. Write a C# Sharp program to concat two given strings. 
+         If the given strings have different length remove the characters from the longer string. 
+            Expected Output: 
+            abcbcd
+            PythonPython
+            JSon
+        */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string");
+
+            if (string1.Length > string2.Length) string1 = string1.Substring(0, string2.Length);
+            if (string1.Length < string2.Length) string2 = string2.Substring(0, string1.Length);
+
+            Console.WriteLine(string1 + string2);
         }
     }
 
