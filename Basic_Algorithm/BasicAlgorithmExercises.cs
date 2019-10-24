@@ -2436,5 +2436,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_86
+    {
+        /*86. Write a C# Sharp program to create a new string from a given string 
+         without the first and last character if the first or last characters are 'a' 
+         otherwise return the original given string. 
+            Expected Output: 
+            bcab
+            python
+            bcd
+            jython
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            string newString = theString.ToLower().StartsWith("a") ? theString.Substring(1) : theString;
+            newString = newString.ToLower().EndsWith("a") ? newString.Substring( 0, newString.Length - 1 ) : newString;
+
+            Console.WriteLine(newString);
+        }
+    }
+
 
 }
