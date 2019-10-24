@@ -2409,5 +2409,32 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_85
+    {
+        /*85. Write a C# Sharp program to create a new string from a given string 
+         without the first two characters. Keep the first character if it is "p" 
+         and keep the second character if it is "y".
+        Expected Output: 
+            cab
+            python
+            pess
+            ython
+        */
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            string characters = theString.Substring(0, 2);
+
+            string newString = "";
+
+            newString = theString.Substring(1,1) != "y" ? theString.Remove(1, 1) : theString;
+
+            newString = newString.StartsWith("p") == false ? newString.Remove(0, 1) : newString;
+
+            Console.WriteLine(newString);
+        }
+    }
+
 
 }
