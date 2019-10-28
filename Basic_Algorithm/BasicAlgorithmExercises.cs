@@ -2551,5 +2551,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_91
+    {
+        /*91. Write a C# Sharp program to compute the sum of the elements of an given array of integers. 
+            Expected Output: 
+            150
+            10
+        */
+
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+            int sum = 0;
+
+            Array.ForEach(integers, n => sum += n);
+
+            Console.WriteLine($"The sum is: {sum}");
+        }
+    }
+
 
 }
