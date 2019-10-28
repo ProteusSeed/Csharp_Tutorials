@@ -2459,5 +2459,29 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_87
+    {
+        /*87. Write a C# Sharp program to create a new string from a given string. 
+         If the first or first two characters is 'a', return the string without those 'a' characters 
+         otherwise return the original given string.
+            Expected Output: 
+            bcab
+            python
+            cda
+            jython
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            string newString = theString.ToLower().Substring(1,1) == "a" ? theString.Remove(1, 1) : theString;
+
+            newString = newString.ToLower().StartsWith("a") ? newString.Remove(0, 1) : newString;
+
+            Console.WriteLine(newString);
+        }
+    }
+
 
 }
