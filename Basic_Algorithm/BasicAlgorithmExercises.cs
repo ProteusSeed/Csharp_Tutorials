@@ -2526,4 +2526,30 @@ namespace Basic_Algorithm_Exercises
 
         }
     }
+
+    public static class Exercise_90
+    {
+        /*90. Write a C# Sharp program to check two given arrays of integers of length 1 or more 
+         and return true if they have the same first element or they have the same last element. 
+            Expected Output: 
+            True
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int[] array1 = UtilityMethods.getValidNumbersArray();
+            int[] array2 = UtilityMethods.getValidNumbersArray();
+
+            bool sameFirst = array1[array1.GetLowerBound(0)] == array2[array2.GetLowerBound(0)] ? true : false;
+            bool sameLast = array1[array1.GetUpperBound(0)] == array2[array2.GetUpperBound(0)] ? true : false;
+
+            bool sameFirstOrLast = sameFirst | sameLast ? true : false;
+
+            Console.WriteLine($"The first numbers or last numbers match in each group: {sameFirstOrLast}");
+        }
+    }
+
+
 }
