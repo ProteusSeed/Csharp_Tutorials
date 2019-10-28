@@ -2592,5 +2592,21 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_93
+    {
+        /*
+          93. Write a C# Sharp program to reverse a given array of integers and length 5. 
+            Expected Output: 
+            Reverse array: 50 -40 -30 20 10
+        */
 
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray(5);
+
+            Array.Reverse<int>(integers);
+
+            Array.ForEach(integers, i => Console.WriteLine(i));
+        }
+    }
 }

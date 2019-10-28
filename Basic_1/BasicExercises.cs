@@ -187,6 +187,46 @@ namespace Exercises
             return numbers;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="minimumEntries"></param>
+        /// <returns></returns>
+        public static int[] getValidNumbersArray(int minimumEntries)
+        {
+            int[] numbers;
+            string entry = ""; int number = 0;
+            string errMessage = "";
+
+            List<int> numbersList = new List<int>();
+
+            while (entry.ToLower() != "s" | numbersList.Count < minimumEntries)
+            {
+                if (numbersList.Count < minimumEntries & entry.ToLower() == "s")
+                {
+                    errMessage = $"There must be a minimum of {minimumEntries} entries! \n";
+                }
+
+                Console.WriteLine("{0}Enter number, or S to save.", errMessage);
+
+                entry = Console.ReadLine();
+
+                if (int.TryParse(entry, out number))
+                {
+                    numbersList.Add(number);
+                    errMessage = "";
+                }
+                else
+                {
+                    errMessage = "Value must be a valid number!";
+                }
+            }
+
+            numbers = numbersList.ToArray();
+
+            return numbers;
+        }
+
         public static string getValidDate()
         {
             //Returns a valid date as a string
