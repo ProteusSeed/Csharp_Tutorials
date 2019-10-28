@@ -2483,5 +2483,26 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_88
+    {
+        /*88. Write a C# Sharp program to check a given array of integers of length 1 or more 
+         and return true if 10 appears as either first or last element in the given array. 
+            Expected Output: 
+            True
+            True
+            True
+            False
+        */
+        public static void Execute()
+        {
+            int[] numbers = UtilityMethods.getValidNumbersArray();
 
+            bool tenAppears = numbers[numbers.GetLowerBound(0)] == 10 
+                            | numbers[numbers.GetUpperBound(0)] == 10 
+                            ? true : false;
+
+            Console.WriteLine($"You entered 10 as the first or last number: {tenAppears}");
+        }
+
+    }
 }
