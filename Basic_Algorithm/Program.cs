@@ -364,7 +364,11 @@ namespace Basic_Algorithm
                         break;
 
                     case 88:
-                        Exercise_87.Execute();
+                        Exercise_88.Execute();
+                        break;
+
+                    case 89:
+                        Exercise_89.Execute();
                         break;
 
                     case 0:

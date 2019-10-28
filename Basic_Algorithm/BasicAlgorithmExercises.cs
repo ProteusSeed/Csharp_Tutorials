@@ -2505,4 +2505,25 @@ namespace Basic_Algorithm_Exercises
         }
 
     }
+
+    public static class Exercise_89
+    {
+        /*89. Write a C# Sharp program to check a given array of integers of length 1 or more 
+            and return true if the first element and the last element are equal in the given array.
+            Expected Output: 
+            False
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+
+            bool equal = integers[integers.GetLowerBound(0)] == integers[integers.GetUpperBound(0)] ? true : false;
+
+            Console.WriteLine( $"The first number entered equals that last number entered: {equal}");
+
+        }
+    }
 }
