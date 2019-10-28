@@ -2570,5 +2570,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_92
+    {
+        /*92. Write a C# Sharp program to rotate the elements of a given array of integers (length 4 ) 
+         in left direction and return the new array. 
+        Expected Output: 
+        Rotated array: 20 -30 -40 10
+        */
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray();
+            int[] rotatedArray = new int[integers.Length];
+
+            Array.ConstrainedCopy(integers, 1, rotatedArray, 0, integers.Length - 1);
+
+            //add the 1st element to the end
+            rotatedArray[rotatedArray.GetUpperBound(0)] = integers[integers.GetLowerBound(0)];
+
+            Array.ForEach(rotatedArray, n => Console.WriteLine(n));
+            
+        }
+    }
+
 
 }
