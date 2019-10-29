@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Exercises;
+using System.Linq;
 
 namespace Basic_Algorithm_Exercises
 {
@@ -2609,4 +2610,34 @@ namespace Basic_Algorithm_Exercises
             Array.ForEach(integers, i => Console.WriteLine(i));
         }
     }
+
+    public static class Exercise_94
+    {
+        /*
+          94. Write a C# Sharp program to find out the maximum element 
+          between the first or last element in a given array of integers ( length 4)
+          , replace all elements with maximum element. 
+            Expected Output: 
+            New array: 20 20 20 20
+        */
+
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray(4);
+            int[] arrayCopy = new int[integers.Length - 2];
+
+            Array.Copy(integers, 1, arrayCopy, 0, integers.Length - 2);
+
+            int maxValue = arrayCopy.Max();
+
+            for (int i = 0; i < integers.Length; i++)
+            {
+                integers[i] = maxValue;
+            }
+
+            Array.ForEach(integers, e => Console.WriteLine(e));
+        }
+    }
+
+
 }
