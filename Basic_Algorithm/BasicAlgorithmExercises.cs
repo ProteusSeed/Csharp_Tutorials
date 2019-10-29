@@ -2639,5 +2639,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_95
+    {
+        /*95. Write a C# Sharp program to create a new array containing the middle elements 
+         from the two given arrays of integers, each length 5. 
+        Expected Output: 
+        New array: -30 30
+        */
+        public static void Execute()
+        {
+            int[] array1 = UtilityMethods.getValidNumbersArray(5,"Enter number for 1st Group, or S to save");
+            int[] array2 = UtilityMethods.getValidNumbersArray(5, "Enter number for 2nd Group, or S to save");
+
+            int middleValue1 = array1[array1.Length / 2];
+            int middleValue2 = array2[array2.Length / 2];
+
+            int[] newArray = { middleValue1, middleValue2 };
+
+            Console.WriteLine("Middle Values:");
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
+
 
 }

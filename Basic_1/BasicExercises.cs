@@ -192,7 +192,7 @@ namespace Exercises
         /// </summary>
         /// <param name="minimumEntries"></param>
         /// <returns></returns>
-        public static int[] getValidNumbersArray(int minimumEntries)
+        public static int[] getValidNumbersArray(int minimumEntries, string entryMessage = "Enter number, or S to save.")
         {
             int[] numbers;
             string entry = ""; int number = 0;
@@ -207,7 +207,7 @@ namespace Exercises
                     errMessage = $"There must be a minimum of {minimumEntries} entries! \n";
                 }
 
-                Console.WriteLine("{0}Enter number, or S to save.", errMessage);
+                Console.WriteLine("{0}{1}", errMessage, entryMessage);
 
                 entry = Console.ReadLine();
 
