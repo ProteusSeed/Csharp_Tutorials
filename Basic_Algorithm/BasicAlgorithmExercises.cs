@@ -2729,5 +2729,36 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_99
+    {
+        /*
+         * 99. Write a C# Sharp program to create a new array of integers of length 1 or more. 
+         The length of the new array will be double length of the given array 
+         and all the elements are 1 except the first element which is equal to the given array. 
+        Expected Output : 
+            New array: 10 0 0 0 0 0 0 0 0 0
+        */
+        private static void ArrayDisplay(int number)
+        {
+            Console.WriteLine(number);
+        }
 
+        public static void Execute()
+        {
+            Action<int> arrayDisplay = new Action<int>( ArrayDisplay );
+
+            int[] givenArray = UtilityMethods.getValidNumbersArray(1);
+            int[] newArray = new int[givenArray.Length * 2];
+
+            newArray[0] = givenArray[0];
+
+            for (int i = 1; i < newArray.Length; i++)
+            {
+                newArray[i] = 1;
+            }
+
+            Array.ForEach(newArray, arrayDisplay);
+
+        }
+    }
 }
