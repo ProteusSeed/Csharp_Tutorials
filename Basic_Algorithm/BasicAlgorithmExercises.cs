@@ -2689,5 +2689,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_97
+    {
+        /*97. Write a C# Sharp program to check if a given array of integers and length 2
+         , contains 15 or 20. 
+        Expected Output : 
+            True
+            True
+            False
+        */
 
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            bool found = Array.Find( givenArray, e => e == 15) == 15 | Array.Find(givenArray, e => e == 20) == 20;
+
+            Console.WriteLine(found);
+        }
+    }
 }
