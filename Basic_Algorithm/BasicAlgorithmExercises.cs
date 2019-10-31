@@ -2661,5 +2661,33 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_96
+    {
+        /*96. Write a C# Sharp program to create a new array taking the first and last elements 
+        of a given array of integers of length 1 or more. 
+        Expected Output : 
+        New array: 10 30
+        */
+        //Note: for this exercise I used an Action rather than an Arrow Function in the Array.ForEach method
+        private static void ArrayDisplay(int number)
+        {
+            Console.WriteLine(number);
+        }
+
+        public static void Execute()
+        {
+            Action<int> arrayDisplay = new Action<int>(ArrayDisplay);
+
+            int[] givenArray = UtilityMethods.getValidNumbersArray(1);
+
+            int[] newarray = new int[2];
+
+            newarray[0] = givenArray[0];
+            newarray[1] = givenArray[givenArray.GetUpperBound(0)];
+
+            Array.ForEach(newarray, arrayDisplay);
+        }
+    }
+
 
 }
