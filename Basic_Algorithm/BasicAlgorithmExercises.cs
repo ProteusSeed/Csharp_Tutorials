@@ -2708,4 +2708,26 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine(found);
         }
     }
+
+    public static class Exercise_98
+    {
+        /*98. Write a C# Sharp program to check if a given array of integers of length 2
+         , does not contain 15 or 20. 
+        Expected Output : 
+            False
+            False
+            True
+        */
+
+        public static void Execute()
+        {
+            int[] integers = UtilityMethods.getValidNumbersArray(2);
+
+            bool numbersNotFound = Array.Find(integers, e => e == 15 | e == 20) == 0;
+
+            Console.WriteLine("Entries do not contain 15 or 20: {0}", numbersNotFound);
+        }
+    }
+
+
 }
