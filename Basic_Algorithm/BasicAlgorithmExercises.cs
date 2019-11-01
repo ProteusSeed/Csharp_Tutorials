@@ -2760,5 +2760,31 @@ namespace Basic_Algorithm_Exercises
             Array.ForEach(newArray, arrayDisplay);
 
         }
+
+
     }
+
+    public static class Exercise_100
+    {
+        /*
+          100. Write a C# Sharp program to check a given array of integers 
+          and return true if the array contains 10 or 20 twice. 
+          The length of the array will be 0, 1, or 2. 
+            Expected Output : 
+            False
+            True
+            True
+            False
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            bool contains = givenArray.Count(e => e == 10 | e == 20) == 2;
+
+            Console.WriteLine($"10 or 20 have been entered twice: {contains}");
+        }
+    }
+
+
 }
