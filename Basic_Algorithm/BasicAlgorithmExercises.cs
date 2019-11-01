@@ -2786,5 +2786,47 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_101
+    {
+        /*101. Write a C# Sharp program to check a given array of integers, length 3 and create a new array. 
+         If there is a 5 in the given array immediately followed by a 7 then set 7 to 1. 
+        Expected Output : 
+        Original array:  1, 5, 7
+        New array: 1 5 1
+        */
+
+        private static void WriteArray( int number)
+        {
+            Console.Write($"{number}, ");
+        }
+
+        public static void Execute()
+        {
+            Action<int> writeArray = new Action<int>(WriteArray);
+
+            int[] givenArray = UtilityMethods.getValidNumbersArray(3);
+            int[] newArray = new int[givenArray.Length];
+
+            givenArray.CopyTo(newArray,0);            
+
+            int locationOf5 = Array.IndexOf(givenArray, 5);
+
+            int locationOf7 = Array.IndexOf(givenArray, 7);
+
+            if (locationOf7 - locationOf5 == 1)
+            {
+                newArray[locationOf7] = 1;
+            }
+
+            Console.Write("Original Array: ");
+            Array.ForEach(givenArray, writeArray);
+
+            Console.WriteLine();
+
+            Console.Write("New Array: ");
+            Array.ForEach(newArray, writeArray);
+        }
+    }
+
 
 }
