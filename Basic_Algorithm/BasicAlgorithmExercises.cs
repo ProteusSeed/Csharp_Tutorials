@@ -2828,5 +2828,39 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_102
+    {
+        /*
+         * Write a C# program to compute the sum of the two given arrays of integers, length 3
+         * and find the array which has the largest sum:
+         * Expected output:
+         *  Original Array: 1, 5, 7
+         *  Larger Array: 10 20 30
+         */
+
+        public static void Execute()
+        {
+            int [] array1 = UtilityMethods.getValidNumbersArray(3);
+            int[] array2 = UtilityMethods.getValidNumbersArray(3);
+
+            int sumOfArray1 = 0; int sumOfArray2 = 0;
+
+            string messageOne = ""; string messageTwo = "";
+
+            Array.ForEach(array1, e => sumOfArray1 += e);
+            Array.ForEach(array2, e => sumOfArray2 += e);
+
+            messageOne = sumOfArray1 > sumOfArray2 ? "Larger Array: " : "Original Array: ";
+            messageTwo = sumOfArray1 > sumOfArray2 ? "Original Array: " : "Larger Array: ";
+
+            Console.WriteLine(messageOne);
+            Array.ForEach(array1, e => Console.WriteLine(e));
+
+            Console.WriteLine(messageTwo);
+            Array.ForEach(array2, e => Console.WriteLine(e));
+        }
+
+    }
+
 
 }
