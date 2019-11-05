@@ -2862,5 +2862,33 @@ namespace Basic_Algorithm_Exercises
 
     }
 
+    public static class Exercise_103
+    {
+        /*
+         * Write a C# program to create an array taking two middle elements from a given array of integers of length even.
+         * Expected Output:
+         *  Original Array: 1, 5, 7, 9, 11, 13
+         *  New array: 7, 9
+         */
+
+        private static void arrayDisplay(int number)
+        {
+            Console.WriteLine(number);
+        }
+
+        public static void Execute()
+        {
+            Action<int> ArrayDisplay = new Action<int>(arrayDisplay);
+
+            int[] givenArray = UtilityMethods.getValidNumbersArray(2);
+            int[] newArray = new int[2];
+
+            newArray[0] = givenArray[ givenArray.Length / 2 - 1];
+            newArray[1] = givenArray[givenArray.Length / 2];
+
+            Array.ForEach(newArray, ArrayDisplay);
+        }
+    }
+
 
 }
