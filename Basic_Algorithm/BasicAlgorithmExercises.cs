@@ -2949,4 +2949,29 @@ namespace Basic_Algorithm_Exercises
             Array.ForEach(newArray, e => Console.WriteLine(e));
         }
     }
+
+    public static class Exercise_107
+    {
+        /*
+         * Write a C# program to find the largest value from the first, last, and middle 
+         * elements of a given array of ints of odd length (at least 1)
+         */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray(1);
+
+            int[] newArray = new int[3];
+
+            newArray[0] = givenArray.First();
+            newArray[1] = givenArray.Last();
+            newArray[2] = givenArray[givenArray.Length / 2];
+
+            Console.WriteLine( $"Largest value is: {newArray.Max()}" );
+
+
+        }
+    }
+
+    
 }
