@@ -2929,5 +2929,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_106
+    {
+        /*
+         * Write a C# program to create a new array length 3 from a given array (length at least 3)
+         * using the elements from themiddle of the array.
+         * 
+         * Original array: 1, 5, 7, 9, 11, 13
+         * New array: 7, 9 11
+         */
 
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray(3);
+            int[] newArray = new int[3];
+
+            Array.ConstrainedCopy(givenArray, givenArray.Length / 2 - 1, newArray, 0, 3);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
 }
