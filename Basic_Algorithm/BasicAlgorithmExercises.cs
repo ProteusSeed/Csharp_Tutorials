@@ -2910,5 +2910,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_105
+    {
+        /*
+         * Write a C# program to create a new array swapping the first and last elements 
+         * of a given array of integers of length at least 1.
+         */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray(1);
+            int[] newArray = (int[])givenArray.Clone();
+
+            newArray[0] = givenArray.Last();
+            newArray[newArray.Length - 1] = givenArray.First();
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
+
 
 }
