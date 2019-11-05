@@ -2973,5 +2973,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
-    
+    public static class Exercise_108
+    {
+        /*
+         * Write a C# program to create a new array taking the 1st two elements
+         * from a given array.  If the length of the given array is less than 2
+         * then return the given array.
+         */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            if (givenArray.Length >= 2)
+            {
+                int[] newArray = new int[2]{ givenArray[0], givenArray[1] };
+                Array.ForEach(newArray, e => Console.WriteLine(e));
+            }
+            else
+            {
+                Array.ForEach(givenArray, e => Console.WriteLine(e));
+            }
+        }
+    }
 }

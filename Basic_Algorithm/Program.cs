@@ -443,6 +443,10 @@ namespace Basic_Algorithm
                         Exercise_107.Execute();
                         break;
 
+                    case 108:
+                        Exercise_108.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;
