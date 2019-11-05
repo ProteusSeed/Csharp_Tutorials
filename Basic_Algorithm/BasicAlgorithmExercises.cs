@@ -2890,5 +2890,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_104
+    {
+        /*
+         * Write a C# program to create a new array from two given arrays of integers, each length 3.
+         */
+
+        public static void Execute()
+        {
+            int[] Array1 = UtilityMethods.getValidNumbersArray(3);
+            int[] Array2 = UtilityMethods.getValidNumbersArray(3);
+
+            int[] newArray = new int[Array1.Length + Array2.Length];
+
+            Array1.CopyTo(newArray, 0);
+            Array2.CopyTo(newArray, Array1.Length);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
+
 
 }
