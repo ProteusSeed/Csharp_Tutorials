@@ -2996,4 +2996,21 @@ namespace Basic_Algorithm_Exercises
             }
         }
     }
+
+    public static class Exercise_109
+    {
+        /*
+         * Write a C# program to count even number of elements in a given array of integers.
+         */
+         public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int evenCount = givenArray.Count() / 2;
+
+            Console.WriteLine($"Even number of elements: {evenCount}");
+        }
+    }
+
+
 }

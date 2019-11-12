@@ -6,7 +6,6 @@ D:\Git\CSharp_Practice\Basic_Algorithm\bin\Debug\netcoreapp2.2\Basic_Algorithm.p
 D:\Git\CSharp_Practice\Basic_Algorithm\bin\Debug\netcoreapp2.2\Basic_1.dll
 D:\Git\CSharp_Practice\Basic_Algorithm\bin\Debug\netcoreapp2.2\Basic_1.pdb
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.csprojAssemblyReference.cache
-D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.csproj.CoreCompileInputs.cache
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.AssemblyInfoInputs.cache
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.AssemblyInfo.cs
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.csproj.CopyComplete
