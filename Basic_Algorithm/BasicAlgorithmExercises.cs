@@ -3056,5 +3056,33 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_112
+    {
+        /*112. Write a C# Sharp program to compute the sum of the numbers in a given array 
+            except those numbers starting with 5 followed by atleast one 6. 
+            Return 0 if the given array has no integer. 
+            Expected Output : 
+            Original array: 1, 5, 6, 9, 10, 17
+            Sum of the numbers of the said array except those numbers starting with 5 followed by atleast one 6: 
+            37
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int sum = 0;
+            
+            Array.ForEach(
+                            givenArray, e => {
+                                if (e.ToString().StartsWith("56") != true ) { sum += e; }
+                                            }
+            );
+
+            Console.WriteLine(sum);
+
+        }
+    }
+
 
 }
