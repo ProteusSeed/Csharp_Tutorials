@@ -3084,5 +3084,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_113
+    {
+        /*113. Write a C# Sharp program to check if a given array of integers contains 5 next to a 5 somewhere. 
+            Expected Output : 
+                False
+                True
+                True
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            bool contains5 = false;
+
+            for (int i = 0; i < givenArray.Length - 1; i++)
+            {
+                contains5 = givenArray[i] == 5 & givenArray[i + 1] == 5;
+            }
+
+            Console.WriteLine("Given array contains 5 next to a 5: {0}", contains5);
+        }
+    }
+
 
 }
