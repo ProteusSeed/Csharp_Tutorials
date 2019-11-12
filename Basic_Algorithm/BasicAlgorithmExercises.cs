@@ -3012,5 +3012,26 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_110
+    {
+        /*
+         * 110. Write a C# Sharp program to compute the difference between the largest 
+            and smallest values in a given array of integers and length one or more. 
+            Expected Output: 
+            Original array: 1, 5, 7, 9, 10, 12 
+            Difference between the largest and smallest values: 
+            11
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int difference = givenArray.Max() - givenArray.Min();
+
+            Console.WriteLine("Difference between the largest and smallest values: {0}", difference);
+        }
+    }
+
 
 }
