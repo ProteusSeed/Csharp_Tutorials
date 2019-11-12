@@ -3033,5 +3033,28 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_111
+    {
+        /*
+          111. Write a C# Sharp program to compute the sum of values in a given array of integers 
+         * except the number 17. Return 0 if the given array has no integer. 
+            Expected Output : 
+            Original array: 1, 5, 7, 9, 10, 17
+            Sum of values in the array of integers except the number 17: 
+            32
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int numOfSeventeens = givenArray.Count(e => e == 17);
+
+            int sum = givenArray.Sum() - (numOfSeventeens * 17);
+
+            Console.WriteLine("Sum of values in the array of integers except the number 17: {0}", sum);
+        }
+    }
+
 
 }
