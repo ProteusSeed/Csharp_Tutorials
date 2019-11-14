@@ -3107,5 +3107,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_114
+    {
+        /*114. Write a C# Sharp program to check whether a given array of integers contains 5's and 7's. 
+            Expected Output : 
+                True
+                True
+                False
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            var contains = givenArray.Contains(5) | givenArray.Contains(7);
+
+            Console.WriteLine("Given array of integers contains 5's and 7's: {0}", contains);
+
+        }
+    }
+
 
 }
