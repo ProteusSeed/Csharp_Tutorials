@@ -3166,5 +3166,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_117
+    {
+        /*117. Write a C# Sharp program to check if a given array of integers contains a 3 or a 5. 
+        Expected Output : 
+            True
+            True
+            True
+            False
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            bool contains = givenArray.Contains(3) | givenArray.Contains(5);
+
+            Console.WriteLine("Given array of integers contains a 3 or a 5: {0}", contains);
+        }
+    }
+
 
 }
