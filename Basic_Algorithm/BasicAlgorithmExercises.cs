@@ -3127,5 +3127,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_115
+    {
+        /*115. Write a C# Sharp program to check if the sum of all 5's in the array 
+         is exactly 15 in a given array of integers. 
+        Expected Output : 
+            False
+            True
+            False
+        */
 
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            bool exactly = givenArray.Count(e => e == 5) == 3;
+
+            Console.WriteLine("The sum of all 5's in the array is exactly 15: {0}", exactly);
+        }
+    }
 }
