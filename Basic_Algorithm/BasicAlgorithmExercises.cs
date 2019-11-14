@@ -3146,4 +3146,25 @@ namespace Basic_Algorithm_Exercises
             Console.WriteLine("The sum of all 5's in the array is exactly 15: {0}", exactly);
         }
     }
+
+    public static class Exercise_116
+    {
+        /*116. Write a C# Sharp program to check if the number of 3's is greater than the number of 5's.
+        Expected Output : 
+        False
+        True
+        False
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            bool threesGreater = givenArray.Count(e => e == 3) > givenArray.Count(e => e == 5);
+
+            Console.WriteLine($" the number of 3's is greater than the number of 5's: {threesGreater}");
+        }
+    }
+
+
 }
