@@ -3185,5 +3185,52 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_118
+    {
+        /*118. Write a C# Sharp program to check if a given array of integers contains no 3 or a 5. 
+        Expected Output : 
+            True
+            True
+            False
+            True
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+
+        }
+    }
+
+    public static class Exercise_119
+    {
+        /*119. Write a C# Sharp program to check if an array of integers contains a 3 next to a 3 or a 5 next to a 5 or both. 
+        Expected Output : 
+            True
+            False
+            False
+            True
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int threeIndex = Array.FindIndex(givenArray, e => e == 3);
+            int fiveIndex = Array.FindIndex(givenArray, e => e == 5);
+
+            //make sure the indexes do not go over
+            threeIndex++;
+            threeIndex = threeIndex < givenArray.Length ? threeIndex : 0;
+
+            fiveIndex++;
+            fiveIndex = fiveIndex < givenArray.Length ? fiveIndex : 0;
+
+            bool contains = givenArray[threeIndex] == 3 | givenArray[fiveIndex] == 5;
+
+            Console.WriteLine("array contains a 3 next to a 3 or a 5 next to a 5 or both: {0}", contains);
+        }
+    }
+
 
 }
