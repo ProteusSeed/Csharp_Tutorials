@@ -3199,7 +3199,9 @@ namespace Basic_Algorithm_Exercises
         {
             int[] givenArray = UtilityMethods.getValidNumbersArray();
 
+            bool contains = givenArray.Contains(3) == false | givenArray.Contains(5);
 
+            Console.WriteLine("given array contains no 3 or a 5: {0}",contains);
         }
     }
 
