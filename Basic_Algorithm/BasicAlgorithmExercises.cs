@@ -3292,5 +3292,38 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_122
+    {
+        /*
+         * 122. Write a C# Sharp program to check a given array of integers 
+            and return true if the given array contains either 2 even or 2 odd values all next to each other. 
+            Expected Output : 
+                True
+                False
+                True
+                True
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            int index = 0;
+            bool evaluate = false;
+
+            for (int i = 0; i < givenArray.GetUpperBound(0); i++)
+            {
+                if( 
+                    givenArray[i] % 2 == 0 & givenArray[i + 1] % 2 == 0 //even
+                    |
+                    givenArray[i] % 2 > 0 & givenArray[i + 1] % 2 > 0 //odd
+                )
+                {
+                    evaluate = true;
+                }
+            }
+
+            Console.WriteLine($" Contains either 2 even or 2 odd values all next to each other: {evaluate}");
+        }
+    }
+
 
 }
