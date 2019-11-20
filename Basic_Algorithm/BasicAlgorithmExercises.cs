@@ -3234,5 +3234,39 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_120
+    {
+        /*120. Write a C# Sharp program to check a given array of integers 
+         and return true if the given array contains two 5's next to each other
+         , or two 5s separated by one element. 
+        Expected Output : 
+            True
+            False
+            True
+            True
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            bool contains = false;
+            int indexPlusTwo = 0;
+            int numberOfElements = givenArray.GetUpperBound(0);
+
+            for (int i = 0; i < numberOfElements; i++)
+            {
+                indexPlusTwo = i <= numberOfElements - 2 ? i + 2 : i + 1;
+
+                if ( givenArray[i] == 5 & ( givenArray[i + 1] == 5 || givenArray[indexPlusTwo] == 5 ) )
+                {
+                    contains = true;
+                    break;
+                }
+            }
+
+            Console.WriteLine("the given array contains two 5's next to each other" + 
+                                ", or two  5 separated by one element: {0}", contains);
+        }
+    }
+
 
 }
