@@ -3268,5 +3268,29 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_121
+    {
+        /*121. Write a C# Sharp program to check a given array of integers 
+            and return true if there is a 3, with a 5 somewhere later in the given array. 
+            Expected Output : 
+                True
+                False
+                True
+                False
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int three = Array.FindIndex(givenArray, e => e == 3);
+            int five = Array.LastIndexOf(givenArray, 5);
+
+            bool evaluate = three < five ? true : false;
+
+            Console.WriteLine($"There is a 3, with a 5 somewhere later in the given array: {evaluate}");
+        }
+    }
+
 
 }
