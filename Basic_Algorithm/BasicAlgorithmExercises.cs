@@ -3325,5 +3325,39 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_123
+    {
+        /*
+         * 123. Write a C# Sharp program to check a given array of integers 
+            and return true if the value 5 appears 5 times and there are no 5 next to each other. 
+            Expected Output : 
+            True
+            False
+            True
+            False
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int fiveCount = givenArray.Count(e => e == 5);
+            bool fiveNext = false;
+            bool evaluate = false;
+
+            for (int i = 0; i < givenArray.GetUpperBound(0); i++)
+            {
+                if (givenArray[i] == 5 & givenArray[ i + 1 ] == 5)
+                {
+                    fiveNext = true;
+                    break;
+                }
+            }
+
+            evaluate = fiveCount >= 5 & fiveNext == false ? true : false;
+
+            Console.WriteLine("The value 5 appears 5 times and there are no 5s next to each other: {0}", evaluate);
+        }
+    }
+
 
 }
