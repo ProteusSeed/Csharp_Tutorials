@@ -3359,5 +3359,49 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_124
+    {
+        /*
+         * 124. Write a C# Sharp program to check a given array of integers 
+            and return true if every 5 that appears in the given array is next to another 5. 
+            Expected Output : 
+            True
+            False
+            True
+            False
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            int nextValue = 0;
+            bool fiveNextFive = false;
+
+            for (int i = 0; i <= givenArray.GetUpperBound(0); i++)
+            {
+                nextValue = i < givenArray.GetUpperBound(0) ? givenArray[i + 1] : 0; //get the next as long as loop isn't on last value
+
+                if (givenArray[i] == 5 & nextValue != 5)
+                {
+                    fiveNextFive = false;
+                    break;
+                }
+                else
+                {
+                    if (givenArray[i] == 5 & nextValue == 5)
+                    {
+                        fiveNextFive = true;
+                        i++; //skip the next five
+                    }
+                }
+            }
+
+            //result = fiveNextFive == true;
+
+            Console.WriteLine("every 5 that appears in the given array is next to another 5: {0}", fiveNextFive);
+        }
+    }
+
+
 
 }
