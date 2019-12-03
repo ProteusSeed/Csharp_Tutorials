@@ -3455,6 +3455,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_127
+    {
+        /*127. Write a C# Sharp program to shift an element in left direction and return a new array. 
+        Expected Output : 
+        New array: 20 -30 -40 50 10
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            int[] newArray = new int[givenArray.Length];
+
+            Array.Copy(givenArray, 1, newArray, 0, givenArray.Length - 1);
+
+            newArray[newArray.GetUpperBound(0)] = givenArray[0];
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+
+        }
+    }
+
 
 
 }
