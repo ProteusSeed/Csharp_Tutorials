@@ -3402,6 +3402,59 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_125
+    {
+        /*125. Write a C# Sharp program to check a given array of integers and return true 
+         if the specified number of same elements appears at the start and end of the given array. 
+        Expected Output : 
+            True
+            False
+            True
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            int numElements = UtilityMethods.GetValidNumber("How many duplicate integers should I search for?: ");
+
+            /*I skipped this, not sure what the requirements are*/
+        }
+    }
+
+    public static class Exercise_126
+    {
+        /*
+         * 126. Write a C# Sharp program to check a given array of integers 
+            and return true if the array contains three increasing adjacent numbers. 
+            Expected Output : 
+            True
+            False
+            True
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            bool contains = false; int containsCount = 0;
+
+            for (int i = 0; i < givenArray.GetUpperBound(0); i++)
+            {
+                if ( givenArray[i + 1] - givenArray[i] > 0 )
+                {
+                    containsCount++;
+                }
+                else
+                {
+                    containsCount = 0;
+                }
+            }
+
+            contains = containsCount >= 2 ? true : false;
+
+            Console.WriteLine($"the array contains three increasing adjacent numbers: {contains}" );
+        }
+    }
+
 
 
 }
