@@ -519,6 +519,10 @@ namespace Basic_Algorithm
                         Exercise_127.Execute();
                         break;
 
+                    case 128:
+                        Exercise_128.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;

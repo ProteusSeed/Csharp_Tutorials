@@ -3476,6 +3476,37 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_128
+    {
+        /*128. Write a C# Sharp program to create a new array taking the elements 
+         before the element value 5 from a given array of integers. 
+        Expected Output : 
+        New array: 1 2 3
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            Predicate<int> findInArray = new Predicate<int>(Find5InArray);
+
+            int indexOf5 = Array.FindIndex(givenArray, findInArray);
+
+            int[] newArray = new int[indexOf5];
+
+            Array.Copy(givenArray, 0, newArray, 0, indexOf5);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+
+        private static bool Find5InArray(int element)
+        {
+            bool evaluate = element == 5 ? true : false;
+            
+            return evaluate;
+        }
+    }
+
 
 
 }
