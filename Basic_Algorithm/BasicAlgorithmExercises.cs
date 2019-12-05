@@ -3507,6 +3507,35 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_129
+    {
+        /*129. Write a C# Sharp program to create a new array taking the elements after the element value 5 
+         from a given array of integers.
+        Expected Output : 
+        New array: 7 9 11
+        */
 
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            Predicate<int> findIndexOf5 = new Predicate<int>(FindIndexOf5);
+
+            int indexOf5 = Array.FindIndex(givenArray, findIndexOf5);
+
+            int[] newArray = new int[givenArray.Length - ( indexOf5 + 1 )];
+
+            Array.Copy(givenArray, indexOf5 + 1, newArray, 0, newArray.Length);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+
+        private static bool FindIndexOf5( int elementValue )
+        {
+            bool evaluate = elementValue == 5 ? true : false;
+
+            return evaluate;
+        }
+    }
 
 }
