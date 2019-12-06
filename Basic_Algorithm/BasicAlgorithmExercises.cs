@@ -3538,4 +3538,61 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_130
+    {
+        /*
+         130. Write a C# Sharp program to create a new array from a given array 
+         of integers shifting all zeros to left direction. 
+            Expected Output : 
+            New array: 0 0 1 3 5 7 2 9 11
+         */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int[] newArray = new int[givenArray.Length];
+
+            int zeroCount = givenArray.Count(e => e == 0);
+
+            //Array.Copy(zeroArray, 0, newArray, 0, zeroArray.Length);
+            int[] nonZero = Array.FindAll(givenArray, e => e > 0);
+
+            Array.Copy( nonZero, 0, newArray, zeroCount, nonZero.Length);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+            
+        }
+    }
+
+    public static class Exercise_131
+    {
+        /*131. Write a C# Sharp program to create a new array after replacing 
+         all the values of 5 with 0, shifting all zeros to right direction. 
+        Expected Output : 
+        New array: 1 2 3 7 9 11 0 0 0
+        */
+
+        public static void Execute()
+        {
+            Action<int> printArray = new Action<int>(PrintArray);
+
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int[] newArray = new int[givenArray.Length];
+
+            int[] nonFive = Array.FindAll(givenArray, e => e != 5);
+
+            Array.Copy(nonFive, newArray, nonFive.Length);
+
+            Array.ForEach(newArray, printArray);
+        }
+
+        private static void PrintArray(int number)
+        {
+            Console.WriteLine(number);
+        }
+    }
+
+
+
 }
