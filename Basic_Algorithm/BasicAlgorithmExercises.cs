@@ -3593,6 +3593,59 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_132
+    {
+        /*132. Write a C# Sharp program to create new array from a given array of integers 
+         shifting all even numbers before all odd numbers. 
+        Expected Output : 
+        New array: 2 4 6 3 5 1 5 9 11
+        */
+
+        private static bool FindEven(int number)
+        {           
+            return number % 2 == 0;
+        }
+
+        public static Predicate<int> findEven = new Predicate<int>(FindEven);
+
+        public static void Execute()
+        {
+
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            int[] newArray = new int[givenArray.Length];
+
+            int[] evens = Array.FindAll(givenArray, findEven);
+            int[] odds = Array.FindAll(givenArray, e => e % 2 > 0);
+
+            Array.Copy(evens, 0, newArray, 0, evens.Length);
+            Array.Copy(odds, 0, newArray, evens.GetUpperBound(0) + 1, odds.Length);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
+
+    public static class Exercise_133
+    {
+        /*133. Write a C# Sharp program to check if the value of each element 
+         is equal or greater than the value of previous element of a given array of integers. 
+            Expected Output: 
+            False
+            True
+            True
+            True
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+
+            for (int i = 1; i < givenArray.Length; i++)
+            {
+                Console.WriteLine(givenArray[i] >= givenArray[i - 1]);
+            }
+        }
+    }
+
 
 
 }
