@@ -3646,6 +3646,31 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_134
+    {
+        /*134. Write a C# Sharp program to check a given array (length will be at least 2) 
+         of integers and return true if there are two values 15, 15 next to each other. 
+            Expected Output : 
+            True
+            False
+            True
+            False
+        */
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray(2);
+            bool evaluate = false;
 
+            for (int i = 0; i < givenArray.GetUpperBound(0); i++)
+            {
+                if (givenArray[i] == 15 & givenArray[i + 1] == 15 )
+                {
+                    evaluate = true;
+                }
+            }
+
+            Console.WriteLine($"there are two values 15, 15 next to each other: {evaluate}");
+        }
+    }
 
 }
