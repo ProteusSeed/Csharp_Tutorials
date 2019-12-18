@@ -3673,4 +3673,49 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_135
+    {
+        /*135. Write a C# Sharp program to find the larger average value 
+          between the first and the second half of a given array of integers 
+          and minimum length is atleast 2. Assume that the second half begins at index (array length)/2. 
+            Expected Output: 
+            6
+            10
+        */
+
+        public static void Execute()
+        {
+            int[] givenArray = UtilityMethods.getValidNumbersArray(2);
+            int avgFirst = 0;
+            int avgSec = 0;
+            string result = "";
+
+            Array.ForEach(givenArray.Take((givenArray.Length / 2) - 1).ToArray(),
+                    e => avgFirst += e
+                    );
+
+            avgFirst = avgFirst / (givenArray.Length / 2);
+
+            int secLength = givenArray.Length - (givenArray.Length / 2);
+
+            Array.ForEach(givenArray.TakeLast(secLength).ToArray(),
+                    e => avgSec += e
+                    );
+
+            avgSec = avgSec / secLength;
+
+            if (avgFirst > avgSec)
+            {
+                result = $"The first half is larger: {avgFirst} ";
+            }
+            else
+            {
+                result = $"The second half is larger: {avgSec} ";
+            }
+
+            Console.WriteLine(result);
+        }
+    }
+
+
 }
