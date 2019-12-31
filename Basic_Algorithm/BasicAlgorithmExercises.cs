@@ -3717,5 +3717,27 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_136
+    {
+        /*136. Write a C# Sharp program to count the number of strings 
+         with given length in given array of strings. 
+        Expected Output: 
+        Number of array: 
+        3
+        */
+        public static void Execute()
+        {
+            string[] givenArray = UtilityMethods.getStringArray();
+
+            int stringLength = UtilityMethods.GetValidNumber("Enter string length to search for: ");
+
+            int stringCount = 0;
+
+            Array.ForEach(givenArray, e => stringCount += e.Length == stringLength ? 1 : 0);
+
+            Console.WriteLine($"The number of strings with given length {stringLength} in given array is: {stringCount}");
+        }
+    }
+
 
 }
