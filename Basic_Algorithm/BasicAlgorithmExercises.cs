@@ -3739,5 +3739,25 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_137
+    {
+        /*137. Write a C# Sharp program to create a new array using the first n strings 
+        from a given array of strings. (n>=1 and <=length of the array). 
+        Expected Output : 
+        New array: a b bb
+        */
 
+        public static void Execute()
+        {
+            string[] givenArray = UtilityMethods.getStringArray();
+
+            int numOfElements = UtilityMethods.GetValidNumber(1, givenArray.Length, "Enter number of elements to return: ");
+
+            string[] newArray = new string[numOfElements];
+
+            Array.ConstrainedCopy(givenArray, 0, newArray, 0, numOfElements);
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
 }
