@@ -3781,4 +3781,25 @@ namespace Basic_Algorithm_Exercises
             Array.ForEach(newArray, e => Console.WriteLine(e));
         }
     }
+
+    public static class Exercise_139
+    {
+        /*139. Write a C# Sharp program to check a positive integer 
+         and return true if it contains a number 2. 
+            Expected Output: 
+            True
+            False
+            True
+        */
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            bool result = number.ToString().ToCharArray().Contains('2');
+
+            Console.WriteLine("The integer contains the number 2: {0}", result);
+        }
+    }
+
+
 }
