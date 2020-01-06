@@ -3760,4 +3760,25 @@ namespace Basic_Algorithm_Exercises
             Array.ForEach(newArray, e => Console.WriteLine(e));
         }
     }
+
+    public static class Exercise_138
+    {
+        /*138. Write a C# Sharp program to create a new array from a given array of strings  
+        using all the strings whose length are matched with given string length. 
+        Expected Output: New array: aaa bbb ccc
+        */
+
+        public static void Execute()
+        {
+            string[] givenArray = UtilityMethods.getStringArray();
+
+            string givenString = UtilityMethods.GetValidString();
+
+            int givenStringLength = givenString.Length;
+
+            string[] newArray = givenArray.Where(e => e.Length == givenStringLength).ToArray();
+
+            Array.ForEach(newArray, e => Console.WriteLine(e));
+        }
+    }
 }
