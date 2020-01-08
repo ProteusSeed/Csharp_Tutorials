@@ -3801,5 +3801,32 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_140
+    {
+        /*140. Write a C# Sharp program to create a new array of given length 
+         using the odd numbers from a given array of positive integers. 
+        Expected Output: 
+        New array: 1 3 5
+        */
+
+        public static Action<int> PrintEachNum = new Action<int>(Printnumber);
+
+        private static void Printnumber(int number)
+        {
+            Console.WriteLine(number);
+        }
+
+        public static void Execute()
+        {
+            
+            int[] givenArray = UtilityMethods.getValidNumbersArray();
+            
+            int[] newArray = givenArray.Where(e => e % 2 > 0).ToArray();
+
+            Array.ForEach(newArray, PrintEachNum);
+
+        }
+    }
+
 
 }
