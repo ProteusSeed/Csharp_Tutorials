@@ -3828,5 +3828,23 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_141
+    {
+        /*
+        141. Write a C# Sharp program to create a new list from a given list of integers 
+        where each element is multiplied by 3. 
+        Expected Output : 
+        New array: 3 6 9 12
+        */
+        public static void Execute()
+        {
+            List<int> givenList = UtilityMethods.getValidNumbersList();
+
+            List<int> newList = givenList.Select( (number, index) => number * 3 ).ToList();
+            
+            newList.ForEach(e => Console.WriteLine(e));
+        }
+    }
+
 
 }
