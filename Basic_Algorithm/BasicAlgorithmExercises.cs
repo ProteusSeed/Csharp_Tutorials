@@ -3846,5 +3846,24 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_142
+    {
+        /*142. Write a C# Sharp program to create a new list from a given list of integers 
+         where each integer multiplied by itself three times. 
+        Expected Output: 
+        New array: 1 8 27 64
+        */
+
+        public static void Execute()
+        {
+            List<int> givenList = UtilityMethods.getValidNumbersList();
+
+            //Note: you don't need to specify the source type and result types, I'm just doing it for illustrative purposes.
+            List<int> newList = givenList.Select<int,int>(num => num * num * num).ToList();
+
+            newList.ForEach(e => Console.WriteLine(e));
+        }
+    }
+
 
 }
