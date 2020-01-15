@@ -3865,5 +3865,21 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_143
+    {
+        /*143. Write a C# Sharp program to create a new list from a given list of strings 
+         where each element has "#" added at the beginning and end position.
+         Expected Output: #1# #2# #3# #4#
+        */
 
+        public static void Execute()
+        {
+            List<string> givenList = UtilityMethods.getStringList();
+
+            List<string> newList = givenList.Select(s => "#" + s + "#").ToList<string>();
+
+            newList.ForEach( s => Console.WriteLine(s) );
+
+        }
+    }
 }
