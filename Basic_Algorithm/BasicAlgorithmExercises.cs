@@ -3882,4 +3882,33 @@ namespace Basic_Algorithm_Exercises
 
         }
     }
+
+    public static class Exercise_144
+    {
+        /*144. Write a C# Sharp program to create a new list from a given list of strings 
+        where each element is replaced by 4 copies of the string concatenated together.
+        Expected Output : 
+        1111 2222 3333 4444
+        */
+
+        public static void Execute()
+        {
+            List<string> givenList = UtilityMethods.getStringList();
+
+            List<string> newList = new List<string>();
+
+            string newString = "";
+
+           newList = givenList.Select(s => {
+               newString = s.PadLeft(s.Length * 4);
+               newString = newString.Replace("".PadLeft(s.Length), s);
+                return newString;
+                }
+            ).ToList();
+
+            newList.ForEach(s => Console.WriteLine(s));
+        }
+    }
+
+
 }
