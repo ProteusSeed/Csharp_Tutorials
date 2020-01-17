@@ -3910,5 +3910,22 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_145
+    {
+        /*145. Write a C# Sharp program to create a new list from a given list of integers 
+           where each integer value is added to 2 and the result value is multiplied by 5. 
+            Expected Output: 15 20 25 30
+        */
 
+        public static void Execute()
+        {
+            List<int> givenList = UtilityMethods.getValidNumbersList();
+
+            List<int> newList = new List<int>();
+
+            newList = givenList.Select(i => (i + 2) * 5).ToList<int>();
+
+            newList.ForEach(i => Console.WriteLine(i));
+        }
+    }
 }
