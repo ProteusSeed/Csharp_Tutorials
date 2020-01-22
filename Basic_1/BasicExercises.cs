@@ -157,6 +157,67 @@ namespace Exercises
             return dicNumbers;
         }
 
+        public static List<string> getStringList()
+        {
+            List<string> stringList = new List<string>();
+            string entry = "";
+            string err = "";
+
+            while (entry != "x")
+            {
+                Console.Write("{0} Enter string of at least one character, or ALT+S to save: ", err);
+
+                ConsoleKeyInfo key = Console.ReadKey();
+
+                if( key.Modifiers == ConsoleModifiers.Alt & key.Key == ConsoleKey.S )
+                {
+                    Console.ReadLine();
+                    break;
+                }
+
+                entry = key.KeyChar + Console.ReadLine();
+
+                if (entry != "")
+                {
+                    err = "";
+                    stringList.Add(entry);
+                }
+                else
+                {
+                    err = "Entry must consist of at least one character!";
+                }
+            }
+
+            return stringList;
+            
+        }
+
+        public static List<int> getValidNumbersList()
+        {
+            List<int> listNumbers = new List<int>();
+            string entry = ""; int entryNumber = 0;
+
+            while (entry != "x")
+            {
+                Console.Write("Input an integer or X to stop: ");
+                entry = Console.ReadLine().ToLower();
+
+                if (int.TryParse(entry, out entryNumber))
+                {
+                    listNumbers.Add(entryNumber);
+                }
+                else
+                {
+                    if (entry != "x")
+                    {
+                        Console.WriteLine("Error, value entered is not a number!");
+                    }
+                }
+            }
+
+            return listNumbers;
+        }
+
         public static int[] getValidNumbersArray()
         {
             int[] numbers;
@@ -250,6 +311,36 @@ namespace Exercises
             strValidDate = valid == true ? validDate.ToString() : null;
 
             return strValidDate;  
+        }
+
+        public static string[] getStringArray()
+        {
+            string[] strings;
+            string entry = ""; 
+            string errMessage = "";
+
+            List<string> numbersList = new List<string>();
+
+            while (entry.ToLower() != "s")
+            {
+                Console.WriteLine("{0}Enter string, or S to save.", errMessage);
+
+                entry = Console.ReadLine();
+
+                if (entry.Length > 0 & entry.ToLower() != "s")
+                {
+                    numbersList.Add(entry);
+                    errMessage = "";
+                }
+                else
+                {
+                    errMessage = "String must consist of at least one character!";
+                }
+            }
+
+            strings = numbersList.ToArray();
+
+            return strings;
         }
     }
 

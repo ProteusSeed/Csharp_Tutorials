@@ -3928,4 +3928,45 @@ namespace Basic_Algorithm_Exercises
             newList.ForEach(i => Console.WriteLine(i));
         }
     }
+
+    public static class Exercise_146
+    {
+        /*146. Write a C# Sharp program to create a new list of the rightmost digits 
+         from a given list of positive integers. 
+            Expected Output: 0 2 5 1
+        */
+
+        public static Func<int,int> LastDigit = new Func<int, int>(getLastDigit);
+
+        public static int getLastDigit( int number)
+        {
+            int lastDigit = 0;
+
+            string numberString = number.ToString();
+
+            int.TryParse(numberString.Substring(numberString.Length - 1), out lastDigit);
+
+            return lastDigit;
+        }
+
+        public static void Execute()
+        {
+            List<int> givenList = UtilityMethods.getValidNumbersList();
+
+            //List<int> newList = givenList.Select<int,int>(LastDigit(2)).ToList();
+
+            /*
+            List<int> newList = givenList.Select<int,int>(n =>
+           {
+               int numLength = n.ToString().Length;
+
+               return n - (int)Math.Pow(10, numLength - 1);
+           }).ToList();
+           */
+
+            List<int> newList = givenList.Select(LastDigit).ToList();
+
+            newList.ForEach(n => Console.WriteLine(n));
+        }
+    }
 }
