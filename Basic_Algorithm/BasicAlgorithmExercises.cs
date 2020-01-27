@@ -3969,4 +3969,24 @@ namespace Basic_Algorithm_Exercises
             newList.ForEach(n => Console.WriteLine(n));
         }
     }
+
+    public static class Exercise_147
+    {
+        /*147. Write a C# Sharp program to create a new list from a given list of strings 
+        where strings will be in upper case in new string. 
+        Expected Output : 
+        ABC CDEF JS PHP
+        */
+
+        public static void Execute()
+        {
+            List<string> givenList = UtilityMethods.getStringList();
+
+            List<string> newList;
+
+            newList = givenList.Select(e => e.ToUpper()).ToList();
+
+            newList.ForEach(e => Console.WriteLine(e));
+        }
+    }
 }

@@ -162,32 +162,41 @@ namespace Exercises
             List<string> stringList = new List<string>();
             string entry = "";
             string err = "";
+            ConsoleKeyInfo key = default(ConsoleKeyInfo);
+            bool save = false;
 
-            while (entry != "x")
+            while ( save == false )
             {
                 Console.Write("{0} Enter string of at least one character, or ALT+S to save: ", err);
 
-                ConsoleKeyInfo key = Console.ReadKey();
+                key = Console.ReadKey();
 
-                if( key.Modifiers == ConsoleModifiers.Alt & key.Key == ConsoleKey.S )
-                {
-                    Console.ReadLine();
-                    break;
-                }
+                save = ( key.Modifiers == ConsoleModifiers.Alt & key.Key == ConsoleKey.S );
 
-                entry = key.KeyChar + Console.ReadLine();
 
-                if (entry != "")
+                //if( key.Modifiers == ConsoleModifiers.Alt & key.Key == ConsoleKey.S )
+                //{
+                //    Console.ReadLine();
+                //    break;
+                //}
+
+                if (save == false)
                 {
-                    err = "";
-                    stringList.Add(entry);
-                }
-                else
-                {
-                    err = "Entry must consist of at least one character!";
+                    entry = key.KeyChar + Console.ReadLine();
+
+                    if (entry != "")
+                    {
+                        err = "";
+                        stringList.Add(entry);
+                    }
+                    else
+                    {
+                        err = "Entry must consist of at least one character!";
+                    }
                 }
             }
 
+            Console.WriteLine();
             return stringList;
             
         }
