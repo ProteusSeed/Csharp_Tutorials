@@ -3989,4 +3989,20 @@ namespace Basic_Algorithm_Exercises
             newList.ForEach(e => Console.WriteLine(e));
         }
     }
+
+    public static class Exercise_148
+    {
+        /*
+         * Write a C# program to remove all "A" in each string in a given list of strings and return a new string.
+         */
+
+        public static void Execute()
+        {
+            List<string> givenList = UtilityMethods.getStringList();
+
+            givenList = givenList.Select(s => s.ToLower().Replace("a", " ")).ToList();
+
+            givenList.ForEach(s => Console.WriteLine(s));
+        }
+    }
 }

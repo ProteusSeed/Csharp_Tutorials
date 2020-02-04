@@ -173,13 +173,6 @@ namespace Exercises
 
                 save = ( key.Modifiers == ConsoleModifiers.Alt & key.Key == ConsoleKey.S );
 
-
-                //if( key.Modifiers == ConsoleModifiers.Alt & key.Key == ConsoleKey.S )
-                //{
-                //    Console.ReadLine();
-                //    break;
-                //}
-
                 if (save == false)
                 {
                     entry = key.KeyChar + Console.ReadLine();
