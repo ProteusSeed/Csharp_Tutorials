@@ -4005,4 +4005,22 @@ namespace Basic_Algorithm_Exercises
             givenList.ForEach(s => Console.WriteLine(s));
         }
     }
+
+    public static class Exercise_149
+    {
+        /*Write a C# program to create a new list from a given list of integers
+          removing those values which are less than 4
+        */
+
+        public static void Execute()
+        {
+            List<int> givenList = UtilityMethods.getValidNumbersList();
+
+            List<int> newList = givenList.Where(e => e >= 4 ).ToList();
+
+            newList.ForEach(e => Console.WriteLine(e));
+        }
+    }
+
+
 }
