@@ -4022,5 +4022,26 @@ namespace Basic_Algorithm_Exercises
         }
     }
 
+    public static class Exercise_150
+    {
+        /*
+         * Write a C# program to create a new list from a given list of integers
+         * removing those values ending with 7.
+         */
 
+        public static void Execute()
+        {
+            List<int> givenList = UtilityMethods.getValidNumbersList();
+
+            List<int> newList = givenList.Where(
+                e =>
+                {
+                    string number = e.ToString();
+                    return number.Substring(number.Length - 1) != "7";
+                }
+                ).ToList();
+
+            newList.ForEach(e => Console.WriteLine(e));
+        }
+    }
 }
