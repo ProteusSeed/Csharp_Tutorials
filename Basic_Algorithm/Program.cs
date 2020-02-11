@@ -1,5 +1,6 @@
 ﻿using System;
 using Basic_Algorithm_Exercises;
+using Exercises;
 
 namespace Basic_Algorithm
 {
@@ -12,7 +13,7 @@ namespace Basic_Algorithm
 
             while (continueLoop == true)
             {
-                continueLoop = getValidProgramNumber(out number);
+                continueLoop = UtilityMethods.getValidProgramNumber(out number);
 
                 switch (number)
                 {
@@ -625,26 +626,5 @@ namespace Basic_Algorithm
             
         }
 
-        static bool getValidProgramNumber( out int Number)
-        {
-            bool valid = false;
-            string entry = "";
-            int entryNum = 0;
-            string errMsg = "";
-
-            while (valid == false & entry != "x")
-            {
-                Console.WriteLine("{0} \nEnter program number to run or X to exit: ", errMsg);
-
-                entry = Console.ReadLine().ToLower();
-
-                valid = int.TryParse(entry, out entryNum) | entry == "x";
-
-                errMsg = "Value must be a valid number or X to exit!";
-            }
-
-            Number = entryNum;
-            return entry ==  "x" ? false : true;
-        }
     }
 }

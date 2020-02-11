@@ -7,6 +7,28 @@ namespace Exercises
 {
     public static class UtilityMethods
     {
+        public static bool getValidProgramNumber(out int Number)
+        {
+            bool valid = false;
+            string entry = "";
+            int entryNum = 0;
+            string errMsg = "";
+
+            while (valid == false & entry != "x")
+            {
+                Console.WriteLine("{0} \nEnter program number to run or X to exit: ", errMsg);
+
+                entry = Console.ReadLine().ToLower();
+
+                valid = int.TryParse(entry, out entryNum) | entry == "x";
+
+                errMsg = "Value must be a valid number or X to exit!";
+            }
+
+            Number = entryNum;
+            return entry == "x" ? false : true;
+        }
+
         public static int GetValidNumber( string entryMessage = "Enter Number" )
         {
             int number = 0;
@@ -93,12 +115,13 @@ namespace Exercises
             return theString.Trim();
         }
         */
-        public static string GetValidString(string entryMessage = "Enter String of at least one character", int MinimalLength = 1)
+        public static string GetValidString(string entryMessage = "Enter String of at least one character", int MinimalLength = 1, int MaximumLength = 0)
         {
             string theString = "";
             string message = "";
 
             entryMessage = MinimalLength > 1 & entryMessage == "Enter String of at least one character" ? $"Enter string of at least {MinimalLength} characters" : entryMessage;
+            entryMessage += MaximumLength > 0 & entryMessage == "Enter String of at least one character" ? $", and no more than {MaximumLength} characters in length." : "";
 
             while (theString.Length < MinimalLength)
             {

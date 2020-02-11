@@ -1,0 +1,14 @@
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\DataTypes.exe
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\DataTypes.deps.json
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\DataTypes.runtimeconfig.json
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\DataTypes.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\DataTypes.dll
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\DataTypes.pdb
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\Basic_1.dll
+D:\Git\CSharp_Practice\DataTypes\bin\Debug\netcoreapp3.0\Basic_1.pdb
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.AssemblyInfo.cs
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.csproj.CopyComplete
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.dll
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.pdb

@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic_1", "Basic_1\Basic_1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic_Algorithm", "Basic_Algorithm\Basic_Algorithm.csproj", "{4FDD9F9B-87BE-4992-8CB4-62B633B6D550}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{9A3CECD0-19FE-49EA-A401-17EA0E3CA3DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{4FDD9F9B-87BE-4992-8CB4-62B633B6D550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FDD9F9B-87BE-4992-8CB4-62B633B6D550}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FDD9F9B-87BE-4992-8CB4-62B633B6D550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3CECD0-19FE-49EA-A401-17EA0E3CA3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3CECD0-19FE-49EA-A401-17EA0E3CA3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3CECD0-19FE-49EA-A401-17EA0E3CA3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3CECD0-19FE-49EA-A401-17EA0E3CA3DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{25B4E966-4BDA-46F9-9CAD-3F8723AD9B84} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 		{4FDD9F9B-87BE-4992-8CB4-62B633B6D550} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
+		{9A3CECD0-19FE-49EA-A401-17EA0E3CA3DF} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B1ACBCA-AE99-4DE6-A35E-3EF2AE4C26B4}
