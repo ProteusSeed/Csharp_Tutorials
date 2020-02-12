@@ -121,5 +121,82 @@ namespace DataTypes_Exercises
         }
     }
 
+    public static class Exercise_4
+    {
+        /*4. Write a C# Sharp program that takes two numbers as input and performs an operation (+,-,*,x,/) 
+         on them and displays the result of that operation. 
+        Test Data
+        Input first number: 20
+        Input operation: - 
+        Input second number: 12
+        Expected Output :
+        20 - 12 = 8
+        */
+
+        private static char[] operators = new char[]{ '+', '-', '*', '/' };
+
+        private static char getValidOperator()
+        {
+            bool entryValid = false;
+            string entry = ""; char entryToChar = ' ';
+            char operation = ' ';
+
+            while (entryValid == false ) 
+            {
+                Console.WriteLine("Enter one of the following operators +, -, *, /");
+
+                entry = Console.ReadLine();
+                entryToChar = Convert.ToChar(entry);
+
+                if (entry.Length == 1 & Array.FindIndex(operators, c => c.Equals(entryToChar)) != -1 )
+                {
+                    operation = entryToChar;
+                    entryValid = true;
+                }
+                else
+                {
+                    Console.WriteLine("Entry is not a valid operator!");
+                }
+                //Array.Find(operators, c => c = entry
+
+
+               // entry = Console.ReadLine();
+            }
+
+            return operation;
+        }
+
+        public static void Execute()
+        {
+            int firstNumber = UtilityMethods.GetValidNumber();
+            int secondNumber = UtilityMethods.GetValidNumber();
+            char operation = getValidOperator();
+            int result = 0;
+
+            if (operation == '+')
+            {
+                result = firstNumber + secondNumber;
+            }
+
+            if (operation == '-')
+            {
+                result = firstNumber - secondNumber;
+            }
+
+            if (operation == '*')
+            {
+                result = firstNumber * secondNumber;
+            }
+
+            if (operation == '/')
+            {
+                result = firstNumber / secondNumber;
+            }
+
+            Console.WriteLine($"{firstNumber} {operation} {secondNumber} = {result}");
+        }
+
+    }
+
 
 }
