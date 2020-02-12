@@ -80,4 +80,46 @@ namespace DataTypes_Exercises
         }
 
     }
+
+    public static class Exercise_3
+    {
+        /*
+          3. Write a C# Sharp program that takes userid and password as input (type string).
+           After 3 wrong attempts, user will be rejected.
+         */
+         public static void Execute()
+        {
+            string userid = "LexLuthor";
+            string password = "Krypt0N1ght";
+            string useridEntry = "";
+            string passwordEntry = "";
+            int attemptThreshold = 3;
+            int attempts = 1;
+            string message = "User ID and / or Password do not match, please try again.";
+
+            while (attempts <= attemptThreshold)
+            {
+                useridEntry = UtilityMethods.GetValidString("Enter User ID");
+                passwordEntry = UtilityMethods.GetValidString("Enter Password");
+
+                if (useridEntry != userid | passwordEntry != password)
+                {
+                    message = $" You have {attemptThreshold - attempts} attempts left.";
+                    message += attemptThreshold == attempts ? " ACCESS DENIED!!!" : "";
+
+                    Console.WriteLine( message );
+
+                    attempts++;
+                }
+                else {
+                    Console.WriteLine("Welcome to the app!");
+                    break; 
+                }
+            }
+
+
+        }
+    }
+
+
 }
