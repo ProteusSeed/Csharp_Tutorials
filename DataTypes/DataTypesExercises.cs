@@ -222,4 +222,26 @@ namespace DataTypes_Exercises
             Console.WriteLine($"Area of a circle: {area}");
         }
     }
+
+    public static class Exercise_6
+    {
+        /*
+         * 6. Write a C# Sharp program to display certain values of the function x = y2 + 2y + 1 
+            (using integer numbers for y , ranging from -5 to +5).
+         */
+
+        public static void Execute()
+        {
+            int x = 0;
+
+            for (int y = -5; y <= 5; y++)
+            {
+                x = ( y * 2 ) + ( y * 2 ) + 1;
+
+                Console.WriteLine( $"{x} = ({y} * 2) + (2 * {y}) + 1" );
+            }
+        }
+    }
+
+
 }

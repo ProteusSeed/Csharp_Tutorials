@@ -37,6 +37,10 @@ namespace DataTypes
                         Exercise_5.Execute();
                         break;
 
+                    case 6:
+                        Exercise_6.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;
