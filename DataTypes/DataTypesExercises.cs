@@ -198,5 +198,28 @@ namespace DataTypes_Exercises
 
     }
 
+    public static class Exercise_5
+    {
+        /*
+          5. Write a C# Sharp program that takes the radius of a circle as input 
+            and calculate the perimeter and area of the circle. 
+            Test Data
+            Input the radius of the circle :
+            12 
+            Expected Output :
+            Perimeter of Circle : 75.36
 
+         */
+
+        public static void Execute()
+        {
+            decimal radius = UtilityMethods.GetValidDecimal("Input the radius of the circle");
+
+            decimal perimeter = 2 * (decimal)Math.PI * radius;
+            decimal area = (decimal)( Math.PI * Math.Pow((double)radius, 2) );
+
+            Console.WriteLine($"Perimeter of a circle: {perimeter}");
+            Console.WriteLine($"Area of a circle: {area}");
+        }
+    }
 }
