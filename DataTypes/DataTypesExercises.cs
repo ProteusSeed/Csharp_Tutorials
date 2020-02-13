@@ -243,5 +243,39 @@ namespace DataTypes_Exercises
         }
     }
 
+    public static class Exercise_7
+    {
+        /*
+         * 7. Write a C# Sharp program that takes distance and time as input 
+            and displays the speed in kilometers per hour and miles per hour. 
+            Test Data:
+            Input distance(meters): 50000 
+            Input timeSec(hour): 1 
+            Input timeSec(minutes): 35
+            Input timeSec(seconds): 56
+            Expected Output:
+            Your speed in meters/sec is 8.686588
+            Your speed in km/h is 31.27172 
+            Your speed in miles/h is 19.4355
+         */
 
+        public static void Execute()
+        {
+            double distance = (double)UtilityMethods.GetValidDecimal("Input distance(meters)");
+            int timeHour = UtilityMethods.GetValidNumber("Input time(hours)");
+            int timeMinutes = UtilityMethods.GetValidNumber("Input time(minutes)");
+            int timeSeconds = UtilityMethods.GetValidNumber("Input time(seconds)");
+
+            TimeSpan time = new TimeSpan(timeHour, timeMinutes, timeSeconds);
+
+            double speedMeters = distance / time.TotalSeconds;
+            double speedKM = ( distance / 1000 ) / time.TotalHours;
+            double speedMiles = ( distance * 0.00062137D ) / time.TotalHours;
+
+            Console.WriteLine("Your speed in meters/sec is: {0}", speedMeters);
+            Console.WriteLine("Your speed in km/h is: {0}", speedKM);
+            Console.WriteLine("Your speed in miles/h is: {0}", speedMiles);
+
+        }
+    }
 }
