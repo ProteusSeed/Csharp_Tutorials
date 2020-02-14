@@ -83,6 +83,33 @@ namespace Exercises
 
             return number;
         }
+        public static double GetValidDouble(string entryMessage = "Enter number (of type double) or ESC to cancel: ")
+        {
+            ConsoleKeyInfo key = default(ConsoleKeyInfo);
+            double number = 0.00D;
+            bool entryValid = false;
+            bool exit = false;
+            string entry = "";
+            string message = "";
+
+            Console.WriteLine(entryMessage);
+
+            while ( entryValid == false )
+            {
+                Console.WriteLine(message);
+
+                key = Console.ReadKey();
+
+                if (key.Key == ConsoleKey.Escape) break;
+
+                entry = key.KeyChar + Console.ReadLine();
+
+                entryValid = double.TryParse(entry, out number);
+                message = "Value must be a valid number! " + entryMessage;
+            }
+
+            return number;
+        }
 
         public static decimal GetValidDecimal(string entryMessage = "Enter decimal: ")
         {

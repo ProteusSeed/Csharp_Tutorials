@@ -278,4 +278,29 @@ namespace DataTypes_Exercises
 
         }
     }
+
+    public static class Exercise_8
+    {
+        /*
+         8. Write a C# Sharp program that takes the radius of a sphere as input 
+            and calculate and display the surface and volume of the sphere. 
+            Test Data:
+            Radius: 2 
+            Expected Output:
+            50.26548
+            33.51032
+         */
+         public static void Execute()
+        {
+            double radius = UtilityMethods.GetValidDouble();
+
+            double surface = 4 * Math.PI * (Math.Pow(radius, 2));
+            double volume = (4D /3D) * Math.PI * (Math.Pow(radius,3));
+
+            Console.WriteLine("The surface of the circle is: {0}", surface);
+            Console.WriteLine("The volume of the circle is: {0}", volume);
+        }
+    }
+
+
 }
