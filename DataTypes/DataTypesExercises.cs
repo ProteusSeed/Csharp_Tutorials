@@ -302,5 +302,72 @@ namespace DataTypes_Exercises
         }
     }
 
+    public static class Exercise_9
+    {
+        /*
+         9. Write a C# Sharp program that takes a character as input and check the input (lowercase) is a vowel
+            a digit, or any other symbol. 
+            Test Data:
+            Input a symbol: a
+            Expected Output:
+            It's a lowercase vowel. 
+         */
+
+        public static void Execute()
+        {
+            string message = "Character is a ";
+            char character = UtilityMethods.GetValidChar();
+
+            if( char.IsDigit(character) )
+            {
+                message += "digit";
+            }
+            else
+            {
+                if (char.IsSymbol(character) | char.IsPunctuation(character))
+                {
+                    message += "Symbol";
+                }
+                else
+                {
+                    if (lowercaseVowel(character))
+                    {
+                        message = "lowercase vowel";
+                    }
+                    else
+                    {
+                        message = "other";
+                    }
+                }
+            }
+           
+            Console.WriteLine(message);
+        }
+
+        private static bool lowercaseVowel( char character)
+        {
+            char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+            return char.IsLower(character) & Array.Find(vowels, e => e == character) == character;
+        }
+    }
+
+    public static class Exercise_10
+    {
+        /*10. Write a C# Sharp program that takes two numbers as input 
+         and returns true or false when both numbers are even or odd.
+         */
+
+        public static void Execute()
+        {
+            int number1 = UtilityMethods.GetValidNumber();
+            int number2 = UtilityMethods.GetValidNumber();
+
+            bool result = number1 % 2 == number2 % 2;
+
+            Console.WriteLine(result);
+        }
+    }
+
 
 }

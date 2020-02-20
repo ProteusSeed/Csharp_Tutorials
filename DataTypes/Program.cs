@@ -49,6 +49,14 @@ namespace DataTypes
                         Exercise_8.Execute();
                         break;
 
+                    case 9:
+                        Exercise_9.Execute();
+                        break;
+
+                    case 10:
+                        Exercise_10.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;
