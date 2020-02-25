@@ -369,5 +369,51 @@ namespace DataTypes_Exercises
         }
     }
 
+    public static class Exercise_11
+    {
+        /*
+         11. Write a C# Sharp program that takes a decimal number as input and displays its equivalent in binary form. 
+            Test Data:
+            Number to convert (or "end")? 25
+            Expected Output:
+            Binary: 11001
+         */
 
+        public static string decimalToBinary(int baseNumber, decimal decimalNumber)
+            {
+            string binary = "";
+            int quotient = (int)decimalNumber;
+            decimal multiplier = decimalNumber - quotient;
+
+                //Convert integral part of decimal
+                while ( quotient > 0 )
+                {
+                    binary = (quotient % 2 > 0 ? "1" : "0") + binary;
+                    quotient = quotient / 2;
+                }
+
+                binary += multiplier > 0 ? "." : "";
+
+                //convert fractional part of decimal
+                while (multiplier > 0)
+                {
+                    multiplier *= 2;
+
+                    binary += ((int)multiplier).ToString();
+
+                    multiplier = multiplier - (int)multiplier;
+                }
+
+                return binary;
+            }
+
+        public static void Execute()
+        {
+            decimal decNumber = UtilityMethods.GetValidDecimal();
+
+            string binary = decimalToBinary(2, decNumber);
+
+            Console.WriteLine(binary);
+        }
+    }
 }
