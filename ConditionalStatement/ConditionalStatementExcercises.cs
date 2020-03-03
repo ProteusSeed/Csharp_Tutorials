@@ -64,4 +64,39 @@ namespace Conditional_Statement
 
         }
     }
+
+    public static class Exercise_4
+    {
+        /*
+         4. Write a C# Sharp program to find whether a given year is a leap year or not. 
+            Test Data : 2016 
+            Expected Output :
+            2016 is a leap year.
+         */
+
+        public static void Execute()
+        {
+            string message = "";
+            int year = UtilityMethods.GetValidNumber();
+
+            DateTime givenDate;// = Convert.ToDateTime( $"02/29/{year}" );
+            
+            bool isYear = DateTime.TryParse($"02/29/{year}", out givenDate);
+
+            if (isYear)
+            {
+                string isLeap = DateTime.IsLeapYear(year) ? " " : " not ";
+
+                message = $"{year} is{isLeap}a leap year";
+            }
+            else
+            {
+                message = $"{year} is not a year!";
+            }
+
+            Console.WriteLine(message);
+        }
+    }
+
+
 }
