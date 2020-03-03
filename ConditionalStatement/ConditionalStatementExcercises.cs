@@ -25,4 +25,43 @@ namespace Conditional_Statement
             Console.WriteLine($"{firstNumber} and {secondNumber} are{Condition}equal.");
         }
     }
+
+    public static class Exercise_2
+    {
+        /*2. Write a C# Sharp program to check whether a given number is even or odd. 
+        Test Data : 15
+        Expected Output : 
+        15 is an odd integer
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+
+            string result = number % 2 > 0 ? "odd" : "even";
+
+            Console.WriteLine($"{number} is {result}");
+
+        }
+    }
+
+    public static class Exercise_3
+    {
+        /*
+         3. Write a C# Sharp program to check whether a given number is positive or negative. 
+            Test Data : 14 
+            Expected Output :
+            14 is a positive number
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidNumber();
+
+            string sign = number < 0 ? "negative" : "position";
+
+            Console.WriteLine($"{number} is a {sign} number.");
+
+        }
+    }
 }

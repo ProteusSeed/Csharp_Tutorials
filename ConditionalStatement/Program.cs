@@ -20,6 +20,14 @@ namespace Conditional_Statement
                         Exercise_1.Execute();
                         break;
 
+                    case 2:
+                        Exercise_2.Execute();
+                        break;
+
+                    case 3:
+                        Exercise_3.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;
