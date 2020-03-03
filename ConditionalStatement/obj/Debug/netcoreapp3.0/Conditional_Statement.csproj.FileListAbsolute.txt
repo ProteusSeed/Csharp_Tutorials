@@ -1,0 +1,14 @@
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Conditional_Statement.exe
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Conditional_Statement.deps.json
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Conditional_Statement.runtimeconfig.json
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Conditional_Statement.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Conditional_Statement.dll
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Conditional_Statement.pdb
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Basic_1.dll
+D:\Git\CSharp_Practice\ConditionalStatement\bin\Debug\netcoreapp3.0\Basic_1.pdb
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.AssemblyInfo.cs
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.csproj.CopyComplete
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.dll
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.pdb
