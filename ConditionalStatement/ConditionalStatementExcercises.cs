@@ -145,5 +145,45 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_7
+    {
+        /*
+         7. Write a C# Sharp program to accept the height of a person in centimeter 
+            and categorize the person according to their height. 
+            Test Data : 135 
+            Expected Output: The person is Dwarf.
+        */
+
+        private class heightChart { 
+            //heightChart( int minHeight, int maxHeight, string category )
+            //{
+            //    MinHeight = minHeight;
+            //    MaxHeight = maxHeight;
+            //    Category = category;
+            //}
+
+            public int MinHeight { get; set; }
+            public int MaxHeight { get; set; }
+            public string Category { get; set; }
+        }
+
+        public static void Execute()
+        {
+            List<heightChart> heights = new List<heightChart>() { 
+                                                                new heightChart { MinHeight = 0, MaxHeight = 146, Category = "dwarf" },
+                                                                new heightChart { MinHeight = 147, MaxHeight = 160, Category = "short" },
+                                                                new heightChart { MinHeight = 161, MaxHeight = 170, Category = "average" },
+                                                                new heightChart { MinHeight = 171, MaxHeight = 1000, Category = "tall" },
+                                                                };
+
+            int height = UtilityMethods.GetValidAbsoluteNumber("Enter height in centimeters");
+
+            heightChart heightRange = heights.Find( e => e.MinHeight <= height & e.MaxHeight >= height );
+
+            Console.WriteLine("The person is {0}", heightRange.Category);
+
+        }
+    }
+
 
 }
