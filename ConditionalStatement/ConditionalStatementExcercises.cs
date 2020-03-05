@@ -98,5 +98,52 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_5
+    {
+        /*5. Write a C# Sharp program to read the age of a candidate 
+        and determine whether it is eligible for casting his/her own vote. 
+        Test Data : 21 
+        Expected Output:
+        Congratulation! You are eligible for casting your vote.
+        */
+
+       public static void Execute()
+        {
+            const int ageThreshold = 21;
+
+            int age = UtilityMethods.GetValidAbsoluteNumber("Enter Candidate Age");
+
+            string message = age >= ageThreshold ? "Congratulations! You are eligible for casting your vote." 
+                                                    : "You are not eligible for casting your vote.";
+
+            Console.WriteLine(message);
+        }
+
+    }
+
+    public static class Exercise_6
+    {
+        /*6. Write a C# Sharp program to read the value of an integer m 
+        and display the value of n is 1 when m is larger than 0
+        , 0 when m is 0 
+        and -1 when m is less than 0. 
+
+        Test Data : -5 
+        Expected Output:
+        The value of n = -1
+        */
+
+        public static void Execute()
+        {
+            int m = 0;
+            int n = 0;
+
+            m = UtilityMethods.GetValidNumber();
+            n = m > 0 ? 1 : ( m < 0 ? -1 : 0 );
+
+            Console.WriteLine("The value of n = {0}", n);
+        }
+    }
+
 
 }
