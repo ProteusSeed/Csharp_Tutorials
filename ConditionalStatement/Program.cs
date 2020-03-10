@@ -44,6 +44,10 @@ namespace Conditional_Statement
                         Exercise_7.Execute();
                         break;
 
+                    case 8:
+                        Exercise_8.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;

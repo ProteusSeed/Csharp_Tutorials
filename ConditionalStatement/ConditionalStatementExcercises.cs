@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Exercises;
+using System.Linq;
 
 namespace Conditional_Statement
 {
@@ -185,5 +186,40 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_8
+    {
+        /*8. Write a C# Sharp program to find the largest of three numbers. 
+            Test Data :
+            Input the 1st number :25 
+            Input the 2nd number :63 
+            Input the 3rd number :10 
+            Expected Output :
+            The 2nd Number is the greatest among three 
+        */
 
+        private class Numbers
+        {
+            public int number { get; set; }
+            public string name { get; set; }
+        }
+
+        public static void Execute()
+        {
+            int number1 = UtilityMethods.GetValidNumber("Enter 1st number");
+            int number2 = UtilityMethods.GetValidNumber("Enter 2nd number");
+            int number3 = UtilityMethods.GetValidNumber("Enter 3rd number");
+
+            List<Numbers> numbers = new List<Numbers> { 
+                                                         new Numbers() { number = number1, name = "1st number" } 
+                                                        ,new Numbers{ number = number2, name = "2nd number" }
+                                                        ,new Numbers{ number = number3, name = "3rd number" }
+                                                      };
+
+            List<Numbers> largest = numbers.OrderBy(n => n.number).ToList();
+
+            string largestName = largest.Last().name;
+
+            Console.WriteLine(largestName);
+        }
+    }
 }
