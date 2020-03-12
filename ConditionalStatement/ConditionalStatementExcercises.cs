@@ -222,4 +222,42 @@ namespace Conditional_Statement
             Console.WriteLine(largestName);
         }
     }
+
+    public static class Exercise_9
+    {
+        /*9. Write a C# Sharp program to accept a coordinate point in an XY coordinate system
+            and determine in which quadrant the coordinate point lies. 
+            Test Data :
+            Input the value for X coordinate :7 
+            Input the value for Y coordinate :9 
+            Expected Output :
+            The coordinate point (7,9) lies in the First quadrant.
+        */
+        
+        private static string getQuadrant(int x, int y)
+        {
+            if (x > 0 & y > 0) return "1st";
+
+            if (x < 0 & y < 0) return "3rd";
+
+            if (x < 0 & y > 0) return "4th";
+
+            if (x > 0 & y < 0) return "2nd";
+
+            return "Origin";
+        }
+
+        public static void Execute()
+        {
+            int x = UtilityMethods.GetValidNumber("Input the value for X coordinate");
+            int y = UtilityMethods.GetValidNumber("Input the value for y coordinate");
+
+            string quadrant = getQuadrant(x, y);
+
+            Console.WriteLine($"The coordinate point ({x},{y}) lies in the {quadrant} quadrant.");
+
+        }
+    }
+
+
 }
