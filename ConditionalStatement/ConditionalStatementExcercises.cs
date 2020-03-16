@@ -81,7 +81,7 @@ namespace Conditional_Statement
             int year = UtilityMethods.GetValidNumber();
 
             DateTime givenDate;// = Convert.ToDateTime( $"02/29/{year}" );
-            
+
             bool isYear = DateTime.TryParse($"02/29/{year}", out givenDate);
 
             if (isYear)
@@ -108,13 +108,13 @@ namespace Conditional_Statement
         Congratulation! You are eligible for casting your vote.
         */
 
-       public static void Execute()
+        public static void Execute()
         {
             const int ageThreshold = 21;
 
             int age = UtilityMethods.GetValidAbsoluteNumber("Enter Candidate Age");
 
-            string message = age >= ageThreshold ? "Congratulations! You are eligible for casting your vote." 
+            string message = age >= ageThreshold ? "Congratulations! You are eligible for casting your vote."
                                                     : "You are not eligible for casting your vote.";
 
             Console.WriteLine(message);
@@ -140,7 +140,7 @@ namespace Conditional_Statement
             int n = 0;
 
             m = UtilityMethods.GetValidNumber();
-            n = m > 0 ? 1 : ( m < 0 ? -1 : 0 );
+            n = m > 0 ? 1 : (m < 0 ? -1 : 0);
 
             Console.WriteLine("The value of n = {0}", n);
         }
@@ -155,7 +155,8 @@ namespace Conditional_Statement
             Expected Output: The person is Dwarf.
         */
 
-        private class heightChart { 
+        private class heightChart
+        {
             //heightChart( int minHeight, int maxHeight, string category )
             //{
             //    MinHeight = minHeight;
@@ -170,7 +171,7 @@ namespace Conditional_Statement
 
         public static void Execute()
         {
-            List<heightChart> heights = new List<heightChart>() { 
+            List<heightChart> heights = new List<heightChart>() {
                                                                 new heightChart { MinHeight = 0, MaxHeight = 146, Category = "dwarf" },
                                                                 new heightChart { MinHeight = 147, MaxHeight = 160, Category = "short" },
                                                                 new heightChart { MinHeight = 161, MaxHeight = 170, Category = "average" },
@@ -179,7 +180,7 @@ namespace Conditional_Statement
 
             int height = UtilityMethods.GetValidAbsoluteNumber("Enter height in centimeters");
 
-            heightChart heightRange = heights.Find( e => e.MinHeight <= height & e.MaxHeight >= height );
+            heightChart heightRange = heights.Find(e => e.MinHeight <= height & e.MaxHeight >= height);
 
             Console.WriteLine("The person is {0}", heightRange.Category);
 
@@ -209,8 +210,8 @@ namespace Conditional_Statement
             int number2 = UtilityMethods.GetValidNumber("Enter 2nd number");
             int number3 = UtilityMethods.GetValidNumber("Enter 3rd number");
 
-            List<Numbers> numbers = new List<Numbers> { 
-                                                         new Numbers() { number = number1, name = "1st number" } 
+            List<Numbers> numbers = new List<Numbers> {
+                                                         new Numbers() { number = number1, name = "1st number" }
                                                         ,new Numbers{ number = number2, name = "2nd number" }
                                                         ,new Numbers{ number = number3, name = "3rd number" }
                                                       };
@@ -233,7 +234,7 @@ namespace Conditional_Statement
             Expected Output :
             The coordinate point (7,9) lies in the First quadrant.
         */
-        
+
         private static string getQuadrant(int x, int y)
         {
             if (x > 0 & y > 0) return "1st";
@@ -256,6 +257,110 @@ namespace Conditional_Statement
 
             Console.WriteLine($"The coordinate point ({x},{y}) lies in the {quadrant} quadrant.");
 
+        }
+    }
+
+    public static class Exercise_10
+    {
+        /*10. Write a C# Sharp program to find the eligibility of admission for a professional course 
+        based on the following criteria: 
+        Marks in Maths >=65
+        Marks in Phy >=55
+        Marks in Chem>=50
+        Total in all three subject >=180
+        or
+        Total in Math and Subjects >=140 
+        Test Data : 
+        Input the marks obtained in Physics :65 
+        Input the marks obtained in Chemistry :51 
+        Input the marks obtained in Mathematics :72
+        Expected Output :
+        The candidate is eligible for admission.
+        */
+
+        const int eligibleGrade = 140;
+
+        public static void Execute()
+        {
+            int Physics = UtilityMethods.GetValidNumber(0, 100, "Input the marks obtained in Physics");
+            int Chemistry = UtilityMethods.GetValidNumber(0, 100, "Input the marks obtained in Chemistry");
+            int Mathematics = UtilityMethods.GetValidNumber(0, 100, "Input the marks obtained in Mathematics");
+
+            int total = Physics + Chemistry + Mathematics;
+
+            string eligibility = total >= eligibleGrade ? "eligible" : "ineligible";
+
+            Console.WriteLine("The candidate is {0} for admission.", eligibility);
+
+        }
+    }
+
+    public static class Exercise_11
+    {
+        /*
+          11. Write a C# Sharp program to calculate root of Quadratic Equation. 
+            Test Data : 
+            Input the value of a : 1 
+            Input the value of b : 5 
+            Input the value of c : 7 
+            Expected Output :
+            Root are imaginary; 
+            No Solution.
+         */
+
+        public static void Execute()
+        {
+            Console.WriteLine("I'm skipping this one.");
+        }
+    }
+
+    public static class Exercise_12
+    {
+        /*
+         * 12. Write a C# Sharp program to read roll no, name and marks of three subjects 
+            and calculate the total, percentage, and division. 
+            Test Data : 
+            Input the Roll Number of the student :784 
+            Input the Name of the Student :James 
+            Input the marks of Physics, Chemistry and Computer Application : 70 80 90
+            Expected Output :
+            Roll No : 784 
+            Name of Student : James 
+            Marks in Physics : 70 
+            Marks in Chemistry : 80 
+            Marks in Computer Application : 90 
+            Total Marks = 240 
+            Percentage = 80.00 
+            Division = First
+        */
+
+        public static void Execute()
+        {
+            int roll = UtilityMethods.GetValidAbsoluteNumber("Input the Roll Number of the student");
+            string name = UtilityMethods.GetValidString("Input the Name of the Student");
+            int physics = UtilityMethods.GetValidAbsoluteNumber("Input the marks in Physics");
+            int chemistry = UtilityMethods.GetValidAbsoluteNumber("Input the marks in Chemistry");
+            int CompApp = UtilityMethods.GetValidAbsoluteNumber("Input the marks in Computer Applications");
+
+            int Total = physics + chemistry + CompApp;
+            decimal Percentage = Total / 300.00m * 100.00m;
+
+            string Division = "";
+
+            Console.WriteLine($"Roll No: {roll}");
+            Console.WriteLine($"Name of Student: {name}");
+            Console.WriteLine($"Marks in Physics: {physics}");
+            Console.WriteLine($"Marks in Chemistry: {chemistry}");
+            Console.WriteLine($"Marks in Computer Application : {CompApp}");
+            Console.WriteLine($"Total Marks = {Total}");
+            Console.WriteLine($"Percentage = {Percentage}");
+
+            if (Percentage >= 60m) Division = "First";
+            if (Percentage >= 48m & Percentage < 60m) Division = "Second";
+            if (Percentage >= 36m & Percentage < 48m) Division = "Pass";
+            if (Percentage < 36m) Division = "Fail";
+
+            Console.WriteLine($"Division = {Division}");
         }
     }
 
