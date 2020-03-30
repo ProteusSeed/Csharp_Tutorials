@@ -364,5 +364,40 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_13
+    {
+        /*
+         13. Write a C# Sharp program to read temperature in centigrade 
+            and display a suitable message according to temperature state below: 
+            Temp < 0 then Freezing weather 
+            Temp 0-10 then Very Cold weather
+            Temp 10-20 then Cold weather
+            Temp 20-30 then Normal in Temp 
+            Temp 30-40 then Its Hot 
+            Temp >=40 then Its Very Hot 
+            Test Data : 
+            42 
+            Expected Output: Its very hot.
+         */
+
+        public static void Execute()
+        {
+            var tempRanges = new[]{
+                new{ low=0, high=10, message="Very Cold Weather"}
+                ,new { low = 0, high = 10, message = "Very Cold Weather" }
+                ,new { low = 11, high = 20, message = "Cold Weather" }
+                ,new { low = 21, high = 30, message = "Normal" }
+                ,new { low = 31, high = 40, message = "Its Hot" }
+                ,new { low = 41, high = 100, message = "Its Very Hot" }
+                };
+
+            int temperature = UtilityMethods.GetValidNumber("Enter Temperature");
+
+            string message = tempRanges.Where(e => e.low <= temperature & e.high >= temperature).First().message;
+
+            Console.WriteLine(message);
+        }
+    }
+
 
 }
