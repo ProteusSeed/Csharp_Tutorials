@@ -399,5 +399,28 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_14
+    {
+        /*14. Write a C# Sharp program to check whether a triangle is Equilateral, Isosceles or Scalene. 
+            Test Data: 50 50 60 
+            Expected Output: This is an isosceles triangle.
+        */
+        public static void Execute()
+        {
+            decimal angle1 = UtilityMethods.GetValidDecimal("Enter first angle");
+            decimal angle2 = UtilityMethods.GetValidDecimal("Enter second angle");
+            decimal angle3 = UtilityMethods.GetValidDecimal("Enter third angle");
 
+            string triangle = "";
+
+            if (angle1 == angle2 & angle2 == angle3) triangle = "Equalateral";
+
+            if ((angle1 == angle2 & angle3 != angle2) | (angle2 == angle3 & angle1 != angle2) | (angle1 == angle3 & angle1 != angle2) ) triangle = "Isosceles";
+
+            if (angle1 != angle2 & angle2 != angle3 & angle1 != angle3) triangle = "Scalene";
+
+            Console.WriteLine($"This is an {triangle} triangle.");
+
+        }
+    }
 }
