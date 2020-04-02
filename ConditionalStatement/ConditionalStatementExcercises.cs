@@ -413,14 +413,34 @@ namespace Conditional_Statement
 
             string triangle = "";
 
-            if (angle1 == angle2 & angle2 == angle3) triangle = "Equalateral";
+            if (angle1 == angle2 & angle2 == angle3 & angle1 == 60) triangle = "Equalateral";
 
             if ((angle1 == angle2 & angle3 != angle2) | (angle2 == angle3 & angle1 != angle2) | (angle1 == angle3 & angle1 != angle2) ) triangle = "Isosceles";
 
             if (angle1 != angle2 & angle2 != angle3 & angle1 != angle3) triangle = "Scalene";
 
+            if (triangle == "") triangle = "invalid";
+
             Console.WriteLine($"This is an {triangle} triangle.");
 
+        }
+    }
+
+    public static class Exercise_15
+    {
+        /*15. Write a C# Sharp program to check whether a triangle can be formed by the given value for the angles. 
+            Test Data: 40 55 65
+            Expected Output: The triangle is not valid.
+        */
+        public static void Execute()
+        {
+            decimal angle1 = UtilityMethods.GetValidDecimal("Enter 1st angle");
+            decimal angle2 = UtilityMethods.GetValidDecimal("Enter 2nd angle");
+            decimal angle3 = UtilityMethods.GetValidDecimal("Enter 3rd angle");
+
+            string validity = angle1 + angle2 + angle3 != 180m ? "not" : "";
+
+            Console.WriteLine($"The triangle is {validity} valid.");
         }
     }
 }
