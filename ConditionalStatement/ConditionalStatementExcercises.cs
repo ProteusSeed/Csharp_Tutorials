@@ -443,4 +443,25 @@ namespace Conditional_Statement
             Console.WriteLine($"The triangle is {validity} valid.");
         }
     }
+
+    public static class Exercise_16
+    {
+        /*16. Write a C# Sharp program to check whether an alphabet is a vowel or consonant.
+            Test Data: k
+            Expected Output: The alphabet is a consonant.
+        */
+
+        public static void Execute()
+        {
+            List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
+            
+            char letter = UtilityMethods.GetValidChar("Enter letter");
+
+            bool isVowel = vowels.Contains(letter);
+
+            string letterType = isVowel == true ? "vowel" : "consonent";
+
+            Console.WriteLine($"The letter is a {letterType}");
+        }
+    }
 }
