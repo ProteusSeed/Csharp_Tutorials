@@ -464,4 +464,26 @@ namespace Conditional_Statement
             Console.WriteLine($"The letter is a {letterType}");
         }
     }
+
+    public static class Exercise_17
+    {
+        /*
+         * 17. Write a C# Sharp program to calculate profit and loss on a transaction. 
+            Test Data: 500 700
+            Expected Output: You can book your profit amount : 200
+         */
+
+        public static void Execute()
+        {
+            decimal cost = UtilityMethods.GetValidDecimal("Enter item cost");
+            decimal salePrice = UtilityMethods.GetValidDecimal("Enter sale price");
+
+            decimal profit = salePrice - cost;
+
+            string message = profit > 0 ? $"You can book your profit amount {profit}" :
+                    profit < 0 ? $"You lost { Math.Abs(profit)}" : "You broke even";
+
+            Console.WriteLine(message);
+        }
+    }
 }
