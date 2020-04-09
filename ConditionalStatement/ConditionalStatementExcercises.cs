@@ -486,4 +486,63 @@ namespace Conditional_Statement
             Console.WriteLine(message);
         }
     }
+
+    public static class Exercise_18
+    {
+        /*18. Write a program in C# Sharp to calculate and print the Electricity bill of a given customer. 
+         The customer id., name and unit consumed by the user should be taken from the keyboard 
+         and display the total amount to pay to the customer. The charge are as follow : 
+            Unit
+            Charge/unit
+            upto 199 
+                @1.20
+            200 and above but less than 400 
+                @1.50
+            400 and above but less than 600
+                @1.80
+            600 and above 
+                @2.00
+            If bill exceeds Rs. 400 then a surcharge of 15% will be charged and the minimum bill should be of Rs. 100/-
+            Test Data : 
+                1001
+                James 
+                800 
+                Expected Output :
+                Customer IDNO :1001 
+                Customer Name :James 
+                unit Consumed :800 
+                Amount Charges @Rs. 2.00 per unit : 1600.00 
+                Surchage Amount : 240.00 
+                Net Amount Paid By the Customer : 1840.00
+        */
+
+        public static void Execute()
+        {
+            int custID = UtilityMethods.GetValidAbsoluteNumber("Enter customer ID#");
+            string custName = UtilityMethods.GetValidString("Enter customer name");
+            int units = UtilityMethods.GetValidAbsoluteNumber("Enter number of units consumed");
+
+            decimal rate = 0.00m;
+
+            if (units <= 199) rate = 1.20m;
+            if (units >= 200 & units <= 399) rate = 1.50m;
+            if (units >= 400 & units <= 599) rate = 1.80m;
+            if (units >= 600 ) rate = 2.00m;
+
+            decimal charges = units * rate;
+
+            decimal surCharge = charges > 400m ? charges * .15m : 0;
+
+            decimal net = charges + surCharge;
+            net = net < 100 ? 100 : net;
+
+            Console.WriteLine($"Customer IDNO: {custID}");
+            Console.WriteLine($"Customer Name: {custName}");
+            Console.WriteLine($"Unit Consumed: {units}");
+            Console.WriteLine($"Amount Charges @Rs. {rate} per unit: {charges}");
+            Console.WriteLine($"Surchage Amount: {surCharge}");
+            Console.WriteLine($"Net Amount Paid By the Customer: {net}");
+            
+        }
+    }
 }
