@@ -545,4 +545,49 @@ namespace Conditional_Statement
             
         }
     }
+
+    public static class Exercise_19
+    {
+        /*
+         * 19. Write a program in C# Sharp to accept a grade and declare the equivalent description : 
+            Grade
+            Description
+            E
+            Excellent
+            V
+            Very Good 
+            G
+            Good
+            A
+            Average
+            F
+            Fail
+            Test Data : 
+                Input the grade :a
+                Expected Output :
+                You have chosen : Average
+         */
+
+        public static void Execute()
+        {
+            Dictionary<char, string> gradeList = new Dictionary<char, string>(){
+                { 'E', "Excellent" }
+                ,{ 'V', "Very Good" }
+                ,{ 'G', "Good" }
+                ,{ 'A', "Average" }
+                ,{ 'F', "Fail" }
+            };
+
+            char grade = UtilityMethods.GetValidChar("Input the grade");
+            grade = char.ToUpper(grade);
+
+            var search = gradeList.Where(e => e.Key.Equals(grade));
+
+            string description = search.Count() > 0 ? search.First().Value : "invalid grade";
+            
+            Console.WriteLine("You have chosen {0}", description);
+        }
+    }
+
+
 }
