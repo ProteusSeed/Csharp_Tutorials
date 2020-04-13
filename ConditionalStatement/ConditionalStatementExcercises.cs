@@ -589,5 +589,21 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_20
+    {
+        /*
+         * 20. Write a program in C# Sharp to read any day number in integer and display day name in the word. 
+            Test Data: 4
+            Expected Output: Thursday
+         */
 
+        public static void Execute()
+        {
+            int DayOfWeek = UtilityMethods.GetValidNumber(0, 6, "Enter number of day of the week.");
+
+            DayOfWeek dow = (DayOfWeek)DayOfWeek;
+
+            Console.WriteLine(dow);
+        }
+    }
 }
