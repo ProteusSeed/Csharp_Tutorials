@@ -601,9 +601,44 @@ namespace Conditional_Statement
         {
             int DayOfWeek = UtilityMethods.GetValidNumber(0, 6, "Enter number of day of the week.");
 
+            //Get enum value by index
             DayOfWeek dow = (DayOfWeek)DayOfWeek;
 
             Console.WriteLine(dow);
         }
     }
-}
+
+    public static class Exercise_21
+    {
+        /*21. Write a program in C# Sharp to read any digit, display in the word. 
+            Test Data : 
+            4
+            Expected Output :
+            Four
+        */
+
+        public static Dictionary<int, string> digits = new Dictionary<int, string>(){ 
+            { 0, "Zero" } 
+            ,{ 1, "One" }
+            ,{ 2, "Two" }
+            ,{ 3, "Three" }
+            ,{ 4, "Four" }
+            ,{ 5, "Five" }
+            ,{ 6, "Six" }
+            ,{ 7, "Seven" }
+            ,{ 8, "Eight" }
+            ,{ 9, "Nine" }
+        };
+
+        public static void Execute()
+        {
+            int digit = UtilityMethods.GetValidNumber(1, 9, "Enter digit from 1 to 9");
+
+            string digitName = "";
+            
+            digits.TryGetValue(digit, out digitName);
+
+            Console.WriteLine(digitName);
+        }
+    }
+} 
