@@ -641,4 +641,24 @@ namespace Conditional_Statement
             Console.WriteLine(digitName);
         }
     }
+
+    public static class Exercise_22
+    {
+        /*
+          22. Write a program in C# Sharp to read any Month Number in integer and display Month name in the word. 
+            Test Data : 
+            4
+            Expected Output:
+            April
+        */
+        public static void Execute()
+        {
+            int month = UtilityMethods.GetValidNumber(1, 12, "Enter number of month");
+
+            string monthName = new DateTime(DateTime.Now.Year, month, 1).ToString("MMMM", System.Globalization.CultureInfo.CurrentCulture);
+
+            Console.WriteLine(monthName);
+
+        }
+    }
 } 
