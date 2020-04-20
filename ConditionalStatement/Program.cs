@@ -104,6 +104,10 @@ namespace Conditional_Statement
                         Exercise_22.Execute();
                         break;
 
+                    case 23:
+                        Exercise_23.Execute();
+                        break;
+
                     case 0:
                         //exit
                         continueLoop = false;

@@ -661,4 +661,27 @@ namespace Conditional_Statement
 
         }
     }
+
+    public static class Exercise_23
+    {
+        /*
+         * 23. Write a program in C# Sharp to read any Month Number in integer 
+            and display the number of days for this month. 
+            Test Data: 7 
+            Expected Output: Month have 31 days
+         */
+
+        public static void Execute()
+        {
+            int monthNumber = UtilityMethods.GetValidNumber(1, 12, "Enter month number");
+
+            int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, monthNumber);
+
+            string monthName = new DateTime(DateTime.Now.Year, monthNumber, 1).ToString("MMMM", System.Globalization.CultureInfo.CurrentCulture);
+
+            Console.WriteLine("Month {0} ({1}) has {2} days in it.", monthNumber, monthName, daysInMonth );
+        }
+    }
+
+
 } 
