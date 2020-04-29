@@ -683,5 +683,88 @@ namespace Conditional_Statement
         }
     }
 
+    public static class Exercise_24
+    {
+        /*
+         * 24. Write a program in C# Sharp which is a Menu-Driven 
+            Program to compute the area of the various geometrical shape. 
+            Test Data : 
+                Input your choice: 1 
+                Input radius of the circle: 5
+                Expected Output:
+                The area is: 78.500000 
+        */
 
+        public static decimal Circle(decimal radius)
+        {
+            //pie * r squared
+
+            decimal area = (decimal)( Math.PI * ( Math.Pow( (double)radius, 2 ) ) );
+
+            return area;
+        }
+
+        public static decimal Quadrilateral(decimal height, decimal width)
+        {
+            decimal area = height * width;
+            
+            return area;
+        }
+
+        public static decimal Triangle(decimal side1, decimal side2, decimal side3 )
+        {
+            decimal p = (side1 + side2 + side3) / 2;
+
+            decimal area = p * (p - side1) * (p -	side2) * (p - side3);
+            area = (decimal)Math.Sqrt( (double)area);
+
+            return area;
+        }
+
+
+        public static void Execute()
+        {
+            string typeOfShape = UtilityMethods.GetValidString("Enter type of shape").ToLower();
+            decimal height, width;
+            decimal area = 0m;
+
+            switch (typeOfShape)
+            {
+                case "square":
+                    height = UtilityMethods.GetValidDecimal("Enter height of square");
+                    width = UtilityMethods.GetValidDecimal("Enter width of square");
+
+                    area = Quadrilateral(height, width);
+                    break;
+
+                case "rectangle":
+                    height = UtilityMethods.GetValidDecimal("Enter height of rectangle");
+                    width = UtilityMethods.GetValidDecimal("Enter width of rectangle");
+
+                    area = Quadrilateral(height, width);
+                    break;
+
+                case "triangle":
+                    decimal side1 = UtilityMethods.GetValidDecimal("Enter length of side 1");
+                    decimal side2 = UtilityMethods.GetValidDecimal("Enter length of side 2");
+                    decimal side3= UtilityMethods.GetValidDecimal("Enter length of side 3");
+
+                    area = Triangle(side1, side2, side3);
+
+                    break;
+
+                case "circle":
+                    decimal radius = UtilityMethods.GetValidDecimal("Enter radius of circle");
+
+                    area = Circle(radius);
+                    break;
+
+                default:
+                    break;
+                
+            }
+
+            Console.WriteLine(area);
+        }
+    }
 } 
