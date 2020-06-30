@@ -713,6 +713,16 @@ namespace Conditional_Statement
 
         public static decimal Triangle(decimal side1, decimal side2, decimal side3 )
         {
+            /*
+             you first have to find the half-perimeter (s) of the triangle
+             ,which you do by adding all three sides and dividing the result by two. 
+             For a triangle with sides a, b and c, 
+             the half-perimeter s = 1/2(a + b + c). 
+             Once you know s, you calculate area using this formula:
+
+             Area = square root [s (s - a) (s - b) (s - c)]
+            */
+
             decimal p = (side1 + side2 + side3) / 2;
 
             decimal area = p * (p - side1) * (p -	side2) * (p - side3);
@@ -724,17 +734,17 @@ namespace Conditional_Statement
 
         public static void Execute()
         {
-            string typeOfShape = UtilityMethods.GetValidString("Enter type of shape").ToLower();
+            string typeOfShape = UtilityMethods.GetValidString("Enter type of shape: Square, Rectangle, Triangle, or Circle").ToLower();
             decimal height, width;
             decimal area = 0m;
 
             switch (typeOfShape)
             {
                 case "square":
-                    height = UtilityMethods.GetValidDecimal("Enter height of square");
-                    width = UtilityMethods.GetValidDecimal("Enter width of square");
+                    height = UtilityMethods.GetValidDecimal("Enter measurement of one side of square");
+                    //width = UtilityMethods.GetValidDecimal("Enter width of square");
 
-                    area = Quadrilateral(height, width);
+                    area = Quadrilateral(height, height);
                     break;
 
                 case "rectangle":
@@ -764,7 +774,7 @@ namespace Conditional_Statement
                 
             }
 
-            Console.WriteLine(area);
+            Console.WriteLine($"The area of this {typeOfShape} is {area}");
         }
     }
 } 
