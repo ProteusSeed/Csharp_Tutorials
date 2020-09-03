@@ -12,3 +12,5 @@ D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_
 D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.csproj.CopyComplete
 D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.dll
 D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.pdb
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\ConditionalStatement\obj\Debug\netcoreapp3.0\Conditional_Statement.genruntimeconfig.cache

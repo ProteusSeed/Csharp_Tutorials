@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace Conditional_Statement
 {
+    //https://www.w3resource.com/csharp-exercises/conditional-statement/index.php
     public static class Exercise_1
     {
         /*
@@ -415,7 +416,7 @@ namespace Conditional_Statement
 
             if (angle1 == angle2 & angle2 == angle3 & angle1 == 60) triangle = "Equalateral";
 
-            if ((angle1 == angle2 & angle3 != angle2) | (angle2 == angle3 & angle1 != angle2) | (angle1 == angle3 & angle1 != angle2) ) triangle = "Isosceles";
+            if ((angle1 == angle2 & angle3 != angle2) | (angle2 == angle3 & angle1 != angle2) | (angle1 == angle3 & angle1 != angle2)) triangle = "Isosceles";
 
             if (angle1 != angle2 & angle2 != angle3 & angle1 != angle3) triangle = "Scalene";
 
@@ -454,7 +455,7 @@ namespace Conditional_Statement
         public static void Execute()
         {
             List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
-            
+
             char letter = UtilityMethods.GetValidChar("Enter letter");
 
             bool isVowel = vowels.Contains(letter);
@@ -527,7 +528,7 @@ namespace Conditional_Statement
             if (units <= 199) rate = 1.20m;
             if (units >= 200 & units <= 399) rate = 1.50m;
             if (units >= 400 & units <= 599) rate = 1.80m;
-            if (units >= 600 ) rate = 2.00m;
+            if (units >= 600) rate = 2.00m;
 
             decimal charges = units * rate;
 
@@ -542,7 +543,7 @@ namespace Conditional_Statement
             Console.WriteLine($"Amount Charges @Rs. {rate} per unit: {charges}");
             Console.WriteLine($"Surchage Amount: {surCharge}");
             Console.WriteLine($"Net Amount Paid By the Customer: {net}");
-            
+
         }
     }
 
@@ -584,7 +585,7 @@ namespace Conditional_Statement
             var search = gradeList.Where(e => e.Key.Equals(grade));
 
             string description = search.Count() > 0 ? search.First().Value : "invalid grade";
-            
+
             Console.WriteLine("You have chosen {0}", description);
         }
     }
@@ -617,8 +618,8 @@ namespace Conditional_Statement
             Four
         */
 
-        public static Dictionary<int, string> digits = new Dictionary<int, string>(){ 
-            { 0, "Zero" } 
+        public static Dictionary<int, string> digits = new Dictionary<int, string>(){
+            { 0, "Zero" }
             ,{ 1, "One" }
             ,{ 2, "Two" }
             ,{ 3, "Three" }
@@ -635,7 +636,7 @@ namespace Conditional_Statement
             int digit = UtilityMethods.GetValidNumber(1, 9, "Enter digit from 1 to 9");
 
             string digitName = "";
-            
+
             digits.TryGetValue(digit, out digitName);
 
             Console.WriteLine(digitName);
@@ -679,7 +680,7 @@ namespace Conditional_Statement
 
             string monthName = new DateTime(DateTime.Now.Year, monthNumber, 1).ToString("MMMM", System.Globalization.CultureInfo.CurrentCulture);
 
-            Console.WriteLine("Month {0} ({1}) has {2} days in it.", monthNumber, monthName, daysInMonth );
+            Console.WriteLine("Month {0} ({1}) has {2} days in it.", monthNumber, monthName, daysInMonth);
         }
     }
 
@@ -699,7 +700,7 @@ namespace Conditional_Statement
         {
             //pie * r squared
 
-            decimal area = (decimal)( Math.PI * ( Math.Pow( (double)radius, 2 ) ) );
+            decimal area = (decimal)(Math.PI * (Math.Pow((double)radius, 2)));
 
             return area;
         }
@@ -707,11 +708,11 @@ namespace Conditional_Statement
         public static decimal Quadrilateral(decimal height, decimal width)
         {
             decimal area = height * width;
-            
+
             return area;
         }
 
-        public static decimal Triangle(decimal side1, decimal side2, decimal side3 )
+        public static decimal Triangle(decimal side1, decimal side2, decimal side3)
         {
             /*
              you first have to find the half-perimeter (s) of the triangle
@@ -725,8 +726,8 @@ namespace Conditional_Statement
 
             decimal p = (side1 + side2 + side3) / 2;
 
-            decimal area = p * (p - side1) * (p -	side2) * (p - side3);
-            area = (decimal)Math.Sqrt( (double)area);
+            decimal area = p * (p - side1) * (p - side2) * (p - side3);
+            area = (decimal)Math.Sqrt((double)area);
 
             return area;
         }
@@ -757,7 +758,7 @@ namespace Conditional_Statement
                 case "triangle":
                     decimal side1 = UtilityMethods.GetValidDecimal("Enter length of side 1");
                     decimal side2 = UtilityMethods.GetValidDecimal("Enter length of side 2");
-                    decimal side3= UtilityMethods.GetValidDecimal("Enter length of side 3");
+                    decimal side3 = UtilityMethods.GetValidDecimal("Enter length of side 3");
 
                     area = Triangle(side1, side2, side3);
 
@@ -771,10 +772,62 @@ namespace Conditional_Statement
 
                 default:
                     break;
-                
+
             }
 
             Console.WriteLine($"The area of this {typeOfShape} is {area}");
+        }
+    }
+
+    public static class Exercise_25
+    {
+        /*
+            Write a program in C# Sharp which is a Menu-Driven Program to perform a simple calculation. 
+
+            Test Date and Expected Output
+            Enter the first Integer :10
+            Enter the second Integer :2
+
+            Here are the options :
+            1-Addition.
+            2-Substraction.
+            3-Multiplication.
+            4-Division.
+            5-Exit.
+
+            Input your choice :3
+            The Multiplication of 10 and 2 is: 20
+        */
+
+        static Dictionary<int, string> calcOptions = new Dictionary<int, string>() 
+            { 
+                 { 1, "Addition" }
+                ,{ 2, "Substraction" }
+                ,{ 3, "Multiplication" }
+                ,{ 4, "Division" }
+                ,{ 5, "Exit" }
+            };
+
+        public static void Execute()
+        {
+            Console.WriteLine("************Calculator***********");
+            Console.WriteLine("Options:");
+            printOptions(calcOptions);
+
+            int option = UtilityMethods.GetValidNumber("Enter option");
+            int firstInt = UtilityMethods.GetValidNumber("Enter 1st Integer");
+            int secondInt = UtilityMethods.GetValidNumber("Enter 2nd Integer");
+        }
+
+        private static void printOptions(Dictionary<int, string> calcOptions)
+        {
+            int length = calcOptions.Count();
+
+            for (int i = 1; i <= length; i++)
+            {
+                Console.WriteLine($"{calcOptions.FirstOrDefault( k => k.Key == i).Key} - {calcOptions.FirstOrDefault(k => k.Key == i).Value}");
+                
+            }
         }
     }
 } 
