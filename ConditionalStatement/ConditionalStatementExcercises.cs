@@ -810,13 +810,28 @@ namespace Conditional_Statement
 
         public static void Execute()
         {
-            Console.WriteLine("************Calculator***********");
-            Console.WriteLine("Options:");
-            printOptions(calcOptions);
+           int option = 0;
 
-            int option = UtilityMethods.GetValidNumber("Enter option");
-            int firstInt = UtilityMethods.GetValidNumber("Enter 1st Integer");
-            int secondInt = UtilityMethods.GetValidNumber("Enter 2nd Integer");
+           Console.WriteLine("************Calculator {0}***********", DateTime.Today);
+
+            while ( option != 5 )
+            {
+                Console.WriteLine("Options:");
+                printOptions(calcOptions);
+
+                option = UtilityMethods.GetValidNumber(1, 5, "Enter option:");
+
+                if ( option < 5 )
+                {
+                    int firstInt = UtilityMethods.GetValidNumber("Enter 1st Integer:");
+                    int secondInt = UtilityMethods.GetValidNumber("Enter 2nd Integer:");
+
+                    decimal result = compute(firstInt, secondInt, option);
+                    calcOptions.TryGetValue(option, out string chosenOption);
+
+                    Console.WriteLine($"The {chosenOption} of {firstInt} and {secondInt} is: {result}\n");
+                }
+            }
         }
 
         private static void printOptions(Dictionary<int, string> calcOptions)
@@ -826,8 +841,41 @@ namespace Conditional_Statement
             for (int i = 1; i <= length; i++)
             {
                 Console.WriteLine($"{calcOptions.FirstOrDefault( k => k.Key == i).Key} - {calcOptions.FirstOrDefault(k => k.Key == i).Value}");
-                
             }
+
+            Console.WriteLine();
+
         }
+
+        private static decimal compute(int int1, int int2, int operation)
+        {
+            decimal result = 0.00m;
+
+            switch (operation)
+            {
+                case 1:
+                    result = int1 + int2;
+                    break;
+                case 2:
+                    result = int1 - int2;
+                    break;
+                case 3:
+                    result = int1 * int2;
+                    break;
+                case 4:
+                    result = int1 / int2;
+                    break;
+                case 5:
+                    result = 0;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+
     }
+
+
 } 
