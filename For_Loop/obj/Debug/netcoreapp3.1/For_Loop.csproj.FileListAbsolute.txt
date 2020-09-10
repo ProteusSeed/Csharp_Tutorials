@@ -1,0 +1,16 @@
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\For_Loop.exe
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\For_Loop.deps.json
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\For_Loop.runtimeconfig.json
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\For_Loop.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\For_Loop.dll
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\For_Loop.pdb
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\Basic_1.dll
+D:\Git\CSharp_Practice\For_Loop\bin\Debug\netcoreapp3.1\Basic_1.pdb
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.AssemblyInfo.cs
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.csproj.CopyComplete
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.dll
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.pdb
+D:\Git\CSharp_Practice\For_Loop\obj\Debug\netcoreapp3.1\For_Loop.genruntimeconfig.cache
