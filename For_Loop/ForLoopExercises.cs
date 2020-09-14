@@ -284,5 +284,31 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_11
+    {
+        /*
+         * 11. Write a program in C# Sharp to make such a pattern like right angle triangle
+            with a number which will repeat a number in a row. 
+            The pattern like :
+            1
+            22
+            333
+            4444
+         */
+
+        public static void Execute()
+        {
+            int triangeHeight = UtilityMethods.GetValidAbsoluteNumber("Enter triange height");
+            int number = 1;
+            string line = "";
+
+            for (int i = 1; i <= triangeHeight; i++)
+            {
+                line = new StringBuilder(i).Insert(0, number.ToString(), i ).ToString();
+                Console.WriteLine(line);
+                number++;
+            }
+        }
+    }
 
 }
