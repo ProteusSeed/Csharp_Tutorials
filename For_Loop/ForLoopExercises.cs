@@ -135,4 +135,122 @@ namespace For_Loop
             }
         }
     }
+
+    public static class Exercise_6
+    {
+        /*
+         6. Write a program in C# Sharp to display the multiplication table of a given integer. 
+            Test Data :
+            Input the number (Table to be calculated) : 15
+            Expected Output :
+            15 X 1 = 15
+            ...
+            ...
+            15 X 10 = 150
+         */
+
+        public static void Execute()
+        {
+            int integer = UtilityMethods.GetValidNumber();
+            int result = 0;
+
+            for (int i = 0; i <= 10; i++)
+            {
+                result = integer * i;
+                Console.WriteLine($"{integer} X {i} = {result}");
+            }
+        }
+    }
+
+    public static class Exercise_7
+    {
+        /*
+          7. Write a program in C# Sharp to display the multiplication table vertically from 1 to n. 
+            Test Data :
+            Input upto the table number starting from 1 : 8
+            Expected Output :
+            Multiplication table from 1 to 8
+            1x1 = 1, 2x1 = 2, 3x1 = 3, 4x1 = 4, 5x1 = 5, 6x1 = 6, 7x1 = 7, 8x1 = 8
+            ...
+            1x10 = 10, 2x10 = 20, 3x10 = 30, 4x10 = 40, 5x10 = 50, 6x10 = 60, 7x10 = 70, 8x10 = 80
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Display multiplication tables up to this number");
+            int result = 0;
+            string table = "";
+
+            for (int i = 1; i <= number; i++)
+            {
+                table = "";
+
+                for (int y = 0; y <= 10; y++)
+                {
+                    result = i * y;
+                    table += $"{i}x{y} = {result}, ";
+                }
+
+                Console.WriteLine(table);
+                
+            }
+        }
+    }
+
+    public static class Exercise_8
+    {
+        /*
+         8. Write a program in C# Sharp to display the n terms of odd natural number and their sum. 
+            Test Data
+            Input number of terms : 10
+            Expected Output :
+            The odd numbers are :1 3 5 7 9 11 13 15 17 19
+            The Sum of odd Natural Number upto 10 terms : 100
+         */
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Display odd natural numbers up to...");
+            int sum = 0;
+
+            for (int i = 1; i < number; i = i + 2)
+            {
+                Console.Write($"{i} ");
+                sum += i;
+
+            }
+
+            Console.WriteLine($"The Sum of odd Natural Number up to {number} terms: {sum}");
+        }
+    }
+
+    public static class Exercise_9
+    {
+        /*
+         9. Write a program in C# Sharp to display the pattern like right angle triangle using an asterisk. 
+            The pattern like :
+            *
+            **
+            ***
+            ****
+         */
+
+        public static void Execute()
+        {
+            int triangleHeight = UtilityMethods.GetValidAbsoluteNumber("Enter height of triangle");
+            int triangeWidth = 1;
+            string line = "";
+
+            for (int i = 0; i < triangleHeight; i++)
+            {
+                line = new StringBuilder(triangeWidth).Insert(0, "*", triangeWidth).ToString();
+
+                Console.WriteLine(line);
+
+                triangeWidth++;
+            }
+        }
+
+    }
+
+
 }
