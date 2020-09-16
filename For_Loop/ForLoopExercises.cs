@@ -311,4 +311,38 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_12
+    {
+        /*
+         * 12. Write a program in C# Sharp to make such a pattern like right angle triangle with number increased by 1.
+            The pattern like :
+            1
+            2 3
+            4 5 6
+            7 8 9 10 
+         */
+
+        public static void Execute()
+        {
+            int triangleHeight = UtilityMethods.GetValidAbsoluteNumber("Enter triangle height");
+            int lineWidth = 1; int n = 1;
+            string triangleLine = "";
+
+            for (int i = 1; i <= triangleHeight; i++)
+            {
+                for (int y = 1; y <= lineWidth; y++)
+                {
+                    triangleLine += n.ToString();
+                    n++;
+                }
+                
+                Console.WriteLine(triangleLine);
+                lineWidth++;
+                triangleLine = "";
+            }
+        }
+    }
+
+
+
 }
