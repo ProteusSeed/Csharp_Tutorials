@@ -383,6 +383,39 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_14
+    {
+        /*
+         14. Write a program in C# Sharp to make such a pattern like a pyramid with an asterisk. Go to the editor
 
+           *
+          * * 
+         * * *
+        * * * *
+       * * * * * 
+      * * * * * *
+         */
+
+        public static void Execute()
+        {
+            int pyramidHeight = UtilityMethods.GetValidNumber();
+            int leadSpaceCount = pyramidHeight;
+            string pyramidRow = "";
+            string spaces = "";
+
+            for (int i = 1; i <= pyramidHeight; i++)
+            {
+                //pyramidRow = new string('*', i).ToString() + " ";
+                pyramidRow = new StringBuilder(i).Insert(0,"* ",i).ToString();
+                spaces = new string(' ', leadSpaceCount).ToString();
+                pyramidRow = spaces + pyramidRow;
+
+                Console.WriteLine(pyramidRow);
+                leadSpaceCount -= 1;
+            }
+
+            
+        }
+    }
 
 }
