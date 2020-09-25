@@ -343,6 +343,46 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_13
+    {
+        /*
+         13. Write a program in C# Sharp to make such a pattern like a pyramid with numbers increased by 1. 
+
+               1 
+              2 3 
+             4 5 6 
+            7 8 9 10
+         */
+        
+        public static void Execute()
+        {
+            int pyramidHeight = UtilityMethods.GetValidAbsoluteNumber();
+            string pyramidRow = "";
+            int number = 1; int numberCount = 1;
+            string spaces = "";
+            int spaceMultiplier = 0;
+
+            for (int pyramidStep = 1; pyramidStep <= pyramidHeight; pyramidStep++)
+            {
+                for (int n = 1; n <= numberCount; n++)
+                {
+                    
+                    pyramidRow += number.ToString() + " ";
+                    number++;
+                }
+
+                spaceMultiplier = 3;
+                spaces = new string(' ', ( ( (pyramidHeight - pyramidStep) * spaceMultiplier) / 2));
+                pyramidRow = spaces + pyramidRow;
+
+                Console.WriteLine( pyramidRow);
+                pyramidRow = "";
+                numberCount++;
+            }           
+            
+        }
+    }
+
 
 
 }
