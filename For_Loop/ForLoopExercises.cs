@@ -418,4 +418,28 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_15
+    {
+        /*
+          15. Write a C# Sharp program to calculate the factorial of a given number. 
+            Test Data :
+            Input the number : 5
+            Expected Output :
+            The Factorial of 5 is: 120
+         */
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+            int calculation = number;
+
+            for (int i = 1; i < number; i++)
+            {
+                calculation = calculation * ( number - i );
+            }
+
+            Console.WriteLine("The factorial of {0} is {1}", number, calculation);
+        }
+    }
+
+
 }
