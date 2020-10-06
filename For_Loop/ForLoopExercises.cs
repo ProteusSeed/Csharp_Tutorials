@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace For_Loop
@@ -438,6 +439,128 @@ namespace For_Loop
             }
 
             Console.WriteLine("The factorial of {0} is {1}", number, calculation);
+        }
+    }
+
+    public static class Exercise_16
+    {
+        /*
+         16. Write a program in C# Sharp to display the n terms of even natural number and their sum.
+            Test Data :
+            Input number of terms : 5
+            Expected Output :
+            The even numbers are :2 4 6 8 10
+            The Sum of even Natural Number upto 5 terms : 30
+         */
+        public static void Execute()
+        {
+            int terms = UtilityMethods.GetValidAbsoluteNumber("Input Number of Terms");
+            //int number = 2;
+            int calculation = 0;
+            string evens = "";
+
+            terms *= 2;
+
+            for (int i = 2; i <= terms; i += 2)
+            {                
+                if ( i % 2 == 0 )
+                {
+                    calculation += i;
+                    evens += i.ToString() + " ";
+                    //number += 2;
+                }
+            }
+
+            Console.WriteLine("The even numbers are: {0}", evens);
+            Console.WriteLine("The Sum of even Natural Numbers upto 5 terms: {0}", calculation);
+
+        }
+    }
+
+    public static class Exercise_17
+    {
+        /*
+          17. Write a program in C# Sharp to make such a pattern like a pyramid 
+            with a number which will repeat the number in the same row. 
+               1
+              2 2
+             3 3 3
+            4 4 4 4
+         */
+        public static void Execute()
+        {
+            int pyramidHeight = UtilityMethods.GetValidAbsoluteNumber("Enter pyramid height");
+            int spaceMultiplier = 0; int numberOfSpaces = 0;  
+            string spaces = ""; string trailingSpaces = ""; 
+            string row = "";           
+
+            for (int i = 1; i <= pyramidHeight; i++)
+            {
+                spaceMultiplier = pyramidHeight.ToString().Length - i.ToString().Length + 1;
+                numberOfSpaces = ( pyramidHeight * spaceMultiplier / 2 ) - ( (i * spaceMultiplier) / 2 );
+
+                spaces = new string( ' ', numberOfSpaces );
+                trailingSpaces = new string(' ', spaceMultiplier);
+                
+                for (int r = 1; r <= i; r++)
+                {
+                    row += string.Concat( i.ToString(), trailingSpaces );   
+                }
+
+                row = spaces + row;
+
+                Console.WriteLine(row);
+
+                row = "";
+            }
+        }
+    }
+
+    public static class Exercise_20
+    {
+        /*20. Write a program in C# Sharp to display the pattern like pyramid using an asterisk 
+            and each row contain an odd number of an asterisks. 
+              *
+             ***
+            *****
+           *******
+        */
+        public static void Execute()
+        {
+            int pyramidHeight = UtilityMethods.GetValidAbsoluteNumber("Enter pyramid height");
+            int PyramidBaseWidth = pyramidHeight * 2;
+            string pyramidBlock = "";
+
+            //using an array grid to create the space/asterisk plot the creates the pyramid
+            string[,] pyramid = new string[pyramidHeight, PyramidBaseWidth];
+
+            for (int row = 0; row < pyramidHeight; row++)
+            {
+                for (int column = 0; column < PyramidBaseWidth; column++)
+                {
+                    //(PyramidBaseWidth-1) is used because columns are zero based
+                    pyramidBlock = column >= (PyramidBaseWidth-1) / 2 - row & column <= (PyramidBaseWidth-1) / 2 + row ? "*" : " ";
+                    pyramid[row, column] = pyramidBlock;
+                }
+                
+            }
+
+            printPyramid(pyramid);
+             
+        }
+
+        public static void printPyramid( string[,] pyramid)
+        {
+            for (int row = 0; row <= pyramid.GetUpperBound(0); row++)
+            {
+                for (int column = 0; column < pyramid.GetUpperBound(1); column++)
+                {
+                    Console.Write(pyramid[row,column]);
+                }
+
+                Console.WriteLine();
+            }                
+            
         }
     }
 
