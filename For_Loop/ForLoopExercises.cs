@@ -564,5 +564,58 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_21
+    {
+        /*
+          21. Write a program in C# Sharp to display the sum of the series [ 9 + 99 + 999 + 9999 ...]. 
+            Test Data :
+            Input the number or terms :5
+            Expected Output :
+            9 99 999 9999 99999
+            The sum of the series = 111105
+         */
+
+        public static void Execute()
+        {
+            int terms = UtilityMethods.GetValidAbsoluteNumber("Enter number of terms");
+            Int64 sum = 0;
+            string summand = "";
+
+            for (int i = 1; i <= terms; i++)
+            {
+                summand += "9";
+                sum += Int64.Parse(summand);
+            }
+
+            Console.WriteLine("The sum of the series = {0}", sum);
+        }
+    }
+
+    public static class Exercise_22
+    {
+        /*
+         * 22. Write a program in C# Sharp to print the Floyd's Triangle. 
+            1
+            01 
+            101
+            0101 
+            10101
+        */
+
+        public static void Execute()
+        {
+            int triangleHeight = UtilityMethods.GetValidAbsoluteNumber("Enter triangle height");
+            string triangleRow = "";
+            char triangleBlock = '0';
+
+            for (int i = 0; i < triangleHeight; i++)
+            {
+                triangleBlock = triangleBlock == '1' ? '0' : '1';
+                triangleRow += triangleBlock;
+                Console.WriteLine(triangleRow);
+            }
+        }
+    }
+
 
 }

@@ -88,6 +88,14 @@ namespace For_Loop
                         case 20:
                             Exercise_20.Execute();
                             break;
+
+                        case 21:
+                            Exercise_21.Execute();
+                            break;
+
+                        case 22:
+                            Exercise_22.Execute();
+                            break;
                     default:
                             Console.WriteLine("Program does not exist!");
                             break;
