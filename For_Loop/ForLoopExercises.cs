@@ -1,6 +1,7 @@
 ﻿using Exercises;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -617,5 +618,81 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_23
+    {
+        /*
+         * 23. Write a program in C# Sharp to display the sum of the series [ 1+x+x^2/2!+x^3/3!+....]. 
+            Test Data :
+            Input the value of x :3
+            Input number of terms : 5
+            Expected Output :
+            The sum is : 16.375000
+            Number of terms = 5
+            The value of x = 3.000000
+         */
+
+    }
+
+    public static class Exercise_25
+    {
+        /*
+         25. Write a program in C# Sharp to display the n terms of square natural number and their sum. 
+            1 4 9 16 ... n Terms
+            Test Data :
+            Input the number of terms : 5
+            Expected Output :
+            The square natural upto 5 terms are :1 4 9 16 25
+            The Sum of Square Natural Number upto 5 terms = 55
+        */
+
+        public static void Execute()
+        {
+            int terms = UtilityMethods.GetValidAbsoluteNumber("Input the number of terms");
+            int square = 0;
+            int sum = 0;
+            string squares = "";
+
+            for (int i = 1; i <= terms; i++)
+            {
+                square = i * i;
+                squares += square.ToString() + " ";
+                sum += square;
+            }
+
+            Console.WriteLine($"The square natural upto {terms} terms are {squares}");
+            Console.WriteLine($"The Sum of Square Natural Number up to {terms} terms = {sum}");
+
+        }
+    }
+
+    public static class Exercise_26
+    {
+        /*
+         26. Write a program in C# Sharp to find the sum of the series 1 +11 + 111 + 1111 + .. n terms.
+            Test Data :
+            Input the number of terms : 5
+            Expected Output :
+            1 + 11 + 111 + 1111 + 11111 +
+            The Sum is : 12345
+         */
+
+        public static void Execute()
+        {
+            int terms = UtilityMethods.GetValidAbsoluteNumber("Number of methods");
+            string number = "";
+            string output = "";
+            int sum = 0;
+
+            for (int n = 1; n <= terms; n++)
+            {
+                number = new string('1', n).ToString();
+                sum += int.Parse(number);
+                output += number + " + ";
+            }
+
+            Console.WriteLine(output);
+            Console.WriteLine(sum);
+        }
+    }
 
 }
