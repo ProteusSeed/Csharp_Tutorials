@@ -776,5 +776,45 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_32
+    {
+        /*32. Write a C# Sharp program to determine whether a given number is prime or not. 
+         Test Data :
+        Input a number: 13
+        Expected Output :
+        13 is a prime number.
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            int half = number / 2;
+
+            bool prime = true;
+            int quotient = 0; int remainder = 0;
+
+            if (number > 0)
+            {
+                for (int i = half; i > 2; i--)
+                {
+                    quotient = Math.DivRem(number, i, out remainder);
+
+                    if (quotient > 1 & remainder == 0)
+                    {
+                        prime = false;
+                        break;
+                    };
+                }
+            }
+            else
+            {
+                prime = false;
+            }
+
+
+            Console.WriteLine(prime);
+        }
+    }
 
 }
