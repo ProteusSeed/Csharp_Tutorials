@@ -695,4 +695,86 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_27
+    {
+        /*
+         27. Write a C# Sharp program to check whether a given number is perfect number or not.
+            Test Data :
+            Input the number : 56
+            Expected Output :
+            The positive divisor : 1 2 4 7 8 14 28
+            The sum of the divisor is : 64
+            So, the number is not perfect.
+         */
+
+        public static void Execute()
+        {
+            Console.WriteLine("skipped");
+        }
+
+    }
+
+    public static class Exercise_28
+    {
+        /*
+         * 28. Write a C# Sharp program to find the perfect numbers within a given range of number. 
+            Test Data :
+            Input the starting range or number : 1
+            Input the ending range of number : 50
+            Expected Output :
+            The Perfect numbers within the given range : 6 28
+        */
+    }
+
+    public static class Exercise_31
+    {
+        /*
+        31. Write a program in C# Sharp to display the pattern like a diamond. 
+            *
+           ***
+          *****
+         *******
+        *********
+         *******
+          *****
+           ***
+            *
+        */
+
+        public static void Execute()
+        {
+            int height = UtilityMethods.GetValidAbsoluteNumber("Enter diamond height");
+            int numberOfSpace = height + 1;
+            int numberOfBlocks = 1;
+            string spaces = ""; string row = "";
+
+            for (int i = 1; i <= height; i += 1)
+            {
+                spaces = new string(' ', numberOfSpace);
+                row = new string('*', numberOfBlocks);
+
+                Console.WriteLine(spaces + row);
+
+                numberOfBlocks += 2;
+                if(numberOfSpace > 0) numberOfSpace--;
+            }
+
+            numberOfSpace += 2;
+            numberOfBlocks -= 4;
+
+            for (int r = 1; r < height; r += 1)
+            {
+                spaces = new string(' ', numberOfSpace);
+                row = new string('*', numberOfBlocks);
+
+                Console.WriteLine(spaces + row);
+
+                numberOfBlocks -= 2;
+                numberOfSpace++;
+            }
+
+        }
+    }
+
+
 }
