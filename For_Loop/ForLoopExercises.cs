@@ -894,4 +894,48 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_34
+    {
+        /*
+          34. Write a program in C# Sharp to find the prime numbers within a range of numbers. 
+            Test Data :
+                Input starting number of range: 1
+                Input ending number of range : 50
+                Expected Output :
+                The prime number between 1 and 50 are :
+                    2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
+        */
+
+        public static void Execute()
+        {
+            int starting = UtilityMethods.GetValidAbsoluteNumber("Input starting number of range");
+            int ending = UtilityMethods.GetValidAbsoluteNumber("Input ending number of range");
+
+            int square = 0;
+
+            Boolean prime = true;
+
+            //prime must be greater than 1
+            starting = starting < 2 ? 2 : starting;
+
+            for (int n = starting; n <= ending; n++)
+            {
+                square = Convert.ToInt32( Math.Sqrt(n) );
+                prime = true;
+
+                //Test for primacy 
+                for (int m = 2; m <= square; m++)
+                {
+                    if (n % m == 0)
+                    {
+                        prime = false;
+
+                    }
+                }
+
+                if (prime == true) Console.WriteLine(n);
+            }
+
+        }
+    }
 }
