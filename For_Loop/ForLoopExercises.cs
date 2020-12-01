@@ -1,6 +1,7 @@
 ﻿using Exercises;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -814,6 +815,82 @@ namespace For_Loop
 
 
             Console.WriteLine(prime);
+        }
+    }
+
+    public static class Exercise_33
+    {
+        /*
+          Write a C# Sharp program to display by Pascal's triangle. 
+         Test Data :
+        Input number of rows: 5
+        Expected Output :
+
+        1 1 1 1 2 1 1 3 3 1 1 4 6 4 1
+         */
+
+        public static void Execute()
+        {
+            int triangleHeight = UtilityMethods.GetValidAbsoluteNumber("Enter triangle height");
+
+            int triangleWidth = triangleHeight * 2;//The base is twice the height because of the staggered blocks
+
+            int[,] triangleArray = new int[triangleHeight, triangleWidth];
+
+            int trianglePointer = triangleHeight; //The top-most block is always = to the height
+            int endColumn = triangleHeight;
+
+            //Fill the blocks
+            for (int row = 0; row < triangleHeight; row++)
+            {
+                //int column = trianglePointer;
+
+                //columns
+                for ( int startColumn = trianglePointer; startColumn <= endColumn; startColumn += 2 )
+                {
+                    triangleArray[row, startColumn] = calculatePascal(triangleArray, row, startColumn);
+                    //column += 2;
+                }
+
+                endColumn++; //Increment the number of blocks plus empty for each row interation
+                trianglePointer--;//Reposition the start of the blocks each row
+            }
+
+            printTriangle(triangleArray);
+        }
+
+        private static int calculatePascal( int[,] Array, int row, int column)
+        {
+            int previousRow = row - 1;
+            int columnToLeft = column - 1 < Array.GetLowerBound(1) ? 0 : column - 1;
+            int columnToRight = column + 1 < Array.GetLowerBound(1) ? 0 : column + 1;
+            int columnToLeftValue = previousRow >= 0 & previousRow < Array.GetUpperBound(0) & columnToLeft > 0 & columnToLeft < Array.GetUpperBound(1) ? Array[previousRow, columnToLeft] : 0;
+            int columnToRightValue = previousRow >= 0 & previousRow < Array.GetUpperBound(0) & columnToRight > 0 & columnToRight < Array.GetUpperBound(1) ? Array[previousRow, columnToRight] : 0;
+
+            int pascal = columnToLeftValue + columnToRightValue;
+            pascal = pascal == 0 ? 1 : pascal;
+
+            return pascal;
+        }
+
+        private static void printTriangle( int[,] triangleArray )
+        {
+            string value = "";
+
+            for (int row = 0; row < triangleArray.GetLength(0); row++)
+            {
+                for (int column = 0; column < triangleArray.GetLength(1); column++)
+                {
+                    value = triangleArray[row, column].ToString();
+
+                    value = (value == "0" ? " " : value);
+
+                    Console.Write( value );
+                }
+
+                Console.WriteLine();
+            }
+
         }
     }
 
