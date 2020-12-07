@@ -938,4 +938,39 @@ namespace For_Loop
 
         }
     }
+
+    public static class Exercise_35
+    {
+        /*
+         * Fibonacci series 0 1 2 3 5 8 13 .....
+            Test Data :
+            Input number of terms to display : 10
+            Expected Output :
+            Here is the Fibonacci series upto to 10 terms :
+            0 1 1 2 3 5 8 13 21 34
+         */
+
+        public static void Execute()
+        {
+            int terms = UtilityMethods.GetValidAbsoluteNumber("Input number of terms to display");
+            int fib = 0;
+            int previous1 = 0; int previous2 = 1;
+
+            Console.WriteLine(0);
+
+            for (int n = 0; n <= terms; n++)
+            {
+                fib = previous2 + previous1;
+
+                Console.WriteLine(fib);
+
+                previous2 = previous1;
+                previous1 = fib;
+               
+            }
+
+        }
+    }
+
+
 }
