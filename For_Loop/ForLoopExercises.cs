@@ -1010,4 +1010,29 @@ namespace For_Loop
 
         }
     }
+
+    public static class Exercise_37
+    {
+        /*
+         * 37. Write a program in C# Sharp to display the number in reverse order. 
+            Test Data :
+            Input a number: 12345
+            Expected Output :
+            The number in reverse order is : 54321
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            char[] array = number.ToString().ToCharArray();
+
+            Array.Reverse(array);
+
+            string numberReversed = new string(array);
+
+            Console.WriteLine($"The number in reverse order: {numberReversed}");
+
+        }
+    }
 }
