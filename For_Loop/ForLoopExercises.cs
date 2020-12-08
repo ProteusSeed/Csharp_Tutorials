@@ -1025,6 +1025,7 @@ namespace For_Loop
         {
             int number = UtilityMethods.GetValidAbsoluteNumber();
 
+            //Reverse a string by converting to a char array
             char[] array = number.ToString().ToCharArray();
 
             Array.Reverse(array);
@@ -1033,6 +1034,37 @@ namespace For_Loop
 
             Console.WriteLine($"The number in reverse order: {numberReversed}");
 
+        }
+    }
+
+    public static class Exercise_38
+    {
+        /*
+         * 38. Write a program in C# Sharp to check whether a number is a palindrome or not. 
+            Test Data :
+            Input a number: 121
+            Expected Output :
+            121 is a palindrome number.
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            char[] array = number.ToString().ToCharArray();
+
+            Array.Reverse(array);
+
+            string numberReversed = new string(array);
+
+            if(number.ToString() == numberReversed)
+            {
+                Console.WriteLine("{0} is a palindrome number", number);
+            }
+            else
+            {
+                Console.WriteLine("{0} is not a palindrome number", number);
+            }
         }
     }
 }
