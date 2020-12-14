@@ -1067,4 +1067,52 @@ namespace For_Loop
             }
         }
     }
+
+    public static class Exercise_40
+    {
+        /*
+         * 40. Write a C# Sharp Program to display the following pattern using the alphabet. 
+
+            A
+            A B A 
+            A B C B A
+            A B C D C B A 
+         */
+
+        public static void Execute()
+        {
+            int begin = 65;
+            int stop = begin;
+
+            for (int r = 1; r <= 24; r++)
+            {
+                
+
+                for (int l = begin; l <= stop; l++)
+                {
+                    Console.Write((char)l);
+
+                    //for( int lb = l; l >= 0; l--)
+                    //{
+
+                    //}
+                }
+
+                for (int l = stop - 1; l >= begin; l--)
+                {
+                    Console.Write((char)l);
+
+                    //for( int lb = l; l >= 0; l--)
+                    //{
+
+                    //}
+                }
+
+                stop++;
+                Console.WriteLine();
+            }
+
+        }
+    }
+
 }
