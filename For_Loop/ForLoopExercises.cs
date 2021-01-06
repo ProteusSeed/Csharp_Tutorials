@@ -1115,4 +1115,32 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_41
+    {
+        /*
+         Write a program in C# Sharp to convert a decimal number into binary without using an array. 
+            Test Data :
+            Enter a number to convert : 25
+            Expected Output :
+            The Binary of 25 is 11001.
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Enter a number to convert ");
+            int quotient = number;
+            int remainder = 0;
+            string binaryString = "";
+
+            while( quotient > 0 )
+            {
+                remainder = quotient % 2;
+                quotient = quotient / 2;
+                
+                binaryString = remainder.ToString() + binaryString;
+            }    
+
+            Console.WriteLine(binaryString);
+        }
+    }
 }
