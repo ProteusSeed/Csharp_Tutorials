@@ -1126,7 +1126,7 @@ namespace For_Loop
          */
 
         public static void Execute()
-        {
+        { 
             int number = UtilityMethods.GetValidAbsoluteNumber("Enter a number to convert ");
             int quotient = number;
             int remainder = 0;
@@ -1141,6 +1141,52 @@ namespace For_Loop
             }    
 
             Console.WriteLine(binaryString);
+        }
+    }
+
+    public static class Exercise_42
+    {
+        /*
+         * 42. Write a program in C# Sharp to convert a binary number into a decimal number without using array, function and while loop.
+            Test Data :
+            Input a binary number :1010101
+            Expected Output :
+            The Binary Number : 1010101
+            The equivalent Decimal Number : 85
+        */
+
+        public static void Execute()
+        {
+            int binary = UtilityMethods.GetValidAbsoluteNumber("Enter binary number");
+
+            string binaryString = binary.ToString();
+
+            int numberofDigits = binaryString.Length;
+
+            int decimalNumber = 0;
+
+            int multiplier = 0;
+
+            int currentBinaryDigit = 0;
+
+            char[] binaryCharArray = binaryString.ToCharArray();
+            binaryCharArray.Reverse();
+
+            binaryString = new string(binaryCharArray);
+
+            for ( int d = 0; d < numberofDigits; d++ )
+            {
+                currentBinaryDigit = int.Parse(binaryString.Substring(d, 1));                
+
+                if (currentBinaryDigit == 1)
+                {
+                    multiplier = (int)Math.Pow(2, d);//two times the power of the binary digit number
+                    multiplier = multiplier == 0 ? currentBinaryDigit : multiplier;//first binary digit is not a power of two
+                    decimalNumber += (currentBinaryDigit * multiplier);
+                }
+            }
+
+            Console.WriteLine(decimalNumber);
         }
     }
 }
