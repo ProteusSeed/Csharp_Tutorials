@@ -1241,4 +1241,55 @@ namespace For_Loop
             //Console.WriteLine($"contains: {firstFactors.Contains(4)}");
         }
     }
+
+    public static class Exercise_44
+    {
+        public static void Execute()
+        {
+            Console.WriteLine("skip");
+        }
+    }
+
+    public static class Exercise_45
+    {
+        /*
+         45. Write a program in C# Sharp to find LCM of any two numbers. 
+            Test Data :
+            Input 1st number for LCM: 15
+            Input 2nd number for LCM: 20
+            Expected Output :
+            The LCM of 15 and 20 is : 60
+        */
+
+        public static void Execute()
+        {
+            int firstNumber = UtilityMethods.GetValidAbsoluteNumber("Input 1st number for LCM");
+            int secondNumber = UtilityMethods.GetValidAbsoluteNumber("Input 2nd number for LCM");
+
+            int maxNumber = 0; int minNumber = 0;
+
+            if (firstNumber > secondNumber)
+            {
+                maxNumber = firstNumber;
+                minNumber = secondNumber;
+            }
+            else {
+                    maxNumber = secondNumber;
+                    minNumber = firstNumber;
+                 };
+
+           for( int x = 2; ; x++ )
+            {
+                if( (maxNumber * x) % minNumber == 0)
+                {
+                    Console.WriteLine($"The LCM is: {x * maxNumber}");
+
+                    break;
+                }    
+                
+            }
+        }
+    }
+
+
 }
