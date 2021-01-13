@@ -1189,4 +1189,56 @@ namespace For_Loop
             Console.WriteLine(decimalNumber);
         }
     }
+
+    public static class Exercise_43
+    {
+        /*
+         * 43. Write a C# Sharp program to find HCF (Highest Common Factor) of two numbers. 
+            Test Data :
+            Input 1st number for HCF: 24
+            Input 2nd number for HCF: 28
+            Expected Output :
+            HCF of 24 and 28 is : 4
+        */
+
+        public static void Execute()
+        {
+            int firstNumber = UtilityMethods.GetValidAbsoluteNumber("Input 1st number for HCF");
+            int secondNumber = UtilityMethods.GetValidAbsoluteNumber("Input 2nd number for HCF");
+            int firstFactor = 0; int firstRemainder = 0;
+            int secondFactor = 0; int secondRemainder = 0;
+
+            List<int> firstFactors = new List<int>();
+            List<int> secondFactors = new List<int>();
+
+            for (int f = 2; f <= (firstNumber/2); f++)
+            {
+                firstFactor = firstNumber / f;
+                firstRemainder = firstNumber % f;
+
+                if (firstRemainder == 0) firstFactors.Add(firstFactor);   //Console.WriteLine(firstFactor);
+            }
+
+            for( int s = 2; s <= (secondNumber / 2); s++ )
+            {
+                secondFactor = secondNumber / s;
+                secondRemainder = secondNumber % s;
+
+                if (secondRemainder == 0) secondFactors.Add(secondFactor); // Console.WriteLine(secondFactor);
+            }
+
+            firstFactors.OrderByDescending( a => a );
+
+            foreach (var item in firstFactors)
+            {
+                if (secondFactors.Contains(item))
+                {
+                    Console.WriteLine($"{item} yes");
+                    break;
+                }
+            }
+
+            //Console.WriteLine($"contains: {firstFactors.Contains(4)}");
+        }
+    }
 }
