@@ -1291,5 +1291,21 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_46
+    {
+        /*
+         * 46. Write a program in C# Sharp to convert a binary number into a decimal number using math function. 
+            Test Data :
+            Input the binary number :1010100
+            Expected Output :
+            The Binary Number : 1010100
+            The equivalent Decimal Number is : 84
+        */
 
+        public static void Execute()
+        {
+            //Already did this in Exercise 42
+            Exercise_42.Execute();
+        }
+    }
 }
