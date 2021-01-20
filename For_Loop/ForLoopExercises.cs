@@ -1308,4 +1308,91 @@ namespace For_Loop
             Exercise_42.Execute();
         }
     }
+
+    public static class Exercise_47
+    {
+        /*
+         47. Write a C# Sharp program to check whether a number is a Strong Number or not. 
+            Test Data :
+            Input a number to check whether it is Strong number: 15
+            Expected Output :
+            15 is not Strong number.
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+            string numberString = number.ToString();
+            char[] digits = numberString.ToCharArray();
+
+            //Recompose the char-array
+            int[] intArray = Array.ConvertAll( digits, c => (int)Char.GetNumericValue(c));
+           
+
+            int factorialSum = 0;
+
+            string returnMessage = "is not a strong number";
+
+            foreach( char digit in intArray)
+            {
+
+                factorialSum += factorial(digit);
+            }
+
+            if (factorialSum == number) returnMessage = "is a strong number";
+
+            Console.WriteLine($"{number} {returnMessage}");
+
+        }
+
+        public static int factorial(int number)
+        {
+            int factorial = number;
+
+            for (int i = number - 1; i > 0; i--)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
+        }
+    }
+
+    public static class Exercise_48
+    {
+        /*
+          48. Write a C# Sharp program to find Strong Numbers within a range of numbers. \
+            Test Data :
+            Input starting range of number : 1
+            Input ending range of number: 200
+            Expected Output :
+            The Strong numbers are :
+            1 2 145
+        */
+        public static void Execute()
+        {
+            int lower = UtilityMethods.GetValidAbsoluteNumber("Enter lowest number");
+            int higher = UtilityMethods.GetValidAbsoluteNumber("Enter highest number");
+
+            for( int n = lower; n <= higher; n++)
+            {
+                if (strong(n)) Console.Write($"{n} ");
+            }
+        }
+
+        private static Boolean strong( int number )
+        {
+            char[] digitsCharArray = number.ToString().ToCharArray();
+            int[] digitsArray = Array.ConvertAll(digitsCharArray, d => (int)char.GetNumericValue(d)).ToArray();
+            int factorialSum = 0;
+
+            foreach( int digit in digitsArray)
+            {
+                factorialSum += Exercise_47.factorial(digit);
+            }
+
+            if(factorialSum == number) return true;
+            return false;
+        }
+    }
 }
