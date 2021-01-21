@@ -1395,4 +1395,38 @@ namespace For_Loop
             return false;
         }
     }
+
+    public static class Exercise_49
+    {
+        /*
+         * 49. Write a C# Sharp program to find out the sum of in A.P. series. 
+            Test Data :
+            Input the starting number of the A.P. series: 1
+            Input the number of items for the A.P. series: 10
+            Input the common difference of A.P. series: 4
+            Expected Output :
+            The Sum of the A.P. series are :
+            1 + 5 + 9 + 13 + 17 + 21 + 25 + 29 + 33 + 37 = 190
+        */
+
+        public static void Execute()
+        {
+            int starting = UtilityMethods.GetValidAbsoluteNumber(" Input the starting number of the A.P. series");
+            int numItems = UtilityMethods.GetValidAbsoluteNumber("Input the number of items for the A.P. series");
+            int commonDiff = UtilityMethods.GetValidAbsoluteNumber("Input the common difference of A.P. series");
+            int series = starting;
+            int sum = starting;
+
+            for(int x = 1; x < numItems; x++)
+            {
+                Console.Write($"{series} ");
+                series += commonDiff;
+                sum += series;
+            }
+
+            Console.Write($" = {sum}");
+        }
+    }
+
+
 }
