@@ -1428,5 +1428,39 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_50
+    {
+        /*
+         * 50. Write a program in C# Sharp to convert a decimal number into octal without using an array. 
+            Test Data :
+            Enter a number to convert : 79
+            Expected Output :
+            The Octal of 79 is 117.
+         */
 
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Enter number to convert to octal");
+            int highestPower = 0;
+            string octal = "";
+
+            //The remainder of the quotient divided by the highest power is the next quotient
+            for (int quotient = number; quotient > 0; quotient = quotient %= highestPower )
+            {
+
+                //get highest power
+                for (int hp = 1; hp <= quotient; hp *= 8)
+                {
+                    highestPower = hp;
+
+                }
+                
+                //divide quotient by highest power to get next rightmost digit in octal
+                octal += (quotient / highestPower).ToString();
+
+            }
+
+            Console.WriteLine($"The octal is: {octal}");
+        }
+    }
 }
