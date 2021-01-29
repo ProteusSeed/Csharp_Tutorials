@@ -1463,4 +1463,38 @@ namespace For_Loop
             Console.WriteLine($"The octal is: {octal}");
         }
     }
+
+    public static class Exercise_51
+    {
+        /*
+         * 51. Write a program in C# Sharp to convert an octal number to decimal without using array. 
+            Test Data :
+            Input an octal number (using digit 0 - 7) :745
+            Expected Output :
+            The Octal Number : 745
+            The equivalent Decimal Number : 485
+         */
+
+        public static void Execute()
+        {
+            int octal = UtilityMethods.GetValidAbsoluteNumber("Input an octal number (using digit 0 - 7)");
+            string octalString = octal.ToString();
+            int numberOfDigits = octalString.Length;
+            int digit = 0; int digitValue = 0;
+            string decimalString = ""; int decimalNumber = 0;
+            int power = numberOfDigits - 1;
+
+            for( int x = 0; x < numberOfDigits; x++)
+            {
+                digit = int.Parse(octalString.Substring(x, 1));
+                digitValue = (int)Math.Pow(8, power) * digit;
+                decimalNumber += digitValue;
+
+                power--;
+               // Console.WriteLine($"{octalString.Substring(x, 1)} {(int)Math.Pow( 8, x )}");
+            }
+
+            Console.WriteLine(decimalNumber);
+        }
+    }
 }
