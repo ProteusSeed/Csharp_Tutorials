@@ -24,7 +24,7 @@ namespace For_Loop
             {
                 Console.WriteLine(i);
             }
-            
+
         }
     }
 
@@ -100,7 +100,7 @@ namespace For_Loop
             {
                 prefix = i == 1 ? "st" : i == 2 ? "nd" : i == 3 ? "rd" : "th";
 
-                numbers[i-1] = UtilityMethods.GetValidAbsoluteNumber($"Enter {i}{prefix} number");
+                numbers[i - 1] = UtilityMethods.GetValidAbsoluteNumber($"Enter {i}{prefix} number");
             }
 
             int sum = numbers.Sum();
@@ -195,7 +195,7 @@ namespace For_Loop
                 }
 
                 Console.WriteLine(table);
-                
+
             }
         }
     }
@@ -307,7 +307,7 @@ namespace For_Loop
 
             for (int i = 1; i <= triangeHeight; i++)
             {
-                line = new StringBuilder(i).Insert(0, number.ToString(), i ).ToString();
+                line = new StringBuilder(i).Insert(0, number.ToString(), i).ToString();
                 Console.WriteLine(line);
                 number++;
             }
@@ -338,7 +338,7 @@ namespace For_Loop
                     triangleLine += n.ToString();
                     n++;
                 }
-                
+
                 Console.WriteLine(triangleLine);
                 lineWidth++;
                 triangleLine = "";
@@ -356,7 +356,7 @@ namespace For_Loop
              4 5 6 
             7 8 9 10
          */
-        
+
         public static void Execute()
         {
             int pyramidHeight = UtilityMethods.GetValidAbsoluteNumber();
@@ -369,20 +369,20 @@ namespace For_Loop
             {
                 for (int n = 1; n <= numberCount; n++)
                 {
-                    
+
                     pyramidRow += number.ToString() + " ";
                     number++;
                 }
 
                 spaceMultiplier = 3;
-                spaces = new string(' ', ( ( (pyramidHeight - pyramidStep) * spaceMultiplier) / 2));
+                spaces = new string(' ', (((pyramidHeight - pyramidStep) * spaceMultiplier) / 2));
                 pyramidRow = spaces + pyramidRow;
 
-                Console.WriteLine( pyramidRow);
+                Console.WriteLine(pyramidRow);
                 pyramidRow = "";
                 numberCount++;
-            }           
-            
+            }
+
         }
     }
 
@@ -409,7 +409,7 @@ namespace For_Loop
             for (int i = 1; i <= pyramidHeight; i++)
             {
                 //pyramidRow = new string('*', i).ToString() + " ";
-                pyramidRow = new StringBuilder(i).Insert(0,"* ",i).ToString();
+                pyramidRow = new StringBuilder(i).Insert(0, "* ", i).ToString();
                 spaces = new string(' ', leadSpaceCount).ToString();
                 pyramidRow = spaces + pyramidRow;
 
@@ -417,7 +417,7 @@ namespace For_Loop
                 leadSpaceCount -= 1;
             }
 
-            
+
         }
     }
 
@@ -437,7 +437,7 @@ namespace For_Loop
 
             for (int i = 1; i < number; i++)
             {
-                calculation = calculation * ( number - i );
+                calculation = calculation * (number - i);
             }
 
             Console.WriteLine("The factorial of {0} is {1}", number, calculation);
@@ -464,8 +464,8 @@ namespace For_Loop
             terms *= 2;
 
             for (int i = 2; i <= terms; i += 2)
-            {                
-                if ( i % 2 == 0 )
+            {
+                if (i % 2 == 0)
                 {
                     calculation += i;
                     evens += i.ToString() + " ";
@@ -492,21 +492,21 @@ namespace For_Loop
         public static void Execute()
         {
             int pyramidHeight = UtilityMethods.GetValidAbsoluteNumber("Enter pyramid height");
-            int spaceMultiplier = 0; int numberOfSpaces = 0;  
-            string spaces = ""; string trailingSpaces = ""; 
-            string row = "";           
+            int spaceMultiplier = 0; int numberOfSpaces = 0;
+            string spaces = ""; string trailingSpaces = "";
+            string row = "";
 
             for (int i = 1; i <= pyramidHeight; i++)
             {
                 spaceMultiplier = pyramidHeight.ToString().Length - i.ToString().Length + 1;
-                numberOfSpaces = ( pyramidHeight * spaceMultiplier / 2 ) - ( (i * spaceMultiplier) / 2 );
+                numberOfSpaces = (pyramidHeight * spaceMultiplier / 2) - ((i * spaceMultiplier) / 2);
 
-                spaces = new string( ' ', numberOfSpaces );
+                spaces = new string(' ', numberOfSpaces);
                 trailingSpaces = new string(' ', spaceMultiplier);
-                
+
                 for (int r = 1; r <= i; r++)
                 {
-                    row += string.Concat( i.ToString(), trailingSpaces );   
+                    row += string.Concat(i.ToString(), trailingSpaces);
                 }
 
                 row = spaces + row;
@@ -541,28 +541,28 @@ namespace For_Loop
                 for (int column = 0; column < PyramidBaseWidth; column++)
                 {
                     //(PyramidBaseWidth-1) is used because columns are zero based
-                    pyramidBlock = column >= (PyramidBaseWidth-1) / 2 - row & column <= (PyramidBaseWidth-1) / 2 + row ? "*" : " ";
+                    pyramidBlock = column >= (PyramidBaseWidth - 1) / 2 - row & column <= (PyramidBaseWidth - 1) / 2 + row ? "*" : " ";
                     pyramid[row, column] = pyramidBlock;
                 }
-                
+
             }
 
             printPyramid(pyramid);
-             
+
         }
 
-        public static void printPyramid( string[,] pyramid)
+        public static void printPyramid(string[,] pyramid)
         {
             for (int row = 0; row <= pyramid.GetUpperBound(0); row++)
             {
                 for (int column = 0; column < pyramid.GetUpperBound(1); column++)
                 {
-                    Console.Write(pyramid[row,column]);
+                    Console.Write(pyramid[row, column]);
                 }
 
                 Console.WriteLine();
-            }                
-            
+            }
+
         }
     }
 
@@ -757,7 +757,7 @@ namespace For_Loop
                 Console.WriteLine(spaces + row);
 
                 numberOfBlocks += 2;
-                if(numberOfSpace > 0) numberOfSpace--;
+                if (numberOfSpace > 0) numberOfSpace--;
             }
 
             numberOfSpace += 2;
@@ -846,7 +846,7 @@ namespace For_Loop
                 //int column = trianglePointer;
 
                 //columns
-                for ( int startColumn = trianglePointer; startColumn <= endColumn; startColumn += 2 )
+                for (int startColumn = trianglePointer; startColumn <= endColumn; startColumn += 2)
                 {
                     triangleArray[row, startColumn] = calculatePascal(triangleArray, row, startColumn);
                     //column += 2;
@@ -859,7 +859,7 @@ namespace For_Loop
             printTriangle(triangleArray);
         }
 
-        private static int calculatePascal( int[,] Array, int row, int column)
+        private static int calculatePascal(int[,] Array, int row, int column)
         {
             int previousRow = row - 1;
             int columnToLeft = column - 1 < Array.GetLowerBound(1) ? 0 : column - 1;
@@ -873,7 +873,7 @@ namespace For_Loop
             return pascal;
         }
 
-        private static void printTriangle( int[,] triangleArray )
+        private static void printTriangle(int[,] triangleArray)
         {
             string value = "";
 
@@ -885,7 +885,7 @@ namespace For_Loop
 
                     value = (value == "0" ? " " : value);
 
-                    Console.Write( value );
+                    Console.Write(value);
                 }
 
                 Console.WriteLine();
@@ -920,7 +920,7 @@ namespace For_Loop
 
             for (int n = starting; n <= ending; n++)
             {
-                square = Convert.ToInt32( Math.Sqrt(n) );
+                square = Convert.ToInt32(Math.Sqrt(n));
                 prime = true;
 
                 //Test for primacy 
@@ -966,7 +966,7 @@ namespace For_Loop
 
                 previous2 = previous1;
                 previous1 = fib;
-               
+
             }
 
         }
@@ -997,7 +997,7 @@ namespace For_Loop
                 for (int up = 1; up <= n; up++)
                 {
                     Console.Write(up);
-                   
+
                 }
 
                 for (int down = n - 1; down > 0; down--)
@@ -1057,7 +1057,7 @@ namespace For_Loop
 
             string numberReversed = new string(array);
 
-            if(number.ToString() == numberReversed)
+            if (number.ToString() == numberReversed)
             {
                 Console.WriteLine("{0} is a palindrome number", number);
             }
@@ -1086,7 +1086,7 @@ namespace For_Loop
 
             for (int r = 1; r <= 24; r++)
             {
-                
+
 
                 for (int l = begin; l <= stop; l++)
                 {
@@ -1126,19 +1126,19 @@ namespace For_Loop
          */
 
         public static void Execute()
-        { 
+        {
             int number = UtilityMethods.GetValidAbsoluteNumber("Enter a number to convert ");
             int quotient = number;
             int remainder = 0;
             string binaryString = "";
 
-            while( quotient > 0 )
+            while (quotient > 0)
             {
                 remainder = quotient % 2;
                 quotient = quotient / 2;
-                
+
                 binaryString = remainder.ToString() + binaryString;
-            }    
+            }
 
             Console.WriteLine(binaryString);
         }
@@ -1174,9 +1174,9 @@ namespace For_Loop
 
             binaryString = new string(binaryCharArray);
 
-            for ( int d = 0; d < numberofDigits; d++ )
+            for (int d = 0; d < numberofDigits; d++)
             {
-                currentBinaryDigit = int.Parse(binaryString.Substring(d, 1));                
+                currentBinaryDigit = int.Parse(binaryString.Substring(d, 1));
 
                 if (currentBinaryDigit == 1)
                 {
@@ -1211,7 +1211,7 @@ namespace For_Loop
             List<int> firstFactors = new List<int>();
             List<int> secondFactors = new List<int>();
 
-            for (int f = 2; f <= (firstNumber/2); f++)
+            for (int f = 2; f <= (firstNumber / 2); f++)
             {
                 firstFactor = firstNumber / f;
                 firstRemainder = firstNumber % f;
@@ -1219,7 +1219,7 @@ namespace For_Loop
                 if (firstRemainder == 0) firstFactors.Add(firstFactor);   //Console.WriteLine(firstFactor);
             }
 
-            for( int s = 2; s <= (secondNumber / 2); s++ )
+            for (int s = 2; s <= (secondNumber / 2); s++)
             {
                 secondFactor = secondNumber / s;
                 secondRemainder = secondNumber % s;
@@ -1227,7 +1227,7 @@ namespace For_Loop
                 if (secondRemainder == 0) secondFactors.Add(secondFactor); // Console.WriteLine(secondFactor);
             }
 
-            firstFactors.OrderByDescending( a => a );
+            firstFactors.OrderByDescending(a => a);
 
             foreach (var item in firstFactors)
             {
@@ -1273,20 +1273,21 @@ namespace For_Loop
                 maxNumber = firstNumber;
                 minNumber = secondNumber;
             }
-            else {
-                    maxNumber = secondNumber;
-                    minNumber = firstNumber;
-                 };
-
-           for( int x = 2; ; x++ )
+            else
             {
-                if( (maxNumber * x) % minNumber == 0)
+                maxNumber = secondNumber;
+                minNumber = firstNumber;
+            };
+
+            for (int x = 2; ; x++)
+            {
+                if ((maxNumber * x) % minNumber == 0)
                 {
                     Console.WriteLine($"The LCM is: {x * maxNumber}");
 
                     break;
-                }    
-                
+                }
+
             }
         }
     }
@@ -1326,14 +1327,14 @@ namespace For_Loop
             char[] digits = numberString.ToCharArray();
 
             //Recompose the char-array
-            int[] intArray = Array.ConvertAll( digits, c => (int)Char.GetNumericValue(c));
-           
+            int[] intArray = Array.ConvertAll(digits, c => (int)Char.GetNumericValue(c));
+
 
             int factorialSum = 0;
 
             string returnMessage = "is not a strong number";
 
-            foreach( char digit in intArray)
+            foreach (char digit in intArray)
             {
 
                 factorialSum += factorial(digit);
@@ -1374,24 +1375,24 @@ namespace For_Loop
             int lower = UtilityMethods.GetValidAbsoluteNumber("Enter lowest number");
             int higher = UtilityMethods.GetValidAbsoluteNumber("Enter highest number");
 
-            for( int n = lower; n <= higher; n++)
+            for (int n = lower; n <= higher; n++)
             {
                 if (strong(n)) Console.Write($"{n} ");
             }
         }
 
-        private static Boolean strong( int number )
+        private static Boolean strong(int number)
         {
             char[] digitsCharArray = number.ToString().ToCharArray();
             int[] digitsArray = Array.ConvertAll(digitsCharArray, d => (int)char.GetNumericValue(d)).ToArray();
             int factorialSum = 0;
 
-            foreach( int digit in digitsArray)
+            foreach (int digit in digitsArray)
             {
                 factorialSum += Exercise_47.factorial(digit);
             }
 
-            if(factorialSum == number) return true;
+            if (factorialSum == number) return true;
             return false;
         }
     }
@@ -1417,7 +1418,7 @@ namespace For_Loop
             int series = starting;
             int sum = starting;
 
-            for(int x = 1; x < numItems; x++)
+            for (int x = 1; x < numItems; x++)
             {
                 Console.Write($"{series} ");
                 series += commonDiff;
@@ -1445,7 +1446,7 @@ namespace For_Loop
             string octal = "";
 
             //The remainder of the quotient divided by the highest power is the next quotient
-            for (int quotient = number; quotient > 0; quotient = quotient %= highestPower )
+            for (int quotient = number; quotient > 0; quotient = quotient %= highestPower)
             {
 
                 //get highest power
@@ -1454,7 +1455,7 @@ namespace For_Loop
                     highestPower = hp;
 
                 }
-                
+
                 //divide quotient by highest power to get next rightmost digit in octal
                 octal += (quotient / highestPower).ToString();
 
@@ -1484,17 +1485,55 @@ namespace For_Loop
             string decimalString = ""; int decimalNumber = 0;
             int power = numberOfDigits - 1;
 
-            for( int x = 0; x < numberOfDigits; x++)
+            for (int x = 0; x < numberOfDigits; x++)
             {
                 digit = int.Parse(octalString.Substring(x, 1));
                 digitValue = (int)Math.Pow(8, power) * digit;
                 decimalNumber += digitValue;
 
                 power--;
-               // Console.WriteLine($"{octalString.Substring(x, 1)} {(int)Math.Pow( 8, x )}");
+                // Console.WriteLine($"{octalString.Substring(x, 1)} {(int)Math.Pow( 8, x )}");
             }
 
             Console.WriteLine(decimalNumber);
         }
     }
+
+    public static class Exercise_52
+    {
+        /*
+         * 52. Write a program in C# Sharp to find the Sum of GP series.
+        Test Data :
+        Input the first number of the G.P. series: 1
+        Input the number or terms in the G.P. series: 5
+        Input the common ratio of G.P. series: 2
+        Expected Output :
+        The numbers for the G.P. series:
+        1 2 4 8 16 32
+        The tn terms of G.P. : 16.000000
+        The Sum of the G.P. series : 63.000000 
+        */
+
+        public static void Execute()
+        {
+            int firstNumber = UtilityMethods.GetValidAbsoluteNumber("Input the first number of the G.P. series");
+            int terms = UtilityMethods.GetValidAbsoluteNumber(" Input the number or terms in the G.P. series");
+            int ratio = UtilityMethods.GetValidAbsoluteNumber("Input the common ratio of G.P. series");
+            int number = firstNumber;
+            int sum = firstNumber;
+
+            Console.Write($"{number} ");
+
+            for (int n = 1; n <= terms; n++)
+            {
+                
+                number *= ratio;
+                sum += number;
+                Console.Write($"{number} ");
+            }
+
+            Console.WriteLine("The Sum of the G.P. series: {0}", sum);
+        }
+    }
+
 }
