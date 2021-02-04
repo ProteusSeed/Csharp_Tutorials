@@ -1549,7 +1549,50 @@ namespace For_Loop
 
         public static void Execute()
         {
+            int binary = UtilityMethods.GetValidAbsoluteNumber("Input a binary number");
+            string binaryString = binary.ToString();
+            int numberOfDigits = binaryString.Length;
+            int binaryDigit = 0;  int binaryDigitSum = 0;
+            int power = 1;
 
+            //binary to decimal
+            for( int d = numberOfDigits - 1; d > -1; d--)
+            {
+                binaryDigit = int.Parse(binaryString.Substring(d, 1));
+
+                binaryDigitSum += binaryDigit * power;
+
+                //Console.WriteLine(binaryString.Substring(d, 1));
+
+                power *= 2;
+            }
+
+           //Console.WriteLine(binaryDigitSum);
+
+            //Decimal to Octal
+            int number = binaryDigitSum;
+            int highestPower = 0;
+            string octal = "";
+
+            //The remainder of the quotient divided by the highest power is the next quotient
+            for (int quotient = number; quotient > 0; quotient = quotient %= highestPower)
+            {
+
+                //get highest power
+                for (int hp = 1; hp <= quotient; hp *= 8)
+                {
+                    highestPower = hp;
+
+                }
+
+                //divide quotient by highest power to get next rightmost digit in octal
+                octal += (quotient / highestPower).ToString();
+
+            }
+
+            Console.WriteLine($"The equivalent Octal Number: {octal}");
         }
     }
+
+
 }
