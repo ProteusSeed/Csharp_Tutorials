@@ -1594,5 +1594,57 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_54
+    {
+        /*
+         54. Write a program in C# Sharp to convert an octal number into binary. 
+            Test Data :
+            Input an octal number :11
+            Expected Output :
+            The Octal Number : 11
+            The equivalent Binary Number : 1001
+        */
 
+        public static void Execute()
+        {
+            int octal = UtilityMethods.GetValidAbsoluteNumber("Input an octal number");
+
+            int decimalNumber = OctalToInt(octal);
+            int binaryNumber = decimalToBinary(decimalNumber);
+
+            Console.WriteLine(binaryNumber);
+        }
+
+        public static int OctalToInt( int octal )
+        {
+            string octalString = octal.ToString();
+            int numOfDigits = octalString.Length;
+            int digit = 0;
+            int power = 1;
+            int digitSum = 0;
+
+            for( int d = 0; d < numOfDigits; d++ )
+            {
+                digit = int.Parse( octalString.Substring(d, 1) );
+                digitSum += digit * power;
+                power *= 8;
+            }
+
+            return digitSum;
+        }
+
+        public static int decimalToBinary( int decimalNumber )
+        {
+            string binaryString = "";
+            int binaryNumber = 0;
+
+            for( int d = decimalNumber; d > 0; d = d / 2 )
+            {
+                binaryString += (d % 2).ToString();
+            }
+
+            binaryNumber = int.Parse(binaryString);
+            return binaryNumber;
+        }
+    }
 }
