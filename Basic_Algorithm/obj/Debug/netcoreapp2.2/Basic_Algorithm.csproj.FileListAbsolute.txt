@@ -11,3 +11,5 @@ D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.A
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.csproj.CopyComplete
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.dll
 D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.pdb
+D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\Basic_Algorithm\obj\Debug\netcoreapp2.2\Basic_Algorithm.genruntimeconfig.cache

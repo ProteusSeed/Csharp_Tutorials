@@ -1536,4 +1536,20 @@ namespace For_Loop
         }
     }
 
+    public static class Exercise_53
+    {
+        /*
+         * 53. Write a program in C# Sharp to convert a binary number to octal. 
+            Test Data :
+            Input a binary number :1001
+            Expected Output :
+            The Binary Number : 1001
+            The equivalent Octal Number : 11
+         */
+
+        public static void Execute()
+        {
+
+        }
+    }
 }

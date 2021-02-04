@@ -12,3 +12,5 @@ D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.AssemblyInfo.
 D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.csproj.CopyComplete
 D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.dll
 D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.pdb
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\DataTypes\obj\Debug\netcoreapp3.0\DataTypes.genruntimeconfig.cache
