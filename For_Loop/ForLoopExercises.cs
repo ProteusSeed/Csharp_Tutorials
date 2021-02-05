@@ -1647,4 +1647,49 @@ namespace For_Loop
             return binaryNumber;
         }
     }
+
+    public static class Exercise_55
+    {
+        /*
+          55. Write a program in C# Sharp to convert a decimal number to hexadecimal. 
+            Test Data :
+            Input any Decimal number: 79
+            Expected Output :
+            The equivalent Hexadecimal Number : 4F
+        */
+
+        enum hexa
+        {
+            A = 10
+                    , B = 11
+                    , C = 12
+                    , D = 13
+                    , E = 14
+                    , F = 15
+        };
+
+        public static void Execute()
+        {
+            int decimalNumber = UtilityMethods.GetValidAbsoluteNumber("Input any Decimal number");
+            string hexaString = "";
+            string quotient = "";
+
+            //Note that if d is < 16 then d = d % 16 would just keep d's existing value so a condition is necessary
+            for( int d = decimalNumber; d > 0; d = d > 16 ? d % 16 : 0 )
+            {
+                if( d < 16 )
+                {
+                    quotient = d > 9 ? ((hexa)d).ToString() : d.ToString();
+                }
+                else
+                {
+                    quotient = (d / 16) > 9 ? ((hexa)(d / 16)).ToString() : (d / 16).ToString();
+                }
+                
+                hexaString += quotient;
+            }
+
+            Console.WriteLine($"The equivalent Hexadecimal Number: {hexaString}");
+        }
+    }
 }
