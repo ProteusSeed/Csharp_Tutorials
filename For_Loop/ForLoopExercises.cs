@@ -1692,4 +1692,44 @@ namespace For_Loop
             Console.WriteLine($"The equivalent Hexadecimal Number: {hexaString}");
         }
     }
+
+    public static class Exercise_56
+    {
+        /*56. Write a program in C# Sharp to Check Whether a Number can be Express as Sum of Two Prime Numbers. 
+            Test Data :
+            Input a positive integer: 16
+            Expected Output :
+            16 = 3 + 13
+            16 = 5 + 11
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Input a positive integer");
+
+            //test if two addends of given number are primes.  
+            for (int n = 2; n < number; n++)
+            {
+                if (isPrime(n) && isPrime(number - n))
+                {
+                    Console.WriteLine($"{number} = {n} + {number - n}");
+                    return;
+                }
+            }
+            Console.WriteLine($"{number} cannot be expressed as a sum of two prime numbers");
+        }
+
+        public static Boolean isPrime( int number )
+        {
+            Boolean prime = true;
+
+            //Check if number is perfectly divisbile by any number between the humber and 1/2 of the number 
+            for( int n = 2; n <= (number / 2); n++)
+            {
+                if (number % n == 0) prime = false;
+            }
+
+            return prime;
+        }
+    }
 }
