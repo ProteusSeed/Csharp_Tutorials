@@ -1732,4 +1732,28 @@ namespace For_Loop
             return prime;
         }
     }
+
+    public static class Exercise_57
+    {
+        /*
+         * 57. Write a program in C# Sharp to print a string in reverse order. 
+            Test Data :
+            Input a string to reverse : Welcome
+            Expected Output :
+            Reversed string is: emocleW
+            Click me to see the solution
+        */
+
+        public static void Execute()
+        {
+            string inputString = UtilityMethods.GetValidString("Input a string to reverse");
+
+            var varReverseString = new string( inputString.ToCharArray().Reverse().ToArray() );
+
+            // string reverseString = varReverseString.
+
+
+            Console.WriteLine("Reversed string is {0}", varReverseString);
+        }
+    }
 }
