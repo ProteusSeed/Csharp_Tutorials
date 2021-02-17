@@ -1756,4 +1756,50 @@ namespace For_Loop
             Console.WriteLine("Reversed string is {0}", varReverseString);
         }
     }
+
+    public static class Exercise_58
+    {
+        /*
+         * Write a C#Sharp program to display alphabet pattern like A with an asterisk. 
+
+            Display the pattern like 'A' with an asterisk:                                      
+            ---------------------------------------------                                    
+                                                                                 
+              ***                                                                            
+             *   *                                                                           
+             *   *                                                                           
+             *****                                                                           
+             *   *                                                                           
+             *   *                                                                           
+             *   *                                                                           
+             *   * 
+         */
+        public static void Execute()
+        {
+            string character = "*";
+
+            for( int a = 0; a < 8; a++ )
+            {
+                for (int c = 0; c < 5; c++)
+                {
+                    if (
+                         ((a == 1 | a == 2 | a >= 4 ) & c >= 1 & c <= 3)
+                         |
+                         (a == 0 & (c == 0 | c == 4 ) )
+                        )
+                    {
+                        character = " ";
+                    }
+                    else { character = "*"; }
+
+                    Console.Write(character);
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+    }
+
+
 }
