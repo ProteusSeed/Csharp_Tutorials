@@ -1801,5 +1801,51 @@ namespace For_Loop
 
     }
 
+    public static class Exercise_59
+    {
+        /*
+         * 59. Write a C#Sharp program to display alphabet pattern like B with an asterisk.
 
+            Display the pattern like 'B' with an asterisk:                                      
+            ---------------------------------------------                                    
+                                                                                 
+             ****                                                                            
+             *   *                                                                           
+             *   *                                                                           
+             ****                                                                            
+             *   *                                                                           
+             *   *                                                                           
+             ****   
+         */
+
+        public static void Execute()
+        {
+            string character = "*";
+
+            for (int b = 0; b < 7; b++)
+            {
+                for (int c = 0; c < 5; c++)
+                {
+                    if (
+                        ((b != 0 & b != 3 & b != 6) & c != 0 & c != 4)
+                        |
+                        ( (b == 0 | b == 3 | b == 6 ) & c == 4 )
+                        )
+                    {
+                       character = " ";
+                    }
+                    else
+                    {
+                        character = "*";
+                    }
+                    Console.Write(character);
+                }
+
+                Console.WriteLine();
+
+            }
+
+           
+        }
+    }
 }
