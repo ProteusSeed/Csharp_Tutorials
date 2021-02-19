@@ -1848,4 +1848,44 @@ namespace For_Loop
            
         }
     }
+
+    public static class Exercise_83
+    {
+        /*
+         * Write a C#Sharp program to display alphabet pattern like Z with an asterisk. 
+
+            Display the pattern like 'Z' with an asterisk:                                      
+            ---------------------------------------------                                    
+                                                                                 
+            *******                                                                          
+                 *                                                                           
+                *                                                                            
+               *                                                                             
+              *                                                                              
+             *                                                                               
+            *******   
+         */
+
+        public static void Execute()
+        {
+            string character = "*";
+
+            for( int x = 0; x < 7; x ++ )
+            {
+                Console.Write(character);
+            }
+
+            Console.WriteLine();
+
+            for ( int y = 5; y > 0; y-- )
+            {
+                Console.WriteLine(new string(' ', y - 1) + "*" );
+            }
+
+            for (int z = 0; z < 7; z++)
+            {
+                Console.Write(character);
+            }
+        }
+    }
 }
