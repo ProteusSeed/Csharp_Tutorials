@@ -1,0 +1,16 @@
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Arrays.exe
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Arrays.deps.json
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Arrays.runtimeconfig.json
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Arrays.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Arrays.dll
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Arrays.pdb
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Basic_1.dll
+D:\Git\CSharp_Practice\Arrays\bin\Debug\netcoreapp3.1\Basic_1.pdb
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.AssemblyInfo.cs
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.csproj.CopyComplete
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.dll
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.pdb
+D:\Git\CSharp_Practice\Arrays\obj\Debug\netcoreapp3.1\Arrays.genruntimeconfig.cache
