@@ -22,6 +22,11 @@ namespace Arrays
                     case 2:
                         Exercise_2.Execute();
                         break;
+
+                    case 3:
+                        Exercise_3.Execute();
+                        break;
+
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;
