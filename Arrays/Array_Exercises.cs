@@ -172,4 +172,92 @@ namespace Arrays
 
         }
     }
+
+    public static class Exercise_5
+    {
+        /*
+         * 5. Write a program in C# Sharp to count a total number of duplicate elements in an array. 
+            Test Data :
+            Input the number of elements to be stored in the array :3
+            Input 3 elements in the array :
+            element - 0 : 5
+            element - 1 : 1
+            element - 2 : 1
+            Expected Output :
+            Total number of duplicate elements found in the array is : 1
+         */
+
+        public static void Execute()
+        {
+            int numOfElements = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the array");
+            string[] elements = new string[numOfElements];
+
+            Console.WriteLine($"Input {numOfElements} elements in the array: ");
+
+            for( int e = 0; e < numOfElements; e++ )
+            {
+                elements[e] = UtilityMethods.GetValidString($"element - {e}");
+            }
+
+            Console.WriteLine($" Total number of duplicate elements found in the array is: {CountDupes(elements)}");
+        }
+
+        private static int CountDupes( string[] elements )
+        {
+            int countOfDupes = 0;
+            int countOfElements = 0;
+
+            foreach (var element in elements)
+            {
+                countOfElements = Array.FindAll(elements, e => e == element).Length;
+
+                if (countOfElements > 1) countOfDupes++;
+
+                //update array
+                elements = Array.FindAll(elements, e => e != element);
+            }
+
+            return countOfDupes;
+        }
+    }
+
+    public static class Exercise_6  
+    {
+        /*
+         * 6. Write a program in C# Sharp to print all unique elements in an array. 
+            Test Data :
+            Input the number of elements to be stored in the array :3
+            Input 3 elements in the array :
+            element - 0 : 1
+            element - 1 : 5
+            element - 2 : 1
+            Expected Output :
+            The unique elements found in the array are :
+            5
+         */
+
+        public static void Execute()
+        {
+            int numOfElements = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the array");
+            string[] Elements = new string[numOfElements];
+            int numOfCopies = 0;
+
+            for( int e = 0; e < numOfElements; e++ )
+            {
+                Elements[e] = UtilityMethods.GetValidString($"element - {e}");
+            }
+
+            Console.Write("The unique elements found in the array are: ");
+
+            for(int e = 0; e < numOfElements; e++)
+            {
+                numOfCopies = Array.FindAll(Elements, el => el == Elements[e]).Length;
+                if (numOfCopies == 1) Console.Write($"{Elements[e]} ");
+
+                numOfElements -= numOfCopies; //update the # of elements.
+                //return only those elements not matching the current element
+                Elements = Array.FindAll(Elements, el => el != Elements[e]);
+            }
+        }
+    }
 }
