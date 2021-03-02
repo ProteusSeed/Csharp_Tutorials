@@ -260,4 +260,64 @@ namespace Arrays
             }
         }
     }
+
+    public static class Exercise_7
+    {
+        /*
+         * 7. Write a program in C# Sharp to merge two arrays of same size sorted in ascending order. 
+            Test Data :
+            Input the number of elements to be stored in the first array :3
+            Input 3 elements in the array :
+            element - 0 : 1
+            element - 1 : 2
+            element - 2 : 3
+            Input the number of elements to be stored in the second array :3
+            Input 3 elements in the array:
+            element - 0 : 1
+            element - 1 : 2
+            element - 2 : 3
+            Expected Output:
+            The merged array in ascending order is :
+            1 1 2 2 3 3
+         */
+
+        public static void Execute()
+        {
+            int firstNumElements = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the first array");
+            int secondNumElements = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the second array");
+
+            int[] firstElements = new int[firstNumElements];
+            int[] secondElements = new int[secondNumElements];
+
+            int[] allElements = new int[firstNumElements + secondNumElements];
+
+            Console.Write($"Input {firstNumElements} elements in the array: ");
+
+            for( int e = 0; e < firstNumElements; e++)
+            {
+
+                firstElements[e] = UtilityMethods.GetValidAbsoluteNumber($" element - 0{e}");
+            }
+
+            Console.WriteLine($"Input {secondNumElements} elements in the array: ");
+
+            for (int e2 = 0; e2 < secondNumElements; e2++)
+            {
+                secondElements[e2] = UtilityMethods.GetValidAbsoluteNumber($" element - 0{e2}");
+            }
+
+            firstElements.CopyTo(allElements, 0);
+            secondElements.CopyTo(allElements, firstNumElements);
+
+            Console.WriteLine("The merged array in ascending order is: ");
+
+            foreach( var element in allElements)
+            {
+                Console.Write($"{element} ");
+            }    
+
+        }
+    }
+
+
 }
