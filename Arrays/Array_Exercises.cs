@@ -309,6 +309,8 @@ namespace Arrays
             firstElements.CopyTo(allElements, 0);
             secondElements.CopyTo(allElements, firstNumElements);
 
+            Array.Sort(allElements);
+
             Console.WriteLine("The merged array in ascending order is: ");
 
             foreach( var element in allElements)
