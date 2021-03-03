@@ -321,5 +321,43 @@ namespace Arrays
         }
     }
 
+    public static class Exercise_8
+    {
+        /*
+         * 8. Write a program in C# Sharp to count the frequency of each element of an array. 
+            Test Data :
+            Input the number of elements to be stored in the array :3
+            Input 3 elements in the array :
+            element - 0 : 25
+            element - 1 : 12
+            element - 2 : 43
+            Expected Output :
+            Frequency of all elements of array :
+            25 occurs 1 times
+            12 occurs 1 times
+            43 occurs 1 times
+         */
 
+        public static void Execute()
+        {
+            int numOfElemeents = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the array");
+            string[] elements = new string[numOfElemeents];
+            int countOfElements = 0;
+            string es = "";
+
+            for ( int e = 0; e < numOfElemeents; e++)
+            {
+                elements[e] = UtilityMethods.GetValidString($"element - {e}:");
+            }
+
+            foreach( var element in elements)
+            {
+                countOfElements = Array.FindAll(elements, e => element == e).Length;
+                es = countOfElements == 1 ? "" : "s";
+
+                Console.WriteLine($"{element} occurs {countOfElements} time{es}");
+            }
+
+        }
+    }
 }
