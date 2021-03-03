@@ -360,4 +360,39 @@ namespace Arrays
 
         }
     }
+
+    public static class Exercise_9
+    {
+        /*
+         * 9. Write a program in C# Sharp to find maximum and minimum element in an array. 
+            Test Data :
+            Input the number of elements to be stored in the array :3
+            Input 3 elements in the array :
+            element - 0 : 45
+            element - 1 : 25
+            element - 2 : 21
+            Expected Output :
+            Maximum element is : 45
+            Minimum element is : 21
+         */
+
+        public static void Execute()
+        {
+            int numElements = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the array");
+            int[] elements = new int[numElements];
+            int min = 0, max = 0;
+
+            for( int e = 0; e < numElements; e++ )
+            {
+                elements[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {e+1}:");
+            }
+
+            Array.Sort(elements);
+            min = elements[0];
+            max = elements[numElements - 1];
+
+            Console.WriteLine($"Maximum element: {min}");
+            Console.WriteLine($"Maximum element: {max}");
+        }
+    }
 }
