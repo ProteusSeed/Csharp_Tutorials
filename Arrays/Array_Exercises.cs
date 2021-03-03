@@ -395,4 +395,54 @@ namespace Arrays
             Console.WriteLine($"Maximum element: {max}");
         }
     }
+
+    public static class Exercise_10
+    {
+        /*
+         * 10. Write a programin C# Sharp to separate odd and even integers in separate arrays. 
+            Test Data :
+            Input the number of elements to be stored in the array :5
+            Input 5 elements in the array :
+            element - 0 : 25
+            element - 1 : 47
+            element - 2 : 42
+            element - 3 : 56
+            element - 4 : 32
+            Expected Output:
+            The Even elements are:
+            42 56 32
+            The Odd elements are :
+            25 47
+         */
+
+        public static void Execute()
+        {
+            int numElements = UtilityMethods.GetValidAbsoluteNumber("Input the number of elements to be stored in the array");
+            int[] elements = new int[numElements];
+            string evenElements = "", oddElements = "";
+
+            for(int e = 0; e < numElements; e++)
+            {
+                elements[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {e}");
+            }
+
+            int[] even = Array.FindAll(elements, e => e % 2 == 0);
+            int[] odd = Array.FindAll(elements, e => e % 2 > 0);
+
+            foreach( var element in even)
+            {
+                evenElements += element + " ";
+            }
+
+            Console.WriteLine($"The even elements are: {evenElements}");
+
+            foreach (var element in odd)
+            {
+                oddElements += element + " ";
+            }
+
+            Console.WriteLine($"The Odd elements are: {oddElements}");
+
+        }
+    }
 }
