@@ -484,4 +484,43 @@ namespace Arrays
             Console.WriteLine($"Elements of array in sorted ascending order: {sortedElements}");
         }
     }
+
+    public static class Exercise_12
+    {
+        /*
+         * 12. Write a program in C# Sharp to sort elements of the array in descending order. 
+            Test Data :
+            Input the size of array : 3
+            Input 3 elements in the array :
+            element - 0 : 5
+            element - 1 : 9
+            element - 2 : 1
+            Expected Output :
+            Elements of the array in sorted descending order:
+            9 5 1
+        */
+
+        public static void Execute()
+        {
+            int arraySize = UtilityMethods.GetValidAbsoluteNumber("Input the size of the array");
+            int[] array = new int[arraySize];
+
+            for( int e = 0; e < arraySize; e++ )
+            {
+                array[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {e}");
+            }
+
+            //resort
+            Array.Sort(array);
+            Array.Reverse(array);            
+
+            Console.WriteLine("Elements of the array in sorted descending order:");
+
+            foreach( var element in array)
+            {
+                Console.Write($"{element} ");
+            }
+        }
+    }
+
 }
