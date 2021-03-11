@@ -523,4 +523,56 @@ namespace Arrays
         }
     }
 
+    public static class Exercise_13
+    {
+        /*
+         * 13. Write a program in C# Sharp to insert New value in the array (sorted list ). 
+            Test Data :
+            Input the size of array : 3
+            Input 3 elements in the array in ascending order:
+            element - 0 : 5
+            element - 1 : 7
+            element - 2 : 9
+            Input the value to be inserted : 8
+            Expected Output :
+            The exist array list is : 5 7 9
+            After Insert the list is : 5 7 8 9
+        */
+
+        public static void Execute()
+        {
+            int arraySize = UtilityMethods.GetValidAbsoluteNumber("Input the size of array");
+            int[] array = new int[arraySize];
+
+            Console.WriteLine("Input {0} elements in the array in ascending order:", arraySize);
+
+            for( int e = 0; e < arraySize; e ++ )
+            {
+                array[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {e}");
+            }
+
+            int insertVal = UtilityMethods.GetValidAbsoluteNumber("Input the value to be inserted");
+
+            Console.Write("The existing array list is: ");
+            foreach (var element in array)
+            {
+                Console.Write($"{element} ");
+            }
+           
+
+            Array.Resize(ref array, arraySize + 1);
+
+            array[array.Length - 1] = insertVal;
+
+            Array.Sort(array);
+
+            Console.WriteLine();
+            Console.Write("After Insert the list is: ");
+            foreach (var element in array)
+            {
+                Console.Write($"{element} ");
+            }
+
+        }
+    }
 }
