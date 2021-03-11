@@ -575,4 +575,68 @@ namespace Arrays
 
         }
     }
+
+    public static class Exercise_14
+    {
+        /*
+         * 14. Write a program in C# Sharp to insert New value in the array (unsorted list ). 
+            Test Data :
+            Input the size of array : 4
+            Input 4 elements in the array in ascending order:
+            element - 0 : 1
+            element - 1 : 8
+            element - 2 : 7
+            element - 3 : 10
+            Input the value to be inserted : 5
+            Input the Position, where the value to be inserted :2
+            Expected Output :
+            The current list of the array :
+            1 8 7 10
+            After Insert the element the new list is :
+            1 5 8 7 10
+        */
+
+        public static void Execute()
+        {
+            int arraySize = UtilityMethods.GetValidAbsoluteNumber("Input the size of array");
+            int[] array = new int[arraySize];
+            int prevPosition = 0;
+
+            for( int e = 0; e < arraySize; e++ )
+            {
+                array[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {0}: ");
+            }
+
+            int insert = UtilityMethods.GetValidAbsoluteNumber("Input the value to be inserted");
+            int position = UtilityMethods.GetValidAbsoluteNumber("Input the position where the value is to be inserted");
+            position--; //positions are zero based.
+
+            Console.Write("The current list of the array: ");
+            foreach( var element in array)
+            {
+                Console.Write($"{element} ");
+
+            }
+            Console.WriteLine();
+
+            //resize array
+            Array.Resize(ref array, arraySize + 1);
+
+            //move elements
+            for( int p = array.Length - 1; p >= position; p-- )
+            {
+                prevPosition = p > 0 ? p - 1 : 0;
+
+                array[p] = array[prevPosition];
+            }
+
+            array[position] = insert;
+
+            Console.WriteLine("After Inserting the element the new list is:");
+            foreach( var element in array)
+            {
+                Console.Write($"{element} ");
+            }
+        }
+    }
 }
