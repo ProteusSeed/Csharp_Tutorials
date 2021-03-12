@@ -687,5 +687,37 @@ namespace Arrays
 
     }
 
+    public static class Exercise_16
+    {
+        /*
+         * 16. Write a program in C# Sharp to find the second largest element in an array. 
+            Test Data :
+            Input the size of array : 5
+            Input 5 elements in the array :
+            element - 0 : 2
+            element - 1 : 9
+            element - 2 : 1
+            element - 3 : 4
+            element - 4 : 6
+            Expected Output :
+            The Second largest element in the array is: 6
+        */
 
+        public static void Execute()
+        {
+            int arraySize = UtilityMethods.GetValidAbsoluteNumber($"Input the size of the array");
+            int[] array = new int[arraySize];
+
+            Console.WriteLine("Input 5 elements in the array:");
+
+            for (int e = 0; e < arraySize; e++ )
+            {
+                array[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {e}");
+            }
+
+            Array.Sort(array);
+
+            Console.WriteLine($"The second largest element in the array is: {array[array.Length - 2]}");
+        }
+    }
 }
