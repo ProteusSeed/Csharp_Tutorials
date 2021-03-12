@@ -720,4 +720,38 @@ namespace Arrays
             Console.WriteLine($"The second largest element in the array is: {array[array.Length - 2]}");
         }
     }
+
+    public static class Exercise_17
+    {
+        /*
+         * 17. Write a program in C# Sharp to find the second smallest element in an array. 
+            Test Data :
+            Input the size of array : 5
+            Input 5 elements in the array (value must be <9999) :
+            element - 0 : 0
+            element - 1 : 9
+            element - 2 : 4
+            element - 3 : 6
+            element - 4 : 5
+            Expected Output :
+            The Second smallest element in the array is : 4
+         */
+
+        public static void Execute()
+        {
+            int arraySize = UtilityMethods.GetValidAbsoluteNumber($"Input the size of the array");
+            int[] array = new int[arraySize];
+
+            Console.WriteLine("Input 5 elements in the array:");
+
+            for (int e = 0; e < arraySize; e++)
+            {
+                array[e] = UtilityMethods.GetValidAbsoluteNumber($"element - {e}");
+            }
+
+            Array.Sort(array);
+
+            Console.WriteLine($"The second largest element in the array is: {array[1]}");
+        }
+    }
 }
