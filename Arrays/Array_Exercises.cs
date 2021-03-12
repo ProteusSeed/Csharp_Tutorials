@@ -639,4 +639,53 @@ namespace Arrays
             }
         }
     }
+
+    public static class Exercise_15
+    {
+        /*
+         * 15. Write a program in C# Sharp to delete an element at desired position from an array. Go to the editor
+            Test Data :
+            Input the size of array : 5
+            Input 5 elements in the array in ascending order:
+            element - 0 : 1
+            element - 1 : 2
+            element - 2 : 3
+            element - 3 : 4
+            element - 4 : 5
+            Input the position where to delete: 3
+            Expected Output :
+            The new list is : 1 2 4 5
+            Click me to see the solution
+        */
+
+        public static void Execute()
+        {
+            int arraySize = UtilityMethods.GetValidAbsoluteNumber("Input the size of the array");
+            int deletePosition = UtilityMethods.GetValidAbsoluteNumber("Input the position where to delete");
+            deletePosition--;
+
+            int[] array = new int[arraySize];
+
+            for( int element = 0; element < arraySize; element++ )
+            {
+                array[element] = UtilityMethods.GetValidAbsoluteNumber($"element - {element}");
+            }
+
+            for( int e = deletePosition; e < array.Length - 1; e++ )
+            {
+                array[e] = array[e + 1];
+            }
+
+            Array.Resize(ref array, arraySize - 1);
+
+            Console.Write("The new list is: ");
+            foreach ( var element in  array)
+            {
+                Console.Write($"{element} ");
+            }
+        }
+
+    }
+
+
 }
