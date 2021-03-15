@@ -87,6 +87,10 @@ namespace Arrays
                         Exercise_18.Execute();
                         break;
 
+                    case 19:
+                        Exercise_19.Execute();
+                        break;
+
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;

@@ -801,4 +801,96 @@ namespace Arrays
             }
         }
     }
+
+    public static class Exercise_19
+    {
+        /*
+         * 19. Write a program in C# Sharp for addition of two Matrices of same size. 
+            Test Data :
+            Input the size of the square matrix (less than 5): 2
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Input elements in the second matrix :
+            element - [0],[0] : 5
+            element - [0],[1] : 6
+            element - [1],[0] : 7
+            element - [1],[1] : 8
+            Expected Output:
+            The First matrix is:
+
+            1 2
+            3 4
+            The Second matrix is :
+
+            5 6
+            7 8
+            The Addition of two matrix is :
+
+            6 8
+            10 12
+        */
+
+        public static void Execute()
+        {
+            int matrixSize = UtilityMethods.GetValidNumber(1, 5, " Input the size of the square matrix (less than 5)");
+            int[,] matrix1 = new int[matrixSize, matrixSize];
+            int[,] matrix2 = new int[matrixSize, matrixSize];
+
+            Console.WriteLine("Input elements in the first matrix:");
+            for ( int m1x = 0; m1x < matrixSize; m1x++ )
+            {
+                for (int m1y = 0; m1y < matrixSize; m1y++)
+                {
+                    matrix1[m1x, m1y] = UtilityMethods.GetValidAbsoluteNumber($"element - {m1x},{m1y}");
+                }
+            }
+
+            Console.WriteLine("Input elements in the second matrix:");
+            for (int m2x = 0; m2x < matrixSize; m2x++)
+            {
+                for (int m2y = 0; m2y < matrixSize; m2y++)
+                {
+                    matrix2[m2x, m2y] = UtilityMethods.GetValidAbsoluteNumber($"element - {m2x},{m2y}");
+                }
+            }
+
+            Console.Write("The First matrix is: ");
+            foreach( var element in matrix1 )
+            {
+                Console.Write($"{element} ");
+            }
+
+            Console.WriteLine();
+            Console.Write("The Second matrix is: ");
+            foreach (var element in matrix2)
+            {
+                Console.Write($"{element} ");
+            }
+
+            Console.WriteLine();
+            
+            string addition = MatrixAddition(matrix1, matrix2);
+            Console.Write($"The Addition of two matrix is: {addition}");
+        }
+
+        private static string MatrixAddition( int[,] matrix1, int[,] matrix2 )
+        {
+            int size = matrix1.GetLength(0);
+            string addition = "";
+
+            for( int x = 0; x < size; x++)
+            {
+                for( int y = 0; y < size; y++ )
+                {
+                    addition += Convert.ToString(matrix1[x, y] + matrix2[x, y]) + "\n";
+                }
+            }
+
+            return addition;
+        }
+
+    }
 }
