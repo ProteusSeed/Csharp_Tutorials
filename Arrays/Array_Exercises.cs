@@ -893,4 +893,95 @@ namespace Arrays
         }
 
     }
+
+    public static class Exercise_20
+    {
+        /*
+         * 20. Write a program in C# Sharp for subtraction of two Matrices. 
+            Test Data :
+            Input the size of the square matrix (less than 5): 2
+            Input elements in the first matrix :
+            element - [0],[0] : 5
+            element - [0],[1] : 6
+            element - [1],[0] : 7
+            element - [1],[1] : 8
+            Input elements in the second matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Expected Output :
+            The First matrix is :
+
+            5 6
+            7 8
+            The Second matrix is :
+
+            1 2
+            3 4
+            The Subtraction of two matrix is :
+
+            4 4
+            4 4
+         */
+
+        public static void Execute()
+        {
+            int size = UtilityMethods.GetValidNumber(1, 5, "Input the size of the square matrix (less than 5)");
+            int[,] matrix1 = new int[size, size];
+            int[,] matrix2 = new int[size, size];
+            
+
+            Console.WriteLine("Input elements in the first matrix:");
+            for( int m1x = 0; m1x < size; m1x++ )
+            {
+                for (int m1y = 0; m1y < size; m1y++)
+                {
+                    matrix1[m1x, m1y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{m1x}],[{m1y}]");
+                }
+            }
+
+            Console.WriteLine("Input elements in the second matrix:");
+            for (int m2x = 0; m2x < size; m2x++)
+            {
+                for (int m2y = 0; m2y < size; m2y++)
+                {
+                    matrix2[m2x, m2y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{m2x}],[{m2y}]");
+                }
+            }
+
+            Console.WriteLine("The First matrix is: ");
+            foreach( var element in matrix1)
+            {
+                Console.WriteLine($"{element} ");
+            }
+
+            //Console.WriteLine();
+
+            Console.WriteLine("The second matrix is: ");
+            foreach (var element in matrix2)
+            {
+                Console.WriteLine($"{element} ");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine($"The Subtraction of two matrix is: {subtractMatrix(matrix1, matrix2)}");
+        }
+
+        private static string subtractMatrix( int[,] matrix1, int[,] matrix2)
+        {
+            string sumString = "";
+
+            for ( int x = 0; x < matrix1.GetLength(0); x++ )
+            {
+                for( int y = 0; y < matrix1.GetLength(0); y++ )
+                {
+                    sumString += Convert.ToString( matrix1[x, y] - matrix2[x, y]) + " ";
+                }
+            }
+
+            return sumString;
+        }
+    }
 }
