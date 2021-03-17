@@ -984,4 +984,105 @@ namespace Arrays
             return sumString;
         }
     }
+
+    public static class Exercise_21
+    {
+        /*
+         * 21. Write a program in C# Sharp for multiplication of two square Matrices. 
+            Test Data :
+            Input the rows and columns of first matrix : 2 2
+            Input the rows and columns of second matrix : 2 2
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Input elements in the second matrix :
+            element - [0],[0] : 5
+            element - [0],[1] : 6
+            element - [1],[0] : 7
+            element - [1],[1] : 8
+            Expected Output :
+            The First matrix is :
+
+            1 2
+            3 4
+            The Second matrix is :
+
+            5 6
+            7 8
+            The multiplication of two matrix is :
+
+            19 22
+            43 50
+         */
+
+        public static void Execute()
+        {
+            int matrix1Rows = UtilityMethods.GetValidNumber(1, 5, "Input the number of rows in the first matrix: ");
+            int matrix1Cols = UtilityMethods.GetValidNumber(1, 5, "Input the number of columnss in the first matrix: ");
+            int matrix2Rows = UtilityMethods.GetValidNumber(1, 5, "Input the number of rows in the second matrix: ");
+            int matrix2Cols = UtilityMethods.GetValidNumber(1, 5, "Input the number of columnss in the second matrix: ");
+
+            int[,] matrix1 = new int[matrix1Rows, matrix1Cols];
+            int[,] matrix2 = new int[matrix2Rows, matrix2Cols];
+
+
+            Console.WriteLine("Input elements in the first matrix:");
+            for (int m1x = 0; m1x < matrix1Rows; m1x++)//rows
+            {
+                for (int m1y = 0; m1y < matrix1Cols; m1y++)//cols
+                {
+                    matrix1[m1x, m1y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{m1x}],[{m1y}]");
+                }
+            }
+
+            Console.WriteLine("Input elements in the second matrix:");
+            for (int m2x = 0; m2x < matrix2Rows; m2x++)
+            {
+                for (int m2y = 0; m2y < matrix2Cols; m2y++)
+                {
+                    matrix2[m2x, m2y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{m2x}],[{m2y}]");
+                }
+            }
+
+            Console.WriteLine("The First matrix is: ");
+            foreach (var element in matrix1)
+            {
+                Console.WriteLine($"{element} ");
+            }
+
+            //Console.WriteLine();
+
+            Console.WriteLine("The second matrix is: ");
+            foreach (var element in matrix2)
+            {
+                Console.WriteLine($"{element} ");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine($"The multiplication of two matrix is: \n {multiplyMatrix(matrix1, matrix2)}");
+        }
+
+        private static string multiplyMatrix(int[,] matrix1, int[,] matrix2)
+        {
+            string multString = "";
+
+            for (int x = 0; x < matrix1.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix1.GetLength(0); y++)
+                {
+                    multString += Convert.ToString(matrix1[x, y] * matrix2[x, y]) + " ";
+                }
+
+                multString += "\n";
+
+            }
+
+            return multString;
+        }
+    }
+
+
 }
