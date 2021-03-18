@@ -1084,5 +1084,82 @@ namespace Arrays
         }
     }
 
+    public static class Exercise_22
+    {
+        /*
+         * 22. Write a program in C# Sharp to find transpose of a given matrix. 
+            Test Data :
+            Input the rows and columns of the matrix : 2 2
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Expected Output :
+            The matrix is :
+                1 2
+                3 4
 
+            The Transpose of a matrix is :
+                1 3
+                2 4
+        */
+
+        public static void Execute()
+        {
+            int rows = UtilityMethods.GetValidAbsoluteNumber("Input the # of rows in the matrix");
+            int cols = UtilityMethods.GetValidAbsoluteNumber("Input the # of columns in the matrix");
+            int[,] matrix = new int[rows, cols];
+
+            for( int x = 0; x < rows; x++ )
+            {
+                for( int y = 0; y < cols; y++ )
+                {
+                    matrix[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{x}],[{y}]: ");
+                }
+            }
+
+            Console.WriteLine("The matrix is: ");
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < cols; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+
+                Console.WriteLine();
+            }
+
+            int[,] transposedMatrix = transpose(matrix);
+
+            Console.WriteLine("The transpose of the matrix is: ");
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < cols; y++)
+                {
+                    Console.Write($"{transposedMatrix[x, y]} ");
+                }
+                Console.WriteLine();
+            }
+
+        }
+
+        private static int[,] transpose( int[,] matrix)
+        {
+            int[,] transposedMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
+            int diagonalPosition = 0;
+
+            for( int x = 0; x < matrix.GetLength(0); x++ )
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    //if (y == diagonalPosition) Console.WriteLine($"{y} Diagonal!");
+                    transposedMatrix[y, x] = matrix[x, y];
+                }
+                diagonalPosition++;
+            }
+
+            return transposedMatrix;
+        }
+    }
 }
