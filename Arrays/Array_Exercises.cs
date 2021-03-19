@@ -1207,7 +1207,7 @@ namespace Arrays
             }
 
             string addition = MatrixAddition(matrix);
-            Console.WriteLine("Addition of the left Diagonal elements is: {0}", addition);
+            Console.WriteLine("Addition of the right Diagonal elements is: {0}", addition);
         }
 
         private static string MatrixAddition( int[,] matrix)
@@ -1223,6 +1223,71 @@ namespace Arrays
                 }
 
                 diagonalPosition--; //move diagonally at next row
+            }
+
+            return addition.ToString();
+        }
+    }
+
+    public static class Exercise_24
+    {
+        /*
+         * 24. Write a program in C# Sharp to find the sum of left diagonals of a matrix. 
+            Test Data:
+            Input the size of the square matrix : 2
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Expected Output :
+            The matrix is :
+            1 2
+            3 4
+         */
+
+        public static void Execute()
+        {
+            int size = UtilityMethods.GetValidAbsoluteNumber("Input the size of the square matrix");
+            int[,] matrix = new int[size, size];
+
+            Console.WriteLine("Input elements in the first matrix: ");
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    matrix[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{x}],[{y}]");
+                }
+            }
+
+            Console.WriteLine("The matrix is;");
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+                Console.WriteLine();
+            }
+
+            string addition = MatrixAddition(matrix);
+            Console.WriteLine("Addition of the left Diagonal elements is: {0}", addition);
+        }
+
+        private static string MatrixAddition(int[,] matrix)
+        {
+            int addition = 0;
+            int diagonalPosition = 0;
+
+            for (int x = 0; x < matrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    if (y == diagonalPosition) addition += matrix[x, y];
+                }
+
+                diagonalPosition++; //move diagonally at next row
             }
 
             return addition.ToString();
