@@ -1293,4 +1293,83 @@ namespace Arrays
             return addition.ToString();
         }
     }
+
+    public static class Exercise_25
+    {
+        /*
+         * 25. Write a program in C# Sharp to find sum of rows an columns of a Matrix.Go to the editor
+            Test Data :
+            Input the size of the square matrix: 2
+            Input elements in the first matrix:
+            element - [0],[0] : 5
+            element - [0],[1] : 6
+            element - [1],[0] : 7
+            element - [1],[1] : 8
+            Expected Output :
+            The First matrix is :
+            The matrix is :
+            5 6
+            7 8
+            The sum or rows and columns of the matrix is :
+            5 6 11
+            7 8 15
+
+            12 14
+         */
+
+        public static void Execute()
+        {
+            int matrixSize = UtilityMethods.GetValidAbsoluteNumber("Input the size of the square matrix");
+            int[,] matrix = new int[matrixSize, matrixSize];
+            int rowSum = 0; int ColumnSum = 0;
+
+            for (int row = 0; row < matrixSize; row++)
+            {
+                for (int column = 0; column < matrixSize; column++)
+                {
+                    matrix[row, column] = UtilityMethods.GetValidAbsoluteNumber($"element - [{0}],[{0}]");
+                } 
+            }
+
+            Console.WriteLine("The First matrix is: ");
+
+            for (int x = 0; x < matrixSize; x++)
+			{
+                
+                for (int y = 0; y < matrixSize; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+
+                Console.WriteLine();
+			}
+
+            Console.WriteLine("The sum of rows and columns of the matrix is:");
+
+            for (int x = 0; x < matrixSize; x++)
+            {
+
+                for (int y = 0; y < matrixSize; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                    rowSum += matrix[x, y];
+                }
+                Console.Write($"{rowSum}");
+                Console.WriteLine();
+                rowSum = 0;
+            }
+
+            for (int y = 0; y < matrixSize; y++)
+            {
+
+                for (int x = 0; x < matrixSize; x++)
+                {
+                    ColumnSum += matrix[x, y];
+                }
+
+                Console.Write($"{ColumnSum} ");
+                ColumnSum = 0;
+            }
+        }
+    }
 }
