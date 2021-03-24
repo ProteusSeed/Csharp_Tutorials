@@ -1405,7 +1405,6 @@ namespace Arrays
         {
             int size = UtilityMethods.GetValidAbsoluteNumber($"Input the size of the square matrix");
             int[,] matrix = new int[size, size];
-            int diagonalPosition = 0;
 
             Console.WriteLine("Input elements in the first matrix:");
 
@@ -1429,16 +1428,6 @@ namespace Arrays
                 Console.WriteLine();
             }
 
-            for (int x = 0; x < size; x++)
-            {
-                for(int y = 0; y < size; y++)
-                {
-                    if (y < diagonalPosition) matrix[x, y] = 0;
-                }
-
-                diagonalPosition++;
-            }
-
             Console.WriteLine("Setting zero in lower triangular matrix:");
 
             triangular(ref matrix);
@@ -1457,7 +1446,108 @@ namespace Arrays
 
         private static void triangular( ref int[,] matrix )
         {
-            matrix[2, 0] = 0;
+            int diagonalPosition = 0;
+            int size = matrix.GetLength(0);
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    if (y < diagonalPosition) matrix[x, y] = 0;
+                }
+
+                diagonalPosition++;
+            }
+        }
+    }
+
+    public static class Exercise_27
+    {
+        /*
+            27. Write a program in C# Sharp to print or display the upper triangular of a given matrix. Go to the editor
+            Test Data :
+            Input the size of the square matrix : 3
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [0],[2] : 3
+            element - [1],[0] : 4
+            element - [1],[1] : 5
+            element - [1],[2] : 6
+            element - [2],[0] : 7
+            element - [2],[1] : 8
+            element - [2],[2] : 9
+            Expected Output :
+            The matrix is :
+            1 2 3
+            4 5 6
+            7 8 9
+
+            Setting zero in upper triangular matrix
+
+            1 0 0
+            4 5 0
+            7 8 9
+        */
+
+        public static void Execute()
+        {
+            int size = UtilityMethods.GetValidAbsoluteNumber($"Input the size of the square matrix");
+            int[,] matrix = new int[size, size];
+            int diagonalPosition = 0;
+
+            Console.WriteLine("Input elements in the first matrix:");
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    matrix[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{0}],[{0}]");
+                }
+            }
+
+            Console.WriteLine("The matrix is:");
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Setting zero in lower triangular matrix:");
+
+            triangular(ref matrix);
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+
+                Console.WriteLine();
+            }
+
+        }
+
+        private static void triangular(ref int[,] matrix)
+        {
+            int diagonalPosition = 0;
+            int size = matrix.GetLength(0);
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    if (y > diagonalPosition) matrix[x, y] = 0;
+                }
+
+                diagonalPosition++;
+            }
         }
     }
 }
