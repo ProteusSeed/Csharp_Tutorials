@@ -1550,4 +1550,120 @@ namespace Arrays
             }
         }
     }
+
+    public static class Exercise_28
+    {
+        /*FUCK THIS ONE.
+         * 28. Write a program in C# Sharp to calculate determinant of a 3 x 3 matrix. 
+            Test Data :
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 0
+            element - [0],[2] : -1
+            element - [1],[0] : 0
+            element - [1],[1] : 0
+            element - [1],[2] : 1
+            element - [2],[0] : -1
+            element - [2],[1] : -1
+            element - [2],[2] : 0
+            Expected Output:
+            The matrix is :
+            1 0 -1
+            0 0 1
+            -1 -1 0
+
+            The Determinant of the matrix is: 1
+         */
+
+        public static void Execute()
+        {
+            int[,] matrix = new int[3, 3];
+
+            for (int x = 0; x < 3; x++)
+            {
+                for( int y = 0; y < 3; y++ )
+                {
+                    matrix[x, y] = UtilityMethods.GetValidNumber($"element - [{x}],[{y}]");
+                }
+            }
+
+            Console.WriteLine("The matrix is: ");
+            for( int x = 0; x < 3; x++ )
+            {
+                for( int y = 0; y < 3; y++ )
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("The Determinant of the matrix is: {0}", determinant(matrix));
+
+        }
+
+        private static int determinant( int[,] matrix )
+        {
+            int LeftDiag = 0; int RightDiag = matrix.GetLength(1) - 1;
+            int LeftDiagBase = 0; int RightDiagBase = matrix.GetLength(1) - 1;
+            int CalcA = 0, CalcB = 0;
+
+            for (int x = 0; x < matrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    if (y == LeftDiag & y != LeftDiagBase) CalcA *= matrix[x, y];
+                    if (x == 0 & y == LeftDiagBase) CalcA = matrix[x, y];
+
+                    if (y == RightDiag & y != RightDiagBase) CalcB *= matrix[x, y];
+                    if (x == 0 & y == RightDiagBase) CalcB = matrix[x, y];
+                }
+                LeftDiag++;
+                RightDiag--;
+            }
+
+            return CalcA - CalcB;
+        }
+    }
+
+    public static class Exercise_29
+    {
+        /*
+         * 29. Write a program in C# Sharp to accept a matrix and determine whether it is a sparse matrix. 
+            Test Data :
+            Input the number of rows of the matrix : 2
+            Input the number of columns of the matrix : 2
+            Input elements in the first matrix :
+            element - [0],[0] : 0
+            element - [0],[1] : 0
+            element - [1],[0] : 1
+            element - [1],[1] : 0
+            Expected Output :
+            The given matrix is sparse matrix.
+            There are 3 number of zeros in the matrix
+         */
+
+        public static void Execute()
+        {
+            int numRows = UtilityMethods.GetValidAbsoluteNumber("Input the number of rows of the matrix");
+            int numCols = UtilityMethods.GetValidAbsoluteNumber("Input the number of cols of the matrix");
+            int totalElements = numRows * numCols;
+            int zeroCount = 0;
+            decimal sparcity = 0;
+            string isSpareMsg = "The given matrix is a sparse matrix.  ";
+            int[,] matrix = new int[numRows, numCols];
+
+            for (int x = 0; x < numRows; x++)
+            {
+                for (int y = 0; y < numCols; y++)
+                {
+                    matrix[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{x}],[{y}]");
+                    if (matrix[x, y] == 0) zeroCount += 1;
+                }
+            }
+
+            sparcity = (decimal)zeroCount / totalElements;
+            if (!(sparcity > .5m)) isSpareMsg = "The given matrix is NOT a sparse matrix.  "
+            Console.WriteLine($"{isSpareMsg}There are {zeroCount} zeros in the matrix");
+        }
+    }
 }
