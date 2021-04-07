@@ -1662,8 +1662,152 @@ namespace Arrays
             }
 
             sparcity = (decimal)zeroCount / totalElements;
-            if (!(sparcity > .5m)) isSpareMsg = "The given matrix is NOT a sparse matrix.  "
+            if (!(sparcity > .5m)) isSpareMsg = "The given matrix is NOT a sparse matrix.  ";
             Console.WriteLine($"{isSpareMsg}There are {zeroCount} zeros in the matrix");
+        }
+    }
+
+    public static class Exercise_30
+    {
+        /*
+         * 30. Write a program in C# Sharp to accept two matrices and check whether they are equal.
+            Test Data :
+            Input Rows and Columns of the 1st matrix :2 2
+            Input Rows and Columns of the 2nd matrix :2 2
+            Input elements in the first matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Input elements in the second matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 2
+            element - [1],[0] : 3
+            element - [1],[1] : 4
+            Expected Output :
+            The first matrix is :
+            1 2
+            3 4
+            The second matrix is :
+            1 2
+            3 4
+            The Matrices can be compared :
+            Two matrices are equal.
+         */
+
+        public static void Execute()
+        {
+            string matrixOneDims = UtilityMethods.GetValidString("Input Rows and Columns of the 1st matrix seperated by spaces");
+            string matrixtwoDims = UtilityMethods.GetValidString("Input Rows and Columns of the 1st matrix seperated by spaces");
+            int matrix1XdimSize = parseNumbers(matrixOneDims, 1);
+            int matrix1YdimSize = parseNumbers(matrixOneDims, 2);
+            int matrix2XdimSize = parseNumbers(matrixtwoDims, 1);
+            int matrix2YdimSize = parseNumbers(matrixtwoDims, 2);
+            int[,] matrix1 = new int[matrix1XdimSize, matrix1YdimSize];
+            int[,] matrix2 = new int[matrix2XdimSize, matrix2YdimSize];
+
+            Console.WriteLine("Input elements in the first matrix:");
+            for( int x = 0; x < matrix1XdimSize; x++ )
+            {
+                for( int y = 0; y < matrix1YdimSize; y++ )
+                {
+                    matrix1[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{x}],[{y}]");
+                }
+            }
+
+            Console.WriteLine("Input elements in the second matrix:");
+            for (int x = 0; x < matrix2XdimSize; x++)
+            {
+                for (int y = 0; y < matrix2YdimSize; y++)
+                {
+                    matrix2[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{x}],[{y}]");
+                }
+            }
+
+            Console.WriteLine("The first matrix is:");
+            for( int x = 0; x < matrix1.GetLength(0); x++)
+            {
+                for( int y = 0; y < matrix1.GetLength(1); y++ )
+                {
+                    Console.Write($"{matrix1[x, y]} ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("The second matrix is:");
+            for (int x = 0; x < matrix2.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix2.GetLength(1); y++)
+                {
+                    Console.Write($"{matrix2[x, y]} ");
+                }
+                Console.WriteLine();
+            }
+
+            bool equal = CompareMatrix(matrix1, matrix2);
+            string equalityMsg = equal == true ? "" : "not"; ;
+
+            Console.WriteLine($"The two matrixes are {equalityMsg} equal");
+        }
+
+        //valueNumber refers to which value you want the function to return, 1st or second; they're seperated by spaces
+        private static int parseNumbers( string entry, int valueNumber )
+        {
+            string firstValue = entry.IndexOf(" ") >= 0 ? entry.Substring(0, entry.IndexOf(" ")) : "";
+            string secondValue = entry.IndexOf(" ") >= 0 ? entry.Substring(entry.IndexOf(" ") + 1) : "";
+
+            if (int.TryParse(firstValue, out int firstValueInt) == false) return 0;
+            if (int.TryParse(secondValue, out int secondValueInt) == false) return 0;
+
+            int returnVal = 0;
+
+            switch (valueNumber)
+            {
+                case 1: 
+                    returnVal = firstValueInt;
+                    break;
+
+                case 2:
+                    returnVal = secondValueInt;
+                    break;
+
+                default:
+                    returnVal = 0;
+                break;
+
+            }
+            if (valueNumber == 0) 
+            {
+                returnVal = Convert.ToInt32(firstValue);
+            }
+
+            return returnVal;
+        }
+
+        private static bool CompareMatrix( int[,] matrix1, int[,] matrix2)
+        {
+            bool returnVal = true;
+
+            if( matrix1.Length != matrix2.Length)
+            {
+                returnVal = false;
+            }
+            else
+            {
+                for( int x = 0; x < matrix1.GetLength(0); x++ )
+                {
+                    for (int y = 0; y < matrix1.GetLength(0); y++)
+                    {
+                        if( matrix1[x,y] != matrix2[x,y] )
+                        {
+                            returnVal = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return returnVal;
         }
     }
 }
