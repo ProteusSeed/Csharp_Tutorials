@@ -1810,4 +1810,68 @@ namespace Arrays
             return returnVal;
         }
     }
+
+    public static class Exercise_31
+    {
+        /*
+         * 31. Write a program in C# Sharp to Check whether a Given Matrix is an Identity Matrix. 
+            Test Data :
+            Input the orders(2x2, 3x3, ...) of squere matrix : 2
+            Input elements in the matrix :
+            element - [0],[0] : 1
+            element - [0],[1] : 0
+            element - [1],[0] : 0
+            element - [1],[1] : 1
+            Expected Output :
+            The matrix is :
+            1 0
+            0 1
+            The matrix is an Identity Matrix.
+        */
+
+        public static void Execute()
+        {
+            int order = UtilityMethods.GetValidAbsoluteNumber("Input the orders(2x2, 3x3, ...) of square matrix");
+            int[,] matrix = new int[order, order];
+
+            Console.WriteLine("Input elements in the matrix:");
+
+            for( int x = 0; x < order; x++ )
+            {
+                for( int y = 0; y < order; y++ )
+                {
+                    matrix[x, y] = UtilityMethods.GetValidAbsoluteNumber($"element - [{x}],[{y}]");
+                }
+            }
+
+            for (int x = 0; x < order; x++)
+            {
+                for (int y = 0; y < order; y++)
+                {
+                    Console.Write($"{matrix[x, y]} ");
+                }
+                Console.WriteLine();
+            }
+
+            string identityMsg = IsIdentity(matrix) == true ? "is" : "is not";
+
+            Console.WriteLine($"The matrix {identityMsg} an Identity Matrix");
+        }
+
+        private static bool IsIdentity(int[,] matrix)
+        {
+            int matrixSize = matrix.GetLength(0);
+            int position = 0;
+
+            for (int x = 0; x < matrixSize; x++)
+            {
+                for (int y = 0; y < matrixSize; y++)
+                {
+                    if ( y == position & matrix[x, y] != 1) return false;
+                }
+                position++;
+            }
+            return true;
+        }
+    }
 }
