@@ -1,0 +1,16 @@
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Searching_Sorting.exe
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Searching_Sorting.deps.json
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Searching_Sorting.runtimeconfig.json
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Searching_Sorting.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Searching_Sorting.dll
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Searching_Sorting.pdb
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Basic_1.dll
+D:\Git\CSharp_Practice\Searching_Sorting\bin\Debug\netcoreapp3.1\Basic_1.pdb
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.AssemblyInfo.cs
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.csproj.CopyComplete
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.dll
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.pdb
+D:\Git\CSharp_Practice\Searching_Sorting\obj\Debug\netcoreapp3.1\Searching_Sorting.genruntimeconfig.cache
