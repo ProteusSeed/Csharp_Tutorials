@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conditional_Statement", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "For_Loop", "For_Loop\For_Loop.csproj", "{9F7955A5-A1FE-4757-8F1C-EC28FEC20A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{01E856E2-8401-4394-B366-C67E07764157}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "Arrays\Arrays.csproj", "{01E856E2-8401-4394-B366-C67E07764157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching_Sorting", "Searching_Sorting\Searching_Sorting.csproj", "{ADD2608B-26D2-4179-A5F5-8DE26AB8048C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{01E856E2-8401-4394-B366-C67E07764157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01E856E2-8401-4394-B366-C67E07764157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01E856E2-8401-4394-B366-C67E07764157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD2608B-26D2-4179-A5F5-8DE26AB8048C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD2608B-26D2-4179-A5F5-8DE26AB8048C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD2608B-26D2-4179-A5F5-8DE26AB8048C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD2608B-26D2-4179-A5F5-8DE26AB8048C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{FE94EBE1-4171-4E49-A9C6-7BD2B5B38CE3} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 		{9F7955A5-A1FE-4757-8F1C-EC28FEC20A72} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 		{01E856E2-8401-4394-B366-C67E07764157} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
+		{ADD2608B-26D2-4179-A5F5-8DE26AB8048C} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B1ACBCA-AE99-4DE6-A35E-3EF2AE4C26B4}

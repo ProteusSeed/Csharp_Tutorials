@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Exercises;
 
 namespace Searching_Sorting
 {
@@ -66,6 +67,22 @@ namespace Searching_Sorting
             {
                 Console.Write($"{item} ");
             }
+        }
+    }
+
+    public static class Exercise_2
+    {
+        /*
+          2. Write a C# Sharp program to sort a list of elements using Bogosort sort. 
+            In computer science, bogosort is a particularly ineffective sorting algorithm based on the generating and test paradigm. 
+            The algorithm successively generates permutations of its input until it finds one that is sorted. 
+            It is not useful for sorting, but may be used for educational purposes, to contrast it with other more realistic algorithms.
+         */
+
+        public static void Execute()
+        {
+            List<int> theList = UtilityMethods.getValidNumbersList();//new List<int>();
+
         }
     }
 }
