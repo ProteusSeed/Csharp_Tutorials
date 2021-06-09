@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Exercises;
+using System.Linq;
 
 namespace Searching_Sorting
 {
@@ -79,10 +80,59 @@ namespace Searching_Sorting
             It is not useful for sorting, but may be used for educational purposes, to contrast it with other more realistic algorithms.
          */
 
+        public static List<int> randos = new List<int>();
+
         public static void Execute()
         {
             List<int> theList = UtilityMethods.getValidNumbersList();//new List<int>();
+            int listSize = theList.Count;
+            List<int> testList = new List<int>(theList);
 
+            while (isSorted(testList) == false)
+            {//keep generating lists until one matches.
+
+                for (int i = 0; i < listSize; i++)
+                {//add a random number from the list to the new list, until all #s are added, without repeating any.
+                    testList[i] = theList[generateRando(listSize)];
+                }
+
+                randos.Clear(); //Since the class will still be instantiated when this method re-runs this member list needs to be cleareed.
+
+            }
+
+            //Print sorted list
+            foreach (var item in testList)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static int generateRando(int maxValue)
+        {
+            var rand = new Random();
+            int rando = 0;
+            bool randoExists = true;
+
+            while (randoExists)
+            {
+                rando = rand.Next(maxValue);
+               if( randos.FindIndex( e => e == rando) == -1 ) randoExists = false;               
+
+            }
+
+            randos.Add(rando);
+
+            return rando;
+        }
+
+        private static bool isSorted(List<int> theList)
+        {
+            for( int i = 0; i < theList.Count - 1; i++)
+            {//if a # is greater than the next # the list is not sorted, return false
+                if (theList[i] > theList[i + 1]) return false;
+            }
+
+            return true;
         }
     }
 }
