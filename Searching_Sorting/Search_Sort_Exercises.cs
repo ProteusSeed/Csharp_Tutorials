@@ -225,4 +225,100 @@ namespace Searching_Sorting
             }
         }
     }
+
+    public static class Exercise_5
+    {
+        /*
+         * 5. Write a C# Sharp program to sort a list of elements using Heap sort. 
+            In computer science, heapsort (invented by J. W. J. Williams in 1964) is a comparison-based sorting algorithm. 
+            Heapsort can be thought of as an improved selection sort: like that algorithm, it divides its input into a sorted and an unsorted region, 
+            and it interactively shrinks the unsorted region by extracting the largest element and moving that to the sorted region. 
+            The improvement consists of the use of a heap data structure rather than a linear-time search to find the maximum.
+            Although somewhat slower in practice on most machines than a well-implemented quicksort, it has the advantage of a more favorable worst-case O(n log n) runtime. 
+            Heapsort is an in-place algorithm, but it is not a stable sort.
+         */
+
+        public static void Execute()
+        {
+            List<int> elements = UtilityMethods.getValidNumbersList();
+            int countOfElements = elements.Count;
+            List<int> sortedList = new List<int>();
+            int parentIndex = countOfElements / 2 - 1;
+ 
+            //Loop through the parent nodes
+            for (int i = parentIndex; i >= 0; i--)
+            {
+                Heapify(ref elements, i);
+            }
+
+            while(elements.Count > 0)
+            {
+                sortedList.Insert(0, elements[0]);
+
+                //put the last value into the 1st node
+                elements[0] = elements.Last();
+
+                //Remove the last node
+                elements.RemoveAt(elements.Count - 1);
+
+                //re-heapify
+                Heapify(ref elements, 0);
+            }
+
+            //Display the sorted numbers
+            for (int x = 0; x < sortedList.Count; x++)
+            {
+                Console.WriteLine($"{x}: {sortedList[x]}");
+            }
+ 
+        }
+
+        private static void Heapify(ref List<int> elements, int parentIndex)
+        {
+            int leftChildVal = 0, rightChildVal = 0;
+            int leftChildIndex = 0, rightChildIndex = 0;
+
+            leftChildIndex = 2 * parentIndex + 1;
+            rightChildIndex = 2 * parentIndex + 2;
+
+            if (leftChildIndex < elements.Count)
+            {
+                leftChildVal = elements[leftChildIndex];
+            }
+            else
+            {
+                return;
+            }
+
+            if (rightChildIndex < elements.Count)
+            {
+                rightChildVal = elements[rightChildIndex];
+            }
+            else
+            {//If the rightChildIndex exceeds the element count then there is no right child; give the value a dummy value that's lower than all the values.
+                rightChildVal = elements[parentIndex] - leftChildVal  - 1;
+            }
+
+                if (leftChildVal > rightChildVal & leftChildVal > elements[parentIndex] )
+                {
+                    //swap
+                    elements[leftChildIndex] = elements[parentIndex];
+                    elements[parentIndex] = leftChildVal;
+
+                    if ( (2 * leftChildIndex + 1 ) < elements.Count ) Heapify(ref elements, leftChildIndex);
+                }
+
+                if (leftChildVal < rightChildVal & rightChildVal > elements[parentIndex])
+                {
+                    //swap
+                    elements[rightChildIndex] = elements[parentIndex];
+                    elements[parentIndex] = rightChildVal;
+
+                if ((2 * rightChildIndex + 2) < elements.Count) Heapify(ref elements, rightChildIndex);
+            }
+
+        }
+    }
+
+
 }
