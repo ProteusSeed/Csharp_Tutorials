@@ -320,5 +320,45 @@ namespace Searching_Sorting
         }
     }
 
+    public static class Exercise_6
+    {
+        /*
+         * 6. Write a C# Sharp program to sort a list of elements using Insertion sort. 
+            Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. 
+         */
 
+        public static void Execute()
+        {
+            List<int> elements = UtilityMethods.getValidNumbersList();
+            int newIndex = 0;
+
+            for( int i = 1; i < elements.Count; i++)
+            {
+                newIndex = i;
+
+                while (newIndex > 0 )
+                {
+                    //if value is less than the value of the element to the left...
+                    if (elements[i] < elements[newIndex - 1])
+                    {
+                        //Move the new index down one
+                        newIndex--;
+                    } 
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                //Move element to new index
+                elements.Insert(newIndex, elements[i]);
+                elements.RemoveAt(i + 1);
+            }
+
+            foreach( var element in elements)
+            {
+                Console.WriteLine(element);
+            }
+        }
+    }
 }
