@@ -361,4 +361,92 @@ namespace Searching_Sorting
             }
         }
     }
+
+    public static class Exercise_7
+    {
+        /*
+         7. Write a C# Sharp program to sort a list of elements using Merge sort. 
+         */
+
+        public static void Execute()
+        {
+            int[] arrayA = UtilityMethods.getValidNumbersArray();
+            int[] arrayB = (int[])arrayA.Clone();
+
+            TopDownSplitMerge( ref arrayB, 0, arrayA.Length, ref arrayA, '0' );
+            //recurssionTest('0', arrayA.Length, arrayA.Length);
+            //return;
+            
+            //Print out array
+            foreach (var item in arrayB)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+        private static void recurssionTest( char CalledBy, int Anumber, int Bnumber )
+        {
+            Console.WriteLine( $"{CalledBy} {Anumber} {Bnumber}" );
+            if ( ( CalledBy == 'A' & Anumber == 0 ) || (CalledBy == 'B' & Bnumber == 0) )
+            {
+                //Console.WriteLine("---Return---");
+                return;
+            }
+
+            recurssionTest('A', Anumber - 1, Bnumber);
+            recurssionTest('B', Anumber, Bnumber - 1 );
+
+            Console.WriteLine($"Execute: {Anumber} {Bnumber}");
+            
+        }
+
+        private static void TopDownSplitMerge( ref int[] arrayB, int begin, int end, ref int[] arrayA, char CalledBy )
+        {
+
+            Console.WriteLine($"Called By: {CalledBy} | {begin} {end}");            
+
+            //if (calledBy == 'A' ) RecursionNumber++;
+
+            if (end - begin <= 1)
+            {
+                Console.WriteLine("Return");
+                return;
+            }
+
+            int iMiddle = (end + begin) / 2;
+            
+            //recursively split the elements down the tree
+            TopDownSplitMerge(ref arrayA, begin, iMiddle, ref arrayB, 'A' );
+
+            TopDownSplitMerge(ref arrayA, iMiddle, end, ref arrayB, 'B' );
+
+            //Merge the splits from the bottom of the tree back up.
+            TopDownMerge(ref arrayB, begin,  iMiddle, end, ref arrayA );
+
+         }
+
+        private static void TopDownMerge( ref int[] arrayA,  int begin,  int iMiddle, int end, ref int[] arrayB )
+        {
+            int left = begin, right = iMiddle;
+
+            //Iterate through the new array (ArrayB) adding elements from left (begin to middle) and right (middle to end) branches of ArrayA in order.
+            for ( int NewArrayIndex = begin; NewArrayIndex < end; NewArrayIndex++)
+            {
+                // If left run head exists and is <= existing right run head.
+                if (left < iMiddle && (right >= end || arrayA[left] <= arrayA[right])) //if left branch value is less than right branch value...
+                {
+                    arrayB[NewArrayIndex] = arrayA[left];
+                    left = left + 1; //since the current element has now been merged go to the next one.
+                }
+                else
+                {
+                    arrayB[NewArrayIndex] = arrayA[right];
+                    right = right + 1; //since the current element has now been merged go to the next one.
+                }
+            }
+        }
+
+    }
+
 }

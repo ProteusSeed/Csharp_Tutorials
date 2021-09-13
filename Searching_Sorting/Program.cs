@@ -40,6 +40,10 @@ namespace Searching_Sorting
                         Exercise_6.Execute();
                         break;
 
+                    case 7:
+                        Exercise_7.Execute();
+                        break;
+
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;
