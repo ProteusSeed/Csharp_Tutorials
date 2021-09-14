@@ -449,4 +449,59 @@ namespace Searching_Sorting
 
     }
 
+    public static class Exercise_8
+    {
+        /*
+         Write a C# Sharp program to sort a list of elements using Permutation sort. 
+        Permutation sort, proceeds by generating the possible permutations of the input array/list until discovering the sorted one.
+         */
+
+        public static void Execute()
+        {
+            List<int> elements = UtilityMethods.getValidNumbersList();
+            sort(ref elements);
+
+            foreach ( int element in elements )
+            {
+                Console.WriteLine(element);
+            }
+
+        }
+
+        private static void sort( ref List<int> elements )
+        {
+            List<int> newList = new List<int>();
+
+            int rand = 0;
+            bool sorted = isSorted(elements);
+
+            if (sorted == true) return;
+
+            while(elements.Count > 0)
+            {
+                rand = new Random().Next(elements.Count);
+                newList.Add(elements[rand]);
+                elements.RemoveAt(rand);
+                
+            }
+
+            elements = newList;
+            sort(ref elements);
+            
+        }
+
+        private static bool isSorted(List<int> elements)
+        {
+            int i = elements.Count - 1;
+
+            while( i > 0 )
+            {
+                if (elements[i] < elements[i - 1]) return false;
+                i--;
+            }
+
+            return true;
+        }
+    }
+
 }
