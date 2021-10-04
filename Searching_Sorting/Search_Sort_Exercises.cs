@@ -504,4 +504,86 @@ namespace Searching_Sorting
         }
     }
 
+    public static class Exercise_9
+    {
+        /*
+         9. Write a C# Sharp program to sort a list of elements using Quick sort.
+            Quick sort is a comparison sort, meaning that it can sort items of any type for which a "less-than" relation (formally, a total order) is defined.
+
+            
+        */
+
+        public static void Execute()
+        {
+            List<int> elements = UtilityMethods.getValidNumbersList();
+
+            quickSort(ref elements, 0, elements.Count - 1);
+
+            print(elements);
+        }
+
+        private static void quickSort(ref List<int> elements, int begin, int end)
+        {
+            int middle = 0;
+            //Console.WriteLine($"{begin} {end}");
+
+            //Move every element that's higher than the last element to the right of the last element
+            //and move every element that's lower to the left
+            middle = partition(ref elements, begin, end);
+            if (middle < begin) return;
+
+            //split the array and recursively call this function 
+            quickSort(ref elements, begin, middle - 1);
+            quickSort(ref elements, middle + 1, end);
+
+        }
+
+        private static int partition(ref List<int> elements, int begin, int end)
+        {
+            //moves every element lower than the pivot to the left of the pivot (the last element) and 
+            //every element higher to the right of the pivot
+
+            if (begin >= end) return -1;
+
+            int pivotValue = elements[end];
+
+            int i = begin - 1;
+
+           for( int pointer = begin; pointer < end; pointer++ )
+            {
+                if (elements[pointer] < pivotValue)
+                {
+                    /*
+                     note each iteration of the loop the pointer moves right but i only moves if the value at pointer is less than the pivot value 
+                    so the element at i will always either be at an element value higher than the pivot so the swap will be a lower value with a higher, 
+                    or the i will = pointer in the case of the array starting with a # smaller than the pivot value 
+                    in which case the element will be swapped with itself changing nothing
+                    */
+                    i++;
+                    swap(ref elements, pointer, i);
+                }
+            }
+
+            swap(ref elements, i + 1, end);
+            return i + 1; //this will be the basis of the next pivot 
+
+        }
+
+        private static void swap( ref List<int> elements, int positionA, int positionB )
+        {
+            int swapValue = elements[positionB];
+
+            elements[positionB] = elements[positionA];
+            elements[positionA] = swapValue;
+        }
+
+        private static void print( List<int> elements)
+        {
+            foreach( int element in elements)
+            {
+                Console.WriteLine(element);
+            }
+        }
+    }
+
 }
