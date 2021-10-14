@@ -586,4 +586,88 @@ namespace Searching_Sorting
         }
     }
 
+    
+    public static class Exercise_10
+    {
+
+        public static void Execute()
+        {
+            int[] array = UtilityMethods.getValidNumbersArray(); 
+            int length = array.Length;
+
+            Console.WriteLine("Radix Sort");
+
+            int max = array.Max();//highest number in array.
+
+            for (int exp = 1; max / exp > 0; exp *= 10)//Keep looping through increasing powers of ten until highest # in array is no longer divisible by that # (10, 100, 1000 ).
+            {
+                CountingSort(array, length, exp);
+            }
+
+            Console.WriteLine("Sorted Array");
+            print_array(array);
+            Console.ReadLine();
+        }
+
+        //We need to do Counting Sort against each group of integers,
+        //where the groups are made based on the position of significant digits.
+        //So, we use Counting Sort on the least-significant digit ( in # 206 the LSD would be 6), then the next-least ( in 206 would be zero ), etc.
+        //After that, we concatenate the groups together to form the final array.
+        public static void CountingSort(int[] array, int length, int exponent)
+        {
+            //Create a new "output" array
+            int[] output = new int[length]; // output array  
+            int i;
+
+            //Create a new "counting" array which stores the count of each unique number
+            int[] count = new int[10]; //to store 0 - 9
+            for (i = 0; i < 10; i++)
+            {
+                count[i] = 0;
+            }
+
+            for (i = 0; i < length; i++)
+            {
+                /*
+                Get the digit at a radix position specified by exponent...
+                Example: if the value at array[i] = 98 and exponent = 10 then ( 98 / 10 ) % 10 = 9
+                exponent = 1 then ( 98 / 1 ) % 10 = 8
+                index the array by that number and increase it's value at that position by one
+                Denoting an instance that this digit has occured in the array 
+                */
+                count[(array[i] / exponent) % 10]++;
+            }
+
+            //Change count[i] so that count[i] now contains actual position of  
+            //this character in the output array.
+            for (i = 1; i < 10; i++)
+            {
+                count[i] += count[i - 1];
+            }
+
+            //Build the output array.
+            //This is the tricky part.
+            for (i = length - 1; i >= 0; i--)
+            {
+                output[count[(array[i] / exponent) % 10] - 1] = array[i];
+                count[(array[i] / exponent) % 10]--;
+            }
+
+            //Copy the output array to the final array.
+            for (i = 0; i < length; i++)
+            {
+                array[i] = output[i];
+            }
+        }
+
+        private static void print_array(int[] elements)
+        {
+            foreach (int element in elements)
+            {
+                Console.WriteLine("{0}", element);
+            }
+        }
+    }
 }
+
+
