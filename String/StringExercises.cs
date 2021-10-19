@@ -65,4 +65,34 @@ namespace String_Exercises
             }
         }
     }
+
+    public static class Exercise_04
+    {
+        /*
+         4. Write a program in C# Sharp to print individual characters of the string in reverse order. 
+            Test Data :
+            Input the string : w3resource.com
+            Expected Output :
+
+            The characters of the string in reverse are : 
+
+            m  o  c  .  e  c  r  u  o  s  e  r  3  w 
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            int stringLength = theString.Length;
+            int index = stringLength - 1;
+
+            while(index >= 0)
+            {
+                Console.Write($"{theString[index]} ");
+                index--;
+            }
+        }
+    }
+
+
 }
