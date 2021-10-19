@@ -46,12 +46,23 @@ namespace String_Exercises
     public static class Exercise_03
     {
         /*
-          
+          3. Write a program in C# Sharp to separate the individual characters from a string. 
+            Test Data :
+            Input the string : w3resource.com
+            Expected Output :
+
+            The characters of the string are : 
+            w  3  r  e  s  o  u  r  c  e  .  c  o  m 
          */
 
         public static void Execute()
         {
+            string theString = UtilityMethods.GetValidString();
 
+            foreach( char letter in theString)
+            {
+                Console.Write($"{letter}  ");
+            }
         }
     }
 }
