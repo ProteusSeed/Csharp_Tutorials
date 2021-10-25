@@ -94,5 +94,37 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_05
+    {
+        /*
+         * 5. Write a program in C# Sharp to count the total number of words in a string.
+            Test Data :
+            Input the string : This is w3resource.com
+            Expected Output :
+
+            Total number of words in the string is : 3 
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string previousCharacter = "";
+            int count = 0;
+
+            if( theString.Length > 0 )
+            {
+                count++;
+
+                foreach (char character in theString)
+                {                    
+                    if (character == ' ' & previousCharacter != " ") count++;
+                    previousCharacter = character.ToString();
+                }
+            }          
+
+            Console.WriteLine("Total number of words in the string is: {0}", count);
+        }
+    }
+
 
 }
