@@ -126,5 +126,43 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_06
+    {
+        /*
+         * 6. Write a program in C# Sharp to compare two string without using string library functions.
+            Test Data :
+            Input the 1st string : This is first string
+            Input the 2nd string : This is first string
+            Expected Output :
+
+            The length of both strings are equal and 
+            also, both strings are equal.
+         */
+        public static void Execute()
+        {
+            string firstString = UtilityMethods.GetValidString("Enter first string: ");
+            string secondString = UtilityMethods.GetValidString("Enter second string: ");
+            string isUnequal = " ", isUnequalLength = " ";
+            int firstStrLength = firstString.Length;
+            int secondStrLength = secondString.Length;
+
+            if (firstStrLength == secondStrLength)
+            {
+                for (int i = 0; i < firstString.Length; i++)
+                {
+                    if (firstString[i] != secondString[i])
+                    {
+                        isUnequal = "not";
+                    }
+                }
+            }
+            else {
+                    isUnequal = "not";
+                    isUnequalLength = "not"; 
+            }
+
+            Console.WriteLine($"The length of both strings are{isUnequalLength}equal and also, both strings are{isUnequal}equal.");
+        }
+    }
 
 }
