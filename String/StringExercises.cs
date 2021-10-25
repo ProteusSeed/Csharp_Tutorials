@@ -165,4 +165,50 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_07
+    {
+        /*
+         * 7. Write a program in C# Sharp to count a total number of alphabets
+            , digits and special characters in a string. 
+            Test Data :
+            Input the string : Welcome to w3resource.com
+            Expected Output :
+
+            Number of Alphabets in the string is : 21 
+            Number of Digits in the string is : 1 
+            Number of Special characters in the string is : 4
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int digits = 0, alphabets = 0, special = 0;
+
+            foreach (char character in theString)
+            {
+                if (int.TryParse(character.ToString(), out int number) == true)
+                {
+                    digits++;
+                }
+                else
+                {
+                    if (character >= 'a' & character <= 'z')
+                    {
+                        alphabets++;
+                    }
+                    else
+                    {
+                        if( character != ' ' ) special++;
+                    }
+                }
+
+            }
+
+            string message = $"Number of Alphabets in the string is: {alphabets}"
+                           + $"\nNumber of Digits in the string is: {digits}"
+                           + $"\nNumber of Special characters in the string is: {special}";
+
+            Console.WriteLine(message);
+        }
+    }
 }
