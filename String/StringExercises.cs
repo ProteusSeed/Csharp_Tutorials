@@ -212,5 +212,30 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_08
+    {
+        /*
+         * 8. Write a program in C# Sharp to copy one string to another string. \
+            Test Data :
+            Input the string : This is a string to be copied.
+            Expected Output :
 
+            The First string is : This is a string to be copied. 
+
+            The Second string is : This is a string to be copied. 
+
+            Number of characters copied : 31 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString("The First String Is ");
+
+            string stringCopy = theString;
+
+            Console.WriteLine($"The Second String is: {stringCopy}");
+
+
+        }
+    }
 }
