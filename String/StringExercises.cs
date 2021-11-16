@@ -238,4 +238,62 @@ namespace String_Exercises
 
         }
     }
+
+    public static class Exercise_09
+    {
+        /*
+         * 9. Write a program in C# Sharp to count a total number of vowel or consonant in a string. 
+            Test Data :
+            Input the string : Welcome to w3resource.com
+            Expected Output :
+
+            The total number of vowel in the string is : 9 
+            The total number of consonant in the string is : 12 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            
+            int vowelCount = 0, consonants = 0;
+            string cType = "";
+
+            foreach(char character in theString )
+            {
+                cType = charType(character);
+
+                switch (cType)
+                {
+                    case "vowel":
+                            vowelCount++;
+                        break;
+                    case "consonant":
+                        consonants++;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
+            Console.WriteLine("The total number of vowel in the string is: {0}", vowelCount);
+            Console.WriteLine("The total number of consonant in the string is: {0}", consonants);
+        }
+
+        private static string charType( char character )
+        {
+            char[] vowels = new char[5] { 'a', 'e', 'i', 'o', 'u' };
+
+            if( char.IsLetter(character) )
+                {
+                foreach (char vowel in vowels)
+                {
+                    if (character == vowel) return "vowel";
+                }
+                return "consonant";
+            }
+
+            return "N/A";
+        }
+    }
 }
