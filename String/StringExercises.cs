@@ -267,9 +267,11 @@ namespace String_Exercises
                     case "vowel":
                             vowelCount++;
                         break;
+
                     case "consonant":
                         consonants++;
                         break;
+
                     default:
                         break;
                 }
