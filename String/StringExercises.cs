@@ -298,4 +298,55 @@ namespace String_Exercises
             return "N/A";
         }
     }
+
+    public static class Exercise_10
+    {
+        /*
+         * 10. Write a program in C# Sharp to find maximum occurring character in a string. 
+            Test Data :
+            Input the string : Welcome to w3resource.com.
+            Expected Output :
+
+            The Highest frequency of character 'e' 
+            appears number of times : 4 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            int[] characters = new int[256];
+
+            foreach( char character in theString )
+            {
+                characters[(int)character]++;
+
+            }
+
+            char maxChar = ' '; int numberTimes = 0;
+            maxChars(characters, ref maxChar, ref numberTimes);
+            
+            Console.WriteLine($"The Highest frequency of character: {maxChar}");
+            Console.WriteLine($"Appears number of times: {numberTimes}");
+       
+        }
+
+        private static void maxChars( int[] characters, ref char maxChar, ref int numberTimes )
+        {
+            int highest = 0; 
+            int? highestIndex = 0;
+
+            for( int i = 0; i <= 255; i++)
+            {
+                if( characters[i] > highest )
+                {
+                    highest = characters[i];
+                    highestIndex = i;
+                }
+            }
+
+            maxChar = (char)highestIndex;
+            numberTimes = highest;
+        }
+    }
 }
