@@ -349,4 +349,51 @@ namespace String_Exercises
             numberTimes = highest;
         }
     }
+
+    public static class Exercise_11
+    {
+        /*
+         * 11. Write a program in C# Sharp to sort a string array in ascending order. 
+            Test Data :
+            Input the string : this is a string
+            Expected Output :
+
+            After sorting the string appears like : 
+            a g h i i i n r s s s t t 
+         */
+
+        public static void Execute()
+        {
+           string theString = UtilityMethods.GetValidString("Input the string");
+
+            char[] characters = theString.ToCharArray();
+
+            int[] charCodes = new int[256];
+
+            foreach( char character in characters )
+            {
+                charCodes[Convert.ToInt32(character)]++;
+            }
+
+           for( int i = 1; i <= 255; i++ )
+            {
+                if( charCodes[i] > 0 ) Console.Write(repeatChar( Convert.ToChar(i), charCodes[i]) + " " );
+
+            }
+
+
+        }
+
+        private static string repeatChar( char character, int repeat )
+        {
+            string theString = "";
+
+            for( int i = 1; i <= repeat; i++ )
+            {
+                theString += character.ToString() + " ";
+            }
+
+            return theString.Substring(0, theString.Length - 1); //remove the trailing space.
+        }
+    }
 }
