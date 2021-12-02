@@ -396,4 +396,80 @@ namespace String_Exercises
             return theString.Substring(0, theString.Length - 1); //remove the trailing space.
         }
     }
+
+    public static class Exercise_12
+    {
+        /*
+         * 12. Write a program in C# Sharp to read a string through the keyboard and sort it using bubble sort.
+            Test Data :
+            Input number of strings :3
+            Input 3 strings below :
+            abcd
+            zxcv
+            mnop
+            Expected Output :
+
+            After sorting the array appears like : 
+            abcd 
+            mnop 
+            zxcv
+        */
+
+        public static void Execute()
+        {
+            int numbStrings = UtilityMethods.GetValidAbsoluteNumber("Input number of strings");
+
+            Console.WriteLine($"Input {numbStrings} below: ");
+
+            string[] strings = UtilityMethods.getStringArray(numbStrings);
+
+            string[] newStrings = bubbleSort(strings);
+
+            printArray(newStrings);
+        }
+
+        private static string[] bubbleSort( string[] strings )
+        {
+            string stringValue = "";
+            string swappedString = "";
+            int charIndex = 0;
+            bool swap = false;
+
+            //Get the length of the longest string
+            //Sort on the indexes using string.compareto()?
+
+            for ( int index = 0; index < strings.Length - 1; index++ )
+            {
+                //initialize vars
+                charIndex = 0;
+                swap = false;
+
+                while ( strings[index].Substring(charIndex, 1) == strings[index + 1].Substring(charIndex, 1) )
+                {
+                    charIndex++;
+                }
+
+                if (Convert.ToChar(strings[index].Substring(charIndex, 1)) > Convert.ToChar(strings[index + 1].Substring(charIndex, 1)))
+                {
+
+                    swappedString = strings[index];
+                    strings[index] = strings[index + 1];
+                    strings[index + 1] = swappedString;
+                    swap = true;
+                }
+
+                if (index == strings.Length - 2 & swap == true) index = -1;
+            }
+
+            return strings;
+        }
+
+        private static void printArray(string[] strings)
+        {
+            foreach( string astring in strings )
+            {
+                Console.WriteLine(astring);
+            }
+        }
+    }
 }

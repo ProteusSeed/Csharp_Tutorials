@@ -365,7 +365,7 @@ namespace Exercises
             return strValidDate;  
         }
 
-        public static string[] getStringArray()
+        public static string[] getStringArray() 
         {
             string[] strings;
             string entry = ""; 
@@ -394,6 +394,20 @@ namespace Exercises
 
             return strings;
         }
+
+        public static string[] getStringArray( int numberOfStrings )
+        {
+            string[] strings = new string[numberOfStrings];
+
+            for( int index = 0; index < numberOfStrings; index++ )
+            {
+                Console.Write($"Enter string #{index + 1}: ");
+                strings[index] = Console.ReadLine();
+            }
+
+            return strings;
+        }
+
     }
 
     static class Basic_01
