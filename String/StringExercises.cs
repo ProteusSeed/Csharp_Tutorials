@@ -472,4 +472,61 @@ namespace String_Exercises
             }
         }
     }
+
+    public static class Exercise_13
+    {
+        /*
+        13. Write a program in C# Sharp to extract a substring from a given string without using the library function. 
+        Test Data :
+        Input the string : This is a test string
+        Input the position to start extraction :5
+        Input the length of substring :5
+        Expected Output :
+
+        The substring retrieve from the string is :  is a
+        */
+
+        public static void Execute()
+        {
+            string message = "The substring retrieved from the string is :";
+            string theString = UtilityMethods.GetValidString("Input the string");
+            int startPos = UtilityMethods.GetValidAbsoluteNumber("Input the position to start extraction") - 1;
+            int length = UtilityMethods.GetValidAbsoluteNumber("Input the length of the substring");
+
+            if (startPos < theString.Length & startPos >= 0 & length <= (theString.Length - startPos))
+            {
+                string theSubstring = theString.Substring(startPos, length);
+                Console.WriteLine("The substring retrieved from the string is: {0}", theSubstring);
+            }
+            else
+            {
+                Console.WriteLine("Start Position out of range of string.");
+            }
+
+        }
+    }
+
+    public static class Exercise_14
+    {
+        /*
+         * 14. Write a C# Sharp program to check whether a given substring is present in the given string. 
+            Test Data :
+            Input the string : This is a Test String
+            Input the substring to search : Test
+            Expected Output: The substring exists in the string
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string theSubstring = UtilityMethods.GetValidString(MinimalLength: 1, MaximumLength: theString.Length);
+
+            bool exists = theString.Contains(theSubstring);
+            string existsMsg = exists == true ? "exists" : "does not exist";
+
+            string message = $"The substring { existsMsg } in the string";
+
+            Console.WriteLine(message);
+        }
+    }
 }
