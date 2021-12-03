@@ -529,4 +529,29 @@ namespace String_Exercises
             Console.WriteLine(message);
         }
     }
+
+    public static class Exercise_15
+    {
+        /*
+         * 15. Write a program in C# Sharp to read a sentence and replace lowercase characters by uppercase and vice-versa. 
+        Test Data :
+        Input the string : This is a string
+        Expected Output :
+
+        After conversion, the string is : tHIS IS A STRING 
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string newString = "";
+
+            foreach( char character in theString.ToCharArray() )
+            {
+                newString += char.IsUpper(character) == true ? character.ToString().ToLower() : character.ToString().ToUpper();
+            }
+
+            Console.WriteLine($"After conversion, the string is: {newString}");
+        }
+    }
 }
