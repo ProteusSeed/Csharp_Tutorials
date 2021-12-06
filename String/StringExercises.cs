@@ -554,4 +554,70 @@ namespace String_Exercises
             Console.WriteLine($"After conversion, the string is: {newString}");
         }
     }
+
+    public static class Exercise_16
+    {
+        /*
+         * 16. Write a program in C# Sharp to check the username and password. 
+            Test Data :
+            Input a username: uesr
+            Input a password: pass
+            Input a username: abcd
+            Input a password: 1234
+            Expected Output :
+
+            Password entered successfully!
+         */
+
+        public static void Execute()
+        {
+            string username = UtilityMethods.GetValidString("Input a username");
+            string password = UtilityMethods.GetValidString("Input a password");
+
+            string usernameCk = UtilityMethods.GetValidString("Input your username");
+            string passwordCk = UtilityMethods.GetValidString("Input your password");
+
+            //verify
+            if( username == usernameCk & password == passwordCk )
+            {
+                Console.WriteLine("Password entered successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Password failed!");
+            }
+        }
+    }
+
+    public static class Exercise_17
+    {
+        /*
+         * 17. Write a program in C# Sharp to search the position of a substring within a string. 
+            Test Data:
+            Input a String: this is a string
+            Input a substring to be found in the string: is
+            Expected Output :
+
+            Found 'is' in 'this is a string' at position 2
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString("Input a String");
+            string theSubString = UtilityMethods.GetValidString("Input a substring to be found in the string");
+            string found = "is";
+            int position = 0;
+            string positionMsg = "";
+
+            position = theString.IndexOf(theSubString);
+
+            found = position > -1 ? "is" : "is not";
+            positionMsg = position > -1 ? "position " + position.ToString() : "";
+
+            Console.WriteLine($"Found {found} in 'this is a string' at {positionMsg}");
+
+
+        }
+
+    }
 }
