@@ -620,4 +620,43 @@ namespace String_Exercises
         }
 
     }
+
+    public static class Exercise_18
+    {
+        /*
+         * 18. Write a program in C# Sharp to check whether a character is an alphabet and not and if so, go to check for the case. 
+            Test Data :
+            Input a character: Z
+
+            Expected Output :
+
+            The character is uppercase.
+         */
+
+        public static void Execute()
+        {
+            char character = UtilityMethods.GetValidChar("input a character");
+            string message = "";
+
+            if(char.IsLetter(character) == true)
+            {
+                if (char.IsUpper(character) == true)
+                {
+                    message = "uppercase";
+                }
+                else
+                {
+                    message = "lowercase";
+                }
+            }
+            else
+            {
+                message = "not an alphabet";
+            }
+
+            Console.WriteLine("The character is {0}", message);
+        }
+    }
+
+
 }
