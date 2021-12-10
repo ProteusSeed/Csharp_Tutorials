@@ -658,5 +658,71 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_19
+    {
+        /*
+         * 19. Write a program in C# Sharp to find the number of times a substring appears in a given string. 
+            Test Data :
+            Input the original string : this is original string
+            Input the string to be searched for : str
+            Expected Output :
+
+            The string 'str' occurs 1 times
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string searchString = UtilityMethods.GetValidString();
+
+            int searchIx = theString.IndexOf(searchString);
+            int NumTimes = 0;
+
+            while (searchIx > -1 & searchIx <= theString.Length - 1)
+            {                
+                searchIx = theString.IndexOf(searchString, searchIx + 1);
+                NumTimes++;
+            } 
+
+            Console.WriteLine($"The string '{searchString}' occurs {NumTimes} times");
+        }
+    }
+
+    public static class Exercise_20
+    {
+        /*
+         * 20. Write a program in C# Sharp to insert a substring before the first occurrence of a string.
+            Test Data :
+            Input the original string : this is a string
+            Input the string to be searched for : a
+            Input the string to be inserted : test
+            Expected Output :
+
+            The modified string is : this is  test a string
+        */
+
+        public static void Execute()
+        {
+            string original = UtilityMethods.GetValidString("Input the original string");
+            string search = UtilityMethods.GetValidString("Input the string to be searched for");
+            string insert = UtilityMethods.GetValidString("Input the string to be inserted");
+
+           
+
+            int index = original.IndexOf(search);
+            if (index > 0)
+            {
+                insert = " " + insert + " ";
+            }
+            else
+            {
+                insert = insert + " ";
+            }
+
+            if ( index > -1 ) original = original.Insert(index, insert);
+
+            Console.WriteLine("The modified string is: {0}", original);
+        }
+    }
 
 }
