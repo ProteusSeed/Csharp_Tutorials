@@ -725,4 +725,26 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_21
+    {
+        /*
+         * 21. Write a C# Sharp program to compare (less than, greater than, equal to ) two substrings. 
+            Expected Output :
+
+            str1 = 'computer', str2 = 'system'                                               
+            Substring 'mp' in 'computer' is less than substring 'sy' in 'system'.  
+        */
+
+        public static void Execute()
+        {
+            string String1 = UtilityMethods.GetValidString("Enter 1st string");
+            string String2 = UtilityMethods.GetValidString("Enter 2nd string");
+
+            int greaterThan = string.Compare(String1.Substring(2, 2), String2.Substring(2, 2));
+            string Comparison = greaterThan < 0 ? "less than" : greaterThan == 0 ? "same as" : "more than";
+
+            Console.WriteLine($"Substring '{String1.Substring(2, 2)}' in '{String1}' is {Comparison} substring '{String2.Substring(2, 2)}' in '{String2}'.");
+
+        }
+    }
 }
