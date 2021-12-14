@@ -784,4 +784,42 @@ namespace String_Exercises
 
         }
     }
+
+    public static class Exercise_23
+    {
+        /*
+         * 23. Write a C# Sharp program to compare two substrings using different cultures and ignoring the case of the substrings. Go to the editor
+            Expected Output :
+
+            str1 = 'COMPUTER', str2 = 'computer'                                             
+            Ignore case, Turkish culture:                                                    
+            Substring 'UT' in 'COMPUTER' is equal to substring 'ut' in 'computer'.           
+                                                                                 
+            Ignore case, invariant culture:                                                  
+            Substring 'UT' in 'COMPUTER' is equal to substring 'ut' in 'computer'.   
+         */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string");
+
+            int start = UtilityMethods.GetValidAbsoluteNumber("Enter start index");
+            int length = UtilityMethods.GetValidAbsoluteNumber("Enter length");
+
+            string substring1 = string1.Substring(start, length);
+            string substring2 = string2.Substring(start, length);
+
+            string equality = string.Compare( substring1.ToLower() , substring2.ToLower(), false, new System.Globalization.CultureInfo("tr-TR") ) == 0 ? "equal" : "not equal";
+
+            Console.WriteLine("Ignore case:");
+            Console.WriteLine($"Substring '{substring1}' in '{string1}' is {equality} to substring '{substring2}' in '{string2}' ");
+
+            equality = string.Compare( substring1.ToLower(), substring2.ToLower(), true, System.Globalization.CultureInfo.InvariantCulture ) == 0 ? "equal" : "not equal";
+
+            Console.WriteLine("Honor Case");
+            Console.WriteLine($"Substring '{substring1}' in '{string1}' is {equality} to substring '{substring2}' in '{string2}' ");
+
+        }
+    }
 }
