@@ -983,4 +983,82 @@ namespace String_Exercises
 
         }
     }
+
+    public static class Exercise_28
+    {
+        /*
+         * 28. Write a C# Sharp program to compare two strings in following three different ways produce three different results. 
+
+        a. using linguistic comparison for the en-US culture;
+        b. using linguistic case-sensitive comparison for the en-US culture;
+        c. using an ordinal comparison. It illustrates how the three methods of comparison
+
+        Expected Output :
+
+        'sister' comes before 'Sister'.                                                  
+        'sister' is the same as 'Sister'.                                                
+        'sister' comes after 'Sister'.
+        */
+
+        public static void Execute()
+        {
+            string string1 = "sister";
+            string string2 = "Sister";
+
+            string compareUS = "", compareCSUS = "", compareOrd = "";
+
+            switch (string.Compare(string1, string2, CultureInfo.GetCultureInfo("en-US"), CompareOptions.None))
+            {
+                case -1:
+                    compareUS = "comes before";
+                    break;
+
+                case 0:
+                    compareUS = "is the same as";
+                    break;
+
+                case 1:
+                    compareUS = "comes after";
+                    break;
+
+                default: break;
+            }
+
+            Console.WriteLine($"'{string1}' {compareUS} '{string2}'.");
+
+            switch (string.Compare(string1, string2, CultureInfo.GetCultureInfo("en-US"), CompareOptions.IgnoreCase))
+            {
+                case -1:
+                    compareUS = "comes before";
+                    break;
+
+                case 0:
+                    compareUS = "is the same as";
+                    break;
+
+                case 1:
+                    compareUS = "comes after";
+                    break;
+
+                default: break;
+            }
+
+            Console.WriteLine($"'{string1}' {compareUS} '{string2}'.");
+
+            if (string.CompareOrdinal(string1, string2) < 0)
+                {
+                    compareUS = "comes before";
+                }
+            else if (string.CompareOrdinal(string1, string2) == 0)
+                {
+                    compareUS = "is the same as";
+                }
+            else
+                {
+                    compareUS = "comes after";
+                }
+
+            Console.WriteLine($"'{string1}' {compareUS} '{string2}'.");
+        }
+    }
 }
