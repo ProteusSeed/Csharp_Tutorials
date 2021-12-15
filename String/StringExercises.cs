@@ -932,5 +932,24 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_26
+    {
+        /*
+         * 26. Write C# Sharp program to demonstrate that the Compare(String, String, Boolean) method is equivalent to using ToUpper or ToLower when comparing strings. 
+            Expected Output :
 
+            Comparing 'QRS' and 'qrs':                                                       
+            The Strings are equal when capitalized? true                                     
+            The Strings are equal when case is ignored? true
+        */
+
+        public static void Execute()
+        {
+            string string1 = "QRS";
+            string string2 = "qrs";
+
+            Console.WriteLine($"The Strings are equal when capitalized? {string.Compare(string1,string2,true) == 0}");                                     
+            Console.WriteLine($"The Strings are equal when case is ignored? {string1.ToLower() == string2.ToLower()}");
+        }
+    }
 }
