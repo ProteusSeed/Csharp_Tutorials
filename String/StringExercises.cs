@@ -952,4 +952,35 @@ namespace String_Exercises
             Console.WriteLine($"The Strings are equal when case is ignored? {string1.ToLower() == string2.ToLower()}");
         }
     }
+
+    public static class Exercise_27
+    {
+        /*
+         * 27. Write a C# Sharp program to demonstrate how culture can affect a comparison. 
+
+            Note : In Czech – Czech Republic culture, "ch" is a single character that is greater than "d". However, in English - United States culture, "ch" consists of two characters, and "c" is less than "d".
+
+            Expected Output :
+
+            For en-US: change < dollar                                                       
+            For cs-CZ: change > dollar
+         */
+
+        public static void Execute()
+        {
+            string string1 = "change";
+            string string2 = "dollar";
+
+            CultureInfo current = CultureInfo.CurrentCulture;
+            CultureInfo czech = new CultureInfo("cs");
+
+            string compare1 = string.Compare(string1, string2, false, current) < 0 ? "<" : ">";
+            string compare2 = string.Compare(string1, string2, false, czech) < 0 ? "<" : ">";
+
+            Console.WriteLine($"For {current}: {string1} {compare1} {string2}");
+            Console.WriteLine($"For {czech}: {string1} {compare2} {string2}");
+
+
+        }
+    }
 }
