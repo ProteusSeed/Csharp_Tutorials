@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using Exercises;
 
 namespace String_Exercises
@@ -822,4 +824,113 @@ namespace String_Exercises
 
         }
     }
+
+    public static class Exercise_24
+    {
+        /*
+         * 24. Write a C# Sharp program to compare the last names of two people. It then lists them in alphabetical order. 
+            Expected Output :
+
+            Sorted alphabetically by last name:                                              
+            Michel Jhonson                                                                   
+            John Peterson  
+        */
+
+        public static void Execute()
+        {
+            string firstPerson = UtilityMethods.GetValidString("First person");
+            string secondPerson = UtilityMethods.GetValidString("Second person");
+            string firstLastname = "", secondLastName = "";
+
+            char[] firstPersonChar = firstPerson.ToCharArray();
+            Array.Reverse(firstPersonChar);
+
+            char[] secondPersonChar = secondPerson.ToCharArray();
+            Array.Reverse(secondPersonChar);
+
+            //get last name
+            foreach (char character in firstPersonChar) 
+            {
+                if (character == ' ') break;
+                firstLastname = character + firstLastname;
+                
+            }
+
+            foreach (char character in secondPersonChar)
+            {
+                if (character == ' ') break;
+                secondLastName = character + secondLastName;
+            }
+
+            if (string.Compare(firstLastname, secondLastName) == -1)
+            {
+                Console.WriteLine(firstLastname);
+                Console.WriteLine(secondLastName);
+            }
+            else
+            {
+                Console.WriteLine(secondLastName);
+                Console.WriteLine(firstLastname);
+            }
+
+        }
+    }
+
+    public static class Exercise_25
+    {
+        /*
+         * 25. Write a C# Sharp program to compare four sets of words by using each member of the string comparison enumeration. The comparisons use the conventions of the English (United States) and Sami (Upper Sweden) cultures.
+            Note : The strings "encyclopedia" and "encyclopedia" are considered equivalent in the en-US culture but not in the Sami (Northern Sweden) culture.
+
+            Expected Output :
+
+               case = Case (CurrentCulture): False                                           
+               case = Case (CurrentCultureIgnoreCase): True                                  
+               case = Case (InvariantCulture): False                                         
+               case = Case (InvariantCultureIgnoreCase): True                                
+               case = Case (Ordinal): False                                                  
+               case = Case (OrdinalIgnoreCase): True                                         
+            ........ 
+         */
+
+        public static void Execute()
+        {
+            String[] cultureNames = { "en-AU", "sv-SE" };
+
+            String[] strs1 = { "case",  "encyclopedia",
+                            "encyclopedia", "Archeology" };
+            String[] strs2 = { "Case", "encyclopedia",
+                            "encyclopedia" , "ARCHEOLOGY" };
+
+            //get all string comparison types into a string comparison type array
+            StringComparison[] comparisons = (StringComparison[])Enum.GetValues(typeof(StringComparison));
+
+            foreach (var cultureName in cultureNames)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureName);
+                Console.WriteLine("Current Culture: {0}", CultureInfo.CurrentCulture.Name);
+
+                //loop through the strings evaluating each set
+                for (int ctr = 0; ctr <= strs1.GetUpperBound(0); ctr++)
+                {
+                    foreach (var comparison in comparisons)
+                    {
+                        Console.WriteLine(
+                            "   {0} = {1} ({2}): {3}"
+                            ,strs1[ctr]
+                            ,strs2[ctr]
+                            ,comparison
+                            ,String.Equals(strs1[ctr], strs2[ctr], comparison)
+                        );
+                    }
+
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine();
+            }
+        }
+    }
+
+
 }
