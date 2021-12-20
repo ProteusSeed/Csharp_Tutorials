@@ -1156,4 +1156,34 @@ namespace String_Exercises
         }
 
     }
+
+    public static class Exercise_30
+    {
+        /*
+         * 30. Write a C# Sharp program to demonstrate that compare ordinal and Compare use different sort orders. 
+            Expected Output:
+
+            CompareOrdinal("xyz"[1], "XYZ"[1]):                                              
+               'y' is greater than 'Y'                                                       
+            Compare("xyz"[1], "XYZ"[1]):                                                     
+               'y' is less than 'Y'
+         */
+
+        public static void Execute()
+        {
+            int compareResult = string.CompareOrdinal("xyz", 1, "XYZ", 1, 1);
+
+            string compareMsg = compareResult < 0 ? "is less than" : compareResult > 0 ? "is greater than" : "is equal to";
+
+            Console.WriteLine($"CompareOrdinal(\"xyz\" [1], \"XYZ\"[1]):\"y\" {compareMsg} \"Y\" ");
+
+            compareResult = string.Compare("xyz", 1, "XYZ", 1, 1);
+
+            compareMsg = compareResult < 0 ? "is less than" : compareResult > 0 ? "is greater than" : "is equal to";
+
+            Console.WriteLine($"Compare(\"xyz\" [1], \"XYZ\"[1]):\"y\" {compareMsg} \"Y\" ");
+        }
+    }
+
+
 }
