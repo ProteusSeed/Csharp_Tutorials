@@ -1185,5 +1185,28 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_31
+    {
+        /*
+         * 31. Write a C# Sharp program to perform and ordinal comparison of two strings that only differ in case. 
 
+            Expected Output :
+
+            Compare the numeric values of the corresponding Char objects in each string.     
+            str1 = 'JAVA', str2 = 'python'                                                   
+            String 'JAVA' is less than String 'python'.
+        */
+
+        public static void Execute()
+        {
+           string str1 = "JAVA";
+           string str2 = "python";
+
+           int compareResult = string.CompareOrdinal(str1, str2);
+            string compareMsg = compareResult < 0 ? "is less than" : compareResult > 0 ? "is greater than" : "is equal to";
+
+            Console.WriteLine($"String ''{str1}'' {compareMsg} String ''{str2}''");
+
+        }
+    }
 }
