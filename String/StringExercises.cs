@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 using Exercises;
@@ -1060,5 +1061,99 @@ namespace String_Exercises
 
             Console.WriteLine($"'{string1}' {compareUS} '{string2}'.");
         }
+    }
+
+    public static class Exercise_29
+    {
+        /*
+         * 29. Write a C# Sharp program to compare three versions of the letter "I". The results are affected by the choice of culture
+            , whether case is ignored, and whether an ordinal comparison is performed. 
+
+            Expected Output :
+            Compare three versions of the letter I using different values of StringComparison.                                                                                
+            The current culture is en-US.                                                    
+                                                                                 
+            StringComparison.CurrentCulture:                                                 
+            LATIN SMALL LETTER I (U+0069) is less than LATIN SMALL LETTER DOTLESS I (U+0131) 
+            LATIN SMALL LETTER I (U+0069) is less than LATIN CAPITAL LETTER I (U+0049)       
+            LATIN SMALL LETTER DOTLESS I (U+0131) is greater than LATIN CAPITAL LETTER I (U+0
+            049)
+         */
+
+        public class compares 
+            {
+                public int compare1 { get; set; }
+                public int compare2 { get; set; }
+
+                public compares( int vcompare1, int vcompare2 )
+                {
+                    compare1 = vcompare1;
+                    compare2 = vcompare2;
+                }
+            }
+
+        public static void Execute()
+        {
+            string[,] letters = { 
+                                    { "/U=0069", "LATIN SMALL LETTER I", Convert.ToString('\u0069') } 
+                                    ,{ "/U+0049", "LATIN CAPITAL LETTER I", Convert.ToString('\u0049') }
+                                    ,{ "/U+0131", "LATIN SMALL LETTER DOTLESS I", Convert.ToString('\u0131') }    
+            };
+            string compareMsg = "", compareTypeMsg = "";
+
+            List<compares> trackCompared = new List<compares>();
+
+            for (int compareType = 1; compareType <= 3; compareType++)
+            {
+                switch (compareType)
+                {
+                    case 1:
+                            compareTypeMsg = "Culture " + CultureInfo.CurrentCulture.Name;
+                        break;
+                    case 2:
+                            compareTypeMsg = "Ignore Case";
+                        break;
+                    case 3:
+                            compareTypeMsg = "ordinal";
+                        break;
+                    default:
+                        break;
+                }
+
+                Console.WriteLine($"\r\n{compareTypeMsg}\r\n");
+
+                for (int i = 0; i <= letters.GetUpperBound(0); i++)
+                {
+
+                    for (int j = 0; j <= letters.GetUpperBound(0); j++)
+                    {
+                        if (!(trackCompared.Contains(new compares(i, j)) | trackCompared.Contains(new compares(j, i))) & i != j)
+                        {
+                            compareMsg = compare(letters[i, 2], letters[j, 2], compareType);
+                            Console.WriteLine($"{letters[i, 1]} {compareMsg} {letters[j, 1]}");
+                            trackCompared.Add(new compares(i, j));
+                        }
+                    }
+                }
+            }
+        }
+
+        private static string compare( string string1, string string2, int compareType )
+        {
+            int compareResult = compareType == 1 ? string.Compare(string1, string2, false, CultureInfo.CurrentCulture ) 
+                                : compareType == 2 ? string.Compare(string1, string2, true ) 
+                                : string.CompareOrdinal( string1, string2 );
+
+            if ( compareResult < 0 )
+            {
+                return "is less than";
+            }
+            else if ( compareResult > 0 )
+            {
+                return "is greater than";
+            }
+            else return "is equal to";
+        }
+
     }
 }
