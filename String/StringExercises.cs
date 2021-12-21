@@ -1252,4 +1252,38 @@ namespace String_Exercises
             }
         }
     }
+
+    public static class Exercise_33
+    {
+        /*
+        33. Write a C# Sharp program to compare the current string instance with another string. 
+        Expected Output :
+
+        The strings occur in the same position in the sort order.                        
+        The first string follows the second in the sort order.                           
+                                                                                 
+        The first string precedes the second in the sort order.                          
+        The first string precedes the second in the sort order.                          
+        The first string follows the second in the sort order.
+         */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter the 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter the 2nd string");
+
+            string precedes = "The first string precedes the second in the sort order.";
+            string follows = "The first string follows the second in the sort order.";
+            string same = "The strings occur in the same position in the sort order.";
+
+            int compareResult = string.Compare(string1, string2, false);
+
+            if (compareResult < 0) Console.WriteLine(precedes);
+            if (compareResult == 0) Console.WriteLine(same);
+            if (compareResult > 0) Console.WriteLine(follows);
+        }
+
+    }
+
+
 }
