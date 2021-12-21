@@ -1372,4 +1372,57 @@ namespace String_Exercises
             Console.WriteLine(concatenated);
         }
     }
+
+    public static class Exercise_38
+    {
+        /*
+         * 38. Write a C# Sharp program to determine whether the string "birds" is a substring of a familiar. 
+
+            Note : Quotation 'two birds with one stone'.
+
+            Expected Output :
+
+            'birds' is in the string 'Kill two birds with one stone': True                   
+            'birds begins at character position 10
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString("Enter string");
+            string subString = UtilityMethods.GetValidString("Enter substring");
+
+            int position = theString.IndexOf(subString);
+
+            Console.WriteLine(position);
+        }
+    }
+
+    public static class Exercise_39
+    {
+        /*
+         * 39. Write a C# Sharp program to creates two string objects with different values. 
+           When it calls the Copy method to assign the first value to the second string, 
+            the output indicates that the strings represent different object references although their values are now equal. 
+            On the other hand, when the first string is assigned to the second string
+            , the two strings have identical values because they represent the same object reference. 
+
+            Expected Output :
+                s1 = 'JAVA'                                                                      
+                s2 = 'Python''
+         */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = ""; // UtilityMethods.GetValidString("Enter 2nd string");
+
+            string2 = String.Copy(string1);
+            Console.WriteLine($"{string1.GetType().Name} {string1} \n{string2.GetType().Name} {string2} \n Reference Equals: {Object.ReferenceEquals(string1,string2)} \n Object Equals: {Object.Equals(string1,string2)}");
+
+            string2 = string1;
+            Console.WriteLine($"{string1.GetType().Name} {string1} \n{string2.GetType().Name} {string2} \n Reference Equals: {Object.ReferenceEquals(string1, string2)} \n Object Equals: {Object.Equals(string1, string2)}");
+
+        }
+    }
+
 }
