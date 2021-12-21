@@ -1320,4 +1320,24 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_36
+    {
+        /*
+         * 36. Write a C# Sharp program to concatenate three strings and display the result. 
+         
+            Expected Output :
+            Don't count your chickens, before the eggs, have hatched.
+        */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter string1");
+            string string2 = UtilityMethods.GetValidString("Enter string2");
+            string string3 = UtilityMethods.GetValidString("Enter string3");
+
+            Console.WriteLine(string.Concat(string1, " ", string2, " ", string3));
+        }
+    }
+
+
 }

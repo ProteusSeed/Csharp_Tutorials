@@ -152,6 +152,10 @@ namespace string_exercises_menu
                         Exercise_34.Execute();
                         break;
 
+                    case 36:
+                        Exercise_36.Execute();
+                        break;
+
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;
