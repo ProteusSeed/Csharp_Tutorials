@@ -1339,5 +1339,37 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_37
+    {
+        /*
+         * 37. Write a C# Sharp program to concatenate the array values of strings. 
 
+            Expected Output :
+
+            hello welcome to C# Sharp create Windows client applications                     
+                                                                                 
+            hello applicationsC# Sharp client create to welcome Windows
+            Click me to see the solution
+        */
+
+        public static void Execute()
+        {
+            int numOfStrings = UtilityMethods.GetValidAbsoluteNumber("Enter # of strings");
+            string[] stringArray = new string[numOfStrings];
+            string concatenated = "";
+
+            for( int i = 0; i < numOfStrings; i++ )
+            {
+                stringArray[i] = UtilityMethods.GetValidString($"Enter string {i}");
+                
+            }
+
+            foreach( string aString in stringArray )
+            {
+                concatenated += aString;
+            }
+
+            Console.WriteLine(concatenated);
+        }
+    }
 }
