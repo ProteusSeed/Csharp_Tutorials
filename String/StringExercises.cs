@@ -1425,4 +1425,35 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_40
+    {
+        /*
+         * 40. Write a C# Sharp program to demonstrate the CopyTo method. 
+
+            Expected Output :
+                w3resource CSharp Tutoral                                                        
+                w3resource Python Tutoral                                                        
+                w3resourcedifferentutoral
+         */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString();
+            char[] string2 = { 'w','3','r','e','s','o','u','r','c','e',' ','C','S','h','a','r','p',' ','T','u','t','o','r','a','l' };
+            string string3 = "";
+
+            string3 = string2.ToString();
+
+            Console.Write($"Original string: ");
+            Console.WriteLine(string2);
+
+            string1.CopyTo(0,string2,11,string1.Length);
+
+            string3 = string2.ToString();
+
+            Console.Write($"Copied-To string: ");
+            Console.WriteLine(string2);
+        }
+    }
+
 }
