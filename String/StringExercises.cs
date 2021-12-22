@@ -1456,4 +1456,36 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_41
+    {
+        /*
+         * 41. Write a C# Sharp program to indicate whether each string in an array ends with a period ("."). 
+
+            Expected Output :
+
+            'Actions speak louder than words' ends in a period: False                        
+            'Hello!' ends in a period: False                                                 
+            'Python.' ends in a period: True                                                 
+            'PHP.' ends in a period: True                                                    
+            'random' ends in a period: False
+        */
+
+        public static void Execute()
+        {
+            string[] string1 = new string[]{
+                "Actions speak louder than words"
+                ,"Hello!"
+                ,"Python."
+                ,"PHP."
+                ,"random"
+                };
+            bool endsWithPeriod = false;
+
+            foreach (string item in string1)
+            {
+                endsWithPeriod = item.Substring(item.Length - 1) == ".";
+                Console.WriteLine($"{item}: {endsWithPeriod}");
+            }
+        }
+    }
 }
