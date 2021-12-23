@@ -1488,4 +1488,122 @@ namespace String_Exercises
             }
         }
     }
+
+    public static class Exercise_42
+    {
+        /*
+         * 42. Write C# Sharp program to check whether a string occurs at the end of another string. 
+
+        Expected Output :
+
+        Search for the target string "Å" in the string "abcЙࠉ".                                                       
+                                                                                                              
+        Using the English (United Kingdom) - "en-GB" culture:                                                         
+        Case sensitive:                                                                                               
+          The string to search ends with the target string: False                                                     
+                                                                                                              
+        Case insensitive:                                                                                             
+          The string to search ends with the target string: False                                                     
+                                                                                                                    
+        Using the English (Australia) - "en-AU" culture:                                                              
+        Case sensitive:                                                                                               
+          The string to search ends with the target string: False                                                     
+
+         */
+
+        public static void Execute()
+        {
+            string mainString = UtilityMethods.GetValidString();
+            string searchString = UtilityMethods.GetValidString("Enter search string");
+            bool endsWith = false;
+
+            StringComparison comparison = new StringComparison();
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-GB");                       
+
+            Console.WriteLine($"Using the {CultureInfo.CurrentCulture.Name} culture:");
+
+            comparison = StringComparison.CurrentCulture;
+            endsWith = mainString.EndsWith(searchString, comparison);
+            Console.WriteLine($"{comparison.ToString()}");
+            Console.WriteLine($"The string to search ends with the target string: {endsWith}");
+
+            comparison = StringComparison.CurrentCultureIgnoreCase;
+            endsWith = mainString.EndsWith(searchString, comparison);
+            Console.WriteLine($"{comparison.ToString()}");
+            Console.WriteLine($"The string to search ends with the target string: {endsWith}");
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-AU");
+            comparison = StringComparison.CurrentCulture;
+            endsWith = mainString.EndsWith(searchString, comparison);
+            Console.WriteLine($"Using the {CultureInfo.CurrentCulture.Name} culture:");
+            Console.WriteLine($"{comparison.ToString()}");
+            Console.WriteLine($"The string to search ends with the target string: {endsWith}");
+        }
+ 
+    }
+
+    public static class Exercise_43
+    {
+        /*
+         * 3. Write a C# Sharp program to determine whether a string ends with a particular substring. 
+
+            Note : The results are affected by the choice of culture, whether case is ignored, and whether an ordinal comparison is performed.
+
+            Expected Output :
+
+            Determine whether a string ends with another string, using                       
+            different values of StringComparison.                                          
+            The current culture is en-US.                                                    
+                                                                                 
+            StringComparison.CurrentCulture:                                                 
+            "xyzPQR" ends with "PQR".                                                        
+            "xyzPQR" ends with "PQR".
+
+         */
+
+        public static void Execute()
+        {
+                string str = "Determine whether a string ends with another string, " +
+                       "using\n  different values of StringComparison.";
+
+                StringComparison[] scValues = {
+                StringComparison.CurrentCulture,
+                StringComparison.CurrentCultureIgnoreCase,
+                StringComparison.InvariantCulture,
+                StringComparison.InvariantCultureIgnoreCase,
+                StringComparison.Ordinal,
+                StringComparison.OrdinalIgnoreCase };
+
+                //
+                Console.Clear();
+                Console.WriteLine(str);
+
+                // Display the current culture because the culture-specific comparisons
+                // can produce different results with different cultures.
+                Console.WriteLine("The current culture is {0}.\n",
+                                   Thread.CurrentThread.CurrentCulture.Name);
+
+                // Determine whether three versions of the letter I are equal to each other. 
+                foreach (StringComparison sc in scValues)
+                {
+                    Console.WriteLine("StringComparison.{0}:", sc);
+                    Test("xyzPQR", "PQR", sc);
+                    Test("xyzPQR", "PQR", sc);
+                    Console.WriteLine();
+                }
+
+            static void Test(string x, string y, StringComparison comparison)
+            {
+                string resultFmt = "\"{0}\" {1} with \"{2}\".";
+                string result = "does not end";
+                //
+                if (x.EndsWith(y, comparison))
+                    result = "ends";
+                Console.WriteLine(resultFmt, x, result, y);
+            }
+        }
+    }
+
+
 }
