@@ -1605,5 +1605,65 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_44
+    {
+
+        /*
+         * 44. Write a C# Sharp program to get the longest Palindromic substring from a given string. 
+
+            From Wikipedia:
+            In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring 
+            of a given string that is also a palindrome. For example, the longest palindromic substring of "bananas" is "anana". 
+            The longest palindromic substring is not guaranteed to be unique; for example, in the string "abracadabra"
+            , there is no palindromic substring with length greater than three, but there are two palindromic substrings with length three, namely, "aca" and "ada".
+
+            Expected Output :
+
+            Original String: aaaaaabbbbccc
+            Length of the longest substring without repeating characters of the said string:
+            aaaaa
+            Original String: BDEFGAABEF
+            Length of the longest substring without repeating characters of the said string:
+            AA
+            Original String: Python
+            Length of the longest substring without repeating characters of the said string:
+            P
+            Original String: Java
+            Length of the longest substring without repeating characters of the said string:
+            av
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string reversedString = reverseString(theString);
+            string palindrome = "";
+
+            for (int i = 0; i < theString.Length; i++)
+            {
+                for (int j = 1; j <= (theString.Length - i); j++)
+                {
+                    //Console.Write($"{theString.Substring(i, j)}");
+
+                    if (theString.Substring(i, j) == reverseString(theString.Substring(i, j)) & j > palindrome.Length)
+                    {
+                        palindrome = theString.Substring(i, j);
+                    };
+                }
+
+            }
+            Console.WriteLine(palindrome);
+        }
+
+        private static string reverseString(string theString)
+        {
+            char[] charArray = theString.ToCharArray();
+            Array.Reverse(charArray);
+
+            return new string(charArray);
+        }
+
+    }
+
 
 }
