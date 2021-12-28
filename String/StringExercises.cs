@@ -1665,5 +1665,31 @@ namespace String_Exercises
 
     }
 
+    public static class Exercise_45
+    {
+        /*
+         * 45. Write a C# Sharp program to reverse a given string in uppercase. 
+
+            Expected Output :
+
+            Original string: php
+            Said string in uppercase: PHP
+            Original string: java
+            Said string in uppercase: AVAJ
+            Original string: abcd
+            Said string in uppercase: DCBA
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            string upperString = theString.ToUpper();
+
+            Console.WriteLine("Original String {0}", theString);
+            Console.WriteLine("Said string in uppercase: {0}", upperString);
+        }
+    }
+
 
 }
