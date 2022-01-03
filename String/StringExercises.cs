@@ -1739,4 +1739,91 @@ namespace String_Exercises
             return element == character;
         }
     }
+
+    public static class Exercise_47
+    {
+        /*
+         * 47. Write a C# Sharp program to find the length of the longest substring without repeating characters from a given string.
+
+            Expected Output :
+
+            Original String: aaaaaabbbbccc
+            Length of the longest substring without repeating characters of the said string:
+            2
+            Original String: BDEFGAABEF
+            Length of the longest substring without repeating characters of the said string:
+            6
+            Original String: Python
+            Length of the longest substring without repeating characters of the said string:
+            6
+            Original String: Java
+            Length of the longest substring without repeating characters of the said string:
+            3
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            char previousChar = ' ';
+            int nonRepeatCount = 0; int highestCount = 0;
+
+            for( int i = 0; i < theString.Length; i++ )
+            {                
+                if(theString[i] != previousChar)
+                {                    
+                    nonRepeatCount++;
+                    previousChar = theString[i];
+                }
+                else{
+                    
+                    nonRepeatCount = 0;
+                }
+
+                highestCount = highestCount < nonRepeatCount ? nonRepeatCount : highestCount;
+            }
+
+            Console.WriteLine(highestCount);
+        }
+    }
+
+    public static class Exercise_48
+    {
+        /*
+         * 48. Write a C# Sharp program to reverse the case (upper->lower, lower->upper) of all the characters of given string. 
+
+            Expected Output :
+
+            Original string: PHP
+            After reversing the case of all characters of the said string: php
+
+            Original string: JavaScript
+            After reversing the case of all characters of the said string: jAVAsCRIPT
+
+            Original string: Python 3.0
+            After reversing the case of all characters of the said string: pYTHON 3.0
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string newString = "";
+
+           foreach( char character in theString.ToCharArray() )
+            {
+                if( char.IsUpper(character) == true )
+                {
+                    newString += character.ToString().ToLower();
+                }
+                else
+                {
+                    newString += character.ToString().ToUpper();
+                }
+            }
+
+            Console.WriteLine(newString);
+        }
+    }
+
+
 }
