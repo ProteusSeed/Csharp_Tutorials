@@ -1691,5 +1691,52 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_46
+    {
+        /*
+         * 46. Write a C# Sharp program to remove duplicate characters from a given string. 
 
+            Expected Output :
+            Original String: aaaaaabbbbccc
+            After removing duplicate characters from the said string:
+            abc
+            Original String: Python
+            After removing duplicates characters from the said string:
+            Python
+            Original String: Java
+            After removing duplicates characters from the said string:
+            Jav
+        */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+
+            char[] charArray = theString.ToCharArray();
+
+            List<char> uniqueChars = new List<char>();
+            string newString = "";
+
+
+            foreach (var element in charArray)
+            {
+                if (!uniqueChars.Exists(e => e == element))
+                {
+                    uniqueChars.Add(element);
+                }
+            }
+
+            foreach( char character in uniqueChars)
+            {
+                newString += character;
+            }
+
+            Console.WriteLine(newString);
+        }
+
+        private static bool elementExists( char element, char character )
+        {
+            return element == character;
+        }
+    }
 }
