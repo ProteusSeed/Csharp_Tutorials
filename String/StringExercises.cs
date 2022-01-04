@@ -1825,5 +1825,46 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_49
+    {
+        /*
+         * 49. Write a C# Sharp program to find the middle character(s) of a given string. 
+            Return the middle character if the length of the string is odd and return two middle characters if the length of the string is even. 
+
+            Expected Output :
+
+            Original string: Python
+            Middle character(s) of the said string: th
+
+            Original string: PHP
+            Middle character(s) of the said string: H
+
+            Original string: C#
+            Middle character(s) of the said string: C#
+
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int stringLength = theString.Length;
+            string middle = "";
+
+            if( stringLength % 2 != 0  )
+            {
+                middle = theString.Substring( stringLength / 2, 1);
+            }
+            else
+            {
+                middle = theString.Substring(stringLength / 2 - 1, 2);
+            }
+
+            int l = 1 - theString.Length % 2;
+            Console.WriteLine(theString.Substring(theString.Length / 2 - l, 1 + l));
+
+            Console.WriteLine(middle);
+        }
+    }
+
 
 }
