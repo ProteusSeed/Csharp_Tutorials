@@ -1866,5 +1866,96 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_50
+    {
+        /*
+         * 50. Write a C# Sharp program to find the maximum and minimum number from a given string of numbers separated by single space.
 
+            Expected Output :
+
+            Original string of numbers: 3 4 8 9 0 2 1
+            Maximum and minimum number of the said string: 9, 0
+
+            Original string of numbers: -2 -1 0 4 10
+            Maximum and minimum number of the said string: 10, -2
+        */
+
+        public static void Execute()
+        {
+            string numberString = UtilityMethods.GetValidString();
+            string currentChar = "";
+            string maxNumString = "";
+            int maxCandidate = 0;
+            int max = 0;
+
+            for (int i = 0; i < numberString.Length; i++)
+            {
+                currentChar = numberString.Substring(i, 1);
+                maxNumString += currentChar;
+
+                if (currentChar == " " | i == numberString.Length - 1 )
+                {
+                    int.TryParse(maxNumString, out maxCandidate);
+                    max = maxCandidate > max ? maxCandidate : max;
+                    maxNumString = "";
+                }
+
+            }
+
+            Console.WriteLine(max);
+        }
+    }
+
+    public static class Exercise_51
+    {
+        /*
+         * 51. Write a C# Sharp program to check whether a given string is an “isograms” or not. Return True or False. 
+
+            From Wikipedia,
+            A heterogram (from hetero-, meaning 'different', + -gram, meaning 'written') is a word, phrase,
+            or sentence in which no letter of the alphabet occurs more than once. 
+            The terms isogram and nonpattern word have also been used to mean the same thing.
+
+            Expected Output :
+
+            Original string: Python
+            Check the said string is an 'isograms' or not! True
+
+            Original string: JavaScript
+            Check the said string is an 'isograms' or not! False
+
+            Original string: PHP
+            Check the said string is an 'isograms' or not! False
+
+            Original string: C#
+            Check the said string is an 'isograms' or not! True
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            int[] charCounts = new int[255];
+            char[] charArray = theString.ToCharArray();
+            int ascii = 0;
+
+            foreach( char character in charArray )
+            {
+                ascii = (int)character;
+                charCounts[ascii]++;
+            }
+
+            Array.Sort(charCounts);
+
+            if( charCounts[charCounts.Length - 1] ==1 )
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+
+            
+        }
+    }
 }
