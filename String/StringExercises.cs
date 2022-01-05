@@ -2100,5 +2100,45 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_56
+    {
+        /*
+         * 56. Write a C# Sharp program to find the longest common ending between two given strings. 
 
+            Expected Output:
+                Original strings: running  ruminating
+                Common ending between said two strings:ing
+                Original strings: thisisatest  testing123testing
+                Common ending between said two strings:
+         */
+
+        public static void Execute()
+        {
+            string string1 = UtilityMethods.GetValidString("Enter 1st string");
+            string string2 = UtilityMethods.GetValidString("Enter 2nd string");
+            string revString1 = reverse(string1);
+            string revString2 = reverse(string2);
+            int length = string1.Length > string2.Length ? string2.Length : string1.Length;
+            string common = "";
+            
+            for( int i = 0; i < length; i++ )
+            {
+                if(revString1[i] == revString2[i] ) common += revString1[i];
+            }
+
+            common = reverse(common).Trim();
+
+            Console.WriteLine(common);
+        }
+
+        private static string reverse( string theString )
+        {
+            char[] charArray = theString.ToCharArray();
+
+            Array.Reverse(charArray);
+
+            return string.Join("", charArray);
+
+        }
+    }
 }
