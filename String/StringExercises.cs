@@ -1996,5 +1996,22 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_53
+    {
+        /*
+         * Write a C# Sharp program to find the position of a specified word in a given string. 
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string searchWord = UtilityMethods.GetValidString();
+
+            int position = theString.IndexOf(searchWord);
+
+            Console.WriteLine(position);
+        }
+    }
+
 
 }
