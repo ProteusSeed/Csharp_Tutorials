@@ -1958,4 +1958,43 @@ namespace String_Exercises
             
         }
     }
+
+    public static class Exercise_52
+    {
+        /*
+         * 52. Write a C# Sharp program to convert the first character of each word of a given string to uppercase. 
+
+            Expected Output :
+
+            Original string: python exercises
+            After converting the first character of each word of the said string:
+            Python Exercises
+            Original string: The quick brown Fox jumps over the little lazy Dog
+            After converting the first character of each word of the said string:
+            The Quick Brown Fox Jumps Over The Little Lazy Dog
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string newString = "";
+            string[] words = theString.Split(' ');
+
+            for ( int i = 0; i < words.Length; i++ )
+            {
+                words[i] = words[i].Substring(0,1).ToUpper() + words[i].Remove(0, 1);
+            }
+
+            foreach (string word in words)
+            {
+                newString += word + " ";
+            }
+
+            newString = newString.TrimEnd();
+
+            Console.WriteLine(newString);
+        }
+    }
+
+
 }
