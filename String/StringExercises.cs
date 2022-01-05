@@ -2013,5 +2013,44 @@ namespace String_Exercises
         }
     }
 
+    public static class Exercise_54
+    {
+        /*
+         * 54. Write a C# Sharp program to alternate the case of each letter in a given string and the first letter of the said string must be uppercase. 
 
+            Expected Output:
+
+            Original string: c# Exercises
+
+            After alternating the case of each letter of the said string:
+            C# ExErCiSeS
+
+            Original string: C# is used to develop web apps, desktop apps, mobile apps, games and much more.
+
+            After alternating the case of each letter of the said string:
+            C# Is UsEd To DeVeLoP wEb ApPs, dEsKtOp ApPs, mObIlE aPpS, GaMeS aNd MuCh MoRe.
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            bool upper = true;
+
+            for( int i = 0; i < theString.Length; i++ )
+            {
+                if(upper)
+                {
+                    theString = theString.Remove(i, 1).Insert(i, theString[i].ToString().ToUpper());
+                }
+                else
+                {
+                    theString = theString.Remove(i, 1).Insert(i, theString[i].ToString().ToLower());
+                }
+
+                upper = !upper;
+            }
+
+            Console.WriteLine(theString);
+        }
+    }
 }
