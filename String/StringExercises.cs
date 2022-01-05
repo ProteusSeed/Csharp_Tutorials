@@ -2053,4 +2053,52 @@ namespace String_Exercises
             Console.WriteLine(theString);
         }
     }
+
+    public static class Exercise_55
+    {
+        /*
+         * 55. Write a C# Sharp program reverse all the words of a given string which have even length. 
+
+            Expected Output:
+
+            Original string: C# Exercises
+
+            Reverse all the words of the said string which have even length.:
+            #C Exercises
+
+            Original string: C# is used to develop web apps , desktop apps , mobile apps , games and much more.
+
+            Reverse all the words of the said string which have even length.:
+            #C si desu ot develop web sppa , desktop sppa , elibom sppa , games and hcum more.
+         */
+
+        public static void Execute()
+        {
+            string theString = UtilityMethods.GetValidString();
+            string[] words = theString.Split(' ');
+            string newString = "";
+
+            foreach( string word in words )
+            {
+                if( word.Length % 2 == 0 )
+                {
+                    newString += ReverseString(word) + " ";
+                }
+                else { newString += word + " ";  }
+
+            }
+
+            newString.TrimEnd();
+            Console.WriteLine(newString);
+        }
+
+        private static string ReverseString( string theString )
+        {
+            char[] charArray = theString.ToCharArray();
+            Array.Reverse(charArray);
+            return string.Join("", charArray);
+        }
+    }
+
+
 }
