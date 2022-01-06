@@ -47,5 +47,32 @@ namespace Function_Exercises
         }
     }
 
+    public static class Exercise_03
+    {
+        /*
+         * 3. Write a program in C# Sharp to create a function for the sum of two numbers. 
+            Test Data :
+            Enter a number: 15
+            Enter another number: 16
+            Expected Output :
+            The sum of two numbers is : 31
+        */
+
+        public static void Execute()
+        {
+            int number1 = UtilityMethods.GetValidAbsoluteNumber("Enter 1st number");
+            int number2 = UtilityMethods.GetValidAbsoluteNumber("Enter 2nd number");
+
+            int sumOfNumbers = sum(number1, number2);
+
+            Console.WriteLine("The sum of {0} and {1} is: {2}", number1, number2, sumOfNumbers);
+        }
+
+        private static int sum(int number1, int number2)
+        {
+            return number1 + number2;
+        }
+    }
+
 
 }
