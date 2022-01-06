@@ -1,0 +1,16 @@
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Function.exe
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Function.deps.json
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Function.runtimeconfig.json
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Function.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Function.dll
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Function.pdb
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Basic_1.dll
+D:\Git\CSharp_Practice\Function\bin\Debug\netcoreapp3.1\Basic_1.pdb
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.AssemblyInfo.cs
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.csproj.CopyComplete
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.dll
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.pdb
+D:\Git\CSharp_Practice\Function\obj\Debug\netcoreapp3.1\Function.genruntimeconfig.cache
