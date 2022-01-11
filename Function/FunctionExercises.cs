@@ -101,4 +101,41 @@ namespace Function_Exercises
             return $"\"{inputString}\" contains {numberOfSpaces} spaces";
         }
     }
+
+    public static class Exercise_05
+    {
+        /*
+          5. Write a program in C# Sharp to calculate the sum of elements in an array. 
+            Test Data :
+            Input 5 elements in the array :
+            element - 0 : 5
+            element - 1 : 7
+            element - 2 : 3
+            element - 3 : 2
+            element - 4 : 9
+            Expected Output :
+            The sum of the elements of the array is 26
+        */
+
+        public static void Execute()
+        {
+            int[] numbers = UtilityMethods.getValidNumbersArray();
+
+            string sumMessage = arraySum(numbers);
+
+            Console.WriteLine($"The sum of the elments of the array is {sumMessage}");
+        }
+
+        private static string arraySum(int[] elements)
+        {
+            int sum = 0;
+
+            foreach( int number in elements )
+            {
+                sum += number;
+            }
+            return sum.ToString();
+        }
+    }
+
 }
