@@ -138,4 +138,56 @@ namespace Function_Exercises
         }
     }
 
+    public static class Exercise_06
+    {
+        /*
+         * 6. Write a program in C# Sharp to create a function to swap the values of two integer numbers. 
+            Test Data :
+            Enter a number: 5
+            Enter another number: 6
+            Expected Output :
+            Now the 1st number is : 6 , and the 2nd number is : 5
+        */
+
+        public static void Execute()
+        {
+            int integer1 = UtilityMethods.GetValidAbsoluteNumber("Enter 1st number");
+            int integer2 = UtilityMethods.GetValidAbsoluteNumber("Enter 2nd number");
+            int newInteger1 = 0, newInteger2 = 0;
+
+            swap(integer1, integer2, out newInteger1, out newInteger2);
+
+            Console.WriteLine($"Now the 1st number is : {newInteger1}, and the 2nd number is: {newInteger2}");
+        }
+
+        private static void swap(int integer1, int integer2, out int newInteger1, out int newInteger2)
+        {
+            newInteger1 = integer2;
+            newInteger2 = integer1;
+
+        }
+    }
+
+    public static class Exercise_07
+    {
+        /*
+          7. Write a program in C# Sharp to create a function to calculate the result of raising an integer number to another.
+                Test Data :
+                Input Base number: 3
+                Input the Exponent : 2
+                Expected Output :
+                So, the number 3 ^ (to the power) 2 = 9
+        */
+
+        public static void Execute()
+        {
+            int baseNum = UtilityMethods.GetValidAbsoluteNumber("Input the base number");
+            int exp = UtilityMethods.GetValidAbsoluteNumber("Input the Exponent");
+            int result = 0;
+
+            result = (int)(Math.Pow((double)baseNum, (double)exp));
+            Console.WriteLine($"So, the number {baseNum} ^ (to the power of) {exp} = {result}");
+        }
+    }
+
 }
