@@ -74,5 +74,31 @@ namespace Function_Exercises
         }
     }
 
+    public static class Exercise_04
+    {
+        /*
+         * 4. Write a program in C# Sharp to create a function to input a string 
+            and count number of spaces are in the string. 
+            Test Data :
+            Please input a string : This is a test string.
+            Expected Output:
+            "This is a test string." contains 4 spaces
+        */
 
+        public static void Execute()
+        {
+            Console.WriteLine(spaces());
+        }
+
+        private static string spaces()
+        {
+            string inputString = UtilityMethods.GetValidString();
+            inputString.Trim();
+            string[] splits = inputString.Split(' ');
+            int numberOfSplits = splits.Length;
+            int numberOfSpaces = numberOfSplits - 1;
+
+            return $"\"{inputString}\" contains {numberOfSpaces} spaces";
+        }
+    }
 }
