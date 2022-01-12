@@ -190,4 +190,41 @@ namespace Function_Exercises
         }
     }
 
+    public static class Exercise_08
+    {
+        /*
+         * 8. Write a program in C# Sharp to create a function to display the n number Fibonacci sequence. 
+            Test Data:
+            Input number of Fibonacci Series : 5
+            Expected Output :
+            The Fibonacci series of 5 numbers is: 0 1 1 2 3
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Enter amount of numbers in sequence");
+
+            fibonacci(number);
+
+        }
+
+        private static void fibonacci(int number)
+        {
+            int previous = 1;
+            int prePrevious = 0;
+            int current = 0;
+
+            Console.Write($"{ prePrevious} ");
+            Console.Write($"{ previous} ");
+
+            for ( int n = 1; n <= number - 2; n++ )
+            {
+                current = prePrevious + previous;
+
+                Console.Write($"{current} ");
+                prePrevious = previous;
+                previous = current;
+            }
+        }
+    }
 }
