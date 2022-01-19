@@ -227,4 +227,86 @@ namespace Function_Exercises
             }
         }
     }
+
+    public static class Exercise_09
+    {
+        /*
+         * 9. Write a program in C# Sharp to create a function to check whether a number is prime or not.
+            Test Data :
+            Input a number : 31
+            Expected Output :
+            31 is a prime number
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            string isPrime = prime(number) == true ? "is" : "is not";
+
+            Console.WriteLine($"{number} {isPrime} a prime number");
+        }
+
+        private static bool prime(int number)
+        {
+            for( int i = 2; i < number; i++ )
+            {
+                if (number % i == 0) return false;
+            }
+
+            return true;
+        }
+    }
+
+    public static class Exercise_10
+    {
+        /*
+         * 10. Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number. 
+            Test Data :
+            Enter a number: 1234
+            Expected Output:
+            The sum of the digits of the number 1234 is: 10
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+            
+            int sum = digitSum(number);
+
+            Console.WriteLine($"The sum of the digits of the number {number} is: {sum}");
+        }
+
+        private static int digitSum( int number )
+        {
+            int digits = number.ToString().Length;
+            string numberString = number.ToString();
+            int sum = 0;
+
+            foreach( char character in numberString )
+            {
+                sum += Convert.ToInt32(character.ToString());
+            }
+
+            return sum;
+        }
+    }
+
+    public static class Exercise_11
+    {
+        /*
+         * 11. Write a program in C# Sharp to create a recursive function to find the factorial of a given number.
+            Test Data :
+            Enter a number: 5
+            Expected Output:
+            The factorial of 5! is 120
+         */
+
+        public static void Execute()
+        {
+
+        }
+    }
+
+
 }
