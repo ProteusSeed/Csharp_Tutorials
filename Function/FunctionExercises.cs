@@ -304,6 +304,24 @@ namespace Function_Exercises
 
         public static void Execute()
         {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            int factorial = factorialCalc(number);
+
+            Console.WriteLine(factorial);
+        }
+
+        private static int factorialCalc( int number )
+        {
+            int factorial = 0;
+
+            // number * factorialCalc(number - 1);
+            if (number == 1) return number;
+
+            factorial = factorialCalc(number - 1); //recursion
+            factorial = number * factorial;//executes after recursion hits bottom
+
+            return factorial;
 
         }
     }
