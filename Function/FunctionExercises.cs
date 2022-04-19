@@ -326,5 +326,41 @@ namespace Function_Exercises
         }
     }
 
+    public static class Exercise_12
+    {
+        /*
+         * 12. Write a program in C# Sharp to create a recursive function to calculate the Fibonacci number of a specific term. 
+            Test Data :
+            Enter a number: 10
+            Expected Output :
+            The Fibonacci of 10 th term is 55
+         */
 
+        public static void Execute()
+        {
+            int term = UtilityMethods.GetValidAbsoluteNumber("Enter number off terms");
+
+            int fibonacci = fib(term,'0');
+
+            Console.WriteLine(fibonacci);
+        }
+
+        private static int fib(int number, char iteration)
+        {
+            int prevPrevNumber = 0;
+            int prevNumber = 1;
+            int calc = 0;
+
+            if( number <= 2) return 1;
+
+            Console.WriteLine($"number: {number} iteration: {iteration}");
+            calc = fib(number - 1,'a') + fib(number - 2,'b');
+
+            //Console.WriteLine($"{calc}");
+            //Console.WriteLine($"Number: {number}");
+            //Console.WriteLine($"Prev Number: {prevNumber}");
+
+            return calc;
+        }
+    }
 }
