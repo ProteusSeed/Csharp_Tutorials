@@ -333,34 +333,42 @@ namespace Function_Exercises
             Test Data :
             Enter a number: 10
             Expected Output :
-            The Fibonacci of 10 th term is 55
+            The Fibonacci of 10th term is 55
+            0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ..
          */
+
+        public static int Fib(int n1, string call)
+        {
+            int retNum1 = 0, retNum2 = 0;
+            Console.WriteLine($"{call} {n1}");
+
+            //if ( (n1 == 1) || (number == 2) )
+            if (n1 <= 2)
+                return 1;
+            else
+            {
+                retNum1 = Fib(n1 - 1, "a");
+                //Console.WriteLine($"{retNum1}");
+                retNum2 = Fib(n1 - 2, "b");
+                //Console.WriteLine($"{retNum1} {retNum2}");
+            }
+
+            Console.WriteLine($"Return {retNum1} {retNum2}");
+
+            return retNum1 + retNum2;
+                //function recurses down to one in first call,
+                //then the 2nd call is executed going down to one
+        }
 
         public static void Execute()
         {
-            int term = UtilityMethods.GetValidAbsoluteNumber("Enter number off terms");
+ 
+            Console.Write("\n\nRecursive Function : To calculate the Fibonacci number of a specific term :\n");
+            Console.Write("-------------------------------------------------------------------------------\n");
 
-            int fibonacci = fib(term,'0');
+            int num = UtilityMethods.GetValidAbsoluteNumber("Enter number off terms");
 
-            Console.WriteLine(fibonacci);
-        }
-
-        private static int fib(int number, char iteration)
-        {
-            int prevPrevNumber = 0;
-            int prevNumber = 1;
-            int calc = 0;
-
-            if( number <= 2) return 1;
-
-            Console.WriteLine($"number: {number} iteration: {iteration}");
-            calc = fib(number - 1,'a') + fib(number - 2,'b');
-
-            //Console.WriteLine($"{calc}");
-            //Console.WriteLine($"Number: {number}");
-            //Console.WriteLine($"Prev Number: {prevNumber}");
-
-            return calc;
+            Console.WriteLine("\nThe Fibonacci of {0} th term  is {1} \n", num, Fib(num, "m"));
         }
     }
 }

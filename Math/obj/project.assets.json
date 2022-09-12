@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Basic_1/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/Basic_1.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Basic_1.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "Basic_1/1.0.0": {
-      "type": "project",
-      "path": "../Basic_1/Basic_1.csproj",
-      "msbuildProject": "../Basic_1/Basic_1.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Basic_1 >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\Zarathustra\\.nuget\\packages\\": {},
@@ -33,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\CSharp_Practice\\Arrays\\Arrays.csproj",
-      "projectName": "Arrays",
-      "projectPath": "D:\\Git\\CSharp_Practice\\Arrays\\Arrays.csproj",
+      "projectUniqueName": "D:\\Git\\CSharp_Practice\\Math\\Math.csproj",
+      "projectName": "Math",
+      "projectPath": "D:\\Git\\CSharp_Practice\\Math\\Math.csproj",
       "packagesPath": "C:\\Users\\Zarathustra\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\CSharp_Practice\\Arrays\\obj\\",
+      "outputPath": "D:\\Git\\CSharp_Practice\\Math\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -55,11 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "D:\\Git\\CSharp_Practice\\Basic_1\\Basic_1.csproj": {
-              "projectPath": "D:\\Git\\CSharp_Practice\\Basic_1\\Basic_1.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
