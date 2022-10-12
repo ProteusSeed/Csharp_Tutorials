@@ -1,0 +1,16 @@
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.AssemblyInfo.cs
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Math.exe
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Math.deps.json
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Math.runtimeconfig.json
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Math.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Math.dll
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Math.pdb
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Basic_1.dll
+D:\Git\CSharp_Practice\Math\bin\Debug\netcoreapp3.1\Basic_1.pdb
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.csproj.CopyComplete
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.dll
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.pdb
+D:\Git\CSharp_Practice\Math\obj\Debug\netcoreapp3.1\Math.genruntimeconfig.cache

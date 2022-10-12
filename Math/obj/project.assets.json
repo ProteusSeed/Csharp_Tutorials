@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Basic_1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/Basic_1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Basic_1.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Basic_1/1.0.0": {
+      "type": "project",
+      "path": "../Basic_1/Basic_1.csproj",
+      "msbuildProject": "../Basic_1/Basic_1.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Basic_1 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Zarathustra\\.nuget\\packages\\": {},
@@ -36,7 +55,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Git\\CSharp_Practice\\Basic_1\\Basic_1.csproj": {
+              "projectPath": "D:\\Git\\CSharp_Practice\\Basic_1\\Basic_1.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -62,7 +85,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.422\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.423\\RuntimeIdentifierGraph.json"
       }
     }
   }

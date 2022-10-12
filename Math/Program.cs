@@ -1,4 +1,6 @@
 ﻿using System;
+using Exercises;
+using Math_Exercises;
 
 namespace Math
 {
@@ -6,7 +8,26 @@ namespace Math
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            bool continueLoop = true;
+            int number = 0;
+
+            while (continueLoop == true)
+            {
+                continueLoop = UtilityMethods.getValidProgramNumber(out number);
+
+                switch (number)
+                {
+                    case 2:
+                        Exercise_02.Execute();
+                        break;
+
+                      default:
+                        Console.WriteLine("Program does not exist!");
+                        break;
+                }
+
+            }
         }
     }
 }
+
