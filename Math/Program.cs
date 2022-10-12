@@ -21,7 +21,11 @@ namespace Math
                         Exercise_02.Execute();
                         break;
 
-                      default:
+                    case 3:
+                        Exercise_03.Execute();
+                        break;
+
+                    default:
                         Console.WriteLine("Program does not exist!");
                         break;
                 }

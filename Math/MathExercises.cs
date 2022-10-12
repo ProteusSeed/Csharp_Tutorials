@@ -116,4 +116,30 @@ namespace Math_Exercises
 
     }
 
+    public static class Exercise_03
+    {
+        /*
+         * 3. Write a C# Sharp program to calculate the value that results from raising 3 to a power ranging from 0 to 32.
+            3^0 = 1 (0x1)
+            3^1 = 3 (0x3)
+            3^2 = 9 (0x9)
+            3^3 = 27 (0x1B)
+            3^4 = 81 (0x51)
+            3^5 = 243 (0xF3)
+            3^6 = 729 (0x2D9)
+            3^7 = 2,187 (0x88B)
+        */
+
+        public static void Execute()
+        {
+            double res = System.Math.Pow(3, 5);
+
+            for (int i = 0; i <= 32; i++)
+            {
+                Console.WriteLine("3 ^ {0} = {1}", i, System.Math.Pow(3,i));
+            }            
+        }
+
+    }
+
 }
