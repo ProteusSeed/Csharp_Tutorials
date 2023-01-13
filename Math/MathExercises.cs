@@ -142,4 +142,78 @@ namespace Math_Exercises
 
     }
 
+    public static class Exercise_24
+    {
+        /*
+         * 24. Write a C# Sharp program to reverse the binary representation of an given integer and convert the reversed binary number into an integer.
+            Expected Output:
+            Original number: 120
+            Reverse the binary representation of the said integer and convert it into an integer: 15
+            Original number: 321
+            Reverse the binary representation of the said integer and convert it into an integer: 261
+            Original number: 43
+            Reverse the binary representation of the said integer and convert it into an integer: 53
+            Original number: 4433
+            Reverse the binary representation of the said integer and convert it into an integer: 4433
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+            string binary = toBinary(number);
+
+            Console.WriteLine($"binary: {binary}");
+
+            Console.WriteLine($"binary reversed: {stringReverse(binary)}");
+
+            Console.WriteLine($"Reverse the binary representation of the said integer and convert it into an integer: {binaryToInteger(stringReverse(binary))}");
+        }
+
+        private static string toBinary(int number)
+        {
+            int integer = number;
+            string binary = "";
+
+            while (integer > 0)
+            {
+                
+                binary = (integer % 2 > 0 ? "1" : "0") + binary;
+                integer = integer / 2;
+            }
+
+            return binary;
+        }
+
+        private static string stringReverse(string theString)
+        {
+            string reversedString = "";
+            char[] charArray = theString.ToCharArray();
+
+            Array.Reverse(charArray);
+
+            reversedString = new string(charArray);
+
+            return reversedString;
+        }
+
+        private static int binaryToInteger(string binary)
+        {
+            int integer = 0;
+            int bitAsInt = 0;
+            int multiplier = 1;
+
+            char[] charArray = binary.ToCharArray();
+
+            Array.Reverse(charArray);
+
+            foreach( char bit in charArray )
+            {
+                bitAsInt = int.Parse(bit.ToString());
+                integer += bitAsInt == 1 ? multiplier : 0;
+                multiplier *= 2;
+            }
+
+            return integer;
+        }
+    }
 }
