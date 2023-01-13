@@ -216,4 +216,53 @@ namespace Math_Exercises
             return integer;
         }
     }
+
+    public static class Exercise_25
+    {
+        /*
+         25. Write a C# Sharp program to find the closest palindrome number of a given integer. 
+         If there are two palindrome numbers in absolute distance return the smaller number. 
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+            int higherNumber = number;
+            int lowerNumber = number;
+
+            palindrome(ref higherNumber, '+');
+            palindrome(ref lowerNumber, '-');
+
+            int palidromeNumber = ( higherNumber - number ) > ( number - lowerNumber ) | (higherNumber - number) == (number - lowerNumber) ? lowerNumber : higherNumber;
+
+            Console.WriteLine("Palindrome: {0}", palidromeNumber);
+        }
+
+        private static void palindrome(ref int number, char sign)
+        {
+            char[] charArray = number.ToString().ToCharArray();
+            char[] charArrayReversed = charArray;
+
+            Array.Reverse(charArrayReversed);
+
+            int numberReversed = int.Parse(new string(charArrayReversed));
+            if (number != numberReversed | number == 0)
+            {
+                if (sign == '+')
+                {
+                    number++;
+                    palindrome(ref number, '+');
+                }
+                else
+                {
+                    number--;
+                    palindrome(ref number, '-');
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
 }
