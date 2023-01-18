@@ -173,5 +173,30 @@ namespace Recursion
         }
     }
 
+    public static class Exercise_07
+    {
+        /*
+          7. Write a program in C# Sharp to check whether a number is prime or not using recursion. 
+            Test Data :
+            Input any positive number : 37
+            Expected Output :
+            The number 37 is a prime number.
+        */
 
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Input any positive number:");
+
+            Console.WriteLine(prime(number, 1));
+        }
+
+        private static Boolean prime(int number, int divisor)
+        {
+            if (divisor > (number / 2) ) return true;
+
+            if (number % divisor == 0 & divisor != 1) return false;
+
+            return prime( number, divisor + 1 );
+        }
+    }
 }

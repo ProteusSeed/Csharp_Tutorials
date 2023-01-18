@@ -40,6 +40,10 @@ namespace Recursion
                         Exercise_06.Execute();
                         break;
 
+                    case 7:
+                        Exercise_07.Execute();
+                        break;
+
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;
