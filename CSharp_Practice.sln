@@ -28,7 +28,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String", "String\String.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Function", "Function\Function.csproj", "{4D135F08-494D-436A-8016-2EE5AD012903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Math\Math.csproj", "{00B6D774-A363-4DE6-AE21-88A00CE8AC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Math", "Math\Math.csproj", "{00B6D774-A363-4DE6-AE21-88A00CE8AC32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion", "Recursion\Recursion.csproj", "{884ECE38-4796-46D3-993D-65178634939F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25B4E966-4BDA-46F9-9CAD-3F8723AD9B84} = {25B4E966-4BDA-46F9-9CAD-3F8723AD9B84}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +81,10 @@ Global
 		{00B6D774-A363-4DE6-AE21-88A00CE8AC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B6D774-A363-4DE6-AE21-88A00CE8AC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B6D774-A363-4DE6-AE21-88A00CE8AC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884ECE38-4796-46D3-993D-65178634939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884ECE38-4796-46D3-993D-65178634939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884ECE38-4796-46D3-993D-65178634939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884ECE38-4796-46D3-993D-65178634939F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +100,7 @@ Global
 		{807321EE-7E63-4F78-BB86-B435CA8B11EC} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 		{4D135F08-494D-436A-8016-2EE5AD012903} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 		{00B6D774-A363-4DE6-AE21-88A00CE8AC32} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
+		{884ECE38-4796-46D3-993D-65178634939F} = {5629D266-1541-4CDD-84A5-BBA760408FF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B1ACBCA-AE99-4DE6-A35E-3EF2AE4C26B4}
