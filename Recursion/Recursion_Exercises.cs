@@ -116,4 +116,29 @@ namespace Recursion
          
         }
     }
+
+    public static class Exercise_05
+    {
+        /*
+          5. Write a program in C# Sharp to count the number of digits in a number using recursion. 
+            Test Data :
+            Input any number : 12345
+            Expected Output :
+            The number 12345 contains number of digits : 5
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber();
+
+            Console.WriteLine($"The number {number} contains number of digits: {digits(number, 0)}");
+        }
+
+        private static int digits( int number, int count)
+        {
+            if (number <= 0) return count;            
+
+            return digits(number / 10, count + 1); ;
+        }
+    }
 }
