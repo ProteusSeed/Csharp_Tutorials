@@ -199,4 +199,38 @@ namespace Recursion
             return prime( number, divisor + 1 );
         }
     }
+
+    public static class Exercise_08
+    {
+        /*
+         * 8. Write a program in C# Sharp to check whether a given string is Palindrome or not using recursion. 
+            Test Data :
+            Input a string : RADAR
+            Expected Output :
+            The string is Palindrome.
+         */
+
+        public static void Execute()
+        {
+            string word = UtilityMethods.GetValidString();
+
+            Console.WriteLine($"The string is a Palindrome: {Palindrome(word)}");
+        }
+
+        private static Boolean Palindrome( string word )
+        {
+            if (word.Length < 2) return true;
+
+            bool isPalindrome = word.Substring(0, 1) == word.Substring(word.Length - 1, 1);
+
+            if (isPalindrome == false)
+            {
+                //Console.WriteLine("false!");
+                return false;
+            }
+
+           return Palindrome(word.Substring(1, word.Length - 2));
+
+        }
+    }
 }
