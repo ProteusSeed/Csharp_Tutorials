@@ -233,4 +233,33 @@ namespace Recursion
 
         }
     }
+
+    public static class Exercise_09
+    {
+        /*
+         * 9. Write a program in C# Sharp to find the factorial of a given number using recursion. 
+            Test Data:
+            Input any positive number: 5
+            Expected Output:
+            The factorial of 5 is: 120
+         */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Input any positive number: ");
+
+            int factorial = Factorial(number);
+
+            Console.WriteLine("The factorial of {0} is: {1}", number, factorial);
+        }
+
+        private static int Factorial(int number)
+        {
+            if (number == 1) return 1;
+
+            int factorial = Factorial(number - 1);
+
+            return number * factorial;
+        }
+    }
 }
