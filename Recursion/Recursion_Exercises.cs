@@ -262,4 +262,28 @@ namespace Recursion
             return number * factorial;
         }
     }
+
+    public static class Exercise_10
+    {
+        /*
+         * 10. Write a program in C# Sharp to find the Fibonacci numbers for a n numbers of series using recursion.
+            Test Data :
+            Input number of terms for the Fibonacci series : 10
+            Expected Output :
+            The Fibonacci series of 10 terms is : 0 1 1 2 3 5 8 13 21 34
+        */
+
+        public static void Execute()
+        {
+            int number = UtilityMethods.GetValidAbsoluteNumber("Input number of terms for the Fibonacci series");
+
+            Fibonacci(0, 1, 1, number);
+        }
+
+        public static void Fibonacci(int a, int b, int counter, int number)
+        {
+            Console.WriteLine(a);
+            if (counter < number) Fibonacci(b, a + b, counter + 1, number);
+        }
+    }
 }
