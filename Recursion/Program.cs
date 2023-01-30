@@ -16,6 +16,10 @@ namespace Recursion
 
                 switch (number)
                 {
+                    case 0:
+                        RecursionTest.Execute();
+                        break;
+
                     case 1:
                         Exercise_01.Execute();
                         break;
@@ -54,6 +58,10 @@ namespace Recursion
 
                     case 10:
                         Exercise_10.Execute();
+                        break;
+
+                    case 11:
+                        Exercise_11.Execute();
                         break;
 
                     default:

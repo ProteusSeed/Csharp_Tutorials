@@ -286,4 +286,72 @@ namespace Recursion
             if (counter < number) Fibonacci(b, a + b, counter + 1, number);
         }
     }
+
+    public static class Exercise_11
+    {
+        /*
+         * 11. Write a program in C# Sharp to generate all possible permutations of an array using recursion. 
+            Test Data :
+            Input the number of elements to store in the array [maximum 5 digits ] :3
+            Input 3 number of elements in the array :
+            element - 0 : 1
+            element - 1 : 2
+            element - 2 : 3
+            Expected Output :
+            The Permutations with a combination of 3 digits are :
+            123 132 213 231 321 312
+         */
+
+        public static void Execute()
+        {
+            int[] array = UtilityMethods.getValidNumbersArray();
+
+            Permutations(array, 0);
+
+
+        }
+
+        private static void Permutations(int[] array, int index)
+        {
+            if (index >= array.Length) return;
+
+            Console.WriteLine(array[index]);
+            Permutations(array, index - 1);
+            Permutations(array, index + 1);
+
+        }
+    }
+
+    public static class Exercise_12
+    {
+        /*
+         * 12. Write a program in C# Sharp to find the LCM and GCD of two numbers using recursion. 
+            Test Data :
+            Input the first number : 10
+            Input the second number : 15
+            Expected Output :
+            The GCD of 10 and 15 = 5
+            The LCM of 10 and 15 = 30
+        */
+    }
+
+    public static class RecursionTest
+    {
+
+        public static void Execute()
+        {
+            Function(5, 'M');
+        }
+
+        private static void Function(int number, char execution)
+        {
+            if (number == 0) return;
+            
+            Function(number - 1, 'A');
+
+            Function(number - 1, 'B');
+
+            Console.WriteLine($"{execution} {number}");
+        }
+    }
 }
