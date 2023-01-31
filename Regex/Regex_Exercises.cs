@@ -31,4 +31,45 @@ namespace Regex_Exercises
 
         }
     }
+
+    public static class Exercise_02
+    {
+        /*
+         * 2. Write a C# Sharp program to calculate the average word length in a given string. Round the average length up to two decimal places. 
+            Sample Data:
+            ("CPP Exercises." -> 6
+            ("C# syntax is highly expressive, yet it is also simple and easy to learn.") -> 4
+            (“C# is an elegant and type-safe object-oriented language") -> 5.62
+         */
+
+        public static void Execute()
+        {
+            string sentence = UtilityMethods.GetValidString();
+            string expression = @"^\w*|\s\w*";
+            int letterCount = 0;
+            decimal averageLength = 0m;
+
+            Regex regex = new Regex(expression);
+
+            MatchCollection sentenceMatches = regex.Matches(sentence);
+
+            foreach( Match word in sentenceMatches)
+            {
+                Console.WriteLine( word.ToString());
+                letterCount += word.Length;
+            }
+
+            
+            averageLength = decimal.Divide(letterCount, sentenceMatches.Count);
+
+            averageLength = Math.Round(averageLength, 2);
+
+            Console.WriteLine($"Average Length: {averageLength}");
+        }
+
+        private static int wordLength(string word)
+        {
+            return word.Trim().Length;
+        }
+    }
 }
