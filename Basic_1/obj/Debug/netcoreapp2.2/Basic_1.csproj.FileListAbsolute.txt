@@ -7,6 +7,5 @@ D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.AssemblyInfoInput
 D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.AssemblyInfo.cs
 D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.dll
 D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.pdb
-D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.csprojAssemblyReference.cache
 D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.csproj.CoreCompileInputs.cache
 D:\Git\CSharp_Practice\Basic_1\obj\Debug\netcoreapp2.2\Basic_1.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.csprojAssemblyReference.cache
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.AssemblyInfoInputs.cache
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.AssemblyInfo.cs
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.csproj.CoreCompileInputs.cache
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Regular_Expressions.exe
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Regular_Expressions.deps.json
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Regular_Expressions.runtimeconfig.json
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Regular_Expressions.runtimeconfig.dev.json
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Regular_Expressions.dll
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Regular_Expressions.pdb
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Basic_1.dll
+D:\Git\CSharp_Practice\Regex\bin\Debug\netcoreapp3.1\Basic_1.pdb
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.csproj.CopyComplete
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.dll
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.pdb
+D:\Git\CSharp_Practice\Regex\obj\Debug\netcoreapp3.1\Regular_Expressions.genruntimeconfig.cache

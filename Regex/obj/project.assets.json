@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\CSharp_Practice\\Regex\\Regex.csproj",
-      "projectName": "Regex",
-      "projectPath": "D:\\Git\\CSharp_Practice\\Regex\\Regex.csproj",
+      "projectUniqueName": "D:\\Git\\CSharp_Practice\\Regex\\Regular_Expressions.csproj",
+      "projectName": "Regular_Expressions",
+      "projectPath": "D:\\Git\\CSharp_Practice\\Regex\\Regular_Expressions.csproj",
       "packagesPath": "C:\\Users\\Zarathustra\\.nuget\\packages\\",
       "outputPath": "D:\\Git\\CSharp_Practice\\Regex\\obj\\",
       "projectStyle": "PackageReference",

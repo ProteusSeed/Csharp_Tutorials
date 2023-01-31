@@ -1,12 +1,32 @@
 ﻿using System;
+using Exercises;
+using Regex_Exercises;
 
-namespace Regex
+namespace Regular_Exp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            bool continueLoop = true;
+            int number = 0;
+
+            while (continueLoop == true)
+            {
+                continueLoop = UtilityMethods.getValidProgramNumber(out number);
+
+                switch (number)
+                {
+                    case 1:
+                        Exercise_01.Execute();
+                        break;
+
+                    default:
+                        Console.WriteLine("Program does not exist!");
+                        break;
+                }
+
+            }
         }
     }
 }

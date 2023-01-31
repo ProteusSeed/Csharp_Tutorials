@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursion", "Recursion\Recu
 		{25B4E966-4BDA-46F9-9CAD-3F8723AD9B84} = {25B4E966-4BDA-46F9-9CAD-3F8723AD9B84}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regex", "Regex\Regex.csproj", "{5EDEC630-F8A0-4119-9B7B-9695215B6C9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regular_Expressions", "Regex\Regular_Expressions.csproj", "{5EDEC630-F8A0-4119-9B7B-9695215B6C9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
