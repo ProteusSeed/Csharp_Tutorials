@@ -72,4 +72,33 @@ namespace Regex_Exercises
             return word.Trim().Length;
         }
     }
+
+    public static class Exercise_04
+    {
+        /*
+        4. Write a C# Sharp program to validate a password of length 7 to 16 characters with the following guidelines: 
+        • Length between 7 and 16 characters.
+        • At least one lowercase letter (a-z).
+        • At least one uppercase letter (A-Z).
+        • At least one digit (0-9).
+        • Supported special characters: ! @ # $ % ^ & * ( ) + = _ - { } [ ] : ; " ' ? < > , .
+        Sample Data:
+        ("Suuu$21g@") -> True
+        ("W#1g@") -> False
+        ("a&&g@") -> False
+        ("sdsd723#$Amid") -> True
+        ("sdsd723#$Amidkiouy") -> False
+         */
+
+        public static void Execute()
+        {
+            string password = UtilityMethods.GetValidString();
+
+            string regex = @"^[a-zA-Z!@#$%^&*()+=_-{}\[\]:;""'?<>,.]{7,16}$";
+
+            Regex expression = new Regex(regex);
+
+            Console.WriteLine(expression.IsMatch(password));
+        }
+    }
 }
