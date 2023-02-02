@@ -101,4 +101,35 @@ namespace Regex_Exercises
             Console.WriteLine(expression.IsMatch(password));
         }
     }
+
+    public static class Exercise_06
+    {
+        /*
+         * 6. Write a C# Sharp program to check for repeated occurrences of words in a given string string.
+            Sample Data:
+            ("C# C# syntax is highly expressive, yet it is is also simple and easy to to learn learn.") -> 3 matches found
+            ("Red Green Green Black Black Green.") -> 2 matches found
+        */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+            string matchString = "";
+
+            string expression = @"\b(?<word>\w+)\s+(\k<word>)\b";
+
+            Regex regex = new Regex(expression);
+
+            MatchCollection matches = regex.Matches(givenString);
+
+            foreach (Match item in matches)
+            {
+                matchString += item + " ";
+            }
+           
+            Console.WriteLine("{0} matches found", matches.Count);
+
+        }
+
+    }
 }
