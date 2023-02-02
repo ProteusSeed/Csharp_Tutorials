@@ -116,7 +116,7 @@ namespace Regex_Exercises
             string givenString = UtilityMethods.GetValidString();
             string matchString = "";
 
-            string expression = @"\b(?<word>\w+)\s+(\k<word>)\b";
+            string expression = @"\b(?<word>\w+)\s+(\k<word>)\b"; // \k = named backreference
 
             Regex regex = new Regex(expression);
 
@@ -132,4 +132,26 @@ namespace Regex_Exercises
         }
 
     }
+
+    public static class Exercise_07
+    {
+        /*
+         7. Write a C# Sharp program to check whether a given string either represents a currency value or has the correct format to represent a currency value. 
+         */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+
+            string expression = @"^\$?\d+.\d+$";
+
+            Regex regex = new Regex(expression);
+
+            Console.WriteLine(regex.IsMatch(givenString));
+
+
+        }
+    }
+
+
 }
