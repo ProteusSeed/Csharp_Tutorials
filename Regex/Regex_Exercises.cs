@@ -153,5 +153,24 @@ namespace Regex_Exercises
         }
     }
 
+    public static class Exercise_08
+    {
+        /*
+         * 8. Write a C# Sharp program to remove the special characters from a given text. 
+            Return the new string which allowed alphanumeric characters, spaces, underscores _ and dashes - .
+            Sample Data:
+            ("AA@%^&CC") -> "AACC"
+            ("Python") -> "Python"
+            ("w3resource.com") -> "w3resourcecom"
+         */
 
+        public static void Execute()
+        {
+            string text = UtilityMethods.GetValidString();
+
+            string alphaString = Regex.Replace(text, @"[^A-Za-z _-]", String.Empty);
+
+            Console.WriteLine(alphaString);
+        }
+    }
 }
