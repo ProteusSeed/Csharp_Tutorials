@@ -173,4 +173,27 @@ namespace Regex_Exercises
             Console.WriteLine(alphaString);
         }
     }
+
+    public static class Exercise_09
+    {
+        /*
+          9. Write a C# Sharp program to find the word "C#" in a given string. If the word "C#" found return "C# document found." otherwise return “Sorry no C# document!". 
+            Sample Data:
+            ("C# Exercises") -> "C# document found."
+            ("Python Exercises") -> "Sorry no C# document!"
+            ("Tutorial on c#") -> "C# document found."
+         */
+
+        public static void Execute()
+        {
+            string givenString = UtilityMethods.GetValidString();
+            string regex = "C#";
+
+            bool found = Regex.IsMatch(givenString, regex);
+
+            Console.WriteLine(found);
+        }
+    }
+
+
 }

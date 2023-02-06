@@ -41,6 +41,10 @@ namespace Regular_Exp
                         Exercise_08.Execute();
                         break;
 
+                    case 9:
+                        Exercise_09.Execute();
+                        break;
+
                     default:
                         Console.WriteLine("Program does not exist!");
                         break;
